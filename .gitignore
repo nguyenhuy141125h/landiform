@@ -1,0 +1,6 @@
+# Design reference image; not loaded by the website.
+/assets/landing-reference.png
+
+# Local editor and operating system files.
+.DS_Store
+Thumbs.db

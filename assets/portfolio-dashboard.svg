@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Bảng điều khiển danh mục dự án LANDIFORM</title>
+  <desc id="desc">Minh họa giao diện theo dõi website, biểu mẫu và khách hàng của nhiều dự án.</desc>
+  <defs>
+    <linearGradient id="backdrop" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f2f8ff"/><stop offset=".56" stop-color="#e5f2ff"/><stop offset="1" stop-color="#e9f7f3"/></linearGradient>
+    <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#8cc8f2"/><stop offset="1" stop-color="#d9efff"/></linearGradient>
+    <linearGradient id="glass" x2="1" y2="1"><stop stop-color="#4d8bb5"/><stop offset="1" stop-color="#12375c"/></linearGradient>
+    <linearGradient id="greenland" x2="0" y2="1"><stop stop-color="#91c99d"/><stop offset="1" stop-color="#d9e8bd"/></linearGradient>
+    <linearGradient id="shore" x2="0" y2="1"><stop stop-color="#8dd3e6"/><stop offset=".55" stop-color="#4aafc7"/><stop offset=".56" stop-color="#efd3a2"/><stop offset="1" stop-color="#d9b77d"/></linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%"><feDropShadow dx="0" dy="18" stdDeviation="20" flood-color="#23476b" flood-opacity=".12"/></filter>
+    <clipPath id="thumbA"><rect x="78" y="249" width="138" height="92" rx="10"/></clipPath>
+    <clipPath id="thumbB"><rect x="78" y="370" width="138" height="92" rx="10"/></clipPath>
+    <clipPath id="thumbC"><rect x="78" y="491" width="138" height="92" rx="10"/></clipPath>
+  </defs>
+  <rect width="1200" height="800" rx="28" fill="url(#backdrop)"/>
+  <circle cx="1070" cy="78" r="155" fill="#d7ebff" opacity=".55"/>
+  <g font-family="'Segoe UI',Arial,sans-serif">
+    <g transform="translate(48 43)">
+      <rect width="34" height="34" rx="8" fill="#0877d8"/>
+      <path d="M9 26V9h16v17M6 26h22M13 13h2m4 0h2m-8 4h2m4 0h2m-8 9v-5h4v5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="46" y="24" fill="#123b6c" font-size="22" font-weight="750" letter-spacing="-.5">LANDIFORM</text>
+    </g>
+    <rect x="42" y="112" width="1116" height="642" rx="22" fill="#fff" filter="url(#shadow)"/>
+    <text x="78" y="160" fill="#7890a8" font-size="12" font-weight="700" letter-spacing="1.1">DANH MỤC DỰ ÁN</text>
+    <text x="78" y="195" fill="#102a52" font-size="25" font-weight="700">Theo dõi trong một nơi</text>
+    <rect x="1082" y="145" width="40" height="40" rx="10" fill="#edf6ff"/>
+    <path d="M1094 157h16m-16 8h16m-16 8h16M1098 155v4m8 4v4m-8 4v4" stroke="#0877d8" stroke-width="2" stroke-linecap="round"/>
+    <g fill="#fff" stroke="#e5edf5">
+      <rect x="68" y="218" width="1064" height="112" rx="12"/>
+      <rect x="68" y="339" width="1064" height="112" rx="12"/>
+      <rect x="68" y="460" width="1064" height="112" rx="12"/>
+    </g>
+    <g clip-path="url(#thumbA)">
+      <rect x="78" y="249" width="138" height="92" fill="url(#sky)"/>
+      <circle cx="183" cy="264" r="17" fill="#fff4cf" opacity=".9"/>
+      <path d="M77 321 110 284l22 21 25-33 60 44v26H77Z" fill="#6a9fbc"/>
+      <path d="M87 255h30v91H87zm36-14h27v105h-27zm34 24h25v81h-25z" fill="url(#glass)"/>
+      <path d="M92 263h5v7h-5m12-7h5v7h-5m-12 9h5v7h-5m12-7h5v7h-5m29-23h5v8h-5m10 0h5v8h-5m-15 9h5v8h-5m10 0h5v8h-5m19-26h5v7h-5m-8 14h5v7h-5" fill="#c2e7f7" opacity=".9"/>
+    </g>
+    <g clip-path="url(#thumbB)">
+      <rect x="78" y="370" width="138" height="92" fill="url(#greenland)"/>
+      <path d="M70 398 224 426M82 447l133-53M125 365l-5 105m57-100-18 105" stroke="#eee4c7" stroke-width="10"/>
+      <path d="m78 387 34-13 15 10-35 16zm52 4 38-14 16 12-40 15zm-38 39 35-16 17 13-37 17zm55 4 38-17 17 13-39 19z" fill="#f8f4e9" stroke="#b2c6a1" stroke-width="2"/>
+      <path d="m81 393 31-12 8 6-32 13zm53 2 34-12 9 7-35 13zm-38 39 30-13 9 7-31 14zm56 4 33-14 9 7-34 15z" fill="#b86c52"/>
+      <circle cx="202" cy="379" r="6" fill="#46835a"/><circle cx="95" cy="451" r="6" fill="#46835a"/>
+    </g>
+    <g clip-path="url(#thumbC)">
+      <rect x="78" y="491" width="138" height="92" fill="url(#shore)"/>
+      <path d="M77 551c26-13 41-9 59-2 21 8 41 6 82-8v43H77Z" fill="#d6bc88" opacity=".8"/>
+      <path d="M109 545v-27m0 1-14-14m14 17 13-19m-13 28-17-9m17 3 16-11" fill="none" stroke="#355f43" stroke-width="4" stroke-linecap="round"/>
+      <path d="M110 520q-16-15-22-8 10 1 17 12m5-3q9-19 19-16-10 5-14 18m-9 2q-20-8-24 1 12-3 22 5" fill="#477a4b"/>
+      <path d="M151 554v-29h36v34h-36z" fill="#f3ead7"/><path d="M146 528h46l-23-16z" fill="#b9825d"/><path d="M158 536h8v10h-8zm15 0h8v10h-8z" fill="#77a6b8"/>
+      <path d="M78 563q27-8 55 0t83 0" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+    </g>
+    <g fill="#163657">
+      <text x="244" y="268" font-size="17" font-weight="700">Dự án căn hộ</text>
+      <text x="244" y="291" fill="#8193a6" font-size="12">Website</text><text x="301" y="291" fill="#13876d" font-size="12" font-weight="650">Đang hoạt động</text>
+      <text x="244" y="389" font-size="17" font-weight="700">Khu nhà ở</text>
+      <text x="244" y="412" fill="#8193a6" font-size="12">Biểu mẫu</text><text x="301" y="412" fill="#13876d" font-size="12" font-weight="650">Đang tiếp nhận</text>
+      <text x="244" y="510" font-size="17" font-weight="700">Dự án nghỉ dưỡng</text>
+      <text x="244" y="533" fill="#8193a6" font-size="12">CRM</text><text x="277" y="533" fill="#13876d" font-size="12" font-weight="650">Đang theo dõi</text>
+    </g>
+    <g fill="#9aafc2"><path d="m1091 265 13-13m-9 0h9v9" fill="none" stroke="#8ca4ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m1091 386 13-13m-9 0h9v9" fill="none" stroke="#8ca4ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m1091 507 13-13m-9 0h9v9" fill="none" stroke="#8ca4ba" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>
+    <g font-size="12" font-weight="650">
+      <rect x="68" y="608" width="142" height="43" rx="9" fill="#f8fbff" stroke="#dfebf5"/><circle cx="88" cy="629" r="10" fill="#e5f2ff"/><path d="M83 629h10m-8-3h6m-6 6h6" stroke="#0877d8" stroke-width="1.5"/><text x="105" y="633" fill="#46627f">Website</text>
+      <rect x="222" y="608" width="153" height="43" rx="9" fill="#f8fbff" stroke="#dfebf5"/><circle cx="243" cy="629" r="10" fill="#e5f2ff"/><path d="M240 624h6v10h-6zM241.5 627h3m-3 2h3" fill="none" stroke="#0877d8" stroke-width="1.3"/><text x="260" y="633" fill="#46627f">Biểu mẫu</text>
+      <rect x="387" y="608" width="158" height="43" rx="9" fill="#f8fbff" stroke="#dfebf5"/><circle cx="409" cy="629" r="10" fill="#e5f2ff"/><circle cx="406" cy="627" r="2.5" fill="#0877d8"/><circle cx="413" cy="627" r="2.5" fill="#0877d8"/><path d="M402 634q0-4 4-4m3 4q0-4 4-4" fill="none" stroke="#0877d8" stroke-width="1.5"/><text x="427" y="633" fill="#46627f">Khách hàng</text>
+    </g>
+    <path d="M68 681h1064" stroke="#eaf0f6"/>
+    <text x="68" y="710" fill="#8193a6" font-size="11">Một danh mục dự án · dữ liệu gắn đúng doanh nghiệp</text>
+    <text x="1132" y="710" text-anchor="end" fill="#0877d8" font-size="11" font-weight="700">LANDIFORM PLATFORM</text>
+  </g>
+</svg>
