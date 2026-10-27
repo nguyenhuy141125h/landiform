@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f3f6f8" />
-        <title>B�o c�o nh�n vi�n | LANDIFORM</title>
+        <title>Báo cáo nhân viên | LANDIFORM</title>
         <link
             rel="icon"
             type="image/svg+xml"
@@ -24,48 +24,48 @@
     <body class="dashboard-body">
     <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
         <div class="app-shell">
-            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="�i?u hu?ng qu?n tr?"></aside>
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
             <main class="main-panel">
                 <header class="topbar" data-admin-shared-topbar data-page-label="B&#225;o c&#225;o nh&#226;n vi&#234;n"></header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
-                            <p class="screen-eyebrow">PH�N T�CH �?I NGU</p>
-                            <h1>B�o c�o nh�n vi�n</h1>
-                            <p>Theo d�i kh�ch h�ng du?c ph? tr�ch, l?ch h?n, giao d?ch, doanh thu tham chi?u v� hoa h?ng theo t?ng nh�n vi�n.</p>
+                            <p class="screen-eyebrow">PHÂN TÍCH ĐỘI NGŨ</p>
+                            <h1>Báo cáo nhân viên</h1>
+                            <p>Theo dõi khách hàng được phụ trách, lịch hẹn, giao dịch, doanh thu tham chiếu và hoa hồng theo từng nhân viên.</p>
                         </div>
                         <div class="screen-heading-actions">
-                            <label class="report-month-field"><span>K? b�o c�o</span><span class="report-month-input"><i class="fa-regular fa-calendar" aria-hidden="true"></i><input id="reportMonth" type="month" aria-label="Ch?n th�ng xem b�o c�o" /></span></label>
-                            <button class="button button-primary" type="button" data-action="export-screen"><i class="fa-solid fa-download" aria-hidden="true"></i> Xu?t CSV</button>
+                            <label class="report-month-field"><span>Kỳ báo cáo</span><span class="report-month-input"><i class="fa-regular fa-calendar" aria-hidden="true"></i><input id="reportMonth" type="month" aria-label="Chọn tháng xem báo cáo" /></span></label>
+                            <button class="button button-primary" type="button" data-action="export-screen"><i class="fa-solid fa-download" aria-hidden="true"></i> Xuất CSV</button>
                         </div>
                     </header>
-                    <section class="screen-stats report-staff-stats" aria-label="T?ng quan hi?u qu? nh�n vi�n">
-                        <article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-users" aria-hidden="true"></i></span><div><span>Nh�n vi�n c� ho?t d?ng</span><strong id="reportStaffActive">0</strong><small>Trong k? b�o c�o</small></div></article>
-                        <article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span><div><span>Kh�ch du?c ph? tr�ch</span><strong id="reportStaffLeads">0</strong><small>T?ng h? so trong k?</small></div></article>
-                        <article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span><div><span>Giao d?ch ghi nh?n</span><strong id="reportStaffDeals">0</strong><small>Kh�ch d� chuy?n sang ngu?i mua</small></div></article>
-                        <article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span><div><span>Doanh thu tham chi?u</span><strong id="reportStaffRevenue">0</strong><small id="reportStaffCommission">Hoa h?ng d? ki?n: 0</small></div></article>
+                    <section class="screen-stats report-staff-stats" aria-label="Tổng quan hiểu quý nhân viên">
+                        <article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-users" aria-hidden="true"></i></span><div><span>Nhân viên có hoạt động</span><strong id="reportStaffActive">0</strong><small>Trong kỳ báo cáo</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span><div><span>Khách được phụ trách</span><strong id="reportStaffLeads">0</strong><small>Tổng hồ sơ trong kỳ</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-handshake" aria-hidden="true"></i></span><div><span>Giao dịch ghi nhận</span><strong id="reportStaffDeals">0</strong><small>Khách đã chuyển sang người mua</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span><div><span>Doanh thu tham chiếu</span><strong id="reportStaffRevenue">0</strong><small id="reportStaffCommission">Hoa hồng dự kiến: 0</small></div></article>
                     </section>
                     <section class="panel screen-panel report-staff-chart-panel">
-                        <div class="screen-panel-head"><div><span class="panel-kicker">SO S�NH K?T QU?</span><h2>Doanh thu tham chi?u theo nh�n vi�n</h2><p>�?i chi?u doanh thu v� hoa h?ng d? ki?n trong th�ng d� ch?n.</p></div></div>
-                        <div class="report-staff-chart" id="reportStaffRevenueChart" aria-label="Bi?u d? doanh thu tham chi?u theo nh�n vi�n"></div>
+                        <div class="screen-panel-head"><div><span class="panel-kicker">SO SÁNH KẾT QUẢ</span><h2>Doanh thu tham chiếu theo nhân viên</h2><p>Đối chiếu doanh thu và hoa hồng dự kiến trong tháng đã chọn.</p></div></div>
+                        <div class="report-staff-chart" id="reportStaffRevenueChart" aria-label="Biểu đồ doanh thu tham chiếu theo nhân viên"></div>
                     </section>
                     <section class="panel screen-panel report-staff-panel">
                         <div class="screen-panel-head">
                             <div>
-                                <span class="panel-kicker">HI?U QU? �?I NGU</span>
-                                <h2>K?t qu? theo nh�n vi�n</h2>
-                                <p>C�c ch? s? du?c t?ng h?p theo k? b�o c�o d� ch?n.</p>
+                                <span class="panel-kicker">HIỆU QUẢ ĐỘI NGŨ</span>
+                                <h2>Kết quả theo nhân viên</h2>
+                                <p>Các chỉ số được tổng hợp theo kỳ báo cáo đã chọn.</p>
                             </div>
-                            <a class="panel-action" href="team.html?type=employee"><i class="fa-solid fa-users" aria-hidden="true"></i> Qu?n l� nh�n vi�n</a>
+                            <a class="panel-action" href="team.html?type=employee"><i class="fa-solid fa-users" aria-hidden="true"></i> Quản lý nhân viên</a>
                         </div>
                         <div class="screen-table-wrap">
                             <table class="screen-table report-staff-table">
-                                <thead><tr><th>Nh�n vi�n</th><th>Ch?c v?</th><th>Kh�ch ph? tr�ch</th><th>�? di?u ki?n</th><th>L?ch h?n</th><th>Giao d?ch</th><th>Doanh thu tham chi?u</th><th>Hoa h?ng d? ki?n</th><th>T? l? chuy?n d?i</th></tr></thead>
+                                <thead><tr><th>Nhân viên</th><th>Chức vụ</th><th>Khách phụ trách</th><th>Đủ điều kiện</th><th>Lịch hẹn</th><th>Giao dịch</th><th>Doanh thu tham chiếu</th><th>Hoa hồng dự kiến</th><th>Tỷ lệ chuyển đổi</th></tr></thead>
                                 <tbody id="reportStaffRows"></tbody>
                             </table>
                         </div>
-                        <p class="report-staff-empty" id="reportStaffEmpty" hidden>Chua c� ho?t d?ng nh�n vi�n trong th�ng n�y.</p>
-                        <p class="report-staff-note">Hoa h?ng u?c t�nh theo t? l? c?a t?ng s?n ph?m; s?n ph?m m?u chua c� t? l? ri�ng dang t?m t�nh 2%.</p>
+                        <p class="report-staff-empty" id="reportStaffEmpty" hidden>Chưa có hoạt động nhân viên trong tháng này.</p>
+                        <p class="report-staff-note">Hoa hồng ước tính theo tỷ lệ của từng sản phẩm; sản phẩm mẫu chưa có tỷ lệ riêng đang tạm tính 2%.</p>
                     </section><footer class="dashboard-footer" data-admin-shared-footer></footer>
                 </div>
             </main>

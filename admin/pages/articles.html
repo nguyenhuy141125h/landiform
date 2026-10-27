@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f3f6f8" />
-        <title>C?m nang | LANDIFORM</title>
+        <title>Cẩm nang | LANDIFORM</title>
         <link
             rel="icon"
             type="image/svg+xml"
@@ -42,17 +42,17 @@
     <body class="dashboard-body">
     <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
         <div class="app-shell">
-            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="�i?u hu?ng qu?n tr?"></aside>
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
             <main class="main-panel">
-                <header class="topbar" data-admin-shared-topbar data-page-label="C?m nang"></header>
+                <header class="topbar" data-admin-shared-topbar data-page-label="Cẩm nang"></header>
                 <div class="dashboard-content screen-content guide-admin-page">
                     <header class="screen-heading">
                         <div>
-                            <p class="screen-eyebrow">N?I DUNG CUSTOMER</p>
-                            <h1>Qu?n l� c?m nang</h1>
+                            <p class="screen-eyebrow">NỘI DUNG CUSTOMER</p>
+                            <h1>Quản lý cẩm nang</h1>
                             <p>
-                                So?n b�i, thay ?nh v� ch?n b�i vi?t du?c hi?n
-                                th? tr�n trang C?m nang c?a Customer.
+                                Soạn bài, thay ảnh và chọn bài viết được hiện
+                                thể trên trang Cẩm nang của Customer.
                             </p>
                         </div>
                         <div class="screen-heading-actions">
@@ -75,7 +75,7 @@
                                     class="fa-solid fa-plus"
                                     aria-hidden="true"
                                 ></i>
-                                Vi?t b�i m?i
+                                Viết bài mới
                             </button>
                         </div>
                     </header>
@@ -84,11 +84,11 @@
                             <div class="screen-panel-head">
                                 <div>
                                     <span class="panel-kicker"
-                                        >DANH S�CH B�I VI?T</span
+                                        >DANH SÁCH BÀI VIẾT</span
                                     >
-                                    <h2>B�i vi?t c?m nang</h2>
+                                    <h2>Bài viết cẩm nang</h2>
                                     <p id="guideListCaption">
-                                        �ang t?i b�i vi?t...
+                                        Đang tải bài viết...
                                     </p>
                                 </div>
                             </div>
@@ -102,14 +102,14 @@
                             <div class="screen-panel-head">
                                 <div>
                                     <span class="panel-kicker"
-                                        >BI�N T?P N?I DUNG</span
+                                        >BIÊN TẬP NỘI DUNG</span
                                     >
                                     <h2 id="guideEditorTitle">
-                                        Ch?n b�i vi?t d? ch?nh s?a
+                                        Chọn bài viết dự chỉnh sửa
                                     </h2>
                                     <p>
-                                        Thay d?i du?c luu v� hi?n th? tr�n trang
-                                        Customer trong c�ng tr�nh duy?t.
+                                        Thay đổi được lưu và hiển thị trên trang
+                                        Customer trong cùng trình duyệt.
                                     </p>
                                 </div>
                             </div>
@@ -117,57 +117,57 @@
                                 <input type="hidden" name="id" />
                                 <div class="guide-form-row">
                                     <label
-                                        >Ch? d?<select name="category" required>
+                                        >Chủ đề<select name="category" required>
                                             <option value="apartment">
-                                                Can h?
+                                                Căn hộ
                                             </option>
-                                            <option value="home">Nh� ?</option>
+                                            <option value="home">Nhà ở</option>
                                             <option value="land">
-                                                �?t & l� d?t
+                                                Đặt & lô đất
                                             </option>
                                             <option value="urban">
-                                                Khu d� th?
+                                                Khu đô thị
                                             </option>
                                             <option value="resort">
-                                                Ngh? du?ng
+                                                Nghỉ dưỡng
                                             </option>
                                             <option value="commercial">
-                                                Thuong m?i
+                                                Thương mại
                                             </option>
                                         </select></label
                                     ><label
-                                        >Nh�n nh?<input
+                                        >Nhãn nhỏ<input
                                             name="kicker"
                                             maxlength="80"
-                                            placeholder="V� d?: CH?N S?N PH?M"
+                                            placeholder="Ví dụ: CHỌN SẢN PHẨM"
                                             required
                                     /></label>
                                 </div>
                                 <label
-                                    >Ti�u d?<input
+                                    >Tiêu đề<input
                                         name="title"
                                         maxlength="180"
                                         required
-                                        placeholder="Ti�u d? b�i vi?t"
+                                        placeholder="Tiêu đề bài viết"
                                 /></label>
                                 <label
-                                    >M� t? ng?n<textarea
+                                    >Mô tả ngắn<textarea
                                         name="summary"
                                         rows="2"
                                         maxlength="360"
                                         required
-                                        placeholder="�o?n gi?i thi?u hi?n th? b�n c?nh ?nh"
+                                        placeholder="Đoạn giới thiệu hiển thị bên cạnh ảnh"
                                     ></textarea>
                                 </label>
                                 <label
-                                    >?nh b�a *<input
+                                    >ảnh bìa *<input
                                         name="imageFile"
                                         type="file"
                                         accept="image/*"
                                     /><small id="guideImageFileName"
-                                        >Ch?n ?nh t? thi?t b?. ?nh hi?n t?i du?c
-                                        gi? nguy�n n?u b?n kh�ng ch?n ?nh
-                                        m?i.</small
+                                        >Chọn ảnh từ thiết bị. Ảnh hiện tại được
+                                        giữ nguyên nếu bạn không chọn ảnh
+                                        mới.</small
                                     ></label
                                 >
                                 <input name="image" type="hidden" />
@@ -179,16 +179,16 @@
                                         class="fa-regular fa-image"
                                         aria-hidden="true"
                                     ></i
-                                    ><span>Xem tru?c ?nh b�a</span>
+                                    ><span>Xem trước ảnh bìa</span>
                                 </div>
                                 <label
-                                    >Van b?n thay th? ?nh<input
+                                    >Văn bản thay thế ảnh<input
                                         name="imageAlt"
                                         maxlength="180"
-                                        placeholder="M� t? ?nh cho ngu?i d�ng tr�nh d?c m�n h�nh"
+                                        placeholder="Mô tả ảnh cho người dùng trình đọc màn hình"
                                 /></label>
                                 <label
-                                    >N?i dung b�i vi?t<textarea
+                                    >Nội dung bài viết<textarea
                                         id="guideBody"
                                         name="bodyHtml"
                                         rows="18"
@@ -200,27 +200,27 @@
                                         type="checkbox"
                                         checked
                                     /><span
-                                        ><strong>Hi?n th? tr�n Customer</strong
+                                        ><strong>Hiện thể trên Customer</strong
                                         ><small
-                                            >B? ch?n d? luu b�i vi?t ? tr?ng
-                                            th�i ?n.</small
+                                            >Bỏ chọn để lưu bài viết ở trạng
+                                            thái ẩn.</small
                                         ></span
                                     ></label
                                 >
                                 <div class="guide-form-actions">
                                     <button
-                                        class="button button-danger"
+                                        class="button button-đanger"
                                         id="guideDelete"
                                         type="button"
                                     >
-                                        X�a b�i vi?t</button
+                                        Xóa bài viết</button
                                     ><span class="guide-editor-spacer"></span
                                     ><button
                                         class="button button-secondary"
                                         id="guideReset"
                                         type="button"
                                     >
-                                        B? thay d?i</button
+                                        Bộ thay đổi</button
                                     ><button
                                         class="button button-primary"
                                         type="submit"
@@ -229,7 +229,7 @@
                                             class="fa-solid fa-floppy-disk"
                                             aria-hidden="true"
                                         ></i>
-                                        Luu b�i vi?t
+                                        Lưu bài viết
                                     </button>
                                 </div>
                             </form>
@@ -241,10 +241,10 @@
                                     class="fa-solid fa-pen-to-square"
                                     aria-hidden="true"
                                 ></i
-                                ><strong>Ch?n m?t b�i vi?t</strong
+                                ><strong>Chọn mật bài viết</strong
                                 ><span
-                                    >Ho?c ch?n �Vi?t b�i m?i� d? th�m b�i v�o
-                                    C?m nang.</span
+                                    >Hoặc chọn “Viết bài mới” dự thêm bài vào
+                                    Cẩm nang.</span
                                 >
                             </div>
                         </section>

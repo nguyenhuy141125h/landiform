@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f3f6f8" />
-        <title>Ngu?i mua & b�n giao | LANDIFORM</title>
+        <title>Người mua & bàn giao | LANDIFORM</title>
         <link
             rel="icon"
             type="image/svg+xml"
@@ -38,22 +38,22 @@
                 class="sidebar"
                 id="sidebar"
                 data-admin-shared-shell
-                aria-label="�i?u hu?ng qu?n tr?"
+                aria-label="Điều hướng quản trị"
             ></aside>
             <main class="main-panel">
                 <header
                     class="topbar"
                     data-admin-shared-topbar
-                    data-page-label="Ngu?i mua &amp; b&#224;n giao"
+                    data-page-label="Người mua &amp; b&#224;n giao"
                 ></header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
-                            <p class="screen-eyebrow">SAU GIAO D?CH</p>
-                            <h1>Ngu?i mua & b�n giao</h1>
+                            <p class="screen-eyebrow">SAU GIAO DỊCH</p>
+                            <h1>Người mua & bàn giao</h1>
                             <p>
-                                Li�n k?t ngu?i mua v?i s?n ph?m, theo d�i h? so
-                                v� chu?n b? l?ch b�n giao.
+                                Liên kết người mua với sản phẩm, theo dõi hồ sơ
+                                và chuẩn bị lịch bàn giao.
                             </p>
                         </div>
                         <div class="screen-heading-actions">
@@ -66,7 +66,7 @@
                                     class="fa-solid fa-plus"
                                     aria-hidden="true"
                                 ></i>
-                                Th�m h? so
+                                Thêm hồ sơ
                             </button>
                         </div>
                     </header>
@@ -79,9 +79,9 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>H? so ngu?i mua</span
+                                <span>Hồ sơ người mua</span
                                 ><strong id="buyerTotal">0</strong
-                                ><small>Trong danh s�ch qu?n l�</small>
+                                ><small>Trong danh sách quản lý</small>
                             </div>
                         </article>
                         <article class="screen-stat">
@@ -92,9 +92,9 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>Ch? b�n giao</span
+                                <span>Chờ bàn giao</span
                                 ><strong id="buyerDueSoon">0</strong
-                                ><small>Trong 90 ng�y t?i</small>
+                                ><small>Trong 90 ngày tới</small>
                             </div>
                         </article>
                         <article class="screen-stat">
@@ -105,10 +105,10 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>�? h? so</span
+                                <span>Đã có hồ sơ</span
                                 ><strong id="buyerDocsComplete">0%</strong
                                 ><small id="buyerDocsCaption"
-                                    >Chua c� h? so</small
+                                    >Chưa có hồ sơ</small
                                 >
                             </div>
                         </article>
@@ -120,9 +120,9 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>C?n b? sung</span
+                                <span>Cần bộ sung</span
                                 ><strong id="buyerDocsMissing">0</strong
-                                ><small>H? so chua ho�n t?t</small>
+                                ><small>Hồ sơ chưa hoàn tất</small>
                             </div>
                         </article>
                     </div>
@@ -130,12 +130,12 @@
                         <div class="screen-panel-head">
                             <div>
                                 <span class="panel-kicker"
-                                    >H? SO SAU GIAO D?CH</span
+                                    >HỒ SƠ SAU GIAO DỊCH</span
                                 >
-                                <h2>Danh s�ch ngu?i mua</h2>
+                                <h2>Danh sách người mua</h2>
                                 <p>
-                                    Th�ng tin giao d?ch, s?n ph?m v� m?c b�n
-                                    giao d? ki?n.
+                                    Thông tin giao dịch, sản phẩm và mục bàn
+                                    giao dự kiến.
                                 </p>
                             </div>
                             <div class="screen-filter">
@@ -147,24 +147,24 @@
                                     ><input
                                         id="buyerSearch"
                                         type="search"
-                                        placeholder="T�m t�n, m� ho?c s?n ph?m"
-                                        aria-label="T�m h? so ngu?i mua" /></label
+                                        placeholder="Tìm tên, mã hoặc sản phẩm"
+                                        aria-label="Tìm hồ sơ người mua" /></label
                                 ><select
                                     id="buyerProjectFilter"
-                                    aria-label="L?c theo d? �n"
+                                    aria-label="Lọc theo dự án"
                                 >
                                     <option value="">
-                                        T?t c? d? �n
+                                        Tất có dự án
                                     </option></select
                                 ><select
                                     id="buyerDocumentFilter"
-                                    aria-label="L?c theo h? so"
+                                    aria-label="Lọc theo hồ sơ"
                                 >
                                     <option value="">
-                                        M?i t�nh tr?ng h? so
+                                        Mới tình trạng hồ sơ
                                     </option>
-                                    <option>�? h? so</option>
-                                    <option>�ang b? sung</option>
+                                    <option>Đã có hồ sơ</option>
+                                    <option>Đang bộ sung</option>
                                 </select>
                             </div>
                         </div>
@@ -172,12 +172,12 @@
                             <table class="screen-table">
                                 <thead>
                                     <tr>
-                                        <th>Ngu?i mua</th>
-                                        <th>S?n ph?m</th>
-                                        <th>D? �n</th>
-                                        <th>D? ki?n b�n giao</th>
-                                        <th>H? so</th>
-                                        <th>Thao t�c</th>
+                                        <th>Người mua</th>
+                                        <th>Sản phẩm</th>
+                                        <th>Dự án</th>
+                                        <th>Dự kiến bàn giao</th>
+                                        <th>Hồ sơ</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody id="buyerTableBody"></tbody>
@@ -192,36 +192,36 @@
                                 class="fa-solid fa-circle-info"
                                 aria-hidden="true"
                             ></i>
-                            Kh�ng t�m th?y h? so ph� h?p v?i b? l?c.
+                            Không tìm thấy hồ sơ phù hợp với bộ lọc.
                         </div>
                     </section>
                     <section class="panel screen-panel">
-                        <span class="panel-kicker">K? HO?CH B�N GIAO</span>
-                        <h2>C�c m?c c?n chu?n b?</h2>
+                        <span class="panel-kicker">Kỳ HOẠCH BÀN GIAO</span>
+                        <h2>Các mục cần chuẩn bị</h2>
                         <div class="handover-list">
                             <p>
                                 <b data-handover-window="30">0</b
                                 ><span
-                                    ><strong>Trong 30 ng�y</strong
+                                    ><strong>Trong 30 ngày</strong
                                     ><small
-                                        >Chu?n b? h? so v� l?ch ki?m tra</small
+                                        >Chuẩn bị hồ sơ và lịch kiểm tra</small
                                     ></span
                                 >
                             </p>
                             <p>
                                 <b data-handover-window="60">0</b
                                 ><span
-                                    ><strong>Trong 60 ng�y</strong
+                                    ><strong>Trong 60 ngày</strong
                                     ><small
-                                        >X�c nh?n t�nh tr?ng s?n ph?m</small
+                                        >Xác nhân tình trạng sản phẩm</small
                                     ></span
                                 >
                             </p>
                             <p>
                                 <b data-handover-window="90">0</b
                                 ><span
-                                    ><strong>Trong 90 ng�y</strong
-                                    ><small>L�n k? ho?ch b�n giao</small></span
+                                    ><strong>Trong 90 ngày</strong
+                                    ><small>Lên kế hoạch bàn giao</small></span
                                 >
                             </p>
                         </div>
@@ -244,61 +244,61 @@
                     class="modal-close"
                     type="button"
                     data-buyer-close
-                    aria-label="��ng"
+                    aria-label="Đóng"
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
                 <span class="modal-icon"
                     ><i class="fa-solid fa-house-user" aria-hidden="true"></i
                 ></span>
-                <h2 id="buyerModalTitle">Th�m h? so ngu?i mua</h2>
-                <p>G?n ngu?i mua v?i s?n ph?m v� m?c b�n giao d? ki?n.</p>
+                <h2 id="buyerModalTitle">Thêm hồ sơ người mua</h2>
+                <p>Gắn người mua với sản phẩm và mục bàn giao dự kiến.</p>
                 <form id="buyerForm" class="project-edit-form">
-                    <label for="buyerName">H? v� t�n</label
+                    <label for="buyerName">Họ và tên</label
                     ><input
                         id="buyerName"
                         name="name"
                         required
                         autocomplete="name"
-                        placeholder="Nh?p h? t�n ngu?i mua"
+                        placeholder="Nhập hồ tên người mua"
                     />
                     <div class="project-form-row">
                         <div>
-                            <label for="buyerPhone">S? di?n tho?i</label
+                            <label for="buyerPhone">Số điện thoại</label
                             ><input
                                 id="buyerPhone"
                                 name="phone"
                                 type="tel"
                                 autocomplete="tel"
                                 required
-                                placeholder="Nh?p s? di?n tho?i"
+                                placeholder="Nhập số điện thoại"
                             />
                         </div>
                         <div>
-                            <label for="buyerProject">D? �n</label
+                            <label for="buyerProject">Dự án</label
                             ><select id="buyerProject" name="project" required>
-                                <option value="">Ch?n d? �n</option>
-                                <option>An Ph� Riverside</option>
+                                <option value="">Chọn dự án</option>
+                                <option>An Phú Riverside</option>
                                 <option>Green Valley</option>
                                 <option>Central Park Towers</option>
-                                <option>Lumi�re Garden</option>
+                                <option>Lumière Garden</option>
                             </select>
                         </div>
                     </div>
                     <div class="project-form-row">
                         <div>
-                            <label for="buyerUnit">S?n ph?m</label
+                            <label for="buyerUnit">Sản phẩm</label
                             ><input
                                 id="buyerUnit"
                                 name="unit"
                                 list="buyerUnitSuggestions"
                                 required
-                                placeholder="Ch?n ho?c nh?p m� s?n ph?m"
+                                placeholder="Chọn hoặc nhập mã sản phẩm"
                             /><datalist id="buyerUnitSuggestions"></datalist>
                         </div>
                         <div>
                             <label for="buyerHandover"
-                                >Ng�y d? ki?n b�n giao</label
+                                >Ngày dự kiến bàn giao</label
                             ><input
                                 id="buyerHandover"
                                 name="handover"
@@ -307,31 +307,31 @@
                             />
                         </div>
                     </div>
-                    <label for="buyerDocuments">T�nh tr?ng gi?y t?</label
+                    <label for="buyerDocuments">Tình trạng giấy tờ</label
                     ><select id="buyerDocuments" name="documents">
-                        <option>�ang b? sung</option>
-                        <option>�? h? so</option>
+                        <option>Đang bộ sung</option>
+                        <option>Đã có hồ sơ</option>
                     </select>
                     <div class="modal-actions">
                         <button
-                            class="button button-danger"
+                            class="button button-đanger"
                             type="button"
                             id="buyerDelete"
                             hidden
                         >
-                            X�a h? so</button
+                            Xóa hồ sơ</button
                         ><button
                             class="button button-secondary"
                             type="button"
                             data-buyer-close
                         >
-                            H?y</button
+                            Hủy</button
                         ><button
                             class="button button-primary"
                             type="submit"
                             id="buyerSave"
                         >
-                            Luu h? so
+                            Lưu hồ sơ
                         </button>
                     </div>
                 </form>
@@ -352,7 +352,7 @@
                     class="modal-close"
                     type="button"
                     data-buyer-detail-close
-                    aria-label="��ng"
+                    aria-label="Đóng"
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
@@ -362,14 +362,14 @@
                         aria-hidden="true"
                     ></i
                 ></span>
-                <p class="panel-kicker">H? SO GIAO D?CH & HO?T �?NG</p>
-                <h2 id="buyerDetailTitle">Chi ti?t ngu?i mua</h2>
+                <p class="panel-kicker">HỒ SƠ GIAO DỊCH & HOẠT ĐỘNG</p>
+                <h2 id="buyerDetailTitle">Chi tiết người mua</h2>
                 <div class="buyer-detail-summary" id="buyerDetailSummary"></div>
                 <div class="buyer-detail-columns">
                     <section class="buyer-detail-purchase">
                         <h3>
                             <i class="fa-solid fa-house" aria-hidden="true"></i>
-                            S?n ph?m d� mua
+                            Sản phẩm dã mua
                         </h3>
                         <div id="buyerDetailProduct"></div>
                     </section>
@@ -379,7 +379,7 @@
                                 class="fa-solid fa-list-check"
                                 aria-hidden="true"
                             ></i>
-                            L?ch s? ho?t d?ng
+                            Lịch số hoạt động
                         </h3>
                         <ol
                             id="buyerDetailTimeline"
@@ -392,13 +392,13 @@
                         class="button button-secondary"
                         id="buyerCustomerLink"
                         href="leads.html"
-                        >M? h? so kh�ch h�ng</a
+                        >Mở hồ sơ khách hàng</a
                     ><button
                         class="button button-secondary"
                         type="button"
                         data-buyer-detail-close
                     >
-                        ��ng
+                        Đóng
                     </button>
                 </div>
             </section>

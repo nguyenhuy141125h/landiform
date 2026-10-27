@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f3f6f8" />
-        <title>S?n ph?m d? �n | LANDIFORM</title>
+        <title>Sản phẩm dự án | LANDIFORM</title>
         <link
             rel="icon"
             type="image/svg+xml"
@@ -34,17 +34,17 @@
     <body class="dashboard-body">
     <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
         <div class="app-shell">
-            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="�i?u hu?ng qu?n tr?"></aside>
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
             <main class="main-panel">
-                <header class="topbar" data-admin-shared-topbar data-page-label="S?n ph?m"></header>
+                <header class="topbar" data-admin-shared-topbar data-page-label="Sản phẩm"></header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
-                            <p class="screen-eyebrow">QU?N L� S?N PH?M</p>
-                            <h1>S?n ph?m d? �n</h1>
+                            <p class="screen-eyebrow">QUẢN LÝ SẢN PHẨM</p>
+                            <h1>Sản phẩm dự án</h1>
                             <p>
-                                Qu?n l� t?ng can h?, can nh� v� l� d?t; theo d�i
-                                t�nh tr?ng b�n v� y�u c?u gi? ch? theo d? �n.
+                                Quản lý căn hộ, căn nhà và lô đất; theo dõi
+                                tình trạng bán và yêu cầu giữ chỗ theo dự án.
                             </p>
                         </div>
                         <div class="screen-heading-actions">
@@ -57,7 +57,7 @@
                                     class="fa-solid fa-plus"
                                     aria-hidden="true"
                                 ></i>
-                                Th�m s?n ph?m
+                                Thêm sản phẩm
                             </button>
                         </div>
                     </header>
@@ -67,25 +67,25 @@
                     >
                         <div class="inventory-map-header">
                             <div>
-                                <span class="panel-kicker">QU? S?N PH?M</span>
+                                <span class="panel-kicker">QUẢN LÝ SẢN PHẨM</span>
                                 <h2 id="inventoryMapTitle">
-                                    Ch?n t�a, t?ng v� can h?
+                                    Chọn tòa, tầng và căn hộ
                                 </h2>
                                 <p id="inventoryMapIntro">
-                                    Xem t�nh tr?ng t?ng can ngay tr�n so d? c?a
-                                    d? �n.
+                                    Xem tình trạng từng căn ngay trên sơ đồ của
+                                    dự án.
                                 </p>
                             </div>
                             <label
                                 class="inventory-project-picker"
                                 for="inventoryProjectFilter"
                             >
-                                <span>D? �n</span>
+                                <span>Dự án</span>
                                 <select
                                     id="inventoryProjectFilter"
-                                    aria-label="Ch?n d? �n"
+                                    aria-label="Chọn dự án"
                                 >
-                                    <option value="">Ch?n d? �n</option>
+                                    <option value="">Chọn dự án</option>
                                 </select>
                             </label>
                         </div>
@@ -99,43 +99,43 @@
                             id="inventoryMapNavigation"
                         >
                             <div class="inventory-map-section-head">
-                                <strong>1. Ch?n t�a nh�</strong
+                                <strong>1. Chọn tòa nhà</strong
                                 ><span id="inventoryTowerCount"></span>
                             </div>
                             <div
                                 class="inventory-map-towers"
                                 id="inventoryMapTowers"
                                 role="group"
-                                aria-label="Ch?n t�a nh�"
+                                aria-label="Chọn tòa nhà"
                             ></div>
                             <div class="inventory-map-section-head">
-                                <strong>2. Ch?n t?ng</strong
+                                <strong>2. Chọn tầng</strong
                                 ><span id="inventorySelectedTower"></span>
                             </div>
                             <div
                                 class="inventory-map-floors"
                                 id="inventoryMapFloors"
                                 role="group"
-                                aria-label="Ch?n t?ng"
+                                aria-label="Chọn tầng"
                             ></div>
                             <div
                                 class="inventory-map-section-head inventory-map-unit-heading"
                             >
-                                <strong>3. Ch?n can h?</strong
+                                <strong>3. Chọn căn hộ</strong
                                 ><span id="inventoryMapCount"></span>
                             </div>
                             <div
                                 class="inventory-map-legend"
-                                aria-label="Ch� gi?i t�nh tr?ng can h?"
+                                aria-label="Chú giới tình trạng căn hộ"
                             >
-                                <span><i class="available"></i>C�n b�n</span>
+                                <span><i class="available"></i>Còn bán</span>
                                 <span
-                                    ><i class="pending"></i>Ch? duy?t / gi?
-                                    ch?</span
+                                    ><i class="pending"></i>Chờ duyệt / giữ
+                                    chờ</span
                                 >
-                                <span><i class="sold"></i>�� b�n</span>
+                                <span><i class="sold"></i>Đã bán</span>
                                 <span
-                                    ><i class="unreleased"></i>Chua m? b�n</span
+                                    ><i class="unreleased"></i>Chưa mở bán</span
                                 >
                             </div>
                             <div
@@ -149,7 +149,7 @@
                                 type="button"
                                 data-unit-bulk
                             >
-                                Th�m nhi?u can h?
+                                Thêm nhiều căn hộ
                             </button>
                         </div>
                     </section>
@@ -163,9 +163,9 @@
                                     class="fa-solid fa-table-list"
                                     aria-hidden="true"
                                 ></i>
-                                Danh s�ch chi ti?t</span
+                                Danh sách chi tiết</span
                             ><span
-                                >Xem, l?c v� ch?nh s?a t?ng s?n ph?m
+                                >Xem, lọc và chỉnh sửa tầng sản phẩm
                                 <i
                                     class="fa-solid fa-chevron-down"
                                     aria-hidden="true"
@@ -175,12 +175,12 @@
                         <div class="screen-panel-head">
                             <div>
                                 <span class="panel-kicker"
-                                    >DANH M?C S?N PH?M</span
+                                    >DANH MỤC SẢN PHẨM</span
                                 >
-                                <h2>C�c s?n ph?m trong d? �n</h2>
+                                <h2>Các sản phẩm trong dự án</h2>
                                 <p>
-                                    L?c c�ng danh m?c s?n ph?m theo nh�m, d? �n,
-                                    ph�n khu, t?ng v� t�nh tr?ng.
+                                    Lọc cùng danh mục sản phẩm theo nhóm, dự án,
+                                    phân khu, tầng và tình trạng.
                                 </p>
                             </div>
                         </div>
@@ -193,98 +193,98 @@
                                 ><input
                                     type="search"
                                     id="inventorySearch"
-                                    placeholder="T�m m� can, t�a ho?c d? �n"
-                                    aria-label="T�m s?n ph?m"
+                                    placeholder="Tìm mã căn, tòa hoặc dự án"
+                                    aria-label="Tìm sản phẩm"
                             /></label>
                             <select
                                 id="inventoryGroupFilter"
-                                aria-label="L?c theo nh�m s?n ph?m"
+                                aria-label="Lọc theo nhóm sản phẩm"
                             >
-                                <option value="">T?t c? nh�m s?n ph?m</option>
-                                <option value="apartment">Can h?</option>
-                                <option value="house">Nh� ?</option>
-                                <option value="land">�?t n?n / l� d?t</option>
+                                <option value="">Tất có nhóm sản phẩm</option>
+                                <option value="apartment">Căn hộ</option>
+                                <option value="house">Nhà ở</option>
+                                <option value="land">Đặt nền / lô đất</option>
                                 <option value="commercial">
-                                    Thuong m?i / van ph�ng
+                                    Thương mại / văn phòng
                                 </option>
                                 <option value="other">
-                                    Ngh? du?ng / lo?i kh�c
+                                    Nghỉ dưỡng / loại khác
                                 </option>
                             </select>
                             <select
                                 id="inventoryTypeFilter"
-                                aria-label="L?c theo lo?i s?n ph?m"
+                                aria-label="Lọc theo loại sản phẩm"
                             >
-                                <option value="">T?t c? lo?i s?n ph?m</option>
+                                <option value="">Tất có loại sản phẩm</option>
                             </select>
                             <select
                                 id="inventoryTowerFilter"
-                                aria-label="L?c theo t�a"
+                                aria-label="Lọc theo tòa"
                             >
-                                <option value="">T?t c? t�a / ph�n khu</option>
+                                <option value="">Tất có tòa / phân khu</option>
                             </select>
                             <select
                                 id="inventoryFloorFilter"
-                                aria-label="L?c theo t?ng"
+                                aria-label="Lọc theo tầng"
                             >
-                                <option value="">T?t c? t?ng</option>
+                                <option value="">Tất có tầng</option>
                             </select>
                             <select
                                 id="inventoryStatusFilter"
-                                aria-label="L?c theo t�nh tr?ng"
+                                aria-label="Lọc theo tình trạng"
                             >
-                                <option value="">T?t c? t�nh tr?ng</option>
-                                <option>C�n b�n</option>
-                                <option>Ch? duy?t</option>
-                                <option>�ang gi? ch?</option>
-                                <option>�� b�n</option>
-                                <option>Chua m? b�n</option>
+                                <option value="">Tất có tình trạng</option>
+                                <option>Còn bán</option>
+                                <option>Chờ duyệt</option>
+                                <option>Đang giữ chỗ</option>
+                                <option>Đã bán</option>
+                                <option>Chưa mở bán</option>
                             </select>
                         </div>
                         <div class="screen-table-wrap">
                             <table class="screen-table inventory-table">
                                 <thead>
                                     <tr>
-                                        <th>M� s?n ph?m</th>
-                                        <th>D? �n</th>
-                                        <th>T�a / khu / ph�n khu</th>
-                                        <th>T?ng</th>
-                                        <th>Lo?i s?n ph?m</th>
-                                        <th>Th�ng s?</th>
-                                        <th>Di?n t�ch</th>
-                                        <th>Gi� d? ki?n</th>
-                                        <th>Hoa h?ng</th>
-                                        <th>T�nh tr?ng</th>
-                                        <th>Thao t�c</th>
+                                        <th>Mã sản phẩm</th>
+                                        <th>Dự án</th>
+                                        <th>Tòa / khu / phân khu</th>
+                                        <th>Tổng</th>
+                                        <th>Loại sản phẩm</th>
+                                        <th>Thông số</th>
+                                        <th>Diện tích</th>
+                                        <th>Giá dự kiến</th>
+                                        <th>Hoa hàng</th>
+                                        <th>Tình trạng</th>
+                                        <th>Thao tác</th>
                                     </tr>
                                 </thead>
                                 <tbody id="inventoryTableBody" data-static-demo="true">
-                                    <tr><td><strong>A2 � 12.08</strong></td><td>An Ph� Riverside</td><td>A2</td><td>T?ng 12</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>82 m�</td><td>3,8 t?</td><td>2%</td><td><span class="screen-badge amber">Ch? duy?t</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1208">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A2 � 12.09</strong></td><td>An Ph� Riverside</td><td>A2</td><td>T?ng 12</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>82 m�</td><td>3,9 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1209">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A2 � 12.10</strong></td><td>An Ph� Riverside</td><td>A2</td><td>T?ng 12</td><td>Can h? 3 ph�ng ng?</td><td>3 PN � 2 PT</td><td>105 m�</td><td>5,2 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1210">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A2 � 13.01</strong></td><td>An Ph� Riverside</td><td>A2</td><td>T?ng 13</td><td>Can h? 1 ph�ng ng?</td><td>1 PN � 1 PT</td><td>58 m�</td><td>2,8 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1301">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A1 � 05.01</strong></td><td>An Ph� Riverside</td><td>A1</td><td>T?ng 5</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>78 m�</td><td>3,5 t?</td><td>2%</td><td><span class="screen-badge neutral">�� b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0501">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A1 � 05.02</strong></td><td>An Ph� Riverside</td><td>A1</td><td>T?ng 5</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>78 m�</td><td>3,5 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0502">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>B1 � 08.03</strong></td><td>Central Park Towers</td><td>B1</td><td>T?ng 8</td><td>Can h? 3 ph�ng ng?</td><td>3 PN � 2 PT</td><td>104 m�</td><td>5,1 t?</td><td>2%</td><td><span class="screen-badge neutral">�� b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0803">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>B1 � 08.04</strong></td><td>Central Park Towers</td><td>B1</td><td>T?ng 8</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>79 m�</td><td>3,7 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0804">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>B2 � 10.01</strong></td><td>Central Park Towers</td><td>B2</td><td>T?ng 10</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>80 m�</td><td>3,8 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b2-1001">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>N08 � 05</strong></td><td>Green Valley</td><td>N08</td><td>�</td><td>Nh� ph?</td><td>3 t?ng � 3 PN</td><td>165 m�</td><td>8,2 t?</td><td>3%</td><td><span class="screen-badge neutral">�� b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-05">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>LG � 17</strong></td><td>Lumi�re Garden</td><td>Ph�n khu 1</td><td>�</td><td>�?t n?n d? �n</td><td>M?t ti?n 6 m</td><td>120 m�</td><td>2,4 t?</td><td>2%</td><td><span class="screen-badge blue">Chua m? b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-17">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>GV � A.26</strong></td><td>Green Valley</td><td>Khu d�n cu A</td><td>�</td><td>Nh� ri�ng</td><td>2 t?ng � 3 PN</td><td>96 m�</td><td>6,6 t?</td><td>3%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-house-026">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>LG � 21</strong></td><td>Lumi�re Garden</td><td>Ph�n khu 1</td><td>�</td><td>�?t n?n d? �n</td><td>M?t ti?n 6 m</td><td>120 m�</td><td>2,4 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-021">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>LG � 22</strong></td><td>Lumi�re Garden</td><td>Ph�n khu 2</td><td>�</td><td>�?t th? cu</td><td>M?t ti?n 7,5 m</td><td>150 m�</td><td>3,1 t?</td><td>2%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-022">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A2 � 15.06</strong></td><td>An Ph� Riverside</td><td>A2</td><td>T?ng 15</td><td>Can h? 2 ph�ng ng?</td><td>2 PN � 2 PT</td><td>82 m�</td><td>3,8 t?</td><td>2%</td><td><span class="screen-badge neutral">�� b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1506">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>N08 � 06</strong></td><td>Green Valley</td><td>N08</td><td>�</td><td>Nh� ph?</td><td>3 t?ng � 3 PN</td><td>168 m�</td><td>8,4 t?</td><td>3%</td><td><span class="screen-badge green">C�n b�n</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-06">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 12.08</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 12</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge amber">Chờ duyệt</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1208">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 12.09</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 12</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,9 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1209">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 12.10</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 12</td><td>Căn hộ 3 phòng ngủ</td><td>3 PN · 2 PT</td><td>105 m²</td><td>5,2 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1210">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 13.01</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tổng 13</td><td>Căn hộ 1 phòng ngủ</td><td>1 PN · 1 PT</td><td>58 m²</td><td>2,8 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1301">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A1 · 05.01</strong></td><td>An Phú Riverside</td><td>A1</td><td>Tổng 5</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0501">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A1 · 05.02</strong></td><td>An Phú Riverside</td><td>A1</td><td>Tổng 5</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0502">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B1 · 08.03</strong></td><td>Central Park Towers</td><td>B1</td><td>Tổng 8</td><td>Căn hộ 3 phòng ngủ</td><td>3 PN · 2 PT</td><td>104 m²</td><td>5,1 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0803">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B1 · 08.04</strong></td><td>Central Park Towers</td><td>B1</td><td>Tổng 8</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>79 m²</td><td>3,7 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0804">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B2 · 10.01</strong></td><td>Central Park Towers</td><td>B2</td><td>Tổng 10</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>80 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b2-1001">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>N08 · 05</strong></td><td>Green Valley</td><td>N08</td><td>—</td><td>Nhà phố</td><td>3 tầng · 3 PN</td><td>165 m²</td><td>8,2 tỷ</td><td>3%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-05">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 17</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Đặt nền dự án</td><td>Một tiền 6 m</td><td>120 m²</td><td>2,4 tỷ</td><td>2%</td><td><span class="screen-badge blue">Chưa mở bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-17">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>GV · A.26</strong></td><td>Green Valley</td><td>Khu dân cu A</td><td>—</td><td>Nhà riêng</td><td>2 tầng · 3 PN</td><td>96 m²</td><td>6,6 tỷ</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-house-026">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 21</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Đặt nền dự án</td><td>Một tiền 6 m</td><td>120 m²</td><td>2,4 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-021">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 22</strong></td><td>Lumière Garden</td><td>Phân khu 2</td><td>—</td><td>Đất thổ cư</td><td>Một tiền 7,5 m</td><td>150 m²</td><td>3,1 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-022">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 15.06</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tổng 15</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1506">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>N08 · 06</strong></td><td>Green Valley</td><td>N08</td><td>—</td><td>Nhà phố</td><td>3 tầng · 3 PN</td><td>168 m²</td><td>8,4 tỷ</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-06">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
                                 </tbody>
                             </table>
                         </div>
                         <div class="inventory-pagination">
-                            <span id="inventoryCount">0 s?n ph?m</span>
+                            <span id="inventoryCount">0 sản phẩm</span>
                             <div>
                                 <button
                                     type="button"
                                     id="inventoryPrevious"
-                                    aria-label="Trang tru?c"
+                                    aria-label="Trang trước"
                                 >
                                     <i
                                         class="fa-solid fa-chevron-left"
@@ -319,32 +319,32 @@
                     class="modal-close"
                     type="button"
                     data-unit-close
-                    aria-label="��ng"
+                    aria-label="Đóng"
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
                 <span class="modal-icon"
                     ><i class="fa-solid fa-door-closed" aria-hidden="true"></i
                 ></span>
-                <h2 id="unitModalTitle">Th�m s?n ph?m</h2>
+                <h2 id="unitModalTitle">Thêm sản phẩm</h2>
                 <p>
-                    Ch?n nh�m b?t d?ng s?n d? form t? hi?n d�ng th�ng tin c?n
-                    nh?p cho t?ng s?n ph?m.
+                    Chọn nhóm bất động sản để biểu mẫu hiển thị đúng thông tin cần thiết.
+                    nhập cho tầng sản phẩm.
                 </p>
                 <form id="unitForm" class="project-edit-form">
-                    <label for="unitProject">D? �n</label
+                    <label for="unitProject">Dự án</label
                     ><select id="unitProject" name="projectCode" required>
-                        <option value="">Ch?n d? �n</option>
+                        <option value="">Chọn dự án</option>
                     </select>
                     <div class="project-form-row">
                         <div>
-                            <label for="unitGroup">Nh�m b?t d?ng s?n</label
+                            <label for="unitGroup">Nhóm bật đang sản</label
                             ><select id="unitGroup" name="group" required>
-                                <option value="">Ch?n nh�m</option>
+                                <option value="">Chọn nhóm</option>
                             </select>
                         </div>
                         <div>
-                            <label for="unitType">Lo?i s?n ph?m</label
+                            <label for="unitType">Loại sản phẩm</label
                             ><select
                                 id="unitType"
                                 name="type"
@@ -353,45 +353,45 @@
                         </div>
                     </div>
                     <p class="inventory-category-link">
-                        Danh m?c v� nh�m s?n ph?m du?c qu?n l� t?i
+                        Danh mục và nhóm sản phẩm được quản lý tại
                         <a href="categories.html" target="_blank" rel="noopener"
-                            >Danh m?c s?n ph?m</a
+                            >Danh mục sản phẩm</a
                         >.
                     </p>
                     <div class="project-form-row">
                         <div>
-                            <label for="unitTower">Khu / d�y</label
+                            <label for="unitTower">Khu / dãy</label
                             ><input
                                 id="unitTower"
                                 name="tower"
                                 required
-                                placeholder="V� d?: D�y LK-01"
+                                placeholder="Ví dụ: Dãy LK-01"
                             />
                         </div>
                         <div id="unitFloorField">
-                            <label for="unitFloor">T?ng</label
+                            <label for="unitFloor">Tổng</label
                             ><input
                                 id="unitFloor"
                                 name="floor"
                                 type="number"
                                 min="1"
                                 max="200"
-                                placeholder="V� d?: 12"
+                                placeholder="Ví dụ: 12"
                             />
                         </div>
                     </div>
                     <div class="project-form-row">
                         <div>
-                            <label for="unitNumber">M� s?n ph?m</label
+                            <label for="unitNumber">Mã sản phẩm</label
                             ><input
                                 id="unitNumber"
                                 name="number"
                                 required
-                                placeholder="V� d?: LK-05"
+                                placeholder="Ví dụ: LK-05"
                             />
                         </div>
                         <div>
-                            <label for="unitArea">Di?n t�ch (m�)</label
+                            <label for="unitArea">Diện tích (m²)</label
                             ><input
                                 id="unitArea"
                                 name="area"
@@ -399,13 +399,13 @@
                                 min="1"
                                 step="0.1"
                                 required
-                                placeholder="V� d?: 82"
+                                placeholder="Ví dụ: 82"
                             />
                         </div>
                     </div>
                     <div class="project-form-row">
                         <div>
-                            <label for="unitPrice">Gi� d? ki?n (t? d?ng)</label
+                            <label for="unitPrice">Giá dự kiến (tỷ đồng)</label
                             ><input
                                 id="unitPrice"
                                 name="price"
@@ -413,12 +413,12 @@
                                 min="0"
                                 step="0.01"
                                 required
-                                placeholder="V� d?: 3.8"
+                                placeholder="Ví dụ: 3.8"
                             />
                         </div>
                         <div id="unitCommissionField">
                             <label for="unitCommission"
-                                >Hoa h?ng nh�n vi�n (%)</label
+                                >Hoa hàng nhân viên (%)</label
                             ><input
                                 id="unitCommission"
                                 name="commissionPercent"
@@ -428,10 +428,10 @@
                                 step="0.1"
                                 value="2"
                                 required
-                                placeholder="V� d?: 2"
+                                placeholder="Ví dụ: 2"
                             /><small
-                                >�p d?ng khi nh�n vi�n b�n du?c s?n ph?m
-                                n�y.</small
+                                >Áp đang khi nhân viên bán được sản phẩm
+                                này.</small
                             >
                         </div>
                     </div>
@@ -441,13 +441,13 @@
                         aria-live="polite"
                     ></div>
                     <div>
-                        <label for="unitStatus">T�nh tr?ng</label
+                        <label for="unitStatus">Tình trạng</label
                         ><select id="unitStatus" name="status">
-                            <option>C�n b�n</option>
-                            <option>Chua m? b�n</option>
-                            <option>Ch? duy?t</option>
-                            <option>�ang gi? ch?</option>
-                            <option>�� b�n</option>
+                            <option>Còn bán</option>
+                            <option>Chưa mở bán</option>
+                            <option>Chờ duyệt</option>
+                            <option>Đang giữ chỗ</option>
+                            <option>Đã bán</option>
                         </select>
                     </div>
                     <div class="modal-actions">
@@ -456,16 +456,16 @@
                             type="button"
                             data-unit-close
                         >
-                            H?y</button
+                            Hủy</button
                         ><button
-                            class="button button-danger"
+                            class="button button-đanger"
                             type="button"
                             id="unitDelete"
                             hidden
                         >
-                            X�a s?n ph?m</button
+                            Xóa sản phẩm</button
                         ><button class="button button-primary" type="submit">
-                            Luu s?n ph?m
+                            Lưu sản phẩm
                         </button>
                     </div>
                 </form>
@@ -482,33 +482,33 @@
                     class="modal-close"
                     type="button"
                     data-unit-detail-close
-                    aria-label="��ng"
+                    aria-label="Đóng"
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
-                <span class="panel-kicker" id="unitDetailLocation">CAN H?</span>
-                <h2 id="unitDetailTitle">Chi ti?t can h?</h2>
+                <span class="panel-kicker" id="unitDetailLocation">CAN Hồ</span>
+                <h2 id="unitDetailTitle">Chi tiết căn hộ</h2>
                 <span class="screen-badge" id="unitDetailStatus"></span>
                 <dl class="inventory-unit-facts">
                     <div>
-                        <dt>Lo?i s?n ph?m</dt>
-                        <dd id="unitDetailType">�</dd>
+                        <dt>Loại sản phẩm</dt>
+                        <dd id="unitDetailType">—</dd>
                     </div>
                     <div>
-                        <dt>Di?n t�ch</dt>
-                        <dd id="unitDetailArea">�</dd>
+                        <dt>Diện tích</dt>
+                        <dd id="unitDetailArea">—</dd>
                     </div>
                     <div>
-                        <dt>Gi� d? ki?n</dt>
-                        <dd id="unitDetailPrice">�</dd>
+                        <dt>Giá dự kiến</dt>
+                        <dd id="unitDetailPrice">—</dd>
                     </div>
                     <div>
-                        <dt>Hoa h?ng nh�n vi�n</dt>
-                        <dd id="unitDetailCommission">�</dd>
+                        <dt>Hoa hàng nhân viên</dt>
+                        <dd id="unitDetailCommission">—</dd>
                     </div>
                     <div>
-                        <dt>D? �n</dt>
-                        <dd id="unitDetailProject">�</dd>
+                        <dt>Dự án</dt>
+                        <dd id="unitDetailProject">—</dd>
                     </div>
                 </dl>
                 <dl
@@ -522,14 +522,14 @@
                         type="button"
                         data-unit-detail-close
                     >
-                        ��ng
+                        Đóng
                     </button>
                     <button
                         class="button button-secondary"
                         type="button"
                         id="unitDetailEdit"
                     >
-                        Ch?nh s?a
+                        Chỉnh sửa
                     </button>
                     <button
                         class="button button-primary"
@@ -537,7 +537,7 @@
                         id="unitDetailBook"
                         hidden
                     >
-                        L�n l?ch tu v?n
+                        Lên lịch tư vấn
                     </button>
                 </div>
             </section>
@@ -553,33 +553,33 @@
                     class="modal-close"
                     type="button"
                     data-unit-bulk-close
-                    aria-label="��ng"
+                    aria-label="Đóng"
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
                 <span class="modal-icon"
                     ><i class="fa-solid fa-building" aria-hidden="true"></i
                 ></span>
-                <h2 id="unitBulkTitle">Th�m nhi?u can h?</h2>
+                <h2 id="unitBulkTitle">Thêm nhiều căn hộ</h2>
                 <p>
-                    Nh?p t�a, c�c t?ng v� s? can m?i t?ng. LANDIFORM s? t?o m�
-                    ri�ng cho t?ng can.
+                    Nhập tòa, các tầng và số căn mỗi tầng. LANDIFORM số tạo mã
+                    riêng cho tầng căn.
                 </p>
                 <form id="unitBulkForm" class="project-edit-form">
-                    <label for="bulkProject">D? �n chung cu</label
+                    <label for="bulkProject">Dự án chung cu</label
                     ><select id="bulkProject" name="projectCode" required>
-                        <option value="">Ch?n d? �n</option>
+                        <option value="">Chọn dự án</option>
                     </select>
-                    <label for="bulkTower">T�a nh�</label
+                    <label for="bulkTower">Tòa nhà</label
                     ><input
                         id="bulkTower"
                         name="tower"
                         required
-                        placeholder="V� d?: A3"
+                        placeholder="Ví dụ: A3"
                     />
                     <div class="project-form-row">
                         <div>
-                            <label for="bulkFromFloor">T? t?ng</label
+                            <label for="bulkFromFloor">Tạo tầng</label
                             ><input
                                 id="bulkFromFloor"
                                 name="fromFloor"
@@ -591,7 +591,7 @@
                             />
                         </div>
                         <div>
-                            <label for="bulkToFloor">�?n t?ng</label
+                            <label for="bulkToFloor">Đến tầng</label
                             ><input
                                 id="bulkToFloor"
                                 name="toFloor"
@@ -605,7 +605,7 @@
                     </div>
                     <div class="project-form-row">
                         <div>
-                            <label for="bulkPerFloor">S? can m?i t?ng</label
+                            <label for="bulkPerFloor">Số căn mỗi tầng</label
                             ><input
                                 id="bulkPerFloor"
                                 name="perFloor"
@@ -617,17 +617,17 @@
                             />
                         </div>
                         <div>
-                            <label for="bulkType">Lo?i can</label
+                            <label for="bulkType">Loại can</label
                             ><select id="bulkType" name="type">
-                                <option>Can h? 1 ph�ng ng?</option>
-                                <option selected>Can h? 2 ph�ng ng?</option>
-                                <option>Can h? 3 ph�ng ng?</option>
+                                <option>Căn hộ 1 phòng ngủ</option>
+                                <option selected>Căn hộ 2 phòng ngủ</option>
+                                <option>Căn hộ 3 phòng ngủ</option>
                             </select>
                         </div>
                     </div>
                     <div class="project-form-row">
                         <div>
-                            <label for="bulkArea">Di?n t�ch m?i can (m�)</label
+                            <label for="bulkArea">Diện tích mới can (m²)</label
                             ><input
                                 id="bulkArea"
                                 name="area"
@@ -640,7 +640,7 @@
                         </div>
                         <div>
                             <label for="bulkPrice"
-                                >Gi� d? ki?n m?i can (t? d?ng)</label
+                                >Giá dự kiến mới (tỷ đồng)</label
                             ><input
                                 id="bulkPrice"
                                 name="price"
@@ -652,7 +652,7 @@
                             />
                         </div>
                     </div>
-                    <label for="bulkCommission">Hoa h?ng nh�n vi�n (%)</label
+                    <label for="bulkCommission">Hoa hàng nhân viên (%)</label
                     ><input
                         id="bulkCommission"
                         name="commissionPercent"
@@ -668,8 +668,8 @@
                         id="bulkPreview"
                         aria-live="polite"
                     >
-                        D? ki?n t?o 8 can. B?n c� th? ch?nh t?ng can sau khi
-                        t?o.
+                        Dự kiến tạo 8 căn. Bạn có thể chỉnh tầng và căn sau khi tạo.
+                        tạo.
                     </p>
                     <div class="modal-actions">
                         <button
@@ -677,9 +677,9 @@
                             type="button"
                             data-unit-bulk-close
                         >
-                            H?y</button
+                            Hủy</button
                         ><button class="button button-primary" type="submit">
-                            T?o danh s�ch can
+                            Tạo danh sách can
                         </button>
                     </div>
                 </form>

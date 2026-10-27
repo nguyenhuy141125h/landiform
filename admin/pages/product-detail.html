@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#f3f6f8" />
-    <title>Chi ti?t s?n ph?m | LANDIFORM</title>
+    <title>Chi tiết sản phẩm | LANDIFORM</title>
     <link rel="icon" type="image/svg+xml" href="../../website/assets/favicon.svg" />
     <link rel="stylesheet" href="../../website/public/css/be-vietnam-pro.css" />
     <link rel="stylesheet" href="../../website/public/css/fontawesome.min.css" />
@@ -16,59 +16,59 @@
 <body class="dashboard-body">
     <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
     <div class="app-shell">
-        <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="�i?u hu?ng qu?n tr?"></aside>
+        <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
         <main class="main-panel">
-            <header class="topbar" data-admin-shared-topbar data-page-label="Chi ti?t s?n ph?m"></header>
+            <header class="topbar" data-admin-shared-topbar data-page-label="Chi tiết sản phẩm"></header>
             <div class="dashboard-content screen-content product-detail-content">
-                <div class="product-detail-back"><a class="button button-secondary" href="booking.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Quay l?i danh s�ch s?n ph?m</a></div>
+                <div class="product-detail-back"><a class="button button-secondary" href="booking.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Quay lại danh sách sản phẩm</a></div>
                 <header class="screen-heading product-detail-heading">
-                    <div><p class="screen-eyebrow">H? SO S?N PH?M</p><h1 id="productTitle">Chi ti?t s?n ph?m</h1><p id="productSubtitle">Th�ng tin s?n ph?m thu?c d? �n.</p></div>
-                    <span class="screen-badge blue" id="productTypeBadge">S?n ph?m</span>
+                    <div><p class="screen-eyebrow">HỒ SƠ SẢN PHẨM</p><h1 id="productTitle">Chi tiết sản phẩm</h1><p id="productSubtitle">Thông tin sản phẩm thuộc dự án.</p></div>
+                    <span class="screen-badge blue" id="productTypeBadge">Sản phẩm</span>
                 </header>
                 <div id="productNotFound" class="panel product-not-found" hidden>
-                    <h2>Kh�ng t�m th?y s?n ph?m</h2><p>H�y quay l?i danh s�ch v� ch?n m?t s?n ph?m c� s?n.</p>
-                    <a class="button button-primary" href="booking.html">V? danh s�ch s?n ph?m</a>
+                    <h2>Không tìm thấy sản phẩm</h2><p>Hãy quay lại danh sách và chọn một sản phẩm có sẵn.</p>
+                    <a class="button button-primary" href="booking.html">Về danh sách sản phẩm</a>
                 </div>
                 <form id="productDetailForm" class="product-detail-layout">
                     <section class="panel product-detail-panel">
-                        <div class="panel-heading"><div><h2>Th�ng tin chung</h2><p>Th�ng tin nh?n di?n, gi� b�n v� t�nh tr?ng s?n ph?m.</p></div></div>
+                        <div class="panel-heading"><div><h2>Thông tin chung</h2><p>Thông tin nhận diện, giá bán và tình trạng sản phẩm.</p></div></div>
                         <div class="product-fields">
-                            <label class="field"><span>D? �n</span><input name="project" readonly /></label>
-                            <label class="field"><span>Nh�m b?t d?ng s?n</span><select name="group"><option>Can h?</option><option>Nh� ?</option><option>�?t n?n &amp; l� d?t</option></select></label>
-                            <label class="field"><span>Lo?i s?n ph?m</span><input name="type" /></label>
-                            <label class="field"><span>T�a nh� / Khu / Ph�n khu</span><input name="zone" /></label>
-                            <label class="field" data-floor-field><span>T?ng</span><input name="floor" /></label>
-                            <label class="field"><span>M� s?n ph?m</span><input name="code" /></label>
-                            <label class="field"><span>Di?n t�ch (m�)</span><input name="area" inputmode="decimal" /></label>
-                            <label class="field"><span>Gi� d? ki?n (t? d?ng)</span><input name="price" inputmode="decimal" /></label>
-                            <label class="field"><span>Hoa h?ng nh�n vi�n (%)</span><input name="commission" inputmode="decimal" /></label>
-                            <label class="field"><span>T�nh tr?ng</span><select name="status"><option>C�n b�n</option><option>Chua m? b�n</option><option>Ch? duy?t</option><option>�ang gi? ch?</option><option>�� b�n</option><option>�� b�n giao</option></select></label>
+                            <label class="field"><span>Dự án</span><input name="project" readonly /></label>
+                            <label class="field"><span>Nhóm bất động sản</span><select name="group"><option>Căn hộ</option><option>Nhà ở</option><option>Đất nền &amp; lô đất</option></select></label>
+                            <label class="field"><span>Loại sản phẩm</span><input name="type" /></label>
+                            <label class="field"><span>Tòa nhà / Khu / Phân khu</span><input name="zone" /></label>
+                            <label class="field" data-floor-field><span>Tầng</span><input name="floor" /></label>
+                            <label class="field"><span>Mã sản phẩm</span><input name="code" /></label>
+                            <label class="field"><span>Diện tích (m²)</span><input name="area" inputmode="decimal" /></label>
+                            <label class="field"><span>Giá dự kiến (tỷ đồng)</span><input name="price" inputmode="decimal" /></label>
+                            <label class="field"><span>Hoa hồng nhân viên (%)</span><input name="commission" inputmode="decimal" /></label>
+                            <label class="field"><span>Tình trạng</span><select name="status"><option>Còn bán</option><option>Chưa mở bán</option><option>Chờ duyệt</option><option>Đang giữ chỗ</option><option>Đã bán</option><option>Đã bàn giao</option></select></label>
                         </div>
                         <section class="product-attributes" data-product-group="apartment" hidden>
-                            <h3>Th�ng tin can h?</h3><div class="product-fields">
-                                <label class="field"><span>S? ph�ng ng?</span><input name="bedrooms" inputmode="numeric" /></label>
-                                <label class="field"><span>S? ph�ng t?m</span><input name="bathrooms" inputmode="numeric" /></label>
+                            <h3>Thông tin căn hộ</h3><div class="product-fields">
+                                <label class="field"><span>Số phòng ngủ</span><input name="bedrooms" inputmode="numeric" /></label>
+                                <label class="field"><span>Số phòng tắm</span><input name="bathrooms" inputmode="numeric" /></label>
                             </div>
                         </section>
                         <section class="product-attributes" data-product-group="house" hidden>
-                            <h3>Th�ng tin nh� ?</h3><div class="product-fields">
-                                <label class="field"><span>S? t?ng</span><input name="storeys" inputmode="numeric" /></label>
-                                <label class="field"><span>S? ph�ng ng?</span><input name="bedrooms" inputmode="numeric" /></label>
-                                <label class="field"><span>M?t ti?n (m)</span><input name="frontage" inputmode="decimal" /></label>
+                            <h3>Thông tin nhà ở</h3><div class="product-fields">
+                                <label class="field"><span>Số tầng</span><input name="storeys" inputmode="numeric" /></label>
+                                <label class="field"><span>Số phòng ngủ</span><input name="bedrooms" inputmode="numeric" /></label>
+                                <label class="field"><span>Mặt tiền (m)</span><input name="frontage" inputmode="decimal" /></label>
                             </div>
                         </section>
                         <section class="product-attributes" data-product-group="land" hidden>
-                            <h3>Th�ng tin l� d?t</h3><div class="product-fields">
-                                <label class="field"><span>M?t ti?n (m)</span><input name="frontage" inputmode="decimal" /></label>
-                                <label class="field"><span>Chi?u s�u (m)</span><input name="depth" inputmode="decimal" /></label>
-                                <label class="field"><span>M?c d�ch s? d?ng</span><input name="legalUse" /></label>
+                            <h3>Thông tin lô đất</h3><div class="product-fields">
+                                <label class="field"><span>Mặt tiền (m)</span><input name="frontage" inputmode="decimal" /></label>
+                                <label class="field"><span>Chiều sâu (m)</span><input name="depth" inputmode="decimal" /></label>
+                                <label class="field"><span>Mục đích sử dụng</span><input name="legalUse" /></label>
                             </div>
                         </section>
-                        <div class="product-detail-actions"><a class="button button-secondary" href="booking.html">H?y</a><button class="button button-primary" type="submit"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Luu thay d?i</button></div>
+                        <div class="product-detail-actions"><a class="button button-secondary" href="booking.html">Hủy</a><button class="button button-primary" type="submit"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Lưu thay đổi</button></div>
                     </section>
                     <aside class="product-detail-aside">
-                        <section class="panel product-summary"><span class="product-summary-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span><p class="panel-kicker">T�M T?T H? SO</p><h2 id="summaryCode">�</h2><p id="summaryProject">�</p><dl><div><dt>Lo?i h�nh</dt><dd id="summaryGroup">�</dd></div><div><dt>Di?n t�ch</dt><dd id="summaryArea">�</dd></div><div><dt>Gi� d? ki?n</dt><dd id="summaryPrice">�</dd></div></dl></section>
-                        <section class="panel product-detail-note"><h2>H? so d�ng chung</h2><p>Trang chi ti?t n�y d�ng cho can h?, nh� ? v� d?t n?n. C�c tru?ng b? sung thay d?i theo nh�m b?t d?ng s?n.</p><p>D? li?u tr�n trang hi?n l� v� d? HTML d? tr�nh b�y giao di?n; khi k?t n?i backend, thay ngu?n d? li?u m?u b?ng API.</p></section>
+                        <section class="panel product-summary"><span class="product-summary-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span><p class="panel-kicker">TÓM TẮT HỒ SƠ</p><h2 id="summaryCode">—</h2><p id="summaryProject">—</p><dl><div><dt>Loại hình</dt><dd id="summaryGroup">—</dd></div><div><dt>Diện tích</dt><dd id="summaryArea">—</dd></div><div><dt>Giá dự kiến</dt><dd id="summaryPrice">—</dd></div></dl></section>
+                        <section class="panel product-detail-note"><h2>Hồ sơ dùng chung</h2><p>Trang chi tiết này dùng cho căn hộ, nhà ở và đất nền. Các trường bổ sung thay đổi theo nhóm bất động sản.</p><p>Dữ liệu trên trang là ví dụ HTML để trình bày giao diện; khi kết nối backend, thay nguồn dữ liệu mẫu bằng API.</p></section>
                     </aside>
                 </form>
             </div>
@@ -77,22 +77,22 @@
     <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
     <script type="application/json" id="productRecordExamples">
     [
-      {"id":"unit-ap-a2-1208","project":"An Ph� Riverside","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"A2","floor":"T?ng 12","code":"A2 � 12.08","area":"82","price":"3.8","commission":"2","status":"Ch? duy?t","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-ap-a2-1209","project":"An Ph� Riverside","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"A2","floor":"T?ng 12","code":"A2 � 12.09","area":"82","price":"3.9","commission":"2","status":"C�n b�n","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-ap-a2-1210","project":"An Ph� Riverside","group":"apartment","type":"Can h? 3 ph�ng ng?","zone":"A2","floor":"T?ng 12","code":"A2 � 12.10","area":"105","price":"5.2","commission":"2","status":"C�n b�n","bedrooms":"3","bathrooms":"2"},
-      {"id":"unit-ap-a2-1301","project":"An Ph� Riverside","group":"apartment","type":"Can h? 1 ph�ng ng?","zone":"A2","floor":"T?ng 13","code":"A2 � 13.01","area":"58","price":"2.8","commission":"2","status":"C�n b�n","bedrooms":"1","bathrooms":"1"},
-      {"id":"unit-ap-a1-0501","project":"An Ph� Riverside","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"A1","floor":"T?ng 5","code":"A1 � 05.01","area":"78","price":"3.5","commission":"2","status":"�� b�n","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-ap-a1-0502","project":"An Ph� Riverside","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"A1","floor":"T?ng 5","code":"A1 � 05.02","area":"78","price":"3.5","commission":"2","status":"C�n b�n","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-cp-b1-0803","project":"Central Park Towers","group":"apartment","type":"Can h? 3 ph�ng ng?","zone":"B1","floor":"T?ng 8","code":"B1 � 08.03","area":"104","price":"5.1","commission":"2","status":"�� b�n","bedrooms":"3","bathrooms":"2"},
-      {"id":"unit-cp-b1-0804","project":"Central Park Towers","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"B1","floor":"T?ng 8","code":"B1 � 08.04","area":"79","price":"3.7","commission":"2","status":"C�n b�n","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-cp-b2-1001","project":"Central Park Towers","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"B2","floor":"T?ng 10","code":"B2 � 10.01","area":"80","price":"3.8","commission":"2","status":"C�n b�n","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-gv-n08-05","project":"Green Valley","group":"house","type":"Nh� ph?","zone":"N08","floor":"","code":"N08 � 05","area":"165","price":"8.2","commission":"3","status":"�� b�n","storeys":"3","bedrooms":"3","frontage":"6"},
-      {"id":"unit-lg-17","project":"Lumi�re Garden","group":"land","type":"�?t n?n d? �n","zone":"Ph�n khu 1","floor":"","code":"LG � 17","area":"120","price":"2.4","commission":"2","status":"Chua m? b�n","frontage":"6","depth":"20","legalUse":"�?t ? t?i d? �n"},
-      {"id":"unit-gv-house-026","project":"Green Valley","group":"house","type":"Nh� ri�ng","zone":"Khu d�n cu A","floor":"","code":"GV � A.26","area":"96","price":"6.6","commission":"3","status":"C�n b�n","storeys":"2","bedrooms":"3","frontage":"5"},
-      {"id":"unit-lg-lot-021","project":"Lumi�re Garden","group":"land","type":"�?t n?n d? �n","zone":"Ph�n khu 1","floor":"","code":"LG � 21","area":"120","price":"2.4","commission":"2","status":"C�n b�n","frontage":"6","depth":"20","legalUse":"�?t ? t?i d? �n"},
-      {"id":"unit-lg-lot-022","project":"Lumi�re Garden","group":"land","type":"�?t th? cu","zone":"Ph�n khu 2","floor":"","code":"LG � 22","area":"150","price":"3.1","commission":"2","status":"C�n b�n","frontage":"7.5","depth":"20","legalUse":"�?t th? cu"},
-      {"id":"unit-ap-a2-1506","project":"An Ph� Riverside","group":"apartment","type":"Can h? 2 ph�ng ng?","zone":"A2","floor":"T?ng 15","code":"A2 � 15.06","area":"82","price":"3.8","commission":"2","status":"�� b�n","bedrooms":"2","bathrooms":"2"},
-      {"id":"unit-gv-n08-06","project":"Green Valley","group":"house","type":"Nh� ph?","zone":"N08","floor":"","code":"N08 � 06","area":"168","price":"8.4","commission":"3","status":"C�n b�n","storeys":"3","bedrooms":"3","frontage":"6"}
+      {"id":"unit-ap-a2-1208","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"A2","floor":"Tầng 12","code":"A2 · 12.08","area":"82","price":"3.8","commission":"2","status":"Chờ duyệt","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-ap-a2-1209","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"A2","floor":"Tầng 12","code":"A2 · 12.09","area":"82","price":"3.9","commission":"2","status":"Còn bán","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-ap-a2-1210","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 3 phòng ngủ","zone":"A2","floor":"Tầng 12","code":"A2 · 12.10","area":"105","price":"5.2","commission":"2","status":"Còn bán","bedrooms":"3","bathrooms":"2"},
+      {"id":"unit-ap-a2-1301","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 1 phòng ngủ","zone":"A2","floor":"Tầng 13","code":"A2 · 13.01","area":"58","price":"2.8","commission":"2","status":"Còn bán","bedrooms":"1","bathrooms":"1"},
+      {"id":"unit-ap-a1-0501","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"A1","floor":"Tầng 5","code":"A1 · 05.01","area":"78","price":"3.5","commission":"2","status":"Đã bán","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-ap-a1-0502","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"A1","floor":"Tầng 5","code":"A1 · 05.02","area":"78","price":"3.5","commission":"2","status":"Còn bán","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-cp-b1-0803","project":"Central Park Towers","group":"apartment","type":"Căn hộ 3 phòng ngủ","zone":"B1","floor":"Tầng 8","code":"B1 · 08.03","area":"104","price":"5.1","commission":"2","status":"Đã bán","bedrooms":"3","bathrooms":"2"},
+      {"id":"unit-cp-b1-0804","project":"Central Park Towers","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"B1","floor":"Tầng 8","code":"B1 · 08.04","area":"79","price":"3.7","commission":"2","status":"Còn bán","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-cp-b2-1001","project":"Central Park Towers","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"B2","floor":"Tầng 10","code":"B2 · 10.01","area":"80","price":"3.8","commission":"2","status":"Còn bán","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-gv-n08-05","project":"Green Valley","group":"house","type":"Nhà phố","zone":"N08","floor":"","code":"N08 · 05","area":"165","price":"8.2","commission":"3","status":"Đã bán","storeys":"3","bedrooms":"3","frontage":"6"},
+      {"id":"unit-lg-17","project":"Lumière Garden","group":"land","type":"Đất nền dự án","zone":"Phân khu 1","floor":"","code":"LG · 17","area":"120","price":"2.4","commission":"2","status":"Chưa mở bán","frontage":"6","depth":"20","legalUse":"Đất ở tại dự án"},
+      {"id":"unit-gv-house-026","project":"Green Valley","group":"house","type":"Nhà riêng","zone":"Khu dân cu A","floor":"","code":"GV · A.26","area":"96","price":"6.6","commission":"3","status":"Còn bán","storeys":"2","bedrooms":"3","frontage":"5"},
+      {"id":"unit-lg-lot-021","project":"Lumière Garden","group":"land","type":"Đất nền dự án","zone":"Phân khu 1","floor":"","code":"LG · 21","area":"120","price":"2.4","commission":"2","status":"Còn bán","frontage":"6","depth":"20","legalUse":"Đất ở tại dự án"},
+      {"id":"unit-lg-lot-022","project":"Lumière Garden","group":"land","type":"Đất thổ cư","zone":"Phân khu 2","floor":"","code":"LG · 22","area":"150","price":"3.1","commission":"2","status":"Còn bán","frontage":"7.5","depth":"20","legalUse":"Đất thổ cư"},
+      {"id":"unit-ap-a2-1506","project":"An Phú Riverside","group":"apartment","type":"Căn hộ 2 phòng ngủ","zone":"A2","floor":"Tầng 15","code":"A2 · 15.06","area":"82","price":"3.8","commission":"2","status":"Đã bán","bedrooms":"2","bathrooms":"2"},
+      {"id":"unit-gv-n08-06","project":"Green Valley","group":"house","type":"Nhà phố","zone":"N08","floor":"","code":"N08 · 06","area":"168","price":"8.4","commission":"3","status":"Còn bán","storeys":"3","bedrooms":"3","frontage":"6"}
     ]
     </script>
     <script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
