@@ -460,7 +460,7 @@
         }
         const query = search.value.trim().toLocaleLowerCase("vi");
         const filtered = units.filter((unit) => {
-            const searchable = `${unit.code} ${projects[unit.projectCode]?.name || unit.project} ${unit.tower} ${unit.type} ${unit.floor ?? ""}`.toLocaleLowerCase("vi");
+            const searchable = `${unit.code} ${projects[unit.projectCode]?.name || unit.project} ${unit.address || ""} ${unit.tower} ${unit.type} ${unit.floor ?? ""}`.toLocaleLowerCase("vi");
             return (!query || searchable.includes(query)) &&
                 (!projectFilter.value || unit.projectCode === projectFilter.value) &&
                 (!groupFilter?.value || (window.LandiformCategories?.groupForType(unit.type) || "other") === groupFilter.value) &&
@@ -517,6 +517,7 @@
         document.querySelector("#unitDetailPrice").textContent = formatPrice(unit.price);
         document.querySelector("#unitDetailCommission").textContent = unit.commissionPercent != null ? `${unit.commissionPercent}%` : "Chưa thiết lập";
         document.querySelector("#unitDetailProject").textContent = projects[unit.projectCode]?.name || unit.project;
+        document.querySelector("#unitDetailAddress").textContent = unit.address || projects[unit.projectCode]?.address || "Theo địa chỉ dự án";
         const attributes = unit.attributes || {};
         const attributeLabels = {
             bedrooms: "Phòng ngủ", bathrooms: "Phòng tắm", storeys: "Số tầng xây dựng",
@@ -598,7 +599,7 @@
         deleteButton.hidden = !unit || !["Còn bán", "Chưa mở bán"].includes(unit.status);
         if (unit) {
             unitForm.elements.projectCode.value = unit.projectCode;
-            for (const field of ["tower", "floor", "number", "area", "price", "commissionPercent", "status"]) {
+            for (const field of ["address", "tower", "floor", "number", "area", "price", "commissionPercent", "status"]) {
                 unitForm.elements[field].value = unit[field] ?? "";
             }
             unitForm.elements.type.value = unit.type;
@@ -770,6 +771,7 @@
             id: editingId || `unit-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
             projectCode,
             project: projects[projectCode]?.name || "Dự án",
+            address: String(values.get("address") || "").trim(),
             tower, floor, number, code,
             type,
             productGroup: window.LandiformCategories?.groupForType(type) || unitGroup.value,
@@ -820,6 +822,7 @@
                     id: `unit-${Date.now()}-${floor}-${number}`,
                     projectCode,
                     project: projects[projectCode]?.name || "Dự án",
+                    address: String(values.get("address") || "").trim(),
                     tower, floor, number: unitNumber, code,
                     type: String(values.get("type")),
                     area: Number(values.get("area")),

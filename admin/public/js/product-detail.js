@@ -19,6 +19,7 @@
     Object.entries(record).forEach(([key, value]) => {
         if (!["group", "bedrooms", "bathrooms", "storeys", "frontage", "depth", "legalUse"].includes(key)) setValue(key, value);
     });
+    setValue("address", record.address || window.LandiformInventory.all().find((unit) => unit.id === id)?.address || "");
     setValue("group", groupLabels[record.group] || groupLabels.apartment);
     document.querySelectorAll("[data-product-group]").forEach((section) => { section.hidden = section.dataset.productGroup !== record.group; });
     const attributeValue = (name, value) => {
@@ -33,6 +34,7 @@
     document.querySelector("#summaryCode").textContent = record.code;
     document.querySelector("#summaryProject").textContent = record.project;
     document.querySelector("#summaryGroup").textContent = groupLabels[record.group] || "—";
+    document.querySelector("#summaryAddress").textContent = form.elements.address.value || "Theo địa chỉ dự án";
     document.querySelector("#summaryArea").textContent = record.area ? `${record.area} m²` : "—";
     document.querySelector("#summaryPrice").textContent = record.price ? `${record.price.replace(".", ",")} tỷ` : "—";
     document.querySelector("[data-floor-field]").hidden = !record.floor;
@@ -47,6 +49,7 @@
         const floorText = String(values.get("floor") || "").trim();
         const next = {
             ...units[index],
+            address: String(values.get("address") || "").trim(),
             type: String(values.get("type") || "").trim(),
             tower: String(values.get("zone") || "").trim(),
             floor: Number(/\d+/.exec(floorText)?.[0]) || null,
@@ -71,6 +74,7 @@
         document.querySelector("#productTitle").textContent = next.code;
         document.querySelector("#productSubtitle").textContent = `${next.project} · ${next.type}`;
         document.querySelector("#summaryCode").textContent = next.code;
+        document.querySelector("#summaryAddress").textContent = next.address || "Theo địa chỉ dự án";
         document.querySelector("#summaryArea").textContent = next.area ? `${next.area} m²` : "—";
         document.querySelector("#summaryPrice").textContent = next.price ? `${String(next.price).replace(".", ",")} tỷ` : "—";
         if (toast) {

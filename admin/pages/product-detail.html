@@ -34,6 +34,7 @@
                         <div class="panel-heading"><div><h2>Thông tin chung</h2><p>Thông tin nhận diện, giá bán và tình trạng sản phẩm.</p></div></div>
                         <div class="product-fields">
                             <label class="field"><span>Dự án</span><input name="project" readonly /></label>
+                            <label class="field"><span>Địa chỉ sản phẩm</span><input name="address" type="text" maxlength="240" autocomplete="street-address" placeholder="Để trống nếu dùng địa chỉ dự án" /></label>
                             <label class="field"><span>Nhóm bất động sản</span><select name="group"><option>Căn hộ</option><option>Nhà ở</option><option>Đất nền &amp; lô đất</option></select></label>
                             <label class="field"><span>Loại sản phẩm</span><input name="type" /></label>
                             <label class="field"><span>Tòa nhà / Khu / Phân khu</span><input name="zone" /></label>
@@ -67,7 +68,7 @@
                         <div class="product-detail-actions"><a class="button button-secondary" href="booking.html">Hủy</a><button class="button button-primary" type="submit"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Lưu thay đổi</button></div>
                     </section>
                     <aside class="product-detail-aside">
-                        <section class="panel product-summary"><span class="product-summary-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span><p class="panel-kicker">TÓM TẮT HỒ SƠ</p><h2 id="summaryCode">—</h2><p id="summaryProject">—</p><dl><div><dt>Loại hình</dt><dd id="summaryGroup">—</dd></div><div><dt>Diện tích</dt><dd id="summaryArea">—</dd></div><div><dt>Giá dự kiến</dt><dd id="summaryPrice">—</dd></div></dl></section>
+                        <section class="panel product-summary"><span class="product-summary-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span><p class="panel-kicker">TÓM TẮT HỒ SƠ</p><h2 id="summaryCode">—</h2><p id="summaryProject">—</p><dl><div><dt>Loại hình</dt><dd id="summaryGroup">—</dd></div><div><dt>Địa chỉ</dt><dd id="summaryAddress">—</dd></div><div><dt>Diện tích</dt><dd id="summaryArea">—</dd></div><div><dt>Giá dự kiến</dt><dd id="summaryPrice">—</dd></div></dl></section>
                         <section class="panel product-detail-note"><h2>Hồ sơ dùng chung</h2><p>Trang chi tiết này dùng cho căn hộ, nhà ở và đất nền. Các trường bổ sung thay đổi theo nhóm bất động sản.</p><p>Dữ liệu trên trang là ví dụ HTML để trình bày giao diện; khi kết nối backend, thay nguồn dữ liệu mẫu bằng API.</p></section>
                     </aside>
                 </form>
@@ -96,7 +97,7 @@
     ]
     </script>
     <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-    <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script>
-    <script src="../public/js/product-detail.js?v=20261027-memory-only-actions-v1"></script>
+    <script src="../public/js/inventory.js?v=20261027-product-address-v1"></script>
+    <script src="../public/js/product-detail.js?v=20261027-product-address-v1"></script>
 </body>
 </html>

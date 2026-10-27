@@ -2041,6 +2041,7 @@
 .inventory-product-dialog .project-form-row { align-items: start; gap: 12px; }
 .inventory-product-dialog .project-form-row > div { gap: 6px; }
 .inventory-product-dialog .project-form-row small { color: #8194a4; font-size: 10px; line-height: 1.4; }
+.project-edit-dialog .inventory-address-help { margin-top: -5px; color: #8194a4; font-size: 11px; line-height: 1.45; }
 .inventory-product-dialog .project-form-row [hidden] { display: none !important; }
 .inventory-attribute-fields { padding: 12px; border: 1px solid #e2edf3; border-radius: 10px; background: linear-gradient(145deg, #f8fbfd, #fff); }
 .inventory-attribute-heading { margin: 0 0 10px; color: #365b74; font-size: 11px; font-weight: 750; }

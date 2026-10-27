@@ -25,7 +25,14 @@
     };
     const demoRelationshipVersion = "landiform.admin.demo-relations.inventory.v3";
     const additions = new Set(["unit-gv-house-026", "unit-lg-lot-021", "unit-lg-lot-022", "unit-ap-a2-1506", "unit-gv-n08-06"]);
+    const sampleAddresses = {
+        "AP-026": "TP. Thủ Đức, TP. Hồ Chí Minh",
+        "GV-014": "Biên Hòa, Đồng Nai",
+        "CP-008": "Quận 7, TP. Hồ Chí Minh",
+        "LG-031": "Đức Hòa, Long An",
+    };
     seed.forEach((unit) => {
+        unit.address = sampleAddresses[unit.projectCode] || "";
         unit.categoryId = categoryByType[unit.type] || "";
         const bedrooms = unit.type.match(/(\d+) phòng ngủ/i);
         if (bedrooms) unit.attributes = { ...(unit.attributes || {}), bedrooms: Number(bedrooms[1]) };

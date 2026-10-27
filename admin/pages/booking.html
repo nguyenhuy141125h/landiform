@@ -24,7 +24,7 @@
         />
         <link
             rel="stylesheet"
-            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+            href="../public/css/admin-screens.css?v=20261027-product-address-v1"
         />
         <link
             rel="stylesheet"
@@ -328,17 +328,26 @@
                 ></span>
                 <h2 id="unitModalTitle">Thêm sản phẩm</h2>
                 <p>
-                    Chọn nhóm bất động sản để biểu mẫu hiển thị đúng thông tin cần thiết.
-                    nhập cho tầng sản phẩm.
+                    Chọn nhóm bất động sản để biểu mẫu hiển thị đúng thông tin cần nhập cho từng sản phẩm.
                 </p>
                 <form id="unitForm" class="project-edit-form">
                     <label for="unitProject">Dự án</label
                     ><select id="unitProject" name="projectCode" required>
                         <option value="">Chọn dự án</option>
                     </select>
+                    <label for="unitAddress">Địa chỉ sản phẩm</label>
+                    <input
+                        id="unitAddress"
+                        name="address"
+                        type="text"
+                        maxlength="240"
+                        autocomplete="street-address"
+                        placeholder="Ví dụ: 123 Võ Văn Ngân, TP. Thủ Đức, TP. Hồ Chí Minh"
+                    />
+                    <small class="inventory-address-help">Hiển thị trên trang Customer và bản đồ vị trí. Để trống nếu dùng địa chỉ dự án.</small>
                     <div class="project-form-row">
                         <div>
-                            <label for="unitGroup">Nhóm bật đang sản</label
+                            <label for="unitGroup">Nhóm bất động sản</label
                             ><select id="unitGroup" name="group" required>
                                 <option value="">Chọn nhóm</option>
                             </select>
@@ -369,7 +378,7 @@
                             />
                         </div>
                         <div id="unitFloorField">
-                            <label for="unitFloor">Tổng</label
+                            <label for="unitFloor">Tầng</label
                             ><input
                                 id="unitFloor"
                                 name="floor"
@@ -418,7 +427,7 @@
                         </div>
                         <div id="unitCommissionField">
                             <label for="unitCommission"
-                                >Hoa hàng nhân viên (%)</label
+                                >Hoa hồng nhân viên (%)</label
                             ><input
                                 id="unitCommission"
                                 name="commissionPercent"
@@ -430,7 +439,7 @@
                                 required
                                 placeholder="Ví dụ: 2"
                             /><small
-                                >Áp đang khi nhân viên bán được sản phẩm
+                                >Áp dụng khi nhân viên bán được sản phẩm
                                 này.</small
                             >
                         </div>
@@ -486,7 +495,7 @@
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
-                <span class="panel-kicker" id="unitDetailLocation">CAN Hồ</span>
+                <span class="panel-kicker" id="unitDetailLocation">CĂN HỘ</span>
                 <h2 id="unitDetailTitle">Chi tiết căn hộ</h2>
                 <span class="screen-badge" id="unitDetailStatus"></span>
                 <dl class="inventory-unit-facts">
@@ -503,12 +512,16 @@
                         <dd id="unitDetailPrice">—</dd>
                     </div>
                     <div>
-                        <dt>Hoa hàng nhân viên</dt>
+                        <dt>Hoa hồng nhân viên</dt>
                         <dd id="unitDetailCommission">—</dd>
                     </div>
                     <div>
                         <dt>Dự án</dt>
                         <dd id="unitDetailProject">—</dd>
+                    </div>
+                    <div>
+                        <dt>Địa chỉ</dt>
+                        <dd id="unitDetailAddress">—</dd>
                     </div>
                 </dl>
                 <dl
@@ -562,11 +575,11 @@
                 ></span>
                 <h2 id="unitBulkTitle">Thêm nhiều căn hộ</h2>
                 <p>
-                    Nhập tòa, các tầng và số căn mỗi tầng. LANDIFORM số tạo mã
-                    riêng cho tầng căn.
+                    Nhập tòa, các tầng và số căn mỗi tầng. LANDIFORM sẽ tạo mã
+                    riêng cho từng căn.
                 </p>
                 <form id="unitBulkForm" class="project-edit-form">
-                    <label for="bulkProject">Dự án chung cu</label
+                    <label for="bulkProject">Dự án chung cư</label
                     ><select id="bulkProject" name="projectCode" required>
                         <option value="">Chọn dự án</option>
                     </select>
@@ -577,9 +590,19 @@
                         required
                         placeholder="Ví dụ: A3"
                     />
+                    <label for="bulkAddress">Địa chỉ sản phẩm</label>
+                    <input
+                        id="bulkAddress"
+                        name="address"
+                        type="text"
+                        maxlength="240"
+                        autocomplete="street-address"
+                        placeholder="Địa chỉ chung cho các căn vừa tạo"
+                    />
+                    <small class="inventory-address-help">Để trống nếu các căn dùng địa chỉ dự án.</small>
                     <div class="project-form-row">
                         <div>
-                            <label for="bulkFromFloor">Tạo tầng</label
+                            <label for="bulkFromFloor">Từ tầng</label
                             ><input
                                 id="bulkFromFloor"
                                 name="fromFloor"
@@ -617,7 +640,7 @@
                             />
                         </div>
                         <div>
-                            <label for="bulkType">Loại can</label
+                            <label for="bulkType">Loại căn</label
                             ><select id="bulkType" name="type">
                                 <option>Căn hộ 1 phòng ngủ</option>
                                 <option selected>Căn hộ 2 phòng ngủ</option>
@@ -627,7 +650,7 @@
                     </div>
                     <div class="project-form-row">
                         <div>
-                            <label for="bulkArea">Diện tích mới can (m²)</label
+                            <label for="bulkArea">Diện tích mỗi căn (m²)</label
                             ><input
                                 id="bulkArea"
                                 name="area"
@@ -640,7 +663,7 @@
                         </div>
                         <div>
                             <label for="bulkPrice"
-                                >Giá dự kiến mới (tỷ đồng)</label
+                                >Giá dự kiến mỗi căn (tỷ đồng)</label
                             ><input
                                 id="bulkPrice"
                                 name="price"
@@ -691,9 +714,9 @@
             role="status"
             aria-live="polite"
         ></div>
-        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script>
+        <script src="../public/js/inventory.js?v=20261027-product-address-v1"></script>
         <script src="../public/js/category-store.js?v=20261027-memory-only-actions-v1"></script><script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-        <script src="../public/js/inventory-page.js?v=20261027-memory-only-actions-v1"></script>
+        <script src="../public/js/inventory-page.js?v=20261027-product-address-v1"></script>
     </body>
 </html>
 

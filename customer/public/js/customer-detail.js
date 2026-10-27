@@ -210,7 +210,8 @@
         const locationIcon = document.createElement("i");
         locationIcon.className = "fa-solid fa-location-dot";
         locationIcon.setAttribute("aria-hidden", "true");
-        location.replaceChildren(locationIcon, document.createTextNode(` ${project.area}${product.tower ? ` · ${product.tower}${product.floor != null ? ` · Tầng ${product.floor}` : ""}` : ""}`));
+        const productAddress = product.address?.trim() || project.address?.trim() || project.area;
+        location.replaceChildren(locationIcon, document.createTextNode(` ${productAddress}${product.tower ? ` · ${product.tower}${product.floor != null ? ` · Tầng ${product.floor}` : ""}` : ""}`));
         document.querySelector("#detailPagePrice").textContent = formatPrice(product.price);
         document.querySelector("#breadcrumbProduct").textContent = product.code;
         document.querySelector("#projectBreadcrumb").textContent = projectName(product);
@@ -218,9 +219,9 @@
         document.querySelector("#projectNavLink").href = `index.html${projectQuery}#products`;
         document.querySelector("#viewProjectLink").href = `index.html${projectQuery}#products`;
         document.querySelector("#detailProjectDescription").textContent = `Tìm hiểu thêm các sản phẩm thuộc ${projectName(product)} tại ${project.area}. Đội ngũ ${companyName} có thể hỗ trợ thông tin về vị trí, tình trạng và chính sách bán hàng.`;
-        const mapQuery = project.address || `${projectName(product)}, ${project.area}`;
+        const mapQuery = product.address?.trim() || project.address?.trim() || `${projectName(product)}, ${project.area}`;
         const encodedMapQuery = encodeURIComponent(mapQuery);
-        document.querySelector("#detailMapAddress").textContent = project.address || project.area;
+        document.querySelector("#detailMapAddress").textContent = product.address?.trim() || project.address?.trim() || project.area;
         document.querySelector("#detailProjectMap").src = `https://www.google.com/maps?q=${encodedMapQuery}&output=embed`;
         document.querySelector("#detailMapLink").href = `https://www.google.com/maps/search/?api=1&query=${encodedMapQuery}`;
         document.title = `${productTitle(product)} | ${projectName(product)} | ${companyName}`;

@@ -171,7 +171,7 @@
     function projectName(product) { return projects[product.projectCode]?.name || product.project || "Dự án"; }
     function locationName(product) {
         const project = projects[product.projectCode];
-        const location = project?.area || "Đang cập nhật khu vực";
+        const location = product.address?.trim() || project?.address?.trim() || project?.area || "Đang cập nhật khu vực";
         const sector = product.tower ? `${product.tower}${product.floor != null ? ` · Tầng ${product.floor}` : ""}` : "";
         return sector ? `${location} · ${sector}` : location;
     }
