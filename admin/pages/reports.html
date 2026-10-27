@@ -32,11 +32,11 @@
                         <div>
                             <p class="screen-eyebrow">BÁO CÁO</p>
                             <h1>Báo cáo hoạt động</h1>
-                            <p>Theo dõi nguồn khách, kết quả chăm sóc và tiền dự giao dịch theo tầng dự án.</p>
+                            <p>Theo dõi nguồn khách, kết quả chăm sóc và tiến độ giao dịch theo từng dự án.</p>
                         </div>
                         <div class="screen-heading-actions">
                             <label class="report-month-field"><span>Kỳ báo cáo</span><span class="report-month-input"><i class="fa-regular fa-calendar" aria-hidden="true"></i><input id="reportMonth" type="month" aria-label="Chọn tháng xem báo cáo" /></span></label>
-                            <label class="report-month-field"><span>Dự án</span><span class="report-project-select"><i class="fa-solid fa-building" aria-hidden="true"></i><select id="reportProjectFilter" aria-label="Lọc báo cáo theo dự án"><option value="">Tất có dự án</option></select></span></label>
+                            <label class="report-month-field"><span>Dự án</span><span class="report-project-select"><i class="fa-solid fa-building" aria-hidden="true"></i><select id="reportProjectFilter" aria-label="Lọc báo cáo theo dự án"><option value="">Tất cả dự án</option></select></span></label>
                             <button
                                 class="button button-primary"
                                 type="button"
@@ -71,8 +71,8 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>Đã điều kiện</span><strong id="reportQualifiedTotal">318</strong
-                                ><small id="reportQualifiedRate">49,5% tầng số khách</small>
+                                <span>Đủ điều kiện</span><strong id="reportQualifiedTotal">318</strong
+                                ><small id="reportQualifiedRate">49,5% tổng số khách</small>
                             </div>
                         </article>
                         <article class="screen-stat">
@@ -101,7 +101,7 @@
                         </article>
                         <article class="screen-stat report-revenue-stat">
                             <span class="screen-stat-icon green"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span>
-                            <div><span>Doanh thu tham chiều</span><strong id="reportRevenueTotal">0 tỷ</strong><small id="reportRevenueChange">Giá sản phẩm đã giao dịch trong kỳ</small></div>
+                            <div><span>Doanh thu tham chiếu</span><strong id="reportRevenueTotal">0 tỷ</strong><small id="reportRevenueChange">Giá sản phẩm đã giao dịch trong kỳ</small></div>
                         </article>
                     </div>
                     <div class="screen-columns">
@@ -109,7 +109,7 @@
                             <div class="screen-panel-head">
                                 <div>
                                     <span class="panel-kicker"
-                                        >PHÚ CHUYỂN ĐẠI</span
+                                        >PHỄU CHUYỂN ĐỔI</span
                                     >
                                     <h2>Hiệu quả hành trình khách hàng</h2>
                                     <p>
@@ -119,17 +119,17 @@
                             </div>
                             <div class="report-funnel">
                                 <div>
-                                    <b id="funnelLeadTotal">642</b><span>Đang ký</span
+                                    <b id="funnelLeadTotal">642</b><span>Đăng ký</span
                                     ><i data-funnel-bar="leads" style="width: 100%"></i>
-                                    <small id="funnelLeadRate">100% tầng khách</small>
+                                    <small id="funnelLeadRate">100% tổng khách</small>
                                 </div>
                                 <div>
-                                    <b id="funnelQualifiedTotal">318</b><span>Đã điều kiện</span
+                                    <b id="funnelQualifiedTotal">318</b><span>Đủ điều kiện</span
                                     ><i data-funnel-bar="qualified" style="width: 78%"></i>
                                     <small id="funnelQualifiedRate">0% từ đăng ký</small>
                                 </div>
                                 <div>
-                                    <b id="funnelAppointmentTotal">146</b><span>Khách dã hẹn</span
+                                    <b id="funnelAppointmentTotal">146</b><span>Khách đã hẹn</span
                                     ><i data-funnel-bar="appointments" style="width: 57%"></i>
                                     <small id="funnelAppointmentRate">0% từ đăng ký</small>
                                 </div>
@@ -169,7 +169,7 @@
                                     <strong id="reportUpcoming">41 lịch</strong>
                                 </div>
                                     <div class="screen-bar-row" data-report-task="holds">
-                                    <span>Giữ chờ chờ xác nhân</span>
+                                    <span>Lịch hẹn chờ xác nhận</span>
                                     <div class="screen-bar">
                                         <i class="amber" style="width: 38%"></i>
                                     </div>
@@ -192,7 +192,7 @@
                     <section class="panel screen-panel">
                         <div class="screen-panel-head">
                             <div>
-                                <span class="panel-kicker">SO SÁNH Dự ÁN</span>
+                                <span class="panel-kicker">SO SÁNH DỰ ÁN</span>
                                 <h2>Khách hàng và hoạt động bán</h2>
                             </div>
                         </div>
@@ -202,11 +202,11 @@
                                     <tr>
                                         <th>Dự án</th>
                                         <th>Khách đăng ký</th>
-                                        <th>Đã điều kiện</th>
+                                        <th>Đủ điều kiện</th>
                                         <th>Lịch hẹn</th>
                                         <th>Giao dịch</th>
-                                        <th>Doanh thu tham chiều</th>
-                                        <th>Tạo lý chuyển đổi</th>
+                                        <th>Doanh thu tham chiếu</th>
+                                        <th>Tỷ lệ chuyển đổi</th>
                                     </tr>
                                 </thead>
                                 <tbody id="reportProjectRows"></tbody>
@@ -216,7 +216,7 @@
                     </section>
                     <section class="panel screen-panel report-staff-shortcut">
                         <div>
-                            <span class="panel-kicker">PHÂN TÍCH ĐẠI NGU</span>
+                            <span class="panel-kicker">PHÂN TÍCH ĐỘI NGŨ</span>
                             <h2>Báo cáo nhân viên</h2>
                             <p>Xem riêng khách hàng phụ trách, lịch hẹn, giao dịch, doanh thu tham chiếu và hoa hồng theo từng nhân viên.</p>
                         </div>

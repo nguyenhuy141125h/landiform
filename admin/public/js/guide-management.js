@@ -234,7 +234,7 @@
             setBody("");
         }
         renderList();
-        notify("Đã xóa bài viết khỏi Cẩm nang Customer.");
+        notify("Đã xóa bài viết khỏi danh sách xem trước.");
     }
 
     list.addEventListener("click", (event) => {
@@ -304,7 +304,7 @@
         document.querySelector("#guideDelete").hidden = false;
         editorTitle.textContent = nextGuide.title;
         renderList();
-        notify("Đã lưu bài viết. Nội dung sẽ xuất hiện trên trang Cẩm nang Customer.");
+        notify("Đã cập nhật bài viết trong danh sách xem trước.");
     });
     document.querySelector("#guideDelete")?.addEventListener("click", () => {
         const guide = guides.find((item) => item.id === activeId);
@@ -317,7 +317,7 @@
         editorTitle.textContent = "Chọn bài viết để chỉnh sửa";
         setBody("");
         renderList();
-        notify("Đã xóa bài viết khỏi Cẩm nang Customer.");
+        notify("Đã xóa bài viết khỏi danh sách xem trước.");
     });
     document.querySelector("#globalSearch")?.addEventListener("input", (event) => {
         const query = event.currentTarget.value.trim().toLocaleLowerCase("vi");

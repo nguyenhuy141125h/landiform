@@ -1033,6 +1033,12 @@
 .about-article-settings .screen-panel-head p { max-width:600px; }
 .about-article-settings .screen-panel-head > a { flex:0 0 auto; }
 .about-article-form { margin-top:22px; }
+.about-cover-upload { display:grid; gap:8px; }
+.about-cover-label { color:var(--text-strong, #28475d); font-size:12px; font-weight:650; }
+.about-cover-controls { display:flex; align-items:center; flex-wrap:wrap; gap:12px; }
+.about-cover-picker { cursor:pointer; }
+.about-cover-preview { display:flex; min-height:112px; align-items:center; justify-content:center; gap:9px; overflow:hidden; border:1px dashed #d6e2e9; border-radius:10px; color:#8396a4; background:#f7fafb; font-size:12px; }
+.about-cover-preview img { display:block; width:100%; max-height:260px; object-fit:cover; }
 .about-article-form .about-article-body-input { min-height:360px; font-size:13px; line-height:1.7; }
 .about-article-form .tox-tinymce { width:100% !important; border-color:#dce6ed; border-radius:10px; box-shadow:0 1px 2px #1d3b5108; }
 .settings-inline-help { color:#8292a0; font-size:10px; font-weight:450; line-height:1.55; }
@@ -2036,12 +2042,16 @@
 }
 .inventory-product-dialog { width: min(100%, 660px); max-height: min(94vh, 860px); overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
 .inventory-product-dialog::-webkit-scrollbar { display: none; width: 0; height: 0; }
+.inventory-product-heading { display:flex; align-items:center; gap:12px; margin:2px 36px 10px 0; }
+.inventory-product-heading .modal-icon { flex:0 0 auto; margin:0; }
+.inventory-product-heading h2 { margin:0; }
 .inventory-product-dialog > p { margin-bottom: 16px; color: #5e7689; line-height: 1.5; }
 .inventory-product-dialog .project-edit-form { gap: 10px; }
 .inventory-product-dialog .project-form-row { align-items: start; gap: 12px; }
 .inventory-product-dialog .project-form-row > div { gap: 6px; }
 .inventory-product-dialog .project-form-row small { color: #8194a4; font-size: 10px; line-height: 1.4; }
 .project-edit-dialog .inventory-address-help { margin-top: -5px; color: #8194a4; font-size: 11px; line-height: 1.45; }
+.inventory-address-field { display:grid; gap:6px; }
 .inventory-product-dialog .project-form-row [hidden] { display: none !important; }
 .inventory-attribute-fields { padding: 12px; border: 1px solid #e2edf3; border-radius: 10px; background: linear-gradient(145deg, #f8fbfd, #fff); }
 .inventory-attribute-heading { margin: 0 0 10px; color: #365b74; font-size: 11px; font-weight: 750; }
@@ -2180,6 +2190,9 @@
 }
 .form-qr-dialog { width: min(100%, 600px); }
 .form-actions-cell { display: flex; align-items: center; gap: 8px; }
+.form-qr-cell { display:grid; justify-items:start; gap:7px; }
+.form-qr-cell > small { color:#8091a0; font-size:10px; line-height:1.35; }
+.form-qr-cell .form-qr-action { white-space:nowrap; }
 .form-qr-preview {
     display: flex;
     align-items: center;
@@ -3887,9 +3900,14 @@
 .inventory-table {
     min-width: 1050px;
 }
+.inventory-table thead th:last-child,
+.inventory-table tbody td:last-child {
+    text-align: center;
+}
 .inventory-actions {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
     white-space: nowrap;
 }
@@ -4822,6 +4840,10 @@
 .role-status-chip.is-inactive {
     background: #eef1f4;
     color: #697987;
+}
+.role-status-chip.is-deleted {
+    background: #fff1ef;
+    color: #a94d45;
 }
 .role-status-chip:disabled {
     cursor: default;

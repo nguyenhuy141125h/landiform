@@ -69,6 +69,25 @@
         return badge;
     }
 
+    function fillQrCell(cell, record) {
+        const content = document.createElement("div");
+        content.className = "form-qr-cell";
+        content.append(makeQrBadge(record.qr));
+        if (record.qr) {
+            const button = document.createElement("button");
+            button.className = "project-detail-button form-qr-action";
+            button.type = "button";
+            button.dataset.formQr = record.id;
+            button.innerHTML = '<i class="fa-solid fa-qrcode" aria-hidden="true"></i> Xem mã QR';
+            content.append(button);
+        } else {
+            const hint = document.createElement("small");
+            hint.textContent = "Bật trong Chỉnh sửa";
+            content.append(hint);
+        }
+        cell.replaceChildren(content);
+    }
+
     function updateSummary() {
         const rows = [...tbody.rows];
         const active = rows.filter((row) => row.cells[4]?.textContent.includes("Đang nhận")).length;
@@ -103,7 +122,7 @@
             existing.cells[2].textContent = String(countFields(record));
             existing.cells[3].textContent = record.place;
             existing.cells[4].replaceChildren(makeBadge(record.status));
-            existing.cells[5].replaceChildren(makeQrBadge(record.qr));
+            fillQrCell(existing.cells[5], record);
             const actionCell = existing.cells[6];
             actionCell.classList.add("form-actions-cell");
             const detailLink = actionCell.querySelector('a[href*="record-detail.html?type=form"]');
@@ -128,15 +147,6 @@
                 deleteButton.dataset.formDelete = record.id;
                 deleteButton.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span>';
                 actionCell.append(deleteButton);
-            }
-            actionCell.querySelector("[data-form-qr]")?.remove();
-            if (record.qr) {
-                const qrButton = document.createElement("button");
-                qrButton.className = "project-detail-button form-qr-action";
-                qrButton.type = "button";
-                qrButton.dataset.formQr = record.id;
-                qrButton.innerHTML = '<i class="fa-solid fa-qrcode" aria-hidden="true"></i> Xem QR';
-                actionCell.prepend(qrButton);
             }
             return;
         }
@@ -173,7 +183,7 @@
         statusCell.append(makeBadge(record.status));
         row.append(statusCell);
         const qrCell = document.createElement("td");
-        qrCell.append(makeQrBadge(record.qr));
+        fillQrCell(qrCell, record);
         row.append(qrCell);
         const actionCell = document.createElement("td");
         actionCell.className = "form-actions-cell";
@@ -194,14 +204,6 @@
         remove.setAttribute("aria-label", `Xóa biểu mẫu ${record.name}`);
         remove.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span>';
         actionCell.append(remove);
-        if (record.qr) {
-            const qrButton = document.createElement("button");
-            qrButton.className = "project-detail-button form-qr-action";
-            qrButton.type = "button";
-            qrButton.dataset.formQr = record.id;
-            qrButton.innerHTML = '<i class="fa-solid fa-qrcode" aria-hidden="true"></i> Xem QR';
-            actionCell.prepend(qrButton);
-        }
         row.append(actionCell);
         tbody.prepend(row);
     }
@@ -307,11 +309,11 @@
         const input = document.querySelector("#formQrLink");
         try {
             await navigator.clipboard.writeText(input.value);
-            notify("Đã sao chép đường dẫn customer.");
+            notify("Đã sao chép đường dẫn trang khách hàng.");
         } catch {
             input.select();
             document.execCommand("copy");
-            notify("Đã sao chép đường dẫn customer.");
+            notify("Đã sao chép đường dẫn trang khách hàng.");
         }
     });
     document.querySelectorAll("[data-form-close]").forEach((button) => button.addEventListener("click", close));

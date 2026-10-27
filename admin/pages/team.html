@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#f3f6f8" />
-        <title>Tài khoản &amp; chức và | LANDIFORM</title>
+        <title>Tài khoản &amp; chức vụ | LANDIFORM</title>
         <link
             rel="icon"
             type="image/svg+xml"
@@ -32,11 +32,11 @@
                     <header class="screen-heading">
                         <div>
                             <p class="screen-eyebrow">NHÂN SỰ</p>
-                            <h1>Tài khoản & chức và</h1>
-                            <p>Tạo chức và và cập quyền trước, sau dó gán chức và phù hợp cho quản lý, nhân viên hoặc khách hàng.</p>
+                            <h1>Tài khoản & chức vụ</h1>
+                            <p>Tạo chức vụ và cấp quyền trước, sau đó gán chức vụ phù hợp cho quản lý, nhân viên hoặc khách hàng.</p>
                         </div>
                         <div class="screen-heading-actions">
-                            <a class="button button-quiet" href="permissions.html"><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Chức và & quyền</a>
+                            <a class="button button-quiet" href="permissions.html"><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Chức vụ & quyền</a>
                             <a class="button button-quiet" href="workflow.html#appointments"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Xem lịch hẹn</a>
                             <button
                                 class="button button-primary"
@@ -52,7 +52,7 @@
                         </div>
                     </header>
                     <div class="screen-stats staff-account-stats">
-                        <article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-users" aria-hidden="true"></i></span><div><span>Tổng tài khoản</span><strong id="staffTotal">0</strong><small>Nhân số và khách hàng</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-users" aria-hidden="true"></i></span><div><span>Tổng tài khoản</span><strong id="staffTotal">0</strong><small>Nhân sự và khách hàng</small></div></article>
                         <article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span><div><span>Quản lý</span><strong id="staffManagerCount">0</strong><small>Tài khoản nhóm quản lý</small></div></article>
                         <article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-user" aria-hidden="true"></i></span><div><span>Nhân viên</span><strong id="staffEmployeeCount">0</strong><small>Tài khoản nhóm nhân viên</small></div></article>
                         <article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-user-lock" aria-hidden="true"></i></span><div><span>Khách hàng</span><strong id="staffCustomerCount">0</strong><small>Tài khoản nhóm khách hàng</small></div></article>
@@ -63,7 +63,7 @@
                                 <span class="panel-kicker">TÀI KHOẢN DOANH NGHIỆP</span>
                                 <h2>Quản lý tài khoản</h2>
                                 <p>
-                                    Chức và quyết định quyền truy cập; thay đổi quyền trong mục Chức và & quyền.
+                                    Chức vụ quyết định quyền truy cập; thay đổi quyền trong mục Chức vụ & quyền.
                                 </p>
                             </div>
                             <div class="screen-filter">
@@ -76,8 +76,8 @@
                                         type="search"
                                         data-filter="team"
                                         placeholder="Tìm nhân viên" /></label
-                                ><select data-staff-type-filter aria-label="Lọc theo nhóm tài khoản"><option value="">Tất có nhóm tài khoản</option><option value="management">Quản lý</option><option value="employee">Nhân viên</option><option value="customer">Khách hàng</option></select>
-                                <select data-staff-role-filter aria-label="Lọc theo chức và"><option value="">Tất có chức và</option></select>
+                                ><select data-staff-type-filter aria-label="Lọc theo nhóm tài khoản"><option value="">Tất cả nhóm tài khoản</option><option value="management">Quản lý</option><option value="employee">Nhân viên</option><option value="customer">Khách hàng</option></select>
+                                <select data-staff-role-filter aria-label="Lọc theo chức vụ"><option value="">Tất cả chức vụ</option></select>
                             </div>
                         </div>
                         <div class="screen-table-wrap">
@@ -86,7 +86,7 @@
                                     <tr>
                                         <th>Tài khoản</th>
                                         <th>Nhóm</th>
-                                        <th>Chức và</th>
+                                        <th>Chức vụ</th>
                                         <th>Phạm vi</th>
                                         <th>Thao tác</th>
                                         <th>Trạng thái</th>
@@ -115,20 +115,20 @@
                 <button class="modal-close" type="button" data-staff-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
                 <span class="modal-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
                 <h2 id="staffModalTitle">Thêm tài khoản</h2>
-                <p id="staffModalDescription">Chọn nhóm tài khoản và chức và dự áp đang dúng bộ quyền.</p>
+                <p id="staffModalDescription">Chọn nhóm tài khoản và chức vụ để áp dụng đúng bộ quyền.</p>
                 <form id="staffForm" class="project-edit-form">
-                    <label for="staffName">Họ và tên</label><input id="staffName" name="name" autocomplete="name" required placeholder="Nhập hồ tên" />
+                    <label for="staffName">Họ và tên</label><input id="staffName" name="name" autocomplete="name" required placeholder="Nhập họ tên" />
                     <div class="project-form-row">
                         <div><label for="staffEmail">Email đăng nhập</label><input id="staffEmail" name="email" type="email" autocomplete="email" required placeholder="ten@doanhnghiep.vn" /></div>
                         <div><label for="staffPhone">Số điện thoại</label><input id="staffPhone" name="phone" type="tel" autocomplete="tel" placeholder="Nhập số điện thoại" /></div>
                     </div>
                     <div class="project-form-row">
                         <div><label for="staffAccountType">Nhóm tài khoản</label><select id="staffAccountType" name="accountType" required><option value="management">Quản lý</option><option value="employee" selected>Nhân viên</option><option value="customer">Khách hàng</option></select></div>
-                        <div><label for="staffRole">Chức và</label><select id="staffRole" name="roleId" required><option value="">Chọn nhóm tài khoản trước</option></select></div>
+                        <div><label for="staffRole">Chức vụ</label><select id="staffRole" name="roleId" required><option value="">Chọn nhóm tài khoản trước</option></select></div>
                     </div>
-                    <p class="staff-role-hint" id="staffRoleHint">Chọn chức và dự áp đang quyền dã thiết lập.</p>
+                    <p class="staff-role-hint" id="staffRoleHint">Chọn chức vụ để áp dụng quyền đã thiết lập.</p>
                     <div class="project-form-row">
-                        <fieldset class="staff-scope-picker"><legend>Phạm vi phụ trách <small>Chọn mật hoặc nhiều dự án</small></legend><div class="staff-scope-options" id="staffScopeOptions"><label><input type="checkbox" name="scopeOptions" value="Toàn doanh nghiệp" checked />Toàn doanh nghiệp</label><label><input type="checkbox" name="scopeOptions" value="An Phú Riverside" />An Phú Riverside</label><label><input type="checkbox" name="scopeOptions" value="Green Valley" />Green Valley</label><label><input type="checkbox" name="scopeOptions" value="Central Park Towers" />Central Park Towers</label><label><input type="checkbox" name="scopeOptions" value="Lumière Garden" />Lumière Garden</label></div></fieldset>
+                        <fieldset class="staff-scope-picker"><legend>Phạm vi phụ trách <small>Chọn một hoặc nhiều dự án</small></legend><div class="staff-scope-options" id="staffScopeOptions"><label><input type="checkbox" name="scopeOptions" value="Toàn doanh nghiệp" checked />Toàn doanh nghiệp</label><label><input type="checkbox" name="scopeOptions" value="An Phú Riverside" />An Phú Riverside</label><label><input type="checkbox" name="scopeOptions" value="Green Valley" />Green Valley</label><label><input type="checkbox" name="scopeOptions" value="Central Park Towers" />Central Park Towers</label><label><input type="checkbox" name="scopeOptions" value="Lumière Garden" />Lumière Garden</label></div></fieldset>
                         <div><label for="staffStatus">Trạng thái tài khoản</label><select id="staffStatus" name="status" required><option>Đang hoạt động</option><option>Tạm ngưng</option></select></div>
                     </div>
                     <div class="modal-actions"><button class="button button-secondary" type="button" data-staff-close>Hủy</button><button class="button button-primary" type="submit" data-staff-submit>Lưu tài khoản</button></div>

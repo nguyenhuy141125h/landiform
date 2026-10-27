@@ -72,7 +72,7 @@
                             ></span>
                             <div>
                                 <span>Đã hoàn tất</span><strong>18</strong
-                                ><small>Trong tầng số 42 việc hôm nay</small>
+                                ><small>Trong tổng số 42 việc hôm nay</small>
                             </div>
                         </article>
                         <article class="screen-stat">
@@ -84,7 +84,7 @@
                             ></span>
                             <div>
                                 <span>Sắp quá hẹn</span><strong>3</strong
-                                ><small>Cần quản lý hồ trợ</small>
+                                ><small>Cần người quản lý hỗ trợ</small>
                             </div>
                         </article>
                         <article class="screen-stat">
@@ -95,8 +95,8 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>Hoàn thành dúng hẹn</span><strong>94%</strong
-                                ><small>Trong 30 ngày gắn nhất</small>
+                                <span>Hoàn thành đúng hẹn</span><strong>94%</strong
+                                ><small>Trong 30 ngày gần nhất</small>
                             </div>
                         </article>
                     </div>
@@ -121,10 +121,10 @@
                             </div>
                             <h3 id="appointmentCalendarTitle"></h3>
                             <div class="appointment-calendar-options">
-                                <label class="calendar-staff-filter"><i class="fa-solid fa-user" aria-hidden="true"></i><select id="appointmentStaffFilter" aria-label="Lọc lịch theo nhân viên"><option value="">Tất có nhân viên</option></select></label>
-                                <div class="appointment-calendar-modes" role="group" aria-label="Chủ đề xem lịch">
+                                <label class="calendar-staff-filter"><i class="fa-solid fa-user" aria-hidden="true"></i><select id="appointmentStaffFilter" aria-label="Lọc lịch theo nhân viên"><option value="">Tất cả nhân viên</option></select></label>
+                                <div class="appointment-calendar-modes" role="group" aria-label="Chế độ xem lịch">
                                     <button type="button" class="is-active" data-calendar-mode="month" aria-pressed="true">Tháng</button>
-                                    <button type="button" data-calendar-mode="week" aria-pressed="false">Tuấn</button>
+                                    <button type="button" data-calendar-mode="week" aria-pressed="false">Tuần</button>
                                     <button type="button" data-calendar-mode="day" aria-pressed="false">Ngày</button>
                                 </div>
                             </div>
@@ -139,9 +139,9 @@
                             <div class="appointment-tabs" role="group" aria-label="Lọc lịch hẹn">
                                 <button class="is-active" type="button" data-appointment-view="upcoming" aria-pressed="true">Sắp tới <span id="appointmentUpcomingCount">0</span></button>
                                 <button type="button" data-appointment-view="unassigned" aria-pressed="false">Chưa phân công <span id="appointmentUnassignedCount">0</span></button>
-                                <button type="button" data-appointment-view="all" aria-pressed="false">Tất có</button>
+                                <button type="button" data-appointment-view="all" aria-pressed="false">Tất cả</button>
                             </div>
-                            <select id="appointmentProjectFilter" aria-label="Lọc lịch theo dự án"><option value="">Tất có dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select>
+                            <select id="appointmentProjectFilter" aria-label="Lọc lịch theo dự án"><option value="">Tất cả dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select>
                         </div>
                         <div class="screen-table-wrap">
                             <table class="screen-table appointment-table">
@@ -172,13 +172,12 @@
                                     <div>
                                         <strong>Gọi lại Nguyễn Ngọc Anh</strong
                                         ><small
-                                            >An Phú Riverside · Căn hộ 2 phòng
-                                            ngữ · Phú trách: Trần Thanh
+                                            >An Phú Riverside · Căn hộ 2 phòng ngủ · Phụ trách: Trần Thanh
                                             Long</small
                                         >
                                     </div>
                                     <span class="screen-badge amber"
-                                        >Uu tiên</span
+                                        >Ưu tiên</span
                                     >
                                 </article>
                                 <article>
@@ -189,7 +188,7 @@
                                             >Gửi thông tin nhà phố phù
                                             hợp</strong
                                         ><small
-                                            >Green Valley · Phú trách: Quỳnh
+                                            >Green Valley · Phụ trách: Quỳnh
                                             Dao</small
                                         >
                                     </div>
@@ -202,14 +201,14 @@
                                     ><span class="agenda-dot violet"></span>
                                     <div>
                                         <strong
-                                            >Chuẩn bộ tài liệu tham quan nhà mẫu</strong
+                                            >Chuẩn bị tài liệu tham quan nhà mẫu</strong
                                         ><small
-                                            >Central Park Towers · Phú trách:
+                                            >Central Park Towers · Phụ trách:
                                             Mai Ngọc</small
                                         >
                                     </div>
                                     <span class="screen-badge green"
-                                        >Đã xác nhân</span
+                                        >Đã xác nhận</span
                                     >
                                 </article>
                                 <article>
@@ -218,7 +217,7 @@
                                     <div>
                                         <strong>Cập nhật kết quả tư vấn</strong
                                         ><small
-                                            >An Phú Riverside · Phú trách: Trần
+                                            >An Phú Riverside · Phụ trách: Trần
                                             Thanh Long</small
                                         >
                                     </div>
@@ -247,7 +246,7 @@
                         <div><label for="appointmentProject">Dự án</label><select id="appointmentProject" name="project" required><option value="">Chọn dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
                     </div>
                     <div class="appointment-new-customer-fields" id="appointmentNewCustomerFields" hidden>
-                        <p>Nhập thông tin liên hệ để tạo hồ sơ khách hàng tiềm nang và gắn lịch hẹn với hồ sơ đó.</p>
+                        <p>Nhập thông tin liên hệ để tạo hồ sơ khách hàng tiềm năng và gắn lịch hẹn với hồ sơ đó.</p>
                         <div class="project-form-row">
                             <div><label for="appointmentNewCustomerName">Họ và tên</label><input id="appointmentNewCustomerName" name="newCustomerName" autocomplete="name" placeholder="Ví dụ: Nguyễn Văn An" /></div>
                             <div><label for="appointmentNewCustomerPhone">Số điện thoại</label><input id="appointmentNewCustomerPhone" name="newCustomerPhone" type="tel" autocomplete="tel" placeholder="Ví dụ: 0901 234 567" /></div>
@@ -259,11 +258,11 @@
                     </div>
                     <div class="project-form-row">
                         <div><label for="appointmentStart">Ngày và giờ hẹn</label><input id="appointmentStart" name="start" type="datetime-local" required /></div>
-                        <div><label for="appointmentType">Hoạt động</label><select id="appointmentType" name="type"><option>Tư vấn tại văn phòng</option><option>Dẫn khách xem nhà</option><option>Tham quan nhà mẫu</option><option>Bàn giao nhà</option><option>Gửi tư vấn</option><option>Hợp trực tuyến</option></select></div>
+                        <div><label for="appointmentType">Hoạt động</label><select id="appointmentType" name="type"><option>Tư vấn tại văn phòng</option><option>Dẫn khách xem nhà</option><option>Tham quan nhà mẫu</option><option>Bàn giao nhà</option><option>Gửi tư vấn</option><option>Họp trực tuyến</option></select></div>
                     </div>
-                    <label for="appointmentPlace">Địa điểm hoặc cách liên hệ</label><input id="appointmentPlace" name="place" maxlength="120" placeholder="Chọn hoạt động, địa điểm hoặc gợi ý" aria-describedby="appointmentPlaceHint" /><small class="appointment-field-note" id="appointmentPlaceHint">Gửi ý địa điểm số thay đổi theo hoạt động.</small>
+                    <label for="appointmentPlace">Địa điểm hoặc cách liên hệ</label><input id="appointmentPlace" name="place" maxlength="120" placeholder="Chọn hoạt động, địa điểm hoặc gợi ý" aria-describedby="appointmentPlaceHint" /><small class="appointment-field-note" id="appointmentPlaceHint">Gợi ý địa điểm sẽ thay đổi theo hoạt động.</small>
                     <div class="project-form-row">
-                        <div><label for="appointmentAssignee">Nhân viên phụ trách</label><select id="appointmentAssignee" name="assignee"><option value="">Chưa phân công</option></select><small class="appointment-field-note" id="appointmentAssigneeHint">Chọn dự án dự xem nhân viên phù hợp.</small></div>
+                        <div><label for="appointmentAssignee">Nhân viên phụ trách</label><select id="appointmentAssignee" name="assignee"><option value="">Chưa phân công</option></select><small class="appointment-field-note" id="appointmentAssigneeHint">Chọn dự án để xem nhân viên phù hợp.</small></div>
                         <div><label for="appointmentStatus">Trạng thái</label><select id="appointmentStatus" name="status"><option>Chờ phân công</option><option>Đã phân công</option><option>Hoàn tất</option><option>Đã hủy</option></select></div>
                     </div>
                     <div class="modal-actions appointment-modal-actions"><button class="button button-đanger" type="button" data-appointment-delete hidden><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Xóa lịch</button><button class="button button-quiet" type="button" data-appointment-cancel hidden><i class="fa-solid fa-ban" aria-hidden="true"></i> Hủy lịch</button><span class="appointment-modal-actions-spacer"></span><button class="button button-secondary" type="button" data-appointment-close>Đóng</button><button class="button button-primary" type="submit">Lưu lịch hẹn</button></div>
@@ -291,14 +290,14 @@
                 <form id="taskForm" class="project-edit-form">
                     <label for="taskTitle">Nội dung công việc</label><input id="taskTitle" name="title" required maxlength="120" placeholder="Ví dụ: Gửi lại khách để xác nhận lịch tham quan" />
                     <div class="project-form-row">
-                        <div class="appointment-customer-picker searchable-customer-picker"><label for="taskCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="taskCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="taskCustomerOptions" aria-haspopup="listbox" placeholder="Tìm khách hàng hoặc dự trạng" autocomplete="off" /><select id="taskCustomer" name="customer" hidden><option value="">Không gắn khách hàng</option><option value="anh">Nguyễn Ngọc Anh</option><option value="khoa">Trần Minh Khoa</option><option value="yen">Lê Hoàng Yến</option><option value="bao">Phạm Quốc Bảo</option></select><div class="appointment-customer-options" id="taskCustomerOptions" role="listbox" hidden></div></div></div>
+                        <div class="appointment-customer-picker searchable-customer-picker"><label for="taskCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="taskCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="taskCustomerOptions" aria-haspopup="listbox" placeholder="Tìm khách hàng hoặc để trống" autocomplete="off" /><select id="taskCustomer" name="customer" hidden><option value="">Không gắn khách hàng</option><option value="anh">Nguyễn Ngọc Anh</option><option value="khoa">Trần Minh Khoa</option><option value="yen">Lê Hoàng Yến</option><option value="bao">Phạm Quốc Bảo</option></select><div class="appointment-customer-options" id="taskCustomerOptions" role="listbox" hidden></div></div></div>
                         <div><label for="taskProject">Dự án</label><select id="taskProject" name="project" required><option value="">Chọn dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
                     </div>
                     <div class="project-form-row">
                         <div><label for="taskAssignee">Người phụ trách</label><select id="taskAssignee" name="assignee" required><option value="">Chọn nhân viên hoặc quản lý</option></select></div>
                         <div><label for="taskDeadline">Hẹn xử lý</label><input id="taskDeadline" name="deadline" type="datetime-local" required /></div>
                     </div>
-                    <label for="taskPriority">Mục uu tiên</label><select id="taskPriority" name="priority"><option>Thông thường</option><option>Uu tiên</option></select>
+                    <label for="taskPriority">Mức ưu tiên</label><select id="taskPriority" name="priority"><option>Thông thường</option><option>Ưu tiên</option></select>
                     <div class="modal-actions"><button class="button button-secondary" type="button" data-task-close>Hủy</button><button class="button button-primary" type="submit">Lưu công việc</button></div>
                 </form>
             </section>

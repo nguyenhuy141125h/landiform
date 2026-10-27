@@ -33,10 +33,10 @@
                     </header>
 
                     <section class="panel role-groups-panel" id="roleGroupsPage" aria-labelledby="roleGroupsTitle">
-                        <div class="role-groups-heading"><div><h2 id="roleGroupsTitle">Chức vụ & quyền</h2><p>Tạo chức vụ theo nhóm tài khoản, sau đó cấp quyền cho tầng chức vụ.</p></div></div>
+                        <div class="role-groups-heading"><div><h2 id="roleGroupsTitle">Chức vụ & quyền</h2><p>Tạo chức vụ theo nhóm tài khoản, sau đó cấp quyền cho từng chức vụ.</p></div></div>
                         <div class="role-groups-toolbar">
                             <button class="button button-primary" type="button" data-role-create-open><i class="fa-solid fa-plus" aria-hidden="true"></i> Tạo chức vụ</button>
-                            <label class="role-status-filter">Trạng thái<select id="roleStatusFilter"><option value="all">Tất cả</option><option value="active">Đang dùng</option><option value="inactive">Đã tạm dừng</option></select></label>
+                            <label class="role-status-filter">Trạng thái<select id="roleStatusFilter"><option value="all">Tất cả</option><option value="active">Đang dùng</option><option value="inactive">Đã tạm dừng</option><option value="deleted">Đã xóa</option></select></label>
                             <button class="button button-quiet role-overview-link" type="button" data-open-matrix><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Quyền hạn</button>
                         </div>
                         <div class="role-groups-table-wrap"><table class="role-groups-table"><thead><tr><th>#</th><th>Tên chức vụ</th><th>Nhóm tài khoản</th><th>Quyền hạn</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody id="roleGroupsTableBody"></tbody></table></div>
@@ -57,15 +57,15 @@
                             <select id="roleSelector" aria-label="Chọn chức vụ">
                                 <option value="admin">Quản trị doanh nghiệp</option>
                                 <option value="manager">Quản lý kinh doanh</option>
-                                <option value="advisor">Nhân viên từ vấn</option>
+                                <option value="advisor">Nhân viên tư vấn</option>
                                 <option value="marketing">Marketing</option>
-                                <option value="care">Cham sóc khách hàng</option>
+                                <option value="care">Chăm sóc khách hàng</option>
                                 <option value="operation">Vận hành</option>
                                 <option value="leader">Ban lãnh đạo</option>
                                 <option value="customer">Khách hàng</option>
                             </select>
                             <span class="screen-badge blue" id="selectedRoleBadge">Toàn doanh nghiệp</span>
-                            <p id="selectedRoleDescription">Quản lý toàn bộ thông tin, nhân số và thiết lập doanh nghiệp.</p>
+                            <p id="selectedRoleDescription">Quản lý toàn bộ thông tin, nhân sự và thiết lập doanh nghiệp.</p>
                         </div>
                         <div class="permissions-scope-bar">
                             <label for="roleScope">Phạm vi dữ liệu</label>
@@ -78,14 +78,14 @@
                         </div>
                         <div class="role-permission-table-wrap">
                             <table class="role-permission-table">
-                                <thead><tr><th><label class="permission-check-label"><input type="checkbox" data-select-all /><span>Bất hoặc tắt tất cả quyền</span></label></th><th id="selectedRoleColumn">Quản trị doanh nghiệp</th></tr></thead>
+                                <thead><tr><th><label class="permission-check-label"><input type="checkbox" data-select-all /><span>Bật hoặc tắt tất cả quyền</span></label></th><th id="selectedRoleColumn">Quản trị doanh nghiệp</th></tr></thead>
                                 <tbody>
                                     <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="projects" /><span>Dự án</span></label></th><td></td></tr>
                                     <tr><td>Xem danh sách và thông tin dự án</td><td><input type="checkbox" data-permission="projects.view" aria-label="Xem dự án" /></td></tr>
                                     <tr><td>Tạo dự án</td><td><input type="checkbox" data-permission="projects.create" aria-label="Tạo dự án" /></td></tr>
                                     <tr><td>Sửa thông tin dự án</td><td><input type="checkbox" data-permission="projects.edit" aria-label="Sửa dự án" /></td></tr>
                                     <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="products" /><span>Sản phẩm</span></label></th><td></td></tr>
-                                    <tr><td>Xem tòa nhà, tầng và can</td><td><input type="checkbox" data-permission="products.view" aria-label="Xem sản phẩm" /></td></tr>
+                                    <tr><td>Xem tòa nhà, tầng và căn</td><td><input type="checkbox" data-permission="products.view" aria-label="Xem sản phẩm" /></td></tr>
                                     <tr><td>Thêm sản phẩm</td><td><input type="checkbox" data-permission="products.create" aria-label="Thêm sản phẩm" /></td></tr>
                                     <tr><td>Sửa thông tin sản phẩm</td><td><input type="checkbox" data-permission="products.edit" aria-label="Sửa sản phẩm" /></td></tr>
                                     <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="customers" /><span>Khách hàng</span></label></th><td></td></tr>
@@ -128,7 +128,7 @@
                 <label>Nhóm tài khoản<select name="group" required><option value="management">Quản lý</option><option value="employee" selected>Nhân viên</option><option value="customer">Khách hàng</option></select></label>
                 <label>Mô tả<input name="description" maxlength="120" placeholder="Vai trò này phụ trách công việc nào?" /></label>
                 <label>Phạm vi ban đầu<select name="scope"><option value="assigned-projects">Các dự án được phân công</option><option value="own-records">Dữ liệu đang phụ trách</option><option value="company">Toàn doanh nghiệp</option></select></label>
-                <label data-role-template>Sao chép quyền từ<select name="template"><option value="blank">Bắt đầu chưa có quyền</option><option value="advisor">Nhân viên từ vấn</option><option value="manager">Quản lý kinh doanh</option><option value="admin">Quản trị doanh nghiệp</option></select></label>
+                <label data-role-template>Sao chép quyền từ<select name="template"><option value="blank">Bắt đầu chưa có quyền</option><option value="advisor">Nhân viên tư vấn</option><option value="manager">Quản lý kinh doanh</option><option value="admin">Quản trị doanh nghiệp</option></select></label>
                 <footer><button class="button button-quiet" type="button" data-role-create-close>Hủy</button><button class="button button-primary" type="submit" data-role-submit><i class="fa-solid fa-plus" aria-hidden="true"></i> Lưu nhóm</button></footer>
             </form>
         </dialog>

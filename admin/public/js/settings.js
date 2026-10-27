@@ -5,6 +5,10 @@
     const customerSiteFields = [...document.querySelectorAll("[data-customer-site-setting]")];
     const saveButton = document.querySelector('[data-action="save-settings"]');
     const logoField = document.querySelector("#companyLogo");
+    const aboutCoverFile = document.querySelector("#aboutCoverFile");
+    const aboutCoverField = document.querySelector('[name="aboutCoverImage"]');
+    const aboutCoverFileName = document.querySelector("#aboutCoverFileName");
+    const aboutCoverPreview = document.querySelector("#aboutCoverPreview");
     const logoImage = document.querySelector("#companyLogoImage");
     const logoInitials = document.querySelector("#companyLogoInitials");
     const previewName = document.querySelector("#companyPreviewName");
@@ -137,12 +141,6 @@
             card.className = "branch-editor-card";
             card.dataset.branchId = branch.id;
             const header = document.createElement("header");
-            const identity = document.createElement("div");
-            const kicker = document.createElement("small");
-            kicker.textContent = `CHI NHÁNH ${String(index + 1).padStart(2, "0")}`;
-            const title = document.createElement("strong");
-            title.textContent = branch.name || `Chi nhánh ${index + 1}`;
-            identity.append(kicker, title);
             const actions = document.createElement("div");
             actions.className = "branch-editor-actions";
             const defaultLabel = document.createElement("label");
@@ -152,17 +150,19 @@
             radio.name = "defaultBranchId";
             radio.value = branch.id;
             radio.checked = Boolean(branch.isDefault) || (!branches.some((item) => item.isDefault) && index === 0);
-            const defaultText = document.createElement("span");
-            defaultText.textContent = "Mặc định";
-            defaultLabel.append(radio, defaultText);
+            defaultLabel.title = "Đặt làm chi nhánh mặc định";
+            defaultLabel.setAttribute("aria-label", "Đặt làm chi nhánh mặc định");
+            defaultLabel.append(radio);
             const remove = document.createElement("button");
             remove.type = "button";
             remove.className = "button button-quiet branch-remove-button";
             remove.dataset.removeBranch = branch.id;
             remove.disabled = branches.length <= 1;
-            remove.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i> Xóa';
+            remove.title = "Xóa chi nhánh";
+            remove.setAttribute("aria-label", "Xóa chi nhánh");
+            remove.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i>';
             actions.append(defaultLabel, remove);
-            header.append(identity, actions);
+            header.append(actions);
 
             const grid = document.createElement("div");
             grid.className = "branch-editor-fields";
@@ -256,6 +256,52 @@
     });
     renderBranches();
     updatePreview();
+
+    function renderAboutCoverPreview() {
+        if (!aboutCoverPreview) return;
+        const src = aboutCoverField?.value.trim();
+        if (!src) {
+            aboutCoverPreview.replaceChildren(
+                Object.assign(document.createElement("i"), { className: "fa-regular fa-image", "aria-hidden": "true" }),
+                Object.assign(document.createElement("span"), { textContent: "Xem trước ảnh bìa" }),
+            );
+            return;
+        }
+        const image = document.createElement("img");
+        image.src = src;
+        image.alt = document.querySelector('[name="aboutCoverAlt"]')?.value.trim() || "Ảnh bìa bài viết";
+        image.addEventListener("error", () => {
+            aboutCoverPreview.replaceChildren(
+                Object.assign(document.createElement("i"), { className: "fa-solid fa-triangle-exclamation", "aria-hidden": "true" }),
+                Object.assign(document.createElement("span"), { textContent: "Không thể hiển thị ảnh đã chọn." }),
+            );
+        }, { once: true });
+        aboutCoverPreview.replaceChildren(image);
+    }
+
+    renderAboutCoverPreview();
+    aboutCoverFile?.addEventListener("change", () => {
+        const file = aboutCoverFile.files?.[0];
+        if (!file) return;
+        if (!file.type.startsWith("image/")) {
+            aboutCoverFile.value = "";
+            notify("Vui lòng chọn tệp hình ảnh.");
+            return;
+        }
+        if (file.size > 8 * 1024 * 1024) {
+            aboutCoverFile.value = "";
+            notify("Ảnh bìa cần có dung lượng nhỏ hơn 8 MB.");
+            return;
+        }
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+            aboutCoverField.value = typeof reader.result === "string" ? reader.result : "";
+            aboutCoverFileName.textContent = `Đã chọn: ${file.name}`;
+            renderAboutCoverPreview();
+        });
+        reader.addEventListener("error", () => notify("Không thể đọc tệp ảnh này."), { once: true });
+        reader.readAsDataURL(file);
+    });
 
     fields.forEach((field) => {
         field.addEventListener("input", () => {
@@ -368,7 +414,7 @@
             window.refreshAdminCompanyBranding?.();
             branches = savedBranches;
             renderBranches();
-            notify("Đã lưu hồ sơ, nội dung website và chi nhánh.");
+            notify("Đã cập nhật bản xem trước của hồ sơ doanh nghiệp.");
         } catch {
             notify("Không thể lưu thay đổi trên trình duyệt này.");
         }

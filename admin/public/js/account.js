@@ -69,7 +69,7 @@
                 currentInput.required = true;
                 hint.textContent = "Mật khẩu đã được thiết lập. Nhập mật khẩu hiện tại để đổi lần tiếp theo.";
                 passwordForm.reset();
-                notify("Đã cập nhật mật khẩu trên trình duyệt này.");
+                notify("Đã cập nhật mật khẩu trong phiên xem hiện tại.");
             } catch {
                 notify("Không thể lưu mật khẩu trên trình duyệt này.");
             }

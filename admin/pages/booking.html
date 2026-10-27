@@ -43,8 +43,7 @@
                             <p class="screen-eyebrow">QUẢN LÝ SẢN PHẨM</p>
                             <h1>Sản phẩm dự án</h1>
                             <p>
-                                Quản lý căn hộ, căn nhà và lô đất; theo dõi
-                                tình trạng bán và lịch tư vấn liên quan đến sản phẩm.
+                                Quản lý căn hộ, nhà ở và lô đất; theo dõi tình trạng bán và lịch tư vấn liên quan đến sản phẩm.
                             </p>
                         </div>
                         <div class="screen-heading-actions">
@@ -126,12 +125,11 @@
                             </div>
                             <div
                                 class="inventory-map-legend"
-                                aria-label="Chú giới tình trạng căn hộ"
+                                aria-label="Chú giải tình trạng căn hộ"
                             >
                                 <span><i class="available"></i>Còn bán</span>
                                 <span
-                                    ><i class="pending"></i>Chờ duyệt / giữ
-                                    chờ</span
+                                    ><i class="pending"></i>Chờ duyệt / giữ chỗ</span
                                 >
                                 <span><i class="sold"></i>Đã bán</span>
                                 <span
@@ -165,7 +163,7 @@
                                 ></i>
                                 Danh sách chi tiết</span
                             ><span
-                                >Xem, lọc và chỉnh sửa tầng sản phẩm
+                                >Xem, lọc và chỉnh sửa từng sản phẩm
                                 <i
                                     class="fa-solid fa-chevron-down"
                                     aria-hidden="true"
@@ -200,10 +198,10 @@
                                 id="inventoryGroupFilter"
                                 aria-label="Lọc theo nhóm sản phẩm"
                             >
-                                <option value="">Tất có nhóm sản phẩm</option>
+                                <option value="">Tất cả nhóm sản phẩm</option>
                                 <option value="apartment">Căn hộ</option>
                                 <option value="house">Nhà ở</option>
-                                <option value="land">Đặt nền / lô đất</option>
+                                <option value="land">Đất nền / lô đất</option>
                                 <option value="commercial">
                                     Thương mại / văn phòng
                                 </option>
@@ -215,25 +213,25 @@
                                 id="inventoryTypeFilter"
                                 aria-label="Lọc theo loại sản phẩm"
                             >
-                                <option value="">Tất có loại sản phẩm</option>
+                                <option value="">Tất cả loại sản phẩm</option>
                             </select>
                             <select
                                 id="inventoryTowerFilter"
                                 aria-label="Lọc theo tòa"
                             >
-                                <option value="">Tất có tòa / phân khu</option>
+                                <option value="">Tất cả tòa / phân khu</option>
                             </select>
                             <select
                                 id="inventoryFloorFilter"
                                 aria-label="Lọc theo tầng"
                             >
-                                <option value="">Tất có tầng</option>
+                                <option value="">Tất cả tầng</option>
                             </select>
                             <select
                                 id="inventoryStatusFilter"
                                 aria-label="Lọc theo tình trạng"
                             >
-                                <option value="">Tất có tình trạng</option>
+                                <option value="">Tất cả tình trạng</option>
                                 <option>Còn bán</option>
                                 <option>Chờ duyệt</option>
                                 <option>Đang giữ chỗ</option>
@@ -248,7 +246,7 @@
                                         <th>Mã sản phẩm</th>
                                         <th>Dự án</th>
                                         <th>Tòa / khu / phân khu</th>
-                                        <th>Tổng</th>
+                                        <th>Tầng</th>
                                         <th>Loại sản phẩm</th>
                                         <th>Thông số</th>
                                         <th>Diện tích</th>
@@ -262,18 +260,18 @@
                                     <tr><td><strong>A2 · 12.08</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 12</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge amber">Chờ duyệt</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1208">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
                                     <tr><td><strong>A2 · 12.09</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 12</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,9 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1209">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
                                     <tr><td><strong>A2 · 12.10</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 12</td><td>Căn hộ 3 phòng ngủ</td><td>3 PN · 2 PT</td><td>105 m²</td><td>5,2 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1210">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A2 · 13.01</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tổng 13</td><td>Căn hộ 1 phòng ngủ</td><td>1 PN · 1 PT</td><td>58 m²</td><td>2,8 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1301">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A1 · 05.01</strong></td><td>An Phú Riverside</td><td>A1</td><td>Tổng 5</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0501">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A1 · 05.02</strong></td><td>An Phú Riverside</td><td>A1</td><td>Tổng 5</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0502">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>B1 · 08.03</strong></td><td>Central Park Towers</td><td>B1</td><td>Tổng 8</td><td>Căn hộ 3 phòng ngủ</td><td>3 PN · 2 PT</td><td>104 m²</td><td>5,1 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0803">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>B1 · 08.04</strong></td><td>Central Park Towers</td><td>B1</td><td>Tổng 8</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>79 m²</td><td>3,7 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0804">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>B2 · 10.01</strong></td><td>Central Park Towers</td><td>B2</td><td>Tổng 10</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>80 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b2-1001">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 13.01</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 13</td><td>Căn hộ 1 phòng ngủ</td><td>1 PN · 1 PT</td><td>58 m²</td><td>2,8 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1301">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A1 · 05.01</strong></td><td>An Phú Riverside</td><td>A1</td><td>Tầng 5</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0501">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A1 · 05.02</strong></td><td>An Phú Riverside</td><td>A1</td><td>Tầng 5</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0502">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B1 · 08.03</strong></td><td>Central Park Towers</td><td>B1</td><td>Tầng 8</td><td>Căn hộ 3 phòng ngủ</td><td>3 PN · 2 PT</td><td>104 m²</td><td>5,1 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0803">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B1 · 08.04</strong></td><td>Central Park Towers</td><td>B1</td><td>Tầng 8</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>79 m²</td><td>3,7 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0804">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B2 · 10.01</strong></td><td>Central Park Towers</td><td>B2</td><td>Tầng 10</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>80 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b2-1001">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
                                     <tr><td><strong>N08 · 05</strong></td><td>Green Valley</td><td>N08</td><td>—</td><td>Nhà phố</td><td>3 tầng · 3 PN</td><td>165 m²</td><td>8,2 tỷ</td><td>3%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-05">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>LG · 17</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Đặt nền dự án</td><td>Một tiền 6 m</td><td>120 m²</td><td>2,4 tỷ</td><td>2%</td><td><span class="screen-badge blue">Chưa mở bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-17">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>GV · A.26</strong></td><td>Green Valley</td><td>Khu dân cu A</td><td>—</td><td>Nhà riêng</td><td>2 tầng · 3 PN</td><td>96 m²</td><td>6,6 tỷ</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-house-026">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>LG · 21</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Đặt nền dự án</td><td>Một tiền 6 m</td><td>120 m²</td><td>2,4 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-021">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>LG · 22</strong></td><td>Lumière Garden</td><td>Phân khu 2</td><td>—</td><td>Đất thổ cư</td><td>Một tiền 7,5 m</td><td>150 m²</td><td>3,1 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-022">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
-                                    <tr><td><strong>A2 · 15.06</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tổng 15</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1506">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 17</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Đất nền dự án</td><td>Mặt tiền 6 m</td><td>120 m²</td><td>2,4 tỷ</td><td>2%</td><td><span class="screen-badge blue">Chưa mở bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-17">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>GV · A.26</strong></td><td>Green Valley</td><td>Khu dân cư A</td><td>—</td><td>Nhà riêng</td><td>2 tầng · 3 PN</td><td>96 m²</td><td>6,6 tỷ</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-house-026">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 21</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Đất nền dự án</td><td>Mặt tiền 6 m</td><td>120 m²</td><td>2,4 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-021">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 22</strong></td><td>Lumière Garden</td><td>Phân khu 2</td><td>—</td><td>Đất thổ cư</td><td>Mặt tiền 7,5 m</td><td>150 m²</td><td>3,1 tỷ</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-022">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 15.06</strong></td><td>An Phú Riverside</td><td>A2</td><td>Tầng 15</td><td>Căn hộ 2 phòng ngủ</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 tỷ</td><td>2%</td><td><span class="screen-badge neutral">Đã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1506">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
                                     <tr><td><strong>N08 · 06</strong></td><td>Green Valley</td><td>N08</td><td>—</td><td>Nhà phố</td><td>3 tầng · 3 PN</td><td>168 m²</td><td>8,4 tỷ</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-06">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
                                 </tbody>
                             </table>
@@ -323,10 +321,10 @@
                 >
                     <i class="fa-solid fa-xmark" aria-hidden="true"></i>
                 </button>
-                <span class="modal-icon"
-                    ><i class="fa-solid fa-door-closed" aria-hidden="true"></i
-                ></span>
-                <h2 id="unitModalTitle">Thêm sản phẩm</h2>
+                <div class="inventory-product-heading">
+                    <span class="modal-icon"><i class="fa-solid fa-door-closed" aria-hidden="true"></i></span>
+                    <h2 id="unitModalTitle">Thêm sản phẩm</h2>
+                </div>
                 <p>
                     Chọn nhóm bất động sản để biểu mẫu hiển thị đúng thông tin cần nhập cho từng sản phẩm.
                 </p>
@@ -335,16 +333,6 @@
                     ><select id="unitProject" name="projectCode" required>
                         <option value="">Chọn dự án</option>
                     </select>
-                    <label for="unitAddress">Địa chỉ sản phẩm</label>
-                    <input
-                        id="unitAddress"
-                        name="address"
-                        type="text"
-                        maxlength="240"
-                        autocomplete="street-address"
-                        placeholder="Ví dụ: 123 Võ Văn Ngân, TP. Thủ Đức, TP. Hồ Chí Minh"
-                    />
-                    <small class="inventory-address-help">Hiển thị trên trang Customer và bản đồ vị trí. Để trống nếu dùng địa chỉ dự án.</small>
                     <div class="project-form-row">
                         <div>
                             <label for="unitGroup">Nhóm bất động sản</label
@@ -449,6 +437,18 @@
                         class="inventory-attribute-fields"
                         aria-live="polite"
                     ></div>
+                    <div class="inventory-address-field">
+                        <label for="unitAddress">Địa chỉ sản phẩm</label>
+                        <input
+                            id="unitAddress"
+                            name="address"
+                            type="text"
+                            maxlength="240"
+                            autocomplete="street-address"
+                            placeholder="Ví dụ: 123 Võ Văn Ngân, TP. Thủ Đức, TP. Hồ Chí Minh"
+                        />
+                        <small class="inventory-address-help">Hiển thị trên trang khách hàng và bản đồ vị trí. Để trống nếu dùng địa chỉ dự án.</small>
+                    </div>
                     <div>
                         <label for="unitStatus">Tình trạng</label
                         ><select id="unitStatus" name="status">
@@ -692,7 +692,6 @@
                         aria-live="polite"
                     >
                         Dự kiến tạo 8 căn. Bạn có thể chỉnh tầng và căn sau khi tạo.
-                        tạo.
                     </p>
                     <div class="modal-actions">
                         <button
@@ -702,7 +701,7 @@
                         >
                             Hủy</button
                         ><button class="button button-primary" type="submit">
-                            Tạo danh sách can
+                            Tạo danh sách căn
                         </button>
                     </div>
                 </form>

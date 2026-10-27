@@ -149,18 +149,25 @@
             access.append(accessPill);
             const statusCell = document.createElement("td");
             const statusButton = document.createElement("button");
-            statusButton.type = "button"; statusButton.className = `role-status-chip ${role.status === "inactive" ? "is-inactive" : "is-active"}`;
-            statusButton.dataset.roleStatus = key; statusButton.textContent = role.status === "inactive" ? "Đã tạm dừng" : "Đang dùng";
-            statusButton.disabled = !customRoles[key]; statusButton.setAttribute("aria-label", `Đổi trạng thái ${role.name}`);
+            statusButton.type = "button"; statusButton.className = `role-status-chip ${role.status === "deleted" ? "is-deleted" : role.status === "inactive" ? "is-inactive" : "is-active"}`;
+            statusButton.dataset.roleStatus = key; statusButton.textContent = role.status === "deleted" ? "Đã xóa" : role.status === "inactive" ? "Đã tạm dừng" : "Đang dùng";
+            statusButton.disabled = Boolean(role.locked || role.status === "deleted"); statusButton.setAttribute("aria-label", `Đổi trạng thái ${role.name}`);
             statusCell.append(statusButton);
             const actions = document.createElement("td"); actions.className = "role-actions-cell";
             const actionGroup = document.createElement("div"); actionGroup.className = "role-group-actions";
-            const grant = document.createElement("button"); grant.type = "button"; grant.className = "button button-primary"; grant.dataset.grantRole = key; grant.textContent = "Cấp quyền";
-            actionGroup.append(grant);
-            if (customRoles[key]) {
+            if (role.status === "deleted") {
+                const restore = document.createElement("button"); restore.type = "button"; restore.className = "button button-secondary"; restore.dataset.restoreRole = key; restore.innerHTML = '<i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Khôi phục';
+                actionGroup.append(restore);
+                const removePermanently = document.createElement("button"); removePermanently.type = "button"; removePermanently.className = "role-icon-action is-danger"; removePermanently.dataset.permanentDeleteRole = key; removePermanently.title = "Xóa khỏi danh sách"; removePermanently.setAttribute("aria-label", `Xóa ${role.name} khỏi danh sách`); removePermanently.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i>';
+                actionGroup.append(removePermanently);
+            } else {
+                const grant = document.createElement("button"); grant.type = "button"; grant.className = "button button-primary"; grant.dataset.grantRole = key; grant.textContent = "Cấp quyền";
+                actionGroup.append(grant);
+            }
+            if (!role.locked && role.status !== "deleted") {
                 const edit = document.createElement("button"); edit.type = "button"; edit.className = "role-icon-action"; edit.dataset.editRole = key; edit.title = "Sửa chức vụ"; edit.setAttribute("aria-label", `Sửa ${role.name}`); edit.innerHTML = '<i class="fa-solid fa-pen" aria-hidden="true"></i>';
                 const remove = document.createElement("button"); remove.type = "button"; remove.className = "role-icon-action is-danger"; remove.dataset.deleteRole = key; remove.title = "Xóa chức vụ"; remove.setAttribute("aria-label", `Xóa ${role.name}`); remove.innerHTML = '<i class="fa-solid fa-trash" aria-hidden="true"></i>';
-                actionGroup.append(edit, remove);
+                actionGroup.append(...(customRoles[key] ? [edit] : []), remove);
             }
             actions.append(actionGroup);
             row.append(number, name, group, access, statusCell, actions);
@@ -214,23 +221,50 @@
         const grant = event.target.closest("[data-grant-role]");
         const edit = event.target.closest("[data-edit-role]");
         const remove = event.target.closest("[data-delete-role]");
+        const restore = event.target.closest("[data-restore-role]");
+        const permanentDelete = event.target.closest("[data-permanent-delete-role]");
         const status = event.target.closest("[data-role-status]");
         if (grant) showEditor(grant.dataset.grantRole);
         if (edit) openEdit(edit.dataset.editRole);
         if (remove) {
             const key = remove.dataset.deleteRole;
+            if (!roles[key] || roles[key].locked) return;
             let assignedCount = 0;
             try {
                 const staff = JSON.parse(null || "[]");
                 if (Array.isArray(staff)) assignedCount = staff.filter((person) => person.roleId === key || person.role === roles[key].name).length;
             } catch { /* Role deletion can still be reviewed from the employee list. */ }
             if (assignedCount) { notify(`Chức vụ đang được gán cho ${assignedCount} tài khoản. Hãy chuyển họ sang chức vụ khác trước khi xóa.`); return; }
-            if (!window.confirm(`Xóa chức vụ “${roles[key].name}”?`)) return;
+            if (!window.confirm(`Chuyển chức vụ “${roles[key].name}” sang trạng thái Đã xóa?`)) return;
+            roles[key].status = "deleted";
+            if (customRoles[key]) customRoles[key].status = "deleted";
+            const option = [...selector.options].find((item) => item.value === key);
+            if (option) option.disabled = true;
+            persistCustomRoles();
+            renderRoleRows(); notify("Đã chuyển chức vụ sang trạng thái Đã xóa.");
+        }
+        if (restore) {
+            const key = restore.dataset.restoreRole;
+            if (!roles[key] || roles[key].locked) return;
+            roles[key].status = "active";
+            if (customRoles[key]) customRoles[key].status = "active";
+            const option = [...selector.options].find((item) => item.value === key);
+            if (option) option.disabled = false;
+            persistCustomRoles(); renderRoleRows(); notify("Đã khôi phục chức vụ.");
+        }
+        if (permanentDelete) {
+            const key = permanentDelete.dataset.permanentDeleteRole;
+            if (!roles[key] || roles[key].locked) return;
+            let assignedCount = 0;
+            try {
+                const staff = JSON.parse(null || "[]");
+                if (Array.isArray(staff)) assignedCount = staff.filter((person) => person.roleId === key || person.role === roles[key].name).length;
+            } catch { /* Keep the role if assignment information is unavailable. */ }
+            if (assignedCount) { notify(`Chức vụ đang được gán cho ${assignedCount} tài khoản. Hãy chuyển họ sang chức vụ khác trước khi xóa.`); return; }
+            if (!window.confirm(`Xóa chức vụ “${roles[key].name}” khỏi danh sách hiện tại?`)) return;
             delete roles[key]; delete customRoles[key]; delete saved[key];
             document.querySelector(`#roleSelector option[value="${key}"]`)?.remove();
-            persistCustomRoles();
-            try { void 0; } catch { /* Role is removed from the current list. */ }
-            renderRoleRows(); notify("Đã xóa chức vụ.");
+            persistCustomRoles(); renderRoleRows(); notify("Đã xóa chức vụ khỏi danh sách hiện tại.");
         }
         if (status) {
             const key = status.dataset.roleStatus;
