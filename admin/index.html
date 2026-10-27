@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Tổng quan | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="public/css/dashboard.css?v=20261027-chart-value-labels-v1" />
+        <link rel="stylesheet" href="public/css/admin-screens.css?v=20261027-topbar-account-borderless-v1" />
+        <link rel="stylesheet" href="public/css/admin-selects.css?v=20261027-period-select-width-v1" />
+</head>
+    <body class="dashboard-body">
+    <script src="public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
+
+            <main class="main-panel" id="overview">
+                <header class="topbar" data-admin-shared-topbar data-page-label="Tổng quan"></header>
+
+                <div class="dashboard-content" id="dashboardHome">
+                    <section class="welcome-row">
+                        <div class="welcome-copy">
+                            <p class="date-line">
+                                <i
+                                    class="fa-solid fa-calendar"
+                                    aria-hidden="true"
+                                ></i
+                                ><time id="dashboardDate"
+                                    >Thứ Tư, 21 tháng 10, 2026</time
+                                >
+                            </p>
+                            <p class="welcome-eyebrow">TỔNG QUAN KINH DOANH</p>
+                            <h1>Tổng quan kinh doanh</h1>
+                            <p class="welcome-subtitle">
+                                Theo dõi khách hàng tiềm năng, giao dịch bất động sản,
+                                doanh thu tham chiếu và công việc cần xử lý.
+                            </p>
+                        </div>
+                        <div class="welcome-actions">
+                            <a
+                                class="button button-secondary"
+                                href="pages/reports.html"
+                            >
+                                <i
+                                    class="fa-solid fa-arrow-down-to-line"
+                                    aria-hidden="true"
+                                ></i>
+                                Xem báo cáo
+                            </a>
+                            <a
+                                class="button button-primary"
+                                href="pages/projects.html?new=1"
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Tạo dự án
+                            </a>
+                        </div>
+                        <div class="hero-note">
+                            <span class="hero-note-dot"></span
+                            ><span
+                                ><strong>4 dự án</strong
+                                ><small>đang được theo dõi</small></span
+                            >
+                        </div>
+                    </section>
+
+                    <section class="metric-grid" aria-label="Chỉ số tổng quan">
+                        <article class="metric-card">
+                            <div class="metric-heading">
+                                <span>Khách hàng tiềm năng</span
+                                ><span class="metric-icon icon-blue"
+                                    ><i
+                                        class="fa-solid fa-user-group"
+                                        aria-hidden="true"
+                                    ></i
+                                ></span>
+                            </div>
+                            <div class="metric-value-row">
+                                <strong id="dashboardLeadCount">7</strong>
+                            </div>
+                            <p>Hồ sơ đang được đội ngũ theo dõi</p>
+                        </article>
+                        <article class="metric-card">
+                            <div class="metric-heading">
+                                <span>Giao dịch đã ghi nhận</span
+                                ><span class="metric-icon icon-purple"
+                                    ><i
+                                        class="fa-solid fa-house-circle-check"
+                                        aria-hidden="true"
+                                    ></i
+                                ></span>
+                            </div>
+                            <div class="metric-value-row">
+                                <strong id="dashboardDealCount">3</strong>
+                            </div>
+                            <p>Khách đã chuyển sang người mua</p>
+                        </article>
+                        <article class="metric-card">
+                            <div class="metric-heading">
+                                <span>Doanh thu tham chiếu</span
+                                ><span class="metric-icon icon-green"
+                                    ><i
+                                        class="fa-solid fa-sack-dollar"
+                                        aria-hidden="true"
+                                    ></i
+                                ></span>
+                            </div>
+                            <div class="metric-value-row">
+                                <strong id="dashboardRevenue">17,1 tỷ</strong>
+                            </div>
+                            <p>Theo giá sản phẩm gắn với giao dịch</p>
+                        </article>
+                        <article class="metric-card metric-card-attention">
+                            <div class="metric-heading">
+                                <span>Việc cần xử lý</span
+                                ><span class="metric-icon icon-orange"
+                                    ><i
+                                        class="fa-solid fa-list-check"
+                                        aria-hidden="true"
+                                    ></i
+                                ></span>
+                            </div>
+                            <div class="metric-value-row">
+                                <strong id="dashboardTaskCount">3</strong>
+                            </div>
+                            <p>Công việc đang chờ hoàn tất</p>
+                        </article>
+                    </section>
+
+                    <section class="analytics-grid" id="reports">
+                        <article class="panel chart-panel">
+                            <div class="panel-heading">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >DỮ LIỆU MÔ PHỎNG</span
+                                    >
+                                    <h2>Doanh thu bán bất động sản</h2>
+                                    <p>Mô phỏng doanh thu theo tỷ đồng</p>
+                                </div>
+                                <label class="select-wrap"
+                                    ><select
+                                        id="chartPeriod"
+                                        aria-label="Chọn khoảng thời gian"
+                                    >
+                                        <option value="year">Năm</option>
+                                        <option value="month">Tháng này</option>
+                                        <option value="week">Tuần này</option>
+                                        <option value="last7">7 ngày trước</option>
+                                        <option value="last30">30 ngày trước</option></select
+                                    ><i
+                                        class="fa-solid fa-chevron-down"
+                                        aria-hidden="true"
+                                    ></i
+                                ></label>
+                            </div>
+                            <div class="chart-summary" aria-label="Chỉ số lượt đăng ký">
+                                <article class="chart-summary-item">
+                                    <span>Doanh thu · kỳ này</span>
+                                    <strong id="chartCurrentTotal">—</strong>
+                                    <small id="chartCurrentLabel">Năm nay</small>
+                                </article>
+                                <article class="chart-summary-item">
+                                    <span>Doanh thu · kỳ trước</span>
+                                    <strong id="chartPreviousTotal">—</strong>
+                                    <small id="chartPreviousLabel">Năm trước</small>
+                                </article>
+                                <article class="chart-summary-item chart-summary-change" id="chartChangeCard">
+                                    <span>Thay đổi</span>
+                                    <strong id="chartChange">—</strong>
+                                    <small id="chartChangeNote">Đang tính so sánh</small>
+                                </article>
+                            </div>
+                            <div class="chart-legend">
+                                <span
+                                    ><i class="legend-dot legend-current"></i
+                                    >Năm nay</span
+                                ><span
+                                    ><i class="legend-dot legend-previous"></i
+                                    >Năm trước</span
+                                >
+                            </div>
+                            <div
+                                class="chart-area"
+                                role="group"
+                                aria-label="Biểu đồ doanh thu bán bất động sản theo tháng, đơn vị tỷ đồng"
+                            >
+                                <div class="chart-y-labels">
+                                    <span>7</span><span>5</span
+                                    ><span>4</span><span>2</span
+                                    ><span>0</span>
+                                </div>
+                                <div class="chart-content">
+                                    <div class="chart-grid-lines">
+                                        <i></i><i></i><i></i><i></i><i></i>
+                                    </div>
+                                    <div class="bar-chart" id="barChart">
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 1</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 2</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 3</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 4</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 5</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 6</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 7</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 8</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 9</span>
+                                        </div>
+                                        <div class="bar-group">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 100%" data-chart-value="7"
+                                            ></i
+                                            ><span>Thg 10</span>
+                                        </div>
+                                        <div class="bar-group is-future">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 11</span>
+                                        </div>
+                                        <div class="bar-group is-future">
+                                            <i
+                                                class="bar previous" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><i
+                                                class="bar current" style="--height: 0%" data-chart-value="0"
+                                            ></i
+                                            ><span>Thg 12</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="panel funnel-panel" id="customers">
+                            <div class="panel-heading">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >TIẾN ĐỘ TƯ VẤN</span
+                                    >
+                                    <h2>Khách theo trạng thái</h2>
+                                    <p>Số hồ sơ trong từng giai đoạn chăm sóc</p>
+                                </div>
+                                <a
+                                    class="panel-action"
+                                    href="pages/leads.html?new=1"
+                                >
+                                    <i
+                                        class="fa-solid fa-plus"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Thêm khách tiềm năng
+                                </a>
+                            </div>
+                            <div class="funnel-total">
+                                <strong>7</strong
+                                ><span>khách hàng tiềm năng</span>
+                            </div>
+                            <div class="funnel-list">
+                                <div class="funnel-row">
+                                    <div class="funnel-meta">
+                                        <span
+                                            ><i
+                                                class="funnel-color funnel-new"
+                                            ></i
+                                            >Chưa liên hệ</span
+                                        ><strong>1 <small>14%</small></strong>
+                                    </div>
+                                    <div class="funnel-track">
+                                        <i
+                                            class="funnel-new"
+                                            style="--width: 38%"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <div class="funnel-row">
+                                    <div class="funnel-meta">
+                                        <span
+                                            ><i
+                                                class="funnel-color funnel-contact"
+                                            ></i
+                                            >Đang tư vấn</span
+                                        ><strong>2 <small>29%</small></strong>
+                                    </div>
+                                    <div class="funnel-track">
+                                        <i
+                                            class="funnel-contact"
+                                            style="--width: 27%"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <div class="funnel-row">
+                                    <div class="funnel-meta">
+                                        <span
+                                            ><i
+                                                class="funnel-color funnel-meet"
+                                            ></i
+                                            >Đã hẹn tham quan</span
+                                        ><strong>0 <small>0%</small></strong>
+                                    </div>
+                                    <div class="funnel-track">
+                                        <i
+                                            class="funnel-meet"
+                                            style="--width: 19%"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <div class="funnel-row">
+                                    <div class="funnel-meta">
+                                        <span
+                                            ><i
+                                                class="funnel-color funnel-close"
+                                            ></i
+                                            >Đang đàm phán</span
+                                        ><strong>1 <small>14%</small></strong>
+                                    </div>
+                                    <div class="funnel-track">
+                                        <i
+                                            class="funnel-close"
+                                            style="--width: 10%"
+                                        ></i>
+                                    </div>
+                                </div>
+                                <div class="funnel-row">
+                                    <div class="funnel-meta">
+                                        <span
+                                            ><i
+                                                class="funnel-color funnel-done"
+                                            ></i
+                                            >Đã giao dịch</span
+                                        ><strong>3 <small>43%</small></strong>
+                                    </div>
+                                    <div class="funnel-track">
+                                        <i
+                                            class="funnel-done"
+                                            style="--width: 6%"
+                                        ></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="panel-link" href="pages/leads.html"
+                                >Xem khách hàng tiềm năng
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                        </article>
+                    </section>
+
+                    <section class="bottom-grid">
+                        <article class="panel projects-panel" id="projects">
+                            <div class="panel-heading">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >DANH MỤC DỰ ÁN</span
+                                    >
+                                    <h2>Dự án đang phụ trách</h2>
+                                    <p>
+                                        Theo dõi lượng khách và chỉ tiêu bán
+                                        hàng
+                                    </p>
+                                </div>
+                                <a
+                                    class="panel-action"
+                                    href="pages/projects.html"
+                                    >Tất cả dự án
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i
+                                ></a>
+                            </div>
+                            <div class="table-scroll">
+                                <table class="project-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tên dự án</th>
+                                            <th>Khách tiềm năng</th>
+                                            <th>Hoàn thành chỉ tiêu</th>
+                                            <th>Trạng thái</th>
+                                            <th>
+                                                <span class="sr-only"
+                                                    >Mở dự án</span
+                                                >
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <span class="project-name"
+                                                    ><i
+                                                        class="project-thumb thumb-blue"
+                                                        ><i
+                                                            class="fa-solid fa-city"
+                                                        ></i></i
+                                                    ><span
+                                                        ><strong
+                                                            >An Phú
+                                                            Riverside</strong
+                                                        ><small
+                                                            >TP. Thủ Đức, TP. Hồ
+                                                            Chí Minh · Căn
+                                                            hộ</small
+                                                        ></span
+                                                    ></span
+                                                >
+                                            </td>
+                                            <td>286</td>
+                                            <td>
+                                                <span class="progress-cell"
+                                                    ><span
+                                                        class="progress-track"
+                                                        ><i
+                                                            style="--width: 72%"
+                                                        ></i></span
+                                                    ><small>72%</small></span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="status-pill status-active"
+                                                    >Đang mở bán</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="row-more"
+                                                    type="button"
+                                                    aria-label="Tùy chọn An Phú Riverside"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-ellipsis"
+                                                    ></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="project-name"
+                                                    ><i
+                                                        class="project-thumb thumb-green"
+                                                        ><i
+                                                            class="fa-solid fa-house"
+                                                        ></i></i
+                                                    ><span
+                                                        ><strong
+                                                            >Green
+                                                            Valley</strong
+                                                        ><small
+                                                            >Biên Hòa, Đồng Nai
+                                                            · Nhà phố</small
+                                                        ></span
+                                                    ></span
+                                                >
+                                            </td>
+                                            <td>194</td>
+                                            <td>
+                                                <span class="progress-cell"
+                                                    ><span
+                                                        class="progress-track"
+                                                        ><i
+                                                            style="--width: 48%"
+                                                        ></i></span
+                                                    ><small>48%</small></span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="status-pill status-active"
+                                                    >Đang mở bán</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="row-more"
+                                                    type="button"
+                                                    aria-label="Tùy chọn Green Valley"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-ellipsis"
+                                                    ></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <span class="project-name"
+                                                    ><i
+                                                        class="project-thumb thumb-violet"
+                                                        ><i
+                                                            class="fa-solid fa-building"
+                                                        ></i></i
+                                                    ><span
+                                                        ><strong
+                                                            >Central Park
+                                                            Towers</strong
+                                                        ><small
+                                                            >Quận 7, TP. Hồ Chí
+                                                            Minh · Căn hộ</small
+                                                        ></span
+                                                    ></span
+                                                >
+                                            </td>
+                                            <td>163</td>
+                                            <td>
+                                                <span class="progress-cell"
+                                                    ><span
+                                                        class="progress-track"
+                                                        ><i
+                                                            style="--width: 86%"
+                                                        ></i></span
+                                                    ><small>86%</small></span
+                                                >
+                                            </td>
+                                            <td>
+                                                <span
+                                                    class="status-pill status-active"
+                                                    >Đang mở bán</span
+                                                >
+                                            </td>
+                                            <td>
+                                                <button
+                                                    class="row-more"
+                                                    type="button"
+                                                    aria-label="Tùy chọn Central Park Towers"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-ellipsis"
+                                                    ></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </article>
+
+                        <article class="panel tasks-panel" id="tasks">
+                            <div class="panel-heading">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >CHĂM SÓC KHÁCH HÀNG</span
+                                    >
+                                    <h2>Lịch làm việc hôm nay</h2>
+                                    <p>Cuộc gọi và lịch hẹn cần hoàn tất</p>
+                                </div>
+                                <a
+                                    class="panel-action"
+                                    href="pages/workflow.html#workAgenda"
+                                    >Xem tất cả</a
+                                >
+                            </div>
+                            <div class="task-list">
+                                <label class="task-item" data-task-id="dashboard-callback-anh"
+                                    ><input type="checkbox" /><span
+                                        class="task-check"
+                                    ></span
+                                    ><span class="task-copy"
+                                        ><strong>Gọi lại chị Ngọc Anh</strong
+                                        ><small
+                                            ><i
+                                                class="fa-solid fa-building"
+                                                aria-hidden="true"
+                                            ></i>
+                                            An Phú Riverside · 09:30</small
+                                        ></span
+                                    ><span class="task-priority priority-high"
+                                        >Ưu tiên</span
+                                    ></label
+                                >
+                                <label class="task-item" data-task-id="dashboard-send-unit-info"
+                                    ><input type="checkbox" /><span
+                                        class="task-check"
+                                    ></span
+                                    ><span class="task-copy"
+                                        ><strong
+                                            >Gửi thông tin căn 2 phòng
+                                            ngủ</strong
+                                        ><small
+                                            ><i
+                                                class="fa-solid fa-building"
+                                                aria-hidden="true"
+                                            ></i>
+                                            Green Valley · 10:45</small
+                                        ></span
+                                    ><span class="task-avatar">TL</span></label
+                                >
+                                <label class="task-item" data-task-id="dashboard-viewing-yen"
+                                    ><input type="checkbox" /><span
+                                        class="task-check"
+                                    ></span
+                                    ><span class="task-copy"
+                                        ><strong
+                                            >Đón khách tham quan nhà mẫu</strong
+                                        ><small
+                                            ><i
+                                                class="fa-solid fa-building"
+                                                aria-hidden="true"
+                                            ></i>
+                                            Central Park Towers · 14:00</small
+                                        ></span
+                                    ><span class="task-avatar avatar-orange"
+                                        >QD</span
+                                    ></label
+                                >
+                            </div>
+                            <a
+                                class="add-task-button"
+                                href="pages/workflow.html?new=1"
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm công việc
+                            </a>
+                        </article>
+                    </section>
+
+                    <section class="panel team-panel" id="team">
+                        <div class="panel-heading">
+                            <div>
+                                <span class="panel-kicker"
+                                    >HIỆU SUẤT ĐỘI NGŨ</span
+                                >
+                                <h2>Nhân viên kinh doanh</h2>
+                                <p>
+                                    Số khách hàng mỗi nhân viên đang phụ trách
+                                </p>
+                            </div>
+                            <a class="panel-action" href="pages/team.html"
+                                >Xem đội ngũ
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                        </div>
+                        <div class="team-grid">
+                            <article class="agent-card">
+                                <span class="agent-avatar agent-violet"
+                                    >TL</span
+                                >
+                                <div class="agent-info">
+                                    <strong>Trần Thanh Long</strong
+                                    ><small>Tư vấn · An Phú Riverside</small>
+                                </div>
+                                <span class="agent-load"
+                                    ><strong>38</strong
+                                    ><small>khách đang chăm sóc</small></span
+                                >
+                            </article>
+                            <article class="agent-card">
+                                <span class="agent-avatar agent-orange"
+                                    >QD</span
+                                >
+                                <div class="agent-info">
+                                    <strong>Quỳnh Dao</strong
+                                    ><small>Tư vấn · Central Park Towers</small>
+                                </div>
+                                <span class="agent-load"
+                                    ><strong>31</strong
+                                    ><small>khách đang chăm sóc</small></span
+                                >
+                            </article>
+                            <article class="agent-card">
+                                <span class="agent-avatar agent-green">MN</span>
+                                <div class="agent-info">
+                                    <strong>Mai Ngọc</strong
+                                    ><small>Tư vấn · Green Valley</small>
+                                </div>
+                                <span class="agent-load"
+                                    ><strong>27</strong
+                                    ><small>khách đang chăm sóc</small></span
+                                >
+                            </article>
+                        </div>
+                    </section>
+
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <script src="public/js/dashboard.js?v=20261027-real-estate-overview-v10"></script>
+        <script src="public/js/chart-tooltips.js?v=20261027-revenue-tooltip-v1"></script><script src="public/js/admin-common.js?v=20261027-form-redirect-v1"></script>
+</body>
+</html>
+
+
+

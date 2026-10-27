@@ -1,0 +1,246 @@
+/* Shared custom dropdowns for every select in the admin area. */
+.select-menu-control {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    flex: 0 1 auto;
+    vertical-align: middle;
+}
+
+.select-menu-native {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.select-menu-trigger {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    min-height: 42px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 13px;
+    border: 1px solid #d6e2ea;
+    border-radius: 9px;
+    color: #29465d;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(25, 54, 76, 0.035);
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: left;
+    -webkit-appearance: none;
+    appearance: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+}
+
+.select-menu-trigger:hover,
+.select-menu-control.is-open .select-menu-trigger {
+    border-color: #91bdd8;
+    background: #fff;
+}
+
+.select-menu-trigger:focus-visible {
+    border-color: #1684c8;
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(22, 132, 200, 0.14);
+}
+
+.select-menu-trigger[aria-invalid="true"],
+.select-menu-control.has-error .select-menu-trigger {
+    border-color: #cf6a62;
+    box-shadow: 0 0 0 3px rgba(207, 106, 98, 0.12);
+}
+
+.select-menu-control.is-disabled .select-menu-trigger {
+    color: #8293a0;
+    background: #f3f6f8;
+    cursor: not-allowed;
+}
+
+.select-menu-value {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.select-menu-arrow {
+    width: 8px;
+    height: 8px;
+    flex: 0 0 auto;
+    margin-top: -4px;
+    border-right: 1.5px solid #71899b;
+    border-bottom: 1.5px solid #71899b;
+    transform: rotate(45deg);
+    transition: transform 0.16s ease, margin 0.16s ease;
+}
+
+.select-menu-control.is-open .select-menu-arrow {
+    margin-top: 4px;
+    transform: rotate(225deg);
+}
+
+.select-menu-list {
+    position: fixed;
+    z-index: 10002;
+    right: auto;
+    left: 0;
+    max-height: min(320px, 55vh);
+    overflow: auto;
+    padding: 5px;
+    border: 1px solid #d4e1e9;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(22, 48, 68, 0.17), 0 2px 6px rgba(22, 48, 68, 0.07);
+    overscroll-behavior: contain;
+    scrollbar-color: #c5d5e0 transparent;
+    scrollbar-width: thin;
+}
+
+.select-menu-list[hidden] {
+    display: none !important;
+}
+
+.select-menu-control.opens-upward .select-menu-list {
+    top: auto;
+    bottom: calc(100% + 6px);
+}
+
+.select-menu-option {
+    display: flex;
+    min-height: 35px;
+    align-items: center;
+    padding: 7px 11px;
+    border-radius: 7px;
+    color: #29465d;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+    line-height: 1.4;
+    transition: color 0.12s ease, background-color 0.12s ease;
+}
+
+.select-menu-option:hover,
+.select-menu-option.is-active {
+    color: #145e8c;
+    background: #edf6fb;
+}
+
+.select-menu-option.is-selected {
+    color: #fff;
+    background: #147fbd;
+    font-weight: 650;
+}
+
+.select-menu-option.is-selected.is-active,
+.select-menu-option.is-selected:hover {
+    color: #fff;
+    background: #0f6fa9;
+}
+
+.select-menu-option.is-disabled {
+    color: #a1adb7;
+    cursor: not-allowed;
+}
+
+.select-menu-option.is-disabled:hover {
+    background: transparent;
+}
+
+.select-wrap .select-menu-control {
+    width: 136px;
+    min-width: 136px;
+    flex: 0 0 136px;
+}
+
+.select-wrap .select-menu-trigger {
+    min-height: 34px;
+}
+
+.select-wrap:has(.select-menu-control) > i {
+    display: none;
+}
+
+.auth-input .select-menu-control {
+    width: auto;
+    min-width: 0;
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.auth-input .select-menu-trigger {
+    min-height: 100%;
+    padding: 0 30px 0 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.auth-input .select-menu-control:has(.select-menu-trigger) + .auth-chevron {
+    display: none;
+}
+
+.screen-filter .select-menu-control {
+    display: inline-block;
+    width: min(190px, 100%);
+    flex: 0 1 190px;
+}
+
+.screen-filter .select-menu-trigger {
+    min-height: 38px;
+    font-size: 12px;
+}
+
+.projects-filter-row .select-menu-control,
+.website-filter-row .select-menu-control {
+    width: 100%;
+    flex: initial;
+}
+
+.permissions-role-bar .select-menu-control,
+.permissions-scope-bar .select-menu-control {
+    width: min(320px, 100%);
+    flex: 0 1 260px;
+}
+
+.role-status-filter .select-menu-control {
+    width: 100%;
+    flex: initial;
+}
+
+.calendar-staff-filter .select-menu-control {
+    display: inline-block;
+    width: auto;
+    flex: 1 1 auto;
+}
+
+.appointment-toolbar .select-menu-control {
+    width: min(240px, 100%);
+    flex: 0 1 220px;
+}
+
+.permission-scope .select-menu-control {
+    width: min(275px, 100%);
+    flex: 0 1 275px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .select-menu-trigger,
+    .select-menu-arrow,
+    .select-menu-option {
+        transition: none;
+    }
+}

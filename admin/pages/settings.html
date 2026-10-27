@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Thông tin doanh nghi?p | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <script src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="Th&#244;ng tin doanh nghi?p"></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">DOANH NGHI?P</p>
+                            <h1>Thông tin doanh nghi?p</h1>
+                            <p>Qu?n lý tên pháp lý, mã s? thu?, logo, d?a ch? và thông tin doanh nghi?p hi?n th? trên Customer.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <a class="button button-secondary" href="account.html"><i class="fa-solid fa-circle-user" aria-hidden="true"></i> Tài kho?n cá nhân</a>
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-action="save-settings"
+                            >
+                                <i
+                                    class="fa-solid fa-floppy-disk"
+                                    aria-hidden="true"
+                                ></i>
+                                Luu thay d?i
+                            </button>
+                        </div>
+                    </header>
+                    <div class="settings-grid">
+                        <section class="panel screen-panel">
+                            <span class="panel-kicker">H? SO DOANH NGHI?P</span>
+                            <h2>H? so doanh nghi?p</h2>
+                            <p class="settings-section-intro">Thông tin pháp lý và d?u m?i liên h? chung c?a công ty.</p>
+                            <div class="settings-form">
+                                <label>
+                                    Tên pháp lý
+                                    <input name="legalName" data-setting required value="Công ty C? ph?n An Phát Land" />
+                                </label>
+                                <label>
+                                    Tên giao d?ch
+                                    <input name="displayName" data-setting required value="An Phát Land" />
+                                </label>
+                                <label>
+                                    Mã s? thu?
+                                    <input name="taxCode" data-setting required inputmode="numeric" value="0314567890" />
+                                </label>
+                                <label>
+                                    Ngu?i d?i di?n
+                                    <input name="representative" data-setting required value="Nguy?n Minh Anh" />
+                                </label>
+                                <label>
+                                    Ch?c v?
+                                    <input name="representativeTitle" data-setting required value="Giám d?c" />
+                                </label>
+                                <label>
+                                    Linh v?c ho?t d?ng
+                                    <select name="businessType" data-setting>
+                                        <option>Ð?u tu và phát tri?n b?t d?ng s?n</option>
+                                        <option>Phân ph?i b?t d?ng s?n</option>
+                                        <option>Môi gi?i b?t d?ng s?n</option>
+                                        <option>Qu?n lý và v?n hành b?t d?ng s?n</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div class="settings-form-divider"><strong>Liên h? chung</strong><span>Dùng làm thông tin m?c d?nh trên website và bi?u m?u.</span></div>
+                            <div class="settings-form settings-form-single">
+                                <label>
+                                    S? di?n tho?i
+                                    <input name="phone" data-setting required type="tel" value="028 7300 6868" />
+                                </label>
+                                <label>
+                                    Email doanh nghi?p
+                                    <input name="email" data-setting required type="email" value="contact@anphatland.vn" />
+                                </label>
+                                <label>
+                                    Website
+                                    <input name="website" data-setting required value="https://anphatland.vn" />
+                                </label>
+                                <label>
+                                    T?nh / Thành ph?
+                                    <select name="province" data-setting>
+                                        <option>TP. H? Chí Minh</option>
+                                        <option>Hà N?i</option>
+                                        <option>Ðà N?ng</option>
+                                        <option>Bình Duong</option>
+                                        <option>Ð?ng Nai</option>
+                                    </select>
+                                </label>
+                                <label class="settings-field-wide">
+                                    Ð?a ch? tr? s? chính
+                                    <textarea name="address" data-setting required rows="3">T?ng 12, 125 Nguy?n Hu?, Phu?ng Sài Gòn, TP. H? Chí Minh</textarea>
+                                </label>
+                            </div>
+                            <p class="settings-help"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> S? thu? và ngu?i d?i di?n dùng cho h? so công ty; s? di?n tho?i, email và d?a ch? du?c dùng làm liên h? m?c d?nh.</p>
+                        </section>
+                    </div>
+                    <section class="panel screen-panel customer-site-settings" id="customer-site-settings">
+                        <div class="screen-panel-head"><div><span class="panel-kicker">TRANG KHÁCH HÀNG</span><h2>N?i dung trang ch?</h2><p>Ch?nh ph?n gi?i thi?u d?u trang dang hi?n th? trên website Customer.</p></div><a class="button button-quiet" href="../../customer/index.html" target="_blank" rel="noopener">Xem trang khách hàng <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                        <div class="settings-form customer-site-form">
+                            <label class="settings-field-wide">Tiêu d? chính<input name="siteHeroTitle" data-customer-site-setting required maxlength="140" /></label>
+                            <label class="settings-field-wide">Mô t? ng?n<textarea name="siteHeroDescription" data-customer-site-setting required rows="3" maxlength="500"></textarea></label>
+                        </div>
+                    </section>
+                    <section class="panel screen-panel branch-settings" id="branch-settings">
+                        <div class="screen-panel-head"><div><span class="panel-kicker">H? TH?NG CHI NHÁNH</span><h2>Van phòng và khu v?c ph?c v?</h2><p>Thông tin này xu?t hi?n trong trang liên h? và l?a ch?n chi nhánh khi khách g?i yêu c?u.</p></div><button class="button button-secondary" type="button" id="addBranchButton"><i class="fa-solid fa-plus" aria-hidden="true"></i> Thêm chi nhánh</button></div>
+                        <div class="branch-editor-list" id="branchEditorList" aria-live="polite"></div>
+                        <p class="settings-help"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Ð? tr?ng di?n tho?i ho?c email riêng n?u chi nhánh dùng thông tin liên h? chung ? trên. S?n ph?m s? g?i ý chi nhánh theo khu v?c d? án.</p>
+                    </section>
+                    <section class="panel screen-panel" id="company-identity">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker">NH?N DI?N DOANH NGHI?P</span>
+                                <h2>Tên và logo thuong hi?u</h2>
+                                <p>Tên và logo du?c dùng trên trang Customer, ph?n d?u/cu?i website và không gian Admin.</p>
+                            </div>
+                        </div>
+                        <div class="company-identity">
+                            <div class="company-logo-preview" id="companyLogoPreview" aria-label="Bi?u tu?ng doanh nghi?p">
+                                <span id="companyLogoInitials">AP</span>
+                                <img id="companyLogoImage" alt="Logo doanh nghi?p" hidden />
+                            </div>
+                            <div class="company-identity-copy">
+                                <strong>Logo thuong hi?u</strong>
+                                <span>Logo h? th?ng hi?n t?i · LANDIFORM</span>
+                                <small>Ch?n logo doanh nghi?p d? thay hình m?c d?nh dang hi?n th?.</small>
+                            </div>
+                            <div class="company-logo-actions">
+                                <label class="button button-quiet" for="companyLogo"><i class="fa-solid fa-image" aria-hidden="true"></i> Ch?n logo</label>
+                                <input id="companyLogo" type="file" accept="image/png,image/jpeg,image/webp" hidden />
+                                <button class="button button-quiet" type="button" data-logo-remove>Ð?t l?i</button>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="panel screen-panel about-article-settings" id="about-article-settings">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker">N?I DUNG WEBSITE</span>
+                                <h2>Bài vi?t gi?i thi?u</h2>
+                                <p>Ch?nh s?a bài blog dang hi?n th? t?i m?c Thông tin trên trang khách hàng.</p>
+                            </div>
+                            <a class="button button-quiet" href="../../customer/about.html" target="_blank" rel="noopener">Xem trang Thông tin <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                        </div>
+                        <div class="settings-form about-article-form">
+                            <label class="settings-field-wide">Tiêu d? bài vi?t<input name="aboutTitle" data-about-setting required maxlength="160" /></label>
+                            <label class="settings-field-wide">Ðo?n gi?i thi?u<textarea name="aboutIntro" data-about-setting required rows="3" maxlength="600"></textarea></label>
+                            <label class="settings-field-wide">Link ?nh bìa<input name="aboutCoverImage" data-about-setting type="url" placeholder="https://... (d? tr?ng n?u gi? ?nh hi?n t?i)" /><small class="settings-inline-help">Dán liên k?t ?nh công khai d? thay ?nh bìa bài vi?t.</small></label>
+                            <label>Van b?n mô t? ?nh<input name="aboutCoverAlt" data-about-setting maxlength="180" /></label>
+                            <label>Chú thích ?nh<input name="aboutCoverCaption" data-about-setting maxlength="240" /></label>
+                            <label class="settings-field-wide">N?i dung bài vi?t<textarea id="aboutBody" class="about-article-body-input" name="aboutBody" data-about-setting rows="20"></textarea><small class="settings-inline-help">So?n th?o b?ng TinyMCE; n?i dung s? hi?n th? tr?c ti?p ? trang Thông tin Customer.</small></label>
+                        </div>
+                        <div class="about-article-settings-footer"><span><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Thay d?i du?c luu trên trình duy?t này và hi?n th? ? trang Thông tin.</span><a class="button button-primary" href="../../customer/about.html" target="_blank" rel="noopener">M? trang khách hàng <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+                    </section>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../../customer/public/js/about-article-data.js"></script>
+        <script src="../public/js/settings.js?v=20261026-tinymce-v1"></script>
+</body>
+</html>
+
+
+

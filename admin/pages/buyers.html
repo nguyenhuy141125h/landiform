@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Ngu?i mua & bàn giao | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
+        />
+    </head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside
+                class="sidebar"
+                id="sidebar"
+                data-admin-shared-shell
+                aria-label="Ði?u hu?ng qu?n tr?"
+            ></aside>
+            <main class="main-panel">
+                <header
+                    class="topbar"
+                    data-admin-shared-topbar
+                    data-page-label="Ngu?i mua &amp; b&#224;n giao"
+                ></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">SAU GIAO D?CH</p>
+                            <h1>Ngu?i mua & bàn giao</h1>
+                            <p>
+                                Liên k?t ngu?i mua v?i s?n ph?m, theo dõi h? so
+                                và chu?n b? l?ch bàn giao.
+                            </p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-buyer-open
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm h? so
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats">
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon blue"
+                                ><i
+                                    class="fa-solid fa-address-card"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>H? so ngu?i mua</span
+                                ><strong id="buyerTotal">0</strong
+                                ><small>Trong danh sách qu?n lý</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon amber"
+                                ><i
+                                    class="fa-solid fa-key"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Ch? bàn giao</span
+                                ><strong id="buyerDueSoon">0</strong
+                                ><small>Trong 90 ngày t?i</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon green"
+                                ><i
+                                    class="fa-solid fa-folder-open"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Ð? h? so</span
+                                ><strong id="buyerDocsComplete">0%</strong
+                                ><small id="buyerDocsCaption"
+                                    >Chua có h? so</small
+                                >
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon violet"
+                                ><i
+                                    class="fa-solid fa-file-circle-exclamation"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>C?n b? sung</span
+                                ><strong id="buyerDocsMissing">0</strong
+                                ><small>H? so chua hoàn t?t</small>
+                            </div>
+                        </article>
+                    </div>
+                    <section class="panel screen-panel">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker"
+                                    >H? SO SAU GIAO D?CH</span
+                                >
+                                <h2>Danh sách ngu?i mua</h2>
+                                <p>
+                                    Thông tin giao d?ch, s?n ph?m và m?c bàn
+                                    giao d? ki?n.
+                                </p>
+                            </div>
+                            <div class="screen-filter">
+                                <label class="inventory-search"
+                                    ><i
+                                        class="fa-solid fa-magnifying-glass"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><input
+                                        id="buyerSearch"
+                                        type="search"
+                                        placeholder="Tìm tên, mã ho?c s?n ph?m"
+                                        aria-label="Tìm h? so ngu?i mua" /></label
+                                ><select
+                                    id="buyerProjectFilter"
+                                    aria-label="L?c theo d? án"
+                                >
+                                    <option value="">
+                                        T?t c? d? án
+                                    </option></select
+                                ><select
+                                    id="buyerDocumentFilter"
+                                    aria-label="L?c theo h? so"
+                                >
+                                    <option value="">
+                                        M?i tình tr?ng h? so
+                                    </option>
+                                    <option>Ð? h? so</option>
+                                    <option>Ðang b? sung</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ngu?i mua</th>
+                                        <th>S?n ph?m</th>
+                                        <th>D? án</th>
+                                        <th>D? ki?n bàn giao</th>
+                                        <th>H? so</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="buyerTableBody"></tbody>
+                            </table>
+                        </div>
+                        <div
+                            class="screen-empty-note"
+                            id="buyerEmptyState"
+                            hidden
+                        >
+                            <i
+                                class="fa-solid fa-circle-info"
+                                aria-hidden="true"
+                            ></i>
+                            Không tìm th?y h? so phù h?p v?i b? l?c.
+                        </div>
+                    </section>
+                    <section class="panel screen-panel">
+                        <span class="panel-kicker">K? HO?CH BÀN GIAO</span>
+                        <h2>Các m?c c?n chu?n b?</h2>
+                        <div class="handover-list">
+                            <p>
+                                <b data-handover-window="30">0</b
+                                ><span
+                                    ><strong>Trong 30 ngày</strong
+                                    ><small
+                                        >Chu?n b? h? so và l?ch ki?m tra</small
+                                    ></span
+                                >
+                            </p>
+                            <p>
+                                <b data-handover-window="60">0</b
+                                ><span
+                                    ><strong>Trong 60 ngày</strong
+                                    ><small
+                                        >Xác nh?n tình tr?ng s?n ph?m</small
+                                    ></span
+                                >
+                            </p>
+                            <p>
+                                <b data-handover-window="90">0</b
+                                ><span
+                                    ><strong>Trong 90 ngày</strong
+                                    ><small>Lên k? ho?ch bàn giao</small></span
+                                >
+                            </p>
+                        </div>
+                    </section>
+                    <footer
+                        class="dashboard-footer"
+                        data-admin-shared-footer
+                    ></footer>
+                </div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="buyerModal" hidden>
+            <section
+                class="project-edit-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="buyerModalTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-buyer-close
+                    aria-label="Ðóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-house-user" aria-hidden="true"></i
+                ></span>
+                <h2 id="buyerModalTitle">Thêm h? so ngu?i mua</h2>
+                <p>G?n ngu?i mua v?i s?n ph?m và m?c bàn giao d? ki?n.</p>
+                <form id="buyerForm" class="project-edit-form">
+                    <label for="buyerName">H? và tên</label
+                    ><input
+                        id="buyerName"
+                        name="name"
+                        required
+                        autocomplete="name"
+                        placeholder="Nh?p h? tên ngu?i mua"
+                    />
+                    <div class="project-form-row">
+                        <div>
+                            <label for="buyerPhone">S? di?n tho?i</label
+                            ><input
+                                id="buyerPhone"
+                                name="phone"
+                                type="tel"
+                                autocomplete="tel"
+                                required
+                                placeholder="Nh?p s? di?n tho?i"
+                            />
+                        </div>
+                        <div>
+                            <label for="buyerProject">D? án</label
+                            ><select id="buyerProject" name="project" required>
+                                <option value="">Ch?n d? án</option>
+                                <option>An Phú Riverside</option>
+                                <option>Green Valley</option>
+                                <option>Central Park Towers</option>
+                                <option>Lumière Garden</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="buyerUnit">S?n ph?m</label
+                            ><input
+                                id="buyerUnit"
+                                name="unit"
+                                list="buyerUnitSuggestions"
+                                required
+                                placeholder="Ch?n ho?c nh?p mã s?n ph?m"
+                            /><datalist id="buyerUnitSuggestions"></datalist>
+                        </div>
+                        <div>
+                            <label for="buyerHandover"
+                                >Ngày d? ki?n bàn giao</label
+                            ><input
+                                id="buyerHandover"
+                                name="handover"
+                                type="date"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <label for="buyerDocuments">Tình tr?ng gi?y t?</label
+                    ><select id="buyerDocuments" name="documents">
+                        <option>Ðang b? sung</option>
+                        <option>Ð? h? so</option>
+                    </select>
+                    <div class="modal-actions">
+                        <button
+                            class="button button-danger"
+                            type="button"
+                            id="buyerDelete"
+                            hidden
+                        >
+                            Xóa h? so</button
+                        ><button
+                            class="button button-secondary"
+                            type="button"
+                            data-buyer-close
+                        >
+                            H?y</button
+                        ><button
+                            class="button button-primary"
+                            type="submit"
+                            id="buyerSave"
+                        >
+                            Luu h? so
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="modal-backdrop buyer-detail-backdrop"
+            id="buyerDetailModal"
+            hidden
+        >
+            <section
+                class="project-edit-dialog buyer-detail-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="buyerDetailTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-buyer-detail-close
+                    aria-label="Ðóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i
+                        class="fa-solid fa-clock-rotate-left"
+                        aria-hidden="true"
+                    ></i
+                ></span>
+                <p class="panel-kicker">H? SO GIAO D?CH & HO?T Ð?NG</p>
+                <h2 id="buyerDetailTitle">Chi ti?t ngu?i mua</h2>
+                <div class="buyer-detail-summary" id="buyerDetailSummary"></div>
+                <div class="buyer-detail-columns">
+                    <section class="buyer-detail-purchase">
+                        <h3>
+                            <i class="fa-solid fa-house" aria-hidden="true"></i>
+                            S?n ph?m dã mua
+                        </h3>
+                        <div id="buyerDetailProduct"></div>
+                    </section>
+                    <section class="buyer-detail-history">
+                        <h3>
+                            <i
+                                class="fa-solid fa-list-check"
+                                aria-hidden="true"
+                            ></i>
+                            L?ch s? ho?t d?ng
+                        </h3>
+                        <ol
+                            id="buyerDetailTimeline"
+                            class="buyer-detail-timeline"
+                        ></ol>
+                    </section>
+                </div>
+                <div class="modal-actions">
+                    <a
+                        class="button button-secondary"
+                        id="buyerCustomerLink"
+                        href="leads.html"
+                        >M? h? so khách hàng</a
+                    ><button
+                        class="button button-secondary"
+                        type="button"
+                        data-buyer-detail-close
+                    >
+                        Ðóng
+                    </button>
+                </div>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script>
+        <script src="../public/js/appointment-store.js?v=20261026-linked-demo-v2"></script>
+        <script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/buyers.js?v=20261027-shared-detail-v1"></script>
+    </body>
+</html>
+

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f8fa" />
+    <meta name="description" content="Gửi yêu cầu tư vấn bất động sản hoặc liên hệ trực tiếp với An Phát Land." />
+    <title>Liên hệ | An Phát Land</title>
+    <link rel="icon" type="image/svg+xml" href="../website/assets/favicon.svg" />
+    <link rel="stylesheet" href="../website/public/css/be-vietnam-pro.css" />
+    <link rel="stylesheet" href="../website/public/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="public/css/customer-storefront.css?v=20261026-customer-site-branches-v1" />
+</head>
+<body class="customer-content-page customer-contact-page" data-customer-page="contact">
+    <script src="../admin/public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+    <header class="store-header" data-customer-header></header>
+    <main class="store-container customer-standalone-main">
+        <nav class="detail-breadcrumb" aria-label="Đường dẫn"><a href="index.html">Trang chủ</a><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><span>Liên hệ</span></nav>
+        <header class="customer-page-intro"><p class="store-eyebrow">ĐỘI NGŨ TƯ VẤN AN PHÁT LAND</p><h1>Kết nối với chúng tôi</h1><p>Để lại thông tin và nhu cầu của bạn. Đội ngũ tư vấn sẽ liên hệ để trao đổi về dự án, sản phẩm hoặc lịch tham quan.</p></header>
+        <section class="contact-page-layout" aria-label="Gửi yêu cầu hoặc liên hệ trực tiếp">
+            <div class="contact-page-details">
+                <div class="contact-page-details-heading"><span class="contact-page-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></span><div><p class="store-eyebrow">CHÚNG TÔI SẴN SÀNG HỖ TRỢ</p><h2>Liên hệ trực tiếp</h2><p>Chọn kênh thuận tiện để trao đổi với đội ngũ phụ trách.</p></div></div>
+                <div class="customer-contact-list customer-contact-page-list" id="contact-details">
+                    <a data-company-phone href="tel:02873006868"><span><i class="fa-solid fa-phone" aria-hidden="true"></i></span><span><small>Điện thoại</small><strong data-company-phone-text>028 7300 6868</strong><em>Chạm để gọi</em></span></a>
+                    <a data-company-email href="mailto:contact@anphatland.vn"><span><i class="fa-solid fa-envelope" aria-hidden="true"></i></span><span><small>Email</small><strong data-company-email-text>contact@anphatland.vn</strong><em>Chạm để gửi email</em></span></a>
+                    <div data-company-address-wrap><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span><small>Địa chỉ văn phòng</small><strong data-company-address>Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</strong><em>Địa chỉ văn phòng doanh nghiệp</em></span></div>
+                    <a data-company-website href="https://anphatland.vn" target="_blank" rel="noopener noreferrer"><span><i class="fa-solid fa-globe" aria-hidden="true"></i></span><span><small>Website</small><strong data-company-website-text>anphatland.vn</strong><em>Mở website doanh nghiệp</em></span></a>
+                </div>
+                <section class="customer-branch-directory-wrap"><p class="store-eyebrow">VĂN PHÒNG THEO KHU VỰC</p><div class="customer-branch-directory" data-branch-directory></div></section>
+            </div>
+            <form class="contact-request-form" id="contactRequestForm">
+                <div class="contact-form-heading"><p class="store-eyebrow">GỬI YÊU CẦU</p><h2>Bạn đang quan tâm điều gì?</h2><p>Các mục có dấu <span aria-hidden="true">*</span> là bắt buộc.</p></div>
+                <div class="contact-form-fields">
+                    <label><span class="contact-field-label">Họ và tên <b>*</b></span><input name="name" required maxlength="100" autocomplete="name" placeholder="Nguyễn Văn A" /></label>
+                    <label><span class="contact-field-label">Số điện thoại <b>*</b></span><input name="phone" required type="tel" minlength="9" maxlength="15" autocomplete="tel" placeholder="09xx xxx xxx" /></label>
+                    <label><span class="contact-field-label">Email <small>(không bắt buộc)</small></span><input name="email" type="email" maxlength="160" autocomplete="email" placeholder="ten@email.com" /></label>
+                    <label class="contact-branch-field" data-branch-field hidden><span class="contact-field-label">Chi nhánh muốn liên hệ <b>*</b></span><select name="branchId" id="contactBranchSelect" data-branch-select><option value="">Chọn chi nhánh</option></select></label>
+                    <label><span class="contact-field-label">Dự án quan tâm <small>(không bắt buộc)</small></span><select name="projectCode"><option value="">Tư vấn chung</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></label>
+                    <label class="contact-message-field"><span class="contact-field-label">Nội dung cần tư vấn</span><textarea name="need" rows="4" maxlength="1000" placeholder="Ví dụ: Tôi muốn tìm hiểu nhà phố hoặc đất nền tại khu vực... "></textarea></label>
+                </div>
+                <label class="contact-consent"><input type="checkbox" name="consent" required /><span>Tôi đồng ý để đội ngũ tư vấn liên hệ về yêu cầu này.</span></label>
+                <div class="contact-form-footer"><button class="button button-primary" type="submit">Gửi yêu cầu <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button><p id="contactFormStatus" role="status" aria-live="polite"></p></div>
+            </form>
+        </section>
+        <section class="customer-company-map customer-company-map-page contact-page-map"><div class="customer-company-map-heading"><div><small>VỊ TRÍ VĂN PHÒNG</small><strong data-brand-name>An Phát Land</strong><span data-company-address>Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</span></div><a data-company-map-link href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Chỉ đường trên Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div><iframe data-company-map title="Bản đồ văn phòng doanh nghiệp" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></section>
+    </main>
+    <footer class="customer-footer" data-customer-footer></footer>
+    <div class="store-toast" id="contactToast" role="status" aria-live="polite"></div>
+    <script src="public/js/backend-ui.js?v=20261027-static-backend-hooks-v2"></script>
+    <script src="public/js/customer-header.js?v=20261026-info-label-v1"></script>
+    <script src="public/js/customer-footer.js?v=20261026-info-label-v1"></script>
+    <script src="public/js/customer-content.js?v=20261026-contact-form-v1"></script>
+    <script src="public/js/customer-branches.js?v=20261026-branch-settings-v1"></script>
+    <script src="public/js/customer-contact.js?v=20261026-linked-demo-v3"></script>
+    <script src="public/js/customer-selects.js?v=20261026-contact-form-v2"></script>
+</body>
+</html>

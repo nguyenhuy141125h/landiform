@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Khách hàng ti?m nang | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="Kh&#225;ch h&#224;ng ti?m nang"></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">KHÁCH HÀNG TI?M NANG</p>
+                            <h1>Khách hàng ti?m nang</h1>
+                            <p>Qu?n lý h? so, nhu c?u, ngu?n dang ký, ngu?i ph? trách và l?ch s? cham sóc khách hàng.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-lead-open
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm khách ti?m nang
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats">
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon blue"
+                                ><i
+                                    class="fa-solid fa-users"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>T?ng khách ti?m nang</span
+                                ><strong>7</strong
+                                ><small>T? 3 d? án</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon amber"
+                                ><i
+                                    class="fa-solid fa-user-clock"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Chua liên h?</span><strong>1</strong
+                                ><small>Uu tiên phân công</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon violet"
+                                ><i
+                                    class="fa-solid fa-calendar-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Ðã h?n tham quan</span><strong>0</strong
+                                ><small>C?n xác nh?n l?ch</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon green"
+                                ><i
+                                    class="fa-solid fa-user-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Khách d? di?u ki?n</span
+                                ><strong>4</strong
+                                ><small>Có nhu c?u và ngân sách phù h?p</small>
+                            </div>
+                        </article>
+                    </div>
+                    <section class="panel screen-panel">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker">H? SO KHÁCH TI?M NANG</span>
+                                <h2>Danh sách khách hàng ti?m nang</h2>
+                                <p>
+                                    Tìm ki?m, phân công và xem các l?n tuong tác
+                                    m?i nh?t.
+                                </p>
+                            </div>
+                            <div class="screen-filter lead-filters">
+                                <label
+                                    ><i
+                                        class="fa-solid fa-magnifying-glass"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><input
+                                        type="search"
+                                        data-filter="leads"
+                                        placeholder="Tên, s? di?n tho?i, d? án" /></label
+                                    ><select data-lead-project-filter aria-label="L?c theo d? án">
+                                    <option value="">T?t c? d? án</option>
+                                </select>
+                                <select data-lead-source-filter aria-label="L?c theo ngu?n">
+                                    <option value="">T?t c? ngu?n</option>
+                                </select>
+                                <select data-lead-owner-filter aria-label="L?c theo ngu?i ph? trách">
+                                    <option value="">T?t c? ngu?i ph? trách</option>
+                                </select>
+                                <select data-lead-status-filter aria-label="L?c theo tr?ng thái">
+                                    <option>T?t c? tr?ng thái</option>
+                                    <option>Chua liên h?</option>
+                                    <option>Ðang tu v?n</option>
+                                    <option>Ðã h?n tham quan</option>
+                                    <option>Ðang dàm phán</option>
+                                    <option>Ðã giao d?ch</option>
+                                    <option>Không phù h?p</option>
+                                </select>
+                                <button class="button button-quiet lead-filter-reset" type="button" data-clear-lead-filters>Xóa l?c</button>
+                            </div>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table">
+                                <thead>
+                                    <tr>
+                                        <th>Khách hàng</th>
+                                        <th>Nhu c?u</th>
+                                        <th>Ngu?n dang ký</th>
+                                        <th>Tr?ng thái</th>
+                                        <th>Ph? trách</th>
+                                        <th>Ho?t d?ng g?n nh?t</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="leadTableBody" data-static-demo="true">
+                                    <tr data-customer-id="anh" data-project="AP-026" data-form-id="consult" data-product-id="unit-ap-a2-1208" data-campaign-id="campaign-an-phu-launch-1" data-source="Google Ads · UTM" data-owner="Tr?n Thanh Long" data-owner-id="staff-long">
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon blue"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a class="customer-link" href="customer-detail.html?id=anh">Nguy?n Ng?c Anh</a></strong
+                                                    ><small
+                                                        >0903 456 218 · Khách
+                                                        m?i</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Can h? 2 phòng ng?</td>
+                                        <td>Google Ads · UTM</td>
+                                        <td>
+                                            <span class="screen-badge amber"
+                                                >Chua liên h?</span
+                                            >
+                                        </td>
+                                        <td>Tr?n Thanh Long</td>
+                                        <td>Hôm nay · 08:45</td>
+                                    </tr>
+                                    <tr data-customer-id="khoa" data-project="GV-014" data-form-id="price" data-product-id="unit-gv-n08-06" data-campaign-id="campaign-green-valley-organic" data-source="SEO · Customer website" data-owner="Qu?nh Dao" data-owner-id="staff-quynh">
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon green"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a class="customer-link" href="customer-detail.html?id=khoa">Tr?n Minh Khoa</a></strong
+                                                    ><small
+                                                        >0918 224 760 · Khách
+                                                        quay l?i</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Nhà ph? · 8–9 t?</td>
+                                        <td>SEO · Customer website</td>
+                                        <td>
+                                            <span class="screen-badge blue"
+                                                >Ðang tu v?n</span
+                                            >
+                                        </td>
+                                        <td>Qu?nh Dao</td>
+                                        <td>Hôm qua · 16:20</td>
+                                    </tr>
+                                    <tr data-customer-id="yen" data-project="CP-008" data-form-id="viewing" data-product-id="unit-cp-b1-0803" data-campaign-id="campaign-central-park-event" data-source="QR · S? ki?n m? bán" data-owner="Mai Ng?c" data-owner-id="staff-mai">
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon violet"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a class="customer-link" href="customer-detail.html?id=yen">Lê Hoàng Y?n</a></strong
+                                                    ><small
+                                                        >0987 332 104 · Ðã giao d?ch</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Can h? 3 phòng ng? · Bàn giao</td>
+                                        <td>QR · S? ki?n m? bán</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Ðã giao d?ch</span
+                                            >
+                                        </td>
+                                        <td>Mai Ng?c</td>
+                                        <td>Hôm qua · 14:10</td>
+                                    </tr>
+                                    <tr data-customer-id="bao" data-project="AP-026" data-form-id="consult" data-product-id="unit-ap-a2-1210" data-campaign-id="campaign-an-phu-meta-oct" data-source="Meta · Campaign T10" data-owner="Tr?n Thanh Long" data-owner-id="staff-long">
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon amber"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a class="customer-link" href="customer-detail.html?id=bao">Ph?m Qu?c B?o</a></strong
+                                                    ><small
+                                                        >0908 113 624 · Khách
+                                                        quay l?i</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Ð?u tu can h?</td>
+                                        <td>Meta · Campaign T10</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Ðang dàm phán</span
+                                            >
+                                        </td>
+                                        <td>Tr?n Thanh Long</td>
+                                        <td>20/10 · 11:35</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="leadModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+                <button class="modal-close" type="button" data-lead-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+                <h2 id="leadModalTitle">Thêm khách ti?m nang</h2>
+                <p>Luu m?t h? so chung d? d?i ngu theo dõi nhu c?u và các l?n trao d?i.</p>
+                <form id="leadForm" class="project-edit-form">
+                    <label for="leadName">H? và tên</label><input id="leadName" name="name" autocomplete="name" required placeholder="Nh?p h? tên khách hàng" />
+                    <div class="project-form-row">
+                        <div><label for="leadPhone">S? di?n tho?i</label><input id="leadPhone" name="phone" type="tel" autocomplete="tel" required placeholder="Nh?p s? di?n tho?i" /></div>
+                        <div><label for="leadEmail">Email</label><input id="leadEmail" name="email" type="email" autocomplete="email" placeholder="N?u khách có email" /></div>
+                    </div>
+                    <div class="project-form-row">
+                        <div><label for="leadProject">D? án quan tâm</label><select id="leadProject" name="project" required><option value="">Ch?n d? án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
+                        <div><label for="leadOwner">Ngu?i ph? trách</label><select id="leadOwner" name="owner"><option>Tr?n Thanh Long</option><option>Qu?nh Dao</option><option>Mai Ng?c</option><option>Minh Anh</option></select></div>
+                    </div>
+                    <label for="leadNeed">Nhu c?u</label><input id="leadNeed" name="need" required placeholder="Ví d?: Can h? 2 phòng ng?" />
+                    <div class="project-form-row">
+                        <div><label for="leadBudget">Ngân sách d? ki?n</label><input id="leadBudget" name="budget" placeholder="Ví d?: 3–4 t?" /></div>
+                        <div><label for="leadSource">Ngu?n ti?p nh?n</label><select id="leadSource" name="source"><option>Customer website</option><option>Bi?u m?u dang ký</option><option>Mã QR s? ki?n</option><option>G?i di?n</option><option>Gi?i thi?u</option></select></div>
+                    </div>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-lead-close>H?y</button><button class="button button-primary" type="submit">Luu khách hàng</button></div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/leads.js?v=20261027-lead-summary-v1"></script>
+</body>
+</html>
+
+
+

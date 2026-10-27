@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>D? án | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="D? &#225;n"></header>
+                <div class="dashboard-content screen-content projects-page">
+  <header class="screen-heading">
+    <div><p class="screen-eyebrow">QU?N LÝ DANH M?C</p><h1>D? án</h1><p>T?p trung thông tin d? án, khách hàng quan tâm và s?n ph?m trong cùng m?t noi.</p></div>
+    <div class="screen-heading-actions"><button class="button button-primary" type="button" data-project-create><i class="fa-solid fa-plus" aria-hidden="true"></i> T?o d? án</button></div>
+  </header>
+  <div class="screen-stats">
+    <article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-building" aria-hidden="true"></i></span><div><span>T?ng d? án</span><strong>4</strong><small>Danh m?c dang qu?n lý</small></div></article>
+    <article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i></span><div><span>Ðang m? bán</span><strong>3</strong><small>S?n sàng nh?n khách quan tâm</small></div></article>
+    <article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-user-group" aria-hidden="true"></i></span><div><span>Khách quan tâm</span><strong>735</strong><small>T?ng t? các d? án</small></div></article>
+    <article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span><div><span>Chu?n b? m? bán</span><strong>1</strong><small>D? án dang hoàn thi?n tru?c khi ra m?t</small></div></article>
+  </div>
+  <section class="panel screen-panel">
+    <div class="screen-panel-head"><div><span class="panel-kicker">KHÔNG GIAN D? ÁN</span><h2>Danh sách d? án</h2><p>M? m?t d? án d? c?p nh?t thông tin và xem danh m?c s?n ph?m.</p></div></div>
+    <div class="screen-filter projects-filter-row"><label class="inventory-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input type="search" data-filter="projects" placeholder="Tìm tên, mã ho?c khu v?c" aria-label="Tìm d? án"></label>
+        <select id="projectTypeFilter" aria-label="L?c theo lo?i d? án"><option value="">T?t c? lo?i hình</option><option>Can h?</option><option>Tòa nhà can h?</option><option>Nhà ph?</option><option>Nhà riêng l?</option><option>Bi?t th?</option><option>Ð?t n?n</option><option>Lô d?t riêng l?</option><option>Khu dô th?</option><option>Khu ngh? du?ng</option><option>Thuong m?i / van phòng</option></select>
+        <select id="projectStatusFilter" aria-label="L?c theo tr?ng thái"><option>T?t c? tr?ng thái</option><option>Ðang m? bán</option><option>Chu?n b? m? bán</option><option>T?m d?ng</option></select>
+      </div>
+    <div class="screen-table-wrap"><table class="screen-table"><thead><tr><th>D? án</th><th>Lo?i hình · khu v?c</th><th>Khách quan tâm</th><th>Tr?ng thái</th><th></th></tr></thead><tbody id="projectTableBody" data-static-demo="true">
+      <tr data-project-code="AP-026"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-building" aria-hidden="true"></i></span><span><strong>An Phú Riverside</strong><small>Mã d? án AP-026 · c?p nh?t 20/10/2026</small></span></span></td><td>Can h? · TP. Th? Ð?c</td><td>286</td><td><span class="screen-badge green">Ðang m? bán</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="project-detail.html?code=AP-026">Chi ti?t <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-project-row-delete="AP-026" aria-label="Xóa An Phú Riverside"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+      <tr data-project-code="GV-014"><td><span class="screen-entity"><span class="screen-entity-icon green"><i class="fa-solid fa-house" aria-hidden="true"></i></span><span><strong>Green Valley</strong><small>Mã d? án GV-014 · c?p nh?t 19/10/2026</small></span></span></td><td>Nhà ph? · Biên Hòa</td><td>194</td><td><span class="screen-badge green">Ðang m? bán</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="project-detail.html?code=GV-014">Chi ti?t <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-project-row-delete="GV-014" aria-label="Xóa Green Valley"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+      <tr data-project-code="CP-008"><td><span class="screen-entity"><span class="screen-entity-icon violet"><i class="fa-solid fa-building" aria-hidden="true"></i></span><span><strong>Central Park Towers</strong><small>Mã d? án CP-008 · c?p nh?t 18/10/2026</small></span></span></td><td>Can h? · Qu?n 7</td><td>163</td><td><span class="screen-badge green">Ðang m? bán</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="project-detail.html?code=CP-008">Chi ti?t <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-project-row-delete="CP-008" aria-label="Xóa Central Park Towers"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+      <tr data-project-code="LG-031"><td><span class="screen-entity"><span class="screen-entity-icon amber"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span><span><strong>Lumière Garden</strong><small>Mã d? án LG-031 · c?p nh?t 16/10/2026</small></span></span></td><td>Ð?t n?n · Long An</td><td>92</td><td><span class="screen-badge blue">Chu?n b? m? bán</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="project-detail.html?code=LG-031">Chi ti?t <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-project-row-delete="LG-031" aria-label="Xóa Lumière Garden"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+    </tbody></table></div>
+    <div class="screen-empty-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> M?i d? án qu?n lý n?i dung, bi?u m?u và s?n ph?m riêng; khách xem các d? án trên cùng customer website c?a doanh nghi?p.</div>
+  </section>
+  <footer class="dashboard-footer" data-admin-shared-footer></footer>
+</div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="projectCreateModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="projectCreateTitle">
+                <button class="modal-close" type="button" data-project-modal-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span>
+                <h2 id="projectCreateTitle">Thêm d? án</h2>
+                    <p>Nh?p các thông tin co b?n d? b?t d?u qu?n lý d? án.</p>
+                <form id="projectCreateForm" class="project-edit-form">
+                    <label for="createProjectName">Tên d? án</label><input id="createProjectName" name="name" required placeholder="Ví d?: An Phú Riverside ho?c Tòa nhà ABC" />
+                    <div class="project-form-row">
+                        <div><label for="createProjectType">Lo?i hình</label><select id="createProjectType" name="type"><option value="Can h?">Chung cu / can h?</option><option value="Tòa nhà can h?">Tòa nhà can h? riêng l?</option><option>Nhà ph?</option><option>Nhà riêng l?</option><option>Bi?t th?</option><option>Ð?t n?n</option><option>Lô d?t riêng l?</option><option>Khu dô th?</option><option>Khu ngh? du?ng</option><option>Thuong m?i / van phòng</option></select></div>
+                        <div><label for="createProjectArea">Khu v?c</label><input id="createProjectArea" name="area" required placeholder="Ví d?: TP. Th? Ð?c" /></div>
+                    </div>
+                    <label for="createProjectStatus">Tr?ng thái</label><select id="createProjectStatus" name="status"><option>Chu?n b? m? bán</option><option>Ðang m? bán</option><option>T?m d?ng</option></select>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-project-modal-close>Ð? sau</button><button class="button button-primary" type="submit">T?o d? án</button></div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/projects.js?v=20261027-memory-only-actions-v1"></script>
+</body>
+</html>
+
+
+

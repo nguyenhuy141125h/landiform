@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>S?n ph?m d? án | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
+        />
+    </head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="S?n ph?m"></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">QU?N LÝ S?N PH?M</p>
+                            <h1>S?n ph?m d? án</h1>
+                            <p>
+                                Qu?n lý t?ng can h?, can nhà và lô d?t; theo dõi
+                                tình tr?ng bán và yêu c?u gi? ch? theo d? án.
+                            </p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-unit-add
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm s?n ph?m
+                            </button>
+                        </div>
+                    </header>
+                    <section
+                        class="panel screen-panel inventory-map"
+                        id="inventoryMap"
+                    >
+                        <div class="inventory-map-header">
+                            <div>
+                                <span class="panel-kicker">QU? S?N PH?M</span>
+                                <h2 id="inventoryMapTitle">
+                                    Ch?n tòa, t?ng và can h?
+                                </h2>
+                                <p id="inventoryMapIntro">
+                                    Xem tình tr?ng t?ng can ngay trên so d? c?a
+                                    d? án.
+                                </p>
+                            </div>
+                            <label
+                                class="inventory-project-picker"
+                                for="inventoryProjectFilter"
+                            >
+                                <span>D? án</span>
+                                <select
+                                    id="inventoryProjectFilter"
+                                    aria-label="Ch?n d? án"
+                                >
+                                    <option value="">Ch?n d? án</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div
+                            class="inventory-map-summary"
+                            id="inventoryMapSummary"
+                            aria-live="polite"
+                        ></div>
+                        <div
+                            class="inventory-map-navigation"
+                            id="inventoryMapNavigation"
+                        >
+                            <div class="inventory-map-section-head">
+                                <strong>1. Ch?n tòa nhà</strong
+                                ><span id="inventoryTowerCount"></span>
+                            </div>
+                            <div
+                                class="inventory-map-towers"
+                                id="inventoryMapTowers"
+                                role="group"
+                                aria-label="Ch?n tòa nhà"
+                            ></div>
+                            <div class="inventory-map-section-head">
+                                <strong>2. Ch?n t?ng</strong
+                                ><span id="inventorySelectedTower"></span>
+                            </div>
+                            <div
+                                class="inventory-map-floors"
+                                id="inventoryMapFloors"
+                                role="group"
+                                aria-label="Ch?n t?ng"
+                            ></div>
+                            <div
+                                class="inventory-map-section-head inventory-map-unit-heading"
+                            >
+                                <strong>3. Ch?n can h?</strong
+                                ><span id="inventoryMapCount"></span>
+                            </div>
+                            <div
+                                class="inventory-map-legend"
+                                aria-label="Chú gi?i tình tr?ng can h?"
+                            >
+                                <span><i class="available"></i>Còn bán</span>
+                                <span
+                                    ><i class="pending"></i>Ch? duy?t / gi?
+                                    ch?</span
+                                >
+                                <span><i class="sold"></i>Ðã bán</span>
+                                <span
+                                    ><i class="unreleased"></i>Chua m? bán</span
+                                >
+                            </div>
+                            <div
+                                class="inventory-map-units"
+                                id="inventoryMapUnits"
+                            ></div>
+                        </div>
+                        <div class="inventory-map-actions">
+                            <button
+                                class="button button-secondary"
+                                type="button"
+                                data-unit-bulk
+                            >
+                                Thêm nhi?u can h?
+                            </button>
+                        </div>
+                    </section>
+                    <details
+                        class="panel screen-panel inventory-list-details"
+                        id="inventoryListDetails"
+                    >
+                        <summary>
+                            <span
+                                ><i
+                                    class="fa-solid fa-table-list"
+                                    aria-hidden="true"
+                                ></i>
+                                Danh sách chi ti?t</span
+                            ><span
+                                >Xem, l?c và ch?nh s?a t?ng s?n ph?m
+                                <i
+                                    class="fa-solid fa-chevron-down"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                        </summary>
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker"
+                                    >DANH M?C S?N PH?M</span
+                                >
+                                <h2>Các s?n ph?m trong d? án</h2>
+                                <p>
+                                    L?c cùng danh m?c s?n ph?m theo nhóm, d? án,
+                                    phân khu, t?ng và tình tr?ng.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="inventory-toolbar">
+                            <label class="inventory-search"
+                                ><i
+                                    class="fa-solid fa-magnifying-glass"
+                                    aria-hidden="true"
+                                ></i
+                                ><input
+                                    type="search"
+                                    id="inventorySearch"
+                                    placeholder="Tìm mã can, tòa ho?c d? án"
+                                    aria-label="Tìm s?n ph?m"
+                            /></label>
+                            <select
+                                id="inventoryGroupFilter"
+                                aria-label="L?c theo nhóm s?n ph?m"
+                            >
+                                <option value="">T?t c? nhóm s?n ph?m</option>
+                                <option value="apartment">Can h?</option>
+                                <option value="house">Nhà ?</option>
+                                <option value="land">Ð?t n?n / lô d?t</option>
+                                <option value="commercial">
+                                    Thuong m?i / van phòng
+                                </option>
+                                <option value="other">
+                                    Ngh? du?ng / lo?i khác
+                                </option>
+                            </select>
+                            <select
+                                id="inventoryTypeFilter"
+                                aria-label="L?c theo lo?i s?n ph?m"
+                            >
+                                <option value="">T?t c? lo?i s?n ph?m</option>
+                            </select>
+                            <select
+                                id="inventoryTowerFilter"
+                                aria-label="L?c theo tòa"
+                            >
+                                <option value="">T?t c? tòa / phân khu</option>
+                            </select>
+                            <select
+                                id="inventoryFloorFilter"
+                                aria-label="L?c theo t?ng"
+                            >
+                                <option value="">T?t c? t?ng</option>
+                            </select>
+                            <select
+                                id="inventoryStatusFilter"
+                                aria-label="L?c theo tình tr?ng"
+                            >
+                                <option value="">T?t c? tình tr?ng</option>
+                                <option>Còn bán</option>
+                                <option>Ch? duy?t</option>
+                                <option>Ðang gi? ch?</option>
+                                <option>Ðã bán</option>
+                                <option>Chua m? bán</option>
+                            </select>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table inventory-table">
+                                <thead>
+                                    <tr>
+                                        <th>Mã s?n ph?m</th>
+                                        <th>D? án</th>
+                                        <th>Tòa / khu / phân khu</th>
+                                        <th>T?ng</th>
+                                        <th>Lo?i s?n ph?m</th>
+                                        <th>Thông s?</th>
+                                        <th>Di?n tích</th>
+                                        <th>Giá d? ki?n</th>
+                                        <th>Hoa h?ng</th>
+                                        <th>Tình tr?ng</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="inventoryTableBody" data-static-demo="true">
+                                    <tr><td><strong>A2 · 12.08</strong></td><td>An Phú Riverside</td><td>A2</td><td>T?ng 12</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 t?</td><td>2%</td><td><span class="screen-badge amber">Ch? duy?t</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1208">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 12.09</strong></td><td>An Phú Riverside</td><td>A2</td><td>T?ng 12</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,9 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1209">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 12.10</strong></td><td>An Phú Riverside</td><td>A2</td><td>T?ng 12</td><td>Can h? 3 phòng ng?</td><td>3 PN · 2 PT</td><td>105 m²</td><td>5,2 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1210">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 13.01</strong></td><td>An Phú Riverside</td><td>A2</td><td>T?ng 13</td><td>Can h? 1 phòng ng?</td><td>1 PN · 1 PT</td><td>58 m²</td><td>2,8 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1301">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A1 · 05.01</strong></td><td>An Phú Riverside</td><td>A1</td><td>T?ng 5</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 t?</td><td>2%</td><td><span class="screen-badge neutral">Ðã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0501">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A1 · 05.02</strong></td><td>An Phú Riverside</td><td>A1</td><td>T?ng 5</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>78 m²</td><td>3,5 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a1-0502">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B1 · 08.03</strong></td><td>Central Park Towers</td><td>B1</td><td>T?ng 8</td><td>Can h? 3 phòng ng?</td><td>3 PN · 2 PT</td><td>104 m²</td><td>5,1 t?</td><td>2%</td><td><span class="screen-badge neutral">Ðã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0803">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B1 · 08.04</strong></td><td>Central Park Towers</td><td>B1</td><td>T?ng 8</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>79 m²</td><td>3,7 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b1-0804">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>B2 · 10.01</strong></td><td>Central Park Towers</td><td>B2</td><td>T?ng 10</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>80 m²</td><td>3,8 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-cp-b2-1001">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>N08 · 05</strong></td><td>Green Valley</td><td>N08</td><td>—</td><td>Nhà ph?</td><td>3 t?ng · 3 PN</td><td>165 m²</td><td>8,2 t?</td><td>3%</td><td><span class="screen-badge neutral">Ðã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-05">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 17</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Ð?t n?n d? án</td><td>M?t ti?n 6 m</td><td>120 m²</td><td>2,4 t?</td><td>2%</td><td><span class="screen-badge blue">Chua m? bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-17">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>GV · A.26</strong></td><td>Green Valley</td><td>Khu dân cu A</td><td>—</td><td>Nhà riêng</td><td>2 t?ng · 3 PN</td><td>96 m²</td><td>6,6 t?</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-house-026">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 21</strong></td><td>Lumière Garden</td><td>Phân khu 1</td><td>—</td><td>Ð?t n?n d? án</td><td>M?t ti?n 6 m</td><td>120 m²</td><td>2,4 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-021">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>LG · 22</strong></td><td>Lumière Garden</td><td>Phân khu 2</td><td>—</td><td>Ð?t th? cu</td><td>M?t ti?n 7,5 m</td><td>150 m²</td><td>3,1 t?</td><td>2%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-lg-lot-022">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>A2 · 15.06</strong></td><td>An Phú Riverside</td><td>A2</td><td>T?ng 15</td><td>Can h? 2 phòng ng?</td><td>2 PN · 2 PT</td><td>82 m²</td><td>3,8 t?</td><td>2%</td><td><span class="screen-badge neutral">Ðã bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-ap-a2-1506">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                    <tr><td><strong>N08 · 06</strong></td><td>Green Valley</td><td>N08</td><td>—</td><td>Nhà ph?</td><td>3 t?ng · 3 PN</td><td>168 m²</td><td>8,4 t?</td><td>3%</td><td><span class="screen-badge green">Còn bán</span></td><td><a class="button button-quiet" href="product-detail.html?id=unit-gv-n08-06">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="inventory-pagination">
+                            <span id="inventoryCount">0 s?n ph?m</span>
+                            <div>
+                                <button
+                                    type="button"
+                                    id="inventoryPrevious"
+                                    aria-label="Trang tru?c"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-left"
+                                        aria-hidden="true"
+                                    ></i></button
+                                ><span id="inventoryPage">Trang 1</span
+                                ><button
+                                    type="button"
+                                    id="inventoryNext"
+                                    aria-label="Trang sau"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-right"
+                                        aria-hidden="true"
+                                    ></i>
+                                </button>
+                            </div>
+                        </div>
+                    </details>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="unitModal" hidden>
+            <section
+                class="project-edit-dialog inventory-product-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="unitModalTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-unit-close
+                    aria-label="Ðóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-door-closed" aria-hidden="true"></i
+                ></span>
+                <h2 id="unitModalTitle">Thêm s?n ph?m</h2>
+                <p>
+                    Ch?n nhóm b?t d?ng s?n d? form t? hi?n dúng thông tin c?n
+                    nh?p cho t?ng s?n ph?m.
+                </p>
+                <form id="unitForm" class="project-edit-form">
+                    <label for="unitProject">D? án</label
+                    ><select id="unitProject" name="projectCode" required>
+                        <option value="">Ch?n d? án</option>
+                    </select>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="unitGroup">Nhóm b?t d?ng s?n</label
+                            ><select id="unitGroup" name="group" required>
+                                <option value="">Ch?n nhóm</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="unitType">Lo?i s?n ph?m</label
+                            ><select
+                                id="unitType"
+                                name="type"
+                                required
+                            ></select>
+                        </div>
+                    </div>
+                    <p class="inventory-category-link">
+                        Danh m?c và nhóm s?n ph?m du?c qu?n lý t?i
+                        <a href="categories.html" target="_blank" rel="noopener"
+                            >Danh m?c s?n ph?m</a
+                        >.
+                    </p>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="unitTower">Khu / dãy</label
+                            ><input
+                                id="unitTower"
+                                name="tower"
+                                required
+                                placeholder="Ví d?: Dãy LK-01"
+                            />
+                        </div>
+                        <div id="unitFloorField">
+                            <label for="unitFloor">T?ng</label
+                            ><input
+                                id="unitFloor"
+                                name="floor"
+                                type="number"
+                                min="1"
+                                max="200"
+                                placeholder="Ví d?: 12"
+                            />
+                        </div>
+                    </div>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="unitNumber">Mã s?n ph?m</label
+                            ><input
+                                id="unitNumber"
+                                name="number"
+                                required
+                                placeholder="Ví d?: LK-05"
+                            />
+                        </div>
+                        <div>
+                            <label for="unitArea">Di?n tích (m²)</label
+                            ><input
+                                id="unitArea"
+                                name="area"
+                                type="number"
+                                min="1"
+                                step="0.1"
+                                required
+                                placeholder="Ví d?: 82"
+                            />
+                        </div>
+                    </div>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="unitPrice">Giá d? ki?n (t? d?ng)</label
+                            ><input
+                                id="unitPrice"
+                                name="price"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                required
+                                placeholder="Ví d?: 3.8"
+                            />
+                        </div>
+                        <div id="unitCommissionField">
+                            <label for="unitCommission"
+                                >Hoa h?ng nhân viên (%)</label
+                            ><input
+                                id="unitCommission"
+                                name="commissionPercent"
+                                type="number"
+                                min="0"
+                                max="100"
+                                step="0.1"
+                                value="2"
+                                required
+                                placeholder="Ví d?: 2"
+                            /><small
+                                >Áp d?ng khi nhân viên bán du?c s?n ph?m
+                                này.</small
+                            >
+                        </div>
+                    </div>
+                    <div
+                        id="unitAttributeFields"
+                        class="inventory-attribute-fields"
+                        aria-live="polite"
+                    ></div>
+                    <div>
+                        <label for="unitStatus">Tình tr?ng</label
+                        ><select id="unitStatus" name="status">
+                            <option>Còn bán</option>
+                            <option>Chua m? bán</option>
+                            <option>Ch? duy?t</option>
+                            <option>Ðang gi? ch?</option>
+                            <option>Ðã bán</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button
+                            class="button button-secondary"
+                            type="button"
+                            data-unit-close
+                        >
+                            H?y</button
+                        ><button
+                            class="button button-danger"
+                            type="button"
+                            id="unitDelete"
+                            hidden
+                        >
+                            Xóa s?n ph?m</button
+                        ><button class="button button-primary" type="submit">
+                            Luu s?n ph?m
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div class="modal-backdrop" id="unitDetailModal" hidden>
+            <section
+                class="project-edit-dialog inventory-unit-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="unitDetailTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-unit-detail-close
+                    aria-label="Ðóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="panel-kicker" id="unitDetailLocation">CAN H?</span>
+                <h2 id="unitDetailTitle">Chi ti?t can h?</h2>
+                <span class="screen-badge" id="unitDetailStatus"></span>
+                <dl class="inventory-unit-facts">
+                    <div>
+                        <dt>Lo?i s?n ph?m</dt>
+                        <dd id="unitDetailType">—</dd>
+                    </div>
+                    <div>
+                        <dt>Di?n tích</dt>
+                        <dd id="unitDetailArea">—</dd>
+                    </div>
+                    <div>
+                        <dt>Giá d? ki?n</dt>
+                        <dd id="unitDetailPrice">—</dd>
+                    </div>
+                    <div>
+                        <dt>Hoa h?ng nhân viên</dt>
+                        <dd id="unitDetailCommission">—</dd>
+                    </div>
+                    <div>
+                        <dt>D? án</dt>
+                        <dd id="unitDetailProject">—</dd>
+                    </div>
+                </dl>
+                <dl
+                    class="inventory-unit-facts inventory-unit-attributes"
+                    id="unitDetailAttributes"
+                    hidden
+                ></dl>
+                <div class="modal-actions">
+                    <button
+                        class="button button-secondary"
+                        type="button"
+                        data-unit-detail-close
+                    >
+                        Ðóng
+                    </button>
+                    <button
+                        class="button button-secondary"
+                        type="button"
+                        id="unitDetailEdit"
+                    >
+                        Ch?nh s?a
+                    </button>
+                    <button
+                        class="button button-primary"
+                        type="button"
+                        id="unitDetailBook"
+                        hidden
+                    >
+                        Lên l?ch tu v?n
+                    </button>
+                </div>
+            </section>
+        </div>
+        <div class="modal-backdrop" id="unitBulkModal" hidden>
+            <section
+                class="project-edit-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="unitBulkTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-unit-bulk-close
+                    aria-label="Ðóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-building" aria-hidden="true"></i
+                ></span>
+                <h2 id="unitBulkTitle">Thêm nhi?u can h?</h2>
+                <p>
+                    Nh?p tòa, các t?ng và s? can m?i t?ng. LANDIFORM s? t?o mã
+                    riêng cho t?ng can.
+                </p>
+                <form id="unitBulkForm" class="project-edit-form">
+                    <label for="bulkProject">D? án chung cu</label
+                    ><select id="bulkProject" name="projectCode" required>
+                        <option value="">Ch?n d? án</option>
+                    </select>
+                    <label for="bulkTower">Tòa nhà</label
+                    ><input
+                        id="bulkTower"
+                        name="tower"
+                        required
+                        placeholder="Ví d?: A3"
+                    />
+                    <div class="project-form-row">
+                        <div>
+                            <label for="bulkFromFloor">T? t?ng</label
+                            ><input
+                                id="bulkFromFloor"
+                                name="fromFloor"
+                                type="number"
+                                min="1"
+                                max="200"
+                                required
+                                value="1"
+                            />
+                        </div>
+                        <div>
+                            <label for="bulkToFloor">Ð?n t?ng</label
+                            ><input
+                                id="bulkToFloor"
+                                name="toFloor"
+                                type="number"
+                                min="1"
+                                max="200"
+                                required
+                                value="10"
+                            />
+                        </div>
+                    </div>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="bulkPerFloor">S? can m?i t?ng</label
+                            ><input
+                                id="bulkPerFloor"
+                                name="perFloor"
+                                type="number"
+                                min="1"
+                                max="50"
+                                required
+                                value="8"
+                            />
+                        </div>
+                        <div>
+                            <label for="bulkType">Lo?i can</label
+                            ><select id="bulkType" name="type">
+                                <option>Can h? 1 phòng ng?</option>
+                                <option selected>Can h? 2 phòng ng?</option>
+                                <option>Can h? 3 phòng ng?</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="project-form-row">
+                        <div>
+                            <label for="bulkArea">Di?n tích m?i can (m²)</label
+                            ><input
+                                id="bulkArea"
+                                name="area"
+                                type="number"
+                                min="1"
+                                step="0.1"
+                                required
+                                value="80"
+                            />
+                        </div>
+                        <div>
+                            <label for="bulkPrice"
+                                >Giá d? ki?n m?i can (t? d?ng)</label
+                            ><input
+                                id="bulkPrice"
+                                name="price"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                required
+                                value="3.8"
+                            />
+                        </div>
+                    </div>
+                    <label for="bulkCommission">Hoa h?ng nhân viên (%)</label
+                    ><input
+                        id="bulkCommission"
+                        name="commissionPercent"
+                        type="number"
+                        min="0"
+                        max="100"
+                        step="0.1"
+                        required
+                        value="2"
+                    />
+                    <p
+                        class="inventory-bulk-note"
+                        id="bulkPreview"
+                        aria-live="polite"
+                    >
+                        D? ki?n t?o 8 can. B?n có th? ch?nh t?ng can sau khi
+                        t?o.
+                    </p>
+                    <div class="modal-actions">
+                        <button
+                            class="button button-secondary"
+                            type="button"
+                            data-unit-bulk-close
+                        >
+                            H?y</button
+                        ><button class="button button-primary" type="submit">
+                            T?o danh sách can
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script>
+        <script src="../public/js/category-store.js?v=20261027-memory-only-actions-v1"></script><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/inventory-page.js?v=20261027-memory-only-actions-v1"></script>
+    </body>
+</html>
+
+
+

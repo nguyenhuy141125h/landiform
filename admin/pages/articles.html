@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>C?m nang | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261027-header-account-v2"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/guide-management.css?v=20261027-memory-only-actions-v1"
+        />
+        <script
+            src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"
+        ></script>
+    </head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="C?m nang"></header>
+                <div class="dashboard-content screen-content guide-admin-page">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">N?I DUNG CUSTOMER</p>
+                            <h1>Qu?n lý c?m nang</h1>
+                            <p>
+                                So?n bài, thay ?nh và ch?n bài vi?t du?c hi?n
+                                th? trên trang C?m nang c?a Customer.
+                            </p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <a
+                                class="button button-secondary"
+                                href="../../customer/articles.html"
+                                target="_blank"
+                                rel="noopener"
+                                >Xem trang Customer
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square"
+                                    aria-hidden="true"
+                                ></i></a
+                            ><button
+                                class="button button-primary"
+                                id="guideCreate"
+                                type="button"
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Vi?t bài m?i
+                            </button>
+                        </div>
+                    </header>
+                    <div class="guide-admin-layout">
+                        <section class="panel screen-panel guide-list-panel">
+                            <div class="screen-panel-head">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >DANH SÁCH BÀI VI?T</span
+                                    >
+                                    <h2>Bài vi?t c?m nang</h2>
+                                    <p id="guideListCaption">
+                                        Ðang t?i bài vi?t...
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="guide-list"
+                                id="guideList"
+                                aria-live="polite"
+                            ></div>
+                        </section>
+                        <section class="panel screen-panel guide-editor-panel">
+                            <div class="screen-panel-head">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >BIÊN T?P N?I DUNG</span
+                                    >
+                                    <h2 id="guideEditorTitle">
+                                        Ch?n bài vi?t d? ch?nh s?a
+                                    </h2>
+                                    <p>
+                                        Thay d?i du?c luu và hi?n th? trên trang
+                                        Customer trong cùng trình duy?t.
+                                    </p>
+                                </div>
+                            </div>
+                            <form id="guideForm" class="guide-form" hidden>
+                                <input type="hidden" name="id" />
+                                <div class="guide-form-row">
+                                    <label
+                                        >Ch? d?<select name="category" required>
+                                            <option value="apartment">
+                                                Can h?
+                                            </option>
+                                            <option value="home">Nhà ?</option>
+                                            <option value="land">
+                                                Ð?t & lô d?t
+                                            </option>
+                                            <option value="urban">
+                                                Khu dô th?
+                                            </option>
+                                            <option value="resort">
+                                                Ngh? du?ng
+                                            </option>
+                                            <option value="commercial">
+                                                Thuong m?i
+                                            </option>
+                                        </select></label
+                                    ><label
+                                        >Nhãn nh?<input
+                                            name="kicker"
+                                            maxlength="80"
+                                            placeholder="Ví d?: CH?N S?N PH?M"
+                                            required
+                                    /></label>
+                                </div>
+                                <label
+                                    >Tiêu d?<input
+                                        name="title"
+                                        maxlength="180"
+                                        required
+                                        placeholder="Tiêu d? bài vi?t"
+                                /></label>
+                                <label
+                                    >Mô t? ng?n<textarea
+                                        name="summary"
+                                        rows="2"
+                                        maxlength="360"
+                                        required
+                                        placeholder="Ðo?n gi?i thi?u hi?n th? bên c?nh ?nh"
+                                    ></textarea>
+                                </label>
+                                <label
+                                    >?nh bìa *<input
+                                        name="imageFile"
+                                        type="file"
+                                        accept="image/*"
+                                    /><small id="guideImageFileName"
+                                        >Ch?n ?nh t? thi?t b?. ?nh hi?n t?i du?c
+                                        gi? nguyên n?u b?n không ch?n ?nh
+                                        m?i.</small
+                                    ></label
+                                >
+                                <input name="image" type="hidden" />
+                                <div
+                                    class="guide-image-preview"
+                                    id="guideImagePreview"
+                                >
+                                    <i
+                                        class="fa-regular fa-image"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><span>Xem tru?c ?nh bìa</span>
+                                </div>
+                                <label
+                                    >Van b?n thay th? ?nh<input
+                                        name="imageAlt"
+                                        maxlength="180"
+                                        placeholder="Mô t? ?nh cho ngu?i dùng trình d?c màn hình"
+                                /></label>
+                                <label
+                                    >N?i dung bài vi?t<textarea
+                                        id="guideBody"
+                                        name="bodyHtml"
+                                        rows="18"
+                                    ></textarea>
+                                </label>
+                                <label class="guide-publish-toggle"
+                                    ><input
+                                        name="published"
+                                        type="checkbox"
+                                        checked
+                                    /><span
+                                        ><strong>Hi?n th? trên Customer</strong
+                                        ><small
+                                            >B? ch?n d? luu bài vi?t ? tr?ng
+                                            thái ?n.</small
+                                        ></span
+                                    ></label
+                                >
+                                <div class="guide-form-actions">
+                                    <button
+                                        class="button button-danger"
+                                        id="guideDelete"
+                                        type="button"
+                                    >
+                                        Xóa bài vi?t</button
+                                    ><span class="guide-editor-spacer"></span
+                                    ><button
+                                        class="button button-secondary"
+                                        id="guideReset"
+                                        type="button"
+                                    >
+                                        B? thay d?i</button
+                                    ><button
+                                        class="button button-primary"
+                                        type="submit"
+                                    >
+                                        <i
+                                            class="fa-solid fa-floppy-disk"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Luu bài vi?t
+                                    </button>
+                                </div>
+                            </form>
+                            <div
+                                class="guide-editor-empty"
+                                id="guideEditorEmpty"
+                            >
+                                <i
+                                    class="fa-solid fa-pen-to-square"
+                                    aria-hidden="true"
+                                ></i
+                                ><strong>Ch?n m?t bài vi?t</strong
+                                ><span
+                                    >Ho?c ch?n “Vi?t bài m?i” d? thêm bài vào
+                                    C?m nang.</span
+                                >
+                            </div>
+                        </section>
+                    </div>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/guide-management.js?v=20261027-memory-only-actions-v1"></script>
+    </body>
+</html>
+
+
+

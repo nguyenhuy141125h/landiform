@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Tài kho?n &amp; ch?c v? | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v2"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="Nh&#226;n s?"></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">NHÂN S?</p>
+                            <h1>Tài kho?n & ch?c v?</h1>
+                            <p>T?o ch?c v? và c?p quy?n tru?c, sau dó gán ch?c v? phù h?p cho qu?n lý, nhân viên ho?c khách hàng.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <a class="button button-quiet" href="permissions.html"><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Ch?c v? & quy?n</a>
+                            <a class="button button-quiet" href="workflow.html#appointments"><i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Xem l?ch h?n</a>
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-staff-open
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm tài kho?n
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats staff-account-stats">
+                        <article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-users" aria-hidden="true"></i></span><div><span>T?ng tài kho?n</span><strong id="staffTotal">0</strong><small>Nhân s? và khách hàng</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span><div><span>Qu?n lý</span><strong id="staffManagerCount">0</strong><small>Tài kho?n nhóm qu?n lý</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-user" aria-hidden="true"></i></span><div><span>Nhân viên</span><strong id="staffEmployeeCount">0</strong><small>Tài kho?n nhóm nhân viên</small></div></article>
+                        <article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-user-lock" aria-hidden="true"></i></span><div><span>Khách hàng</span><strong id="staffCustomerCount">0</strong><small>Tài kho?n nhóm khách hàng</small></div></article>
+                    </div>
+                    <section class="panel screen-panel">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker">TÀI KHO?N DOANH NGHI?P</span>
+                                <h2>Qu?n lý tài kho?n</h2>
+                                <p>
+                                    Ch?c v? quy?t d?nh quy?n truy c?p; thay d?i quy?n trong m?c Ch?c v? & quy?n.
+                                </p>
+                            </div>
+                            <div class="screen-filter">
+                                <label
+                                    ><i
+                                        class="fa-solid fa-magnifying-glass"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><input
+                                        type="search"
+                                        data-filter="team"
+                                        placeholder="Tìm nhân viên" /></label
+                                ><select data-staff-type-filter aria-label="L?c theo nhóm tài kho?n"><option value="">T?t c? nhóm tài kho?n</option><option value="management">Qu?n lý</option><option value="employee">Nhân viên</option><option value="customer">Khách hàng</option></select>
+                                <select data-staff-role-filter aria-label="L?c theo ch?c v?"><option value="">T?t c? ch?c v?</option></select>
+                            </div>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table">
+                                <thead>
+                                    <tr>
+                                        <th>Tài kho?n</th>
+                                        <th>Nhóm</th>
+                                        <th>Ch?c v?</th>
+                                        <th>Ph?m vi</th>
+                                        <th>Thao tác</th>
+                                        <th>Tr?ng thái</th>
+                                        <th>Quy?n dang nh?p</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="staffTableBody" data-static-demo="true">
+                                    <tr data-staff-id="demo-manager-01" data-role-id="manager" data-account-type="management" data-role-group="management"><td><span class="screen-entity"><span class="screen-entity-icon violet"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=demo-manager-01">Nguy?n Minh Anh</a><small>minh.anh@example.com</small></span></span></td><td><span class="screen-badge violet">Qu?n lý</span></td><td><strong>Qu?n lý kinh doanh</strong></td><td>Toàn doanh nghi?p</td><td><a class="staff-permission-link" href="permissions.html?role=manager">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=demo-manager-01">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="demo-manager-02" data-role-id="leader" data-account-type="management" data-role-group="management"><td><span class="screen-entity"><span class="screen-entity-icon violet"><i class="fa-solid fa-user-tie" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=demo-manager-02">Tr?n Qu?c B?o</a><small>quoc.bao@example.com</small></span></span></td><td><span class="screen-badge violet">Qu?n lý</span></td><td><strong>Ban lãnh d?o</strong></td><td>Toàn doanh nghi?p</td><td><a class="staff-permission-link" href="permissions.html?role=leader">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=demo-manager-02">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="demo-advisor-01" data-role-id="advisor" data-account-type="employee" data-role-group="employee"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=demo-advisor-01">Lê Hoàng Y?n</a><small>hoang.yen@example.com</small></span></span></td><td><span class="screen-badge blue">Nhân viên</span></td><td><strong>Nhân viên tu v?n</strong></td><td>An Phú Riverside</td><td><a class="staff-permission-link" href="permissions.html?role=advisor">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=demo-advisor-01">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="demo-advisor-02" data-role-id="advisor" data-account-type="employee" data-role-group="employee"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=demo-advisor-02">Ph?m Gia Huy</a><small>gia.huy@example.com</small></span></span></td><td><span class="screen-badge blue">Nhân viên</span></td><td><strong>Nhân viên tu v?n</strong></td><td>Green Valley</td><td><a class="staff-permission-link" href="permissions.html?role=advisor">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=demo-advisor-02">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="demo-marketing-01" data-role-id="marketing" data-account-type="employee" data-role-group="employee"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=demo-marketing-01">Ð? Khánh Linh</a><small>khanh.linh@example.com</small></span></span></td><td><span class="screen-badge blue">Nhân viên</span></td><td><strong>Marketing</strong></td><td>Toàn doanh nghi?p</td><td><a class="staff-permission-link" href="permissions.html?role=marketing">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=demo-marketing-01">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="staff-long" data-role-id="advisor" data-account-type="employee" data-role-group="employee"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=staff-long">Tr?n Thanh Long</a><small>thanh.long@example.com</small></span></span></td><td><span class="screen-badge blue">Nhân viên</span></td><td><strong>Nhân viên tu v?n</strong></td><td>An Phú Riverside</td><td><a class="staff-permission-link" href="permissions.html?role=advisor">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=staff-long">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="staff-quynh" data-role-id="advisor" data-account-type="employee" data-role-group="employee"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=staff-quynh">Qu?nh Dao</a><small>quynh.dao@example.com</small></span></span></td><td><span class="screen-badge blue">Nhân viên</span></td><td><strong>Nhân viên tu v?n</strong></td><td>Green Valley</td><td><a class="staff-permission-link" href="permissions.html?role=advisor">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=staff-quynh">S?a ?</a></td><td><span class="screen-badge green">Ðang ho?t d?ng</span></td><td><button class="staff-login-toggle is-allowed" type="button" data-staff-login-toggle aria-pressed="true"><i class="fa-solid fa-lock-open" aria-hidden="true"></i> Ðu?c phép</button></td></tr>
+                                    <tr data-staff-id="demo-operation-01" data-role-id="operation" data-account-type="employee" data-role-group="employee"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><a class="staff-name-link" href="team-detail.html?id=demo-operation-01">Bùi Ð?c Thành</a><small>duc.thanh@example.com</small></span></span></td><td><span class="screen-badge blue">Nhân viên</span></td><td><strong>V?n hành</strong></td><td>Lumière Garden</td><td><a class="staff-permission-link" href="permissions.html?role=operation">Quy?n</a> <a class="staff-edit-button" href="team-detail.html?id=demo-operation-01">S?a ?</a></td><td><span class="screen-badge neutral">T?m ngung</span></td><td><span class="screen-badge neutral">Ðã khóa</span></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="staffModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="staffModalTitle">
+                <button class="modal-close" type="button" data-staff-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+                <h2 id="staffModalTitle">Thêm tài kho?n</h2>
+                <p id="staffModalDescription">Ch?n nhóm tài kho?n và ch?c v? d? áp d?ng dúng b? quy?n.</p>
+                <form id="staffForm" class="project-edit-form">
+                    <label for="staffName">H? và tên</label><input id="staffName" name="name" autocomplete="name" required placeholder="Nh?p h? tên" />
+                    <div class="project-form-row">
+                        <div><label for="staffEmail">Email dang nh?p</label><input id="staffEmail" name="email" type="email" autocomplete="email" required placeholder="ten@doanhnghiep.vn" /></div>
+                        <div><label for="staffPhone">S? di?n tho?i</label><input id="staffPhone" name="phone" type="tel" autocomplete="tel" placeholder="Nh?p s? di?n tho?i" /></div>
+                    </div>
+                    <div class="project-form-row">
+                        <div><label for="staffAccountType">Nhóm tài kho?n</label><select id="staffAccountType" name="accountType" required><option value="management">Qu?n lý</option><option value="employee" selected>Nhân viên</option><option value="customer">Khách hàng</option></select></div>
+                        <div><label for="staffRole">Ch?c v?</label><select id="staffRole" name="roleId" required><option value="">Ch?n nhóm tài kho?n tru?c</option></select></div>
+                    </div>
+                    <p class="staff-role-hint" id="staffRoleHint">Ch?n ch?c v? d? áp d?ng quy?n dã thi?t l?p.</p>
+                    <div class="project-form-row">
+                        <fieldset class="staff-scope-picker"><legend>Ph?m vi ph? trách <small>Ch?n m?t ho?c nhi?u d? án</small></legend><div class="staff-scope-options" id="staffScopeOptions"><label><input type="checkbox" name="scopeOptions" value="Toàn doanh nghi?p" checked />Toàn doanh nghi?p</label><label><input type="checkbox" name="scopeOptions" value="An Phú Riverside" />An Phú Riverside</label><label><input type="checkbox" name="scopeOptions" value="Green Valley" />Green Valley</label><label><input type="checkbox" name="scopeOptions" value="Central Park Towers" />Central Park Towers</label><label><input type="checkbox" name="scopeOptions" value="Lumière Garden" />Lumière Garden</label></div></fieldset>
+                        <div><label for="staffStatus">Tr?ng thái tài kho?n</label><select id="staffStatus" name="status" required><option>Ðang ho?t d?ng</option><option>T?m ngung</option></select></div>
+                    </div>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-staff-close>H?y</button><button class="button button-primary" type="submit" data-staff-submit>Luu tài kho?n</button></div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/team.js?v=20261027-memory-only-actions-v1"></script>
+</body>
+</html>
+
+
+
+

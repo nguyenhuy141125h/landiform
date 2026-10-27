@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Tài kho?n cá nhân | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/account.css?v=20261027-topbar-account-borderless-v1"
+        />
+    </head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="T&#224;i kho?n c&#225; nh&#226;n"></header>
+                <div class="dashboard-content screen-content account-page">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">THI?T L?P CÁ NHÂN</p>
+                            <h1>Tài kho?n cá nhân</h1>
+                            <p>
+                                Thông tin dang nh?p và h? so c?a ngu?i dang s?
+                                d?ng LANDIFORM.
+                            </p>
+                        </div>
+                        <a class="button button-secondary" href="settings.html"
+                            ><i
+                                class="fa-solid fa-building-circle-check"
+                                aria-hidden="true"
+                            ></i>
+                            Thông tin doanh nghi?p</a
+                        >
+                    </header>
+                    <div class="account-page-grid">
+                        <section
+                            class="panel screen-panel account-profile-card"
+                        >
+                            <span
+                                class="account-profile-avatar"
+                                id="accountProfileAvatar"
+                                >MA</span
+                            >
+                            <p class="panel-kicker">TÀI KHO?N ÐANG ÐANG NH?P</p>
+                            <h2 id="accountProfileName">Minh Anh</h2>
+                            <span id="accountProfileRole"
+                                >Qu?n lý kinh doanh</span
+                            >
+                            <div class="account-profile-divider"></div>
+                            <div>
+                                <small>Nhóm tài kho?n</small
+                                ><strong>Qu?n lý</strong>
+                            </div>
+                            <p class="account-profile-help">
+                                Quy?n truy c?p du?c qu?n lý riêng trong m?c Phân
+                                quy?n.
+                            </p>
+                        </section>
+                        <section
+                            class="panel screen-panel account-details-panel"
+                        >
+                            <div class="screen-panel-head">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >H? SO CÁ NHÂN</span
+                                    >
+                                    <h2>Thông tin tài kho?n</h2>
+                                    <p>
+                                        C?p nh?t thông tin liên h? c?a tài kho?n
+                                        dang dang nh?p.
+                                    </p>
+                                </div>
+                            </div>
+                            <form id="accountForm" class="account-form">
+                                <label
+                                    >H? và tên<input
+                                        name="name"
+                                        required
+                                        maxlength="100"
+                                        autocomplete="name"
+                                /></label>
+                                <label
+                                    >Email dang nh?p<input
+                                        name="email"
+                                        type="email"
+                                        required
+                                        maxlength="160"
+                                        autocomplete="email"
+                                /></label>
+                                <label
+                                    >S? di?n tho?i<input
+                                        name="phone"
+                                        type="tel"
+                                        maxlength="30"
+                                        autocomplete="tel"
+                                        placeholder="Nh?p s? di?n tho?i"
+                                /></label>
+                                <div class="account-form-note">
+                                    <i
+                                        class="fa-solid fa-circle-info"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><span
+                                        >Ðây là h? so cá nhân. Tên pháp lý, mã
+                                        s? thu?, logo và d?a ch? công ty n?m
+                                        trong m?c
+                                        <a href="settings.html"
+                                            >Thông tin doanh nghi?p</a
+                                        >.</span
+                                    >
+                                </div>
+                                <div class="account-form-actions">
+                                    <button
+                                        class="button button-primary"
+                                        type="submit"
+                                    >
+                                        <i
+                                            class="fa-solid fa-floppy-disk"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Luu thông tin tài kho?n
+                                    </button>
+                                </div>
+                            </form>
+                            <section
+                                class="account-security"
+                                aria-labelledby="accountPasswordTitle"
+                            >
+                                <div class="account-security-heading">
+                                    <div>
+                                        <span class="panel-kicker"
+                                            >B?O M?T</span
+                                        >
+                                        <h3 id="accountPasswordTitle">
+                                            Ð?i m?t kh?u
+                                        </h3>
+                                        <p id="passwordSetupHint">
+                                            C?p nh?t m?t kh?u d? b?o v? tài
+                                            kho?n c?a b?n.
+                                        </p>
+                                    </div>
+                                    <span class="account-security-icon"
+                                        ><i
+                                            class="fa-solid fa-lock"
+                                            aria-hidden="true"
+                                        ></i
+                                    ></span>
+                                </div>
+                                <form
+                                    id="passwordForm"
+                                    class="account-form account-password-form"
+                                >
+                                    <label id="currentPasswordField"
+                                        >M?t kh?u hi?n t?i<input
+                                            name="currentPassword"
+                                            type="password"
+                                            autocomplete="current-password"
+                                            placeholder="Nh?p m?t kh?u hi?n t?i"
+                                    /></label>
+                                    <label
+                                        >M?t kh?u m?i<input
+                                            name="newPassword"
+                                            type="password"
+                                            autocomplete="new-password"
+                                            minlength="8"
+                                            required
+                                            placeholder="Ít nh?t 8 ký t?"
+                                    /></label>
+                                    <label class="password-confirm-field"
+                                        >Nh?p l?i m?t kh?u m?i<input
+                                            name="confirmPassword"
+                                            type="password"
+                                            autocomplete="new-password"
+                                            minlength="8"
+                                            required
+                                            placeholder="Nh?p l?i m?t kh?u m?i"
+                                    /></label>
+                                    <div
+                                        class="account-form-note password-form-note"
+                                    >
+                                        <i
+                                            class="fa-solid fa-circle-info"
+                                            aria-hidden="true"
+                                        ></i
+                                        ><span
+                                            >B?n demo luu thông tin trên trình
+                                            duy?t này; khi dùng h? th?ng th?t,
+                                            vi?c d?i m?t kh?u c?n du?c xác th?c
+                                            và luu trên máy ch?.</span
+                                        >
+                                    </div>
+                                    <div class="account-form-actions">
+                                        <button
+                                            class="button button-primary"
+                                            type="submit"
+                                        >
+                                            <i
+                                                class="fa-solid fa-key"
+                                                aria-hidden="true"
+                                            ></i>
+                                            C?p nh?t m?t kh?u
+                                        </button>
+                                    </div>
+                                </form>
+                            </section>
+                        </section>
+                    </div>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/account.js?v=20261027-account-password-v1"></script>
+    </body>
+</html>
+
+
+

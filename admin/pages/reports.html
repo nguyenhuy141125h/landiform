@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Báo cáo ho?t d?ng | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+    </head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="B&#225;o c&#225;o ho?t d?ng"></header>
+                <div class="dashboard-content screen-content report-activity-page">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">BÁO CÁO</p>
+                            <h1>Báo cáo ho?t d?ng</h1>
+                            <p>Theo dõi ngu?n khách, k?t qu? cham sóc và ti?n d? giao d?ch theo t?ng d? án.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <label class="report-month-field"><span>K? báo cáo</span><span class="report-month-input"><i class="fa-regular fa-calendar" aria-hidden="true"></i><input id="reportMonth" type="month" aria-label="Ch?n tháng xem báo cáo" /></span></label>
+                            <label class="report-month-field"><span>D? án</span><span class="report-project-select"><i class="fa-solid fa-building" aria-hidden="true"></i><select id="reportProjectFilter" aria-label="L?c báo cáo theo d? án"><option value="">T?t c? d? án</option></select></span></label>
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-action="export-screen"
+                            >
+                                <i
+                                    class="fa-solid fa-download"
+                                    aria-hidden="true"
+                                ></i>
+                                Xu?t CSV
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats">
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon blue"
+                                ><i
+                                    class="fa-solid fa-user-plus"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Khách dang ký</span><strong id="reportLeadTotal">642</strong
+                                ><small id="reportLeadChange">Tang 12,8% so v?i tháng tru?c</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon green"
+                                ><i
+                                    class="fa-solid fa-user-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Ð? di?u ki?n</span><strong id="reportQualifiedTotal">318</strong
+                                ><small id="reportQualifiedRate">49,5% t?ng s? khách</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon violet"
+                                ><i
+                                    class="fa-solid fa-calendar-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>L?ch h?n trong k?</span><strong id="reportAppointmentTotal">146</strong
+                                ><small>L?ch h?n trong tháng</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon amber"
+                                ><i
+                                    class="fa-solid fa-handshake"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Ðã giao d?ch</span><strong id="reportDealTotal">28</strong
+                                ><small id="reportDealChange">Giao d?ch trong tháng</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat report-revenue-stat">
+                            <span class="screen-stat-icon green"><i class="fa-solid fa-sack-dollar" aria-hidden="true"></i></span>
+                            <div><span>Doanh thu tham chi?u</span><strong id="reportRevenueTotal">0 t?</strong><small id="reportRevenueChange">Giá s?n ph?m dã giao d?ch trong k?</small></div>
+                        </article>
+                    </div>
+                    <div class="screen-columns">
+                        <section class="panel screen-panel">
+                            <div class="screen-panel-head">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >PH?U CHUY?N Ð?I</span
+                                    >
+                                    <h2>Hi?u qu? hành trình khách hàng</h2>
+                                    <p>
+                                        S? lu?ng và t? l? khách di ti?p qua t?ng giai do?n.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="report-funnel">
+                                <div>
+                                    <b id="funnelLeadTotal">642</b><span>Ðang ký</span
+                                    ><i data-funnel-bar="leads" style="width: 100%"></i>
+                                    <small id="funnelLeadRate">100% t?ng khách</small>
+                                </div>
+                                <div>
+                                    <b id="funnelQualifiedTotal">318</b><span>Ð? di?u ki?n</span
+                                    ><i data-funnel-bar="qualified" style="width: 78%"></i>
+                                    <small id="funnelQualifiedRate">0% t? dang ký</small>
+                                </div>
+                                <div>
+                                    <b id="funnelAppointmentTotal">146</b><span>Khách dã h?n</span
+                                    ><i data-funnel-bar="appointments" style="width: 57%"></i>
+                                    <small id="funnelAppointmentRate">0% t? dang ký</small>
+                                </div>
+                                <div>
+                                    <b id="funnelDealTotal">28</b><span>Giao d?ch</span
+                                    ><i data-funnel-bar="deals" style="width: 34%"></i>
+                                    <small id="funnelDealRate">0% t? dang ký</small>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="panel screen-panel">
+                            <div class="screen-panel-head">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >C?N THEO DÕI</span
+                                    >
+                                    <h2>Vi?c c?n x? lý</h2>
+                                    <p>Tình hình cham sóc khách và x? lý giao d?ch.</p>
+                                </div>
+                            </div>
+                            <div class="screen-bars">
+                                    <div class="screen-bar-row" data-report-task="uncontacted">
+                                    <span>Khách chua du?c liên h?</span>
+                                    <div class="screen-bar">
+                                        <i class="blue" style="width: 76%"></i>
+                                    </div>
+                                    <strong id="reportUncontacted">24 khách</strong>
+                                </div>
+                                    <div class="screen-bar-row" data-report-task="appointments">
+                                    <span>L?ch h?n trong k?</span>
+                                    <div class="screen-bar">
+                                        <i
+                                            class="violet"
+                                            style="width: 90%"
+                                        ></i>
+                                    </div>
+                                    <strong id="reportUpcoming">41 l?ch</strong>
+                                </div>
+                                    <div class="screen-bar-row" data-report-task="holds">
+                                    <span>Gi? ch? ch? xác nh?n</span>
+                                    <div class="screen-bar">
+                                        <i class="amber" style="width: 38%"></i>
+                                    </div>
+                                    <strong id="reportHolds">6 yêu c?u</strong>
+                                </div>
+                                    <div class="screen-bar-row" data-report-task="handoffs">
+                                    <span>H? so bàn giao c?n c?p nh?t</span>
+                                    <div class="screen-bar">
+                                        <i class="green" style="width: 51%"></i>
+                                    </div>
+                                    <strong id="reportHandoffs">12 h? so</strong>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <section class="panel screen-panel report-source-panel">
+                        <div class="screen-panel-head"><div><span class="panel-kicker">KÊNH TI?P NH?N</span><h2>Ngu?n khách hàng dang ký</h2><p>Phân b? theo ngu?n du?c ghi nh?n trong h? so khách hàng.</p></div><span class="screen-badge blue" id="reportSourceTotal">0 khách</span></div>
+                        <div class="report-source-list" id="reportSourceRows"></div>
+                    </section>
+                    <section class="panel screen-panel">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker">SO SÁNH D? ÁN</span>
+                                <h2>Khách hàng và ho?t d?ng bán</h2>
+                            </div>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table report-project-table">
+                                <thead>
+                                    <tr>
+                                        <th>D? án</th>
+                                        <th>Khách dang ký</th>
+                                        <th>Ð? di?u ki?n</th>
+                                        <th>L?ch h?n</th>
+                                        <th>Giao d?ch</th>
+                                        <th>Doanh thu tham chi?u</th>
+                                        <th>T? l? chuy?n d?i</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="reportProjectRows"></tbody>
+                                <tfoot id="reportProjectTotals"></tfoot>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="panel screen-panel report-staff-shortcut">
+                        <div>
+                            <span class="panel-kicker">PHÂN TÍCH Ð?I NGU</span>
+                            <h2>Báo cáo nhân viên</h2>
+                            <p>Xem riêng khách hàng ph? trách, l?ch h?n, giao d?ch, doanh thu tham chi?u và hoa h?ng theo t?ng nhân viên.</p>
+                        </div>
+                        <a class="button button-secondary" href="staff-reports.html"><i class="fa-solid fa-users" aria-hidden="true"></i> M? báo cáo nhân viên <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </section>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <script src="../public/js/appointment-store.js?v=20261026-linked-demo-v2"></script>
+        <script src="../public/js/activity-reports.js?v=20261027-complete-v1"></script>
+        <script src="../public/js/chart-tooltips.js?v=20261026-chart-hover-v1"></script><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+</body>
+</html>
+
+
+

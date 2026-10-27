@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Công vi?c & l?ch h?n | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="C&#244;ng vi?c &amp; l?ch h?n"></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">CÔNG VI?C</p>
+                            <h1>Công vi?c & l?ch h?n</h1>
+                            <p>Giao vi?c, theo dõi h?n x? lý và luu các l?n liên h? v?i khách hàng.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-task-open
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm công vi?c
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats">
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon amber"
+                                ><i
+                                    class="fa-solid fa-list-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Vi?c c?n x? lý hôm nay</span
+                                ><strong>24</strong
+                                ><small>9 vi?c d?n h?n tru?c 12:00</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon green"
+                                ><i
+                                    class="fa-solid fa-circle-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Ðã hoàn t?t</span><strong>18</strong
+                                ><small>Trong t?ng s? 42 vi?c hôm nay</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon red"
+                                ><i
+                                    class="fa-solid fa-clock"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>S?p quá h?n</span><strong>3</strong
+                                ><small>C?n qu?n lý h? tr?</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon blue"
+                                ><i
+                                    class="fa-solid fa-gauge-high"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Hoàn thành dúng h?n</span><strong>94%</strong
+                                ><small>Trong 30 ngày g?n nh?t</small>
+                            </div>
+                        </article>
+                    </div>
+
+                    <section class="panel screen-panel appointment-panel" id="appointments">
+                        <div class="screen-panel-head appointment-panel-head">
+                            <div>
+                                <span class="panel-kicker">L?CH H?N KHÁCH HÀNG</span>
+                                <h2>L?ch tu v?n, tham quan & bàn giao</h2>
+                                <p>X?p l?ch d?n khách xem nhà, tu v?n, bàn giao và phân công ngu?i ph? trách.</p>
+                            </div>
+                            <div class="appointment-head-actions">
+                                <a class="button button-quiet" href="team.html?type=employee&new=1"><i class="fa-solid fa-user-plus" aria-hidden="true"></i> T?o nhân viên</a>
+                                <button class="button button-primary" type="button" data-appointment-open><i class="fa-solid fa-plus" aria-hidden="true"></i> T?o l?ch h?n</button>
+                            </div>
+                        </div>
+                        <div class="appointment-calendar-toolbar">
+                            <div class="appointment-calendar-navigation">
+                                <button class="button button-quiet" type="button" data-calendar-prev aria-label="Kho?ng th?i gian tru?c"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                                <button class="button button-secondary" type="button" data-calendar-today>Hôm nay</button>
+                                <button class="button button-quiet" type="button" data-calendar-next aria-label="Kho?ng th?i gian ti?p theo"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                            </div>
+                            <h3 id="appointmentCalendarTitle"></h3>
+                            <div class="appointment-calendar-options">
+                                <label class="calendar-staff-filter"><i class="fa-solid fa-user" aria-hidden="true"></i><select id="appointmentStaffFilter" aria-label="L?c l?ch theo nhân viên"><option value="">T?t c? nhân viên</option></select></label>
+                                <div class="appointment-calendar-modes" role="group" aria-label="Ch? d? xem l?ch">
+                                    <button type="button" class="is-active" data-calendar-mode="month" aria-pressed="true">Tháng</button>
+                                    <button type="button" data-calendar-mode="week" aria-pressed="false">Tu?n</button>
+                                    <button type="button" data-calendar-mode="day" aria-pressed="false">Ngày</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="appointment-calendar" id="appointmentCalendar" aria-label="L?ch phân công nhân viên"></div>
+                        <div class="appointment-calendar-legend" aria-label="Phân lo?i l?ch">
+                            <span><i class="calendar-legend-dot consultation"></i>Tu v?n</span>
+                            <span><i class="calendar-legend-dot viewing"></i>D?n khách xem nhà</span>
+                            <span><i class="calendar-legend-dot handover"></i>Bàn giao</span>
+                        </div>
+                        <div class="appointment-toolbar">
+                            <div class="appointment-tabs" role="group" aria-label="L?c l?ch h?n">
+                                <button class="is-active" type="button" data-appointment-view="upcoming" aria-pressed="true">S?p t?i <span id="appointmentUpcomingCount">0</span></button>
+                                <button type="button" data-appointment-view="unassigned" aria-pressed="false">Chua phân công <span id="appointmentUnassignedCount">0</span></button>
+                                <button type="button" data-appointment-view="all" aria-pressed="false">T?t c?</button>
+                            </div>
+                            <select id="appointmentProjectFilter" aria-label="L?c l?ch theo d? án"><option value="">T?t c? d? án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table appointment-table">
+                                <thead><tr><th>Ngày gi?</th><th>Khách hàng</th><th>D? án & n?i dung</th><th>Ngu?i ph? trách</th><th>Tr?ng thái</th><th>Thao tác</th></tr></thead>
+                                <tbody id="appointmentRows"><tr><td colspan="6">Ðang t?i l?ch h?n...</td></tr></tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <div class="screen-columns workflow-agenda-layout" id="workAgenda">
+                        <section class="panel screen-panel">
+                            <div class="screen-panel-head">
+                                <div>
+                                    <span class="panel-kicker"
+                                        >CÔNG VI?C C?N LÀM</span
+                                    >
+                                    <h2>Công vi?c c?n làm</h2>
+                                    <p>
+                                        Vi?c theo dõi khách nhu g?i l?i, g?i thông tin
+                                        ho?c chu?n b? tham quan. L?ch h?n ? b?ng phía trên.
+                                    </p>
+                                </div>
+                                <span class="screen-period">Vi?c s?p t?i</span>
+                            </div>
+                            <div class="agenda-list" id="agendaList">
+                                <article>
+                                    <time>09:30</time
+                                    ><span class="agenda-dot amber"></span>
+                                    <div>
+                                        <strong>G?i l?i Nguy?n Ng?c Anh</strong
+                                        ><small
+                                            >An Phú Riverside · Can h? 2 phòng
+                                            ng? · Ph? trách: Tr?n Thanh
+                                            Long</small
+                                        >
+                                    </div>
+                                    <span class="screen-badge amber"
+                                        >Uu tiên</span
+                                    >
+                                </article>
+                                <article>
+                                    <time>10:45</time
+                                    ><span class="agenda-dot blue"></span>
+                                    <div>
+                                        <strong
+                                            >G?i thông tin nhà ph? phù
+                                            h?p</strong
+                                        ><small
+                                            >Green Valley · Ph? trách: Qu?nh
+                                            Dao</small
+                                        >
+                                    </div>
+                                    <span class="screen-badge blue"
+                                        >Ðang x? lý</span
+                                    >
+                                </article>
+                                <article>
+                                    <time>14:00</time
+                                    ><span class="agenda-dot violet"></span>
+                                    <div>
+                                        <strong
+                                            >Chu?n b? tài li?u tham quan nhà m?u</strong
+                                        ><small
+                                            >Central Park Towers · Ph? trách:
+                                            Mai Ng?c</small
+                                        >
+                                    </div>
+                                    <span class="screen-badge green"
+                                        >Ðã xác nh?n</span
+                                    >
+                                </article>
+                                <article>
+                                    <time>15:30</time
+                                    ><span class="agenda-dot green"></span>
+                                    <div>
+                                        <strong>C?p nh?t k?t qu? tu v?n</strong
+                                        ><small
+                                            >An Phú Riverside · Ph? trách: Tr?n
+                                            Thanh Long</small
+                                        >
+                                    </div>
+                                    <span class="screen-badge neutral"
+                                        >Ð?n h?n</span
+                                    >
+                                </article>
+                            </div>
+                        </section>
+                    </div>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="appointmentModal" hidden>
+            <section class="project-edit-dialog appointment-dialog" role="dialog" aria-modal="true" aria-labelledby="appointmentModalTitle">
+                <button class="modal-close" type="button" data-appointment-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+                <h2 id="appointmentModalTitle">T?o l?ch h?n khách hàng</h2>
+                <p>Ch?n khách, th?i gian và ngu?i tu v?n. Có th? phân công sau n?u chua ch?n du?c ngu?i phù h?p.</p>
+                <form id="appointmentForm" class="project-edit-form">
+                    <input type="hidden" name="productId" />
+                    <div id="appointmentProductContext" hidden><label for="appointmentProductDisplay">S?n ph?m quan tâm</label><input id="appointmentProductDisplay" type="text" readonly /><small class="appointment-field-note">L?ch g?i s? du?c liên k?t v?i s?n ph?m này.</small></div>
+                    <div class="project-form-row">
+                        <div class="appointment-customer-picker"><label for="appointmentCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="appointmentCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="appointmentCustomerOptions" aria-haspopup="listbox" placeholder="Tìm theo tên ho?c s? di?n tho?i" autocomplete="off" /><input id="appointmentCustomer" name="customer" type="hidden" /><div class="appointment-customer-options" id="appointmentCustomerOptions" role="listbox" hidden></div></div></div>
+                        <div><label for="appointmentProject">D? án</label><select id="appointmentProject" name="project" required><option value="">Ch?n d? án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
+                    </div>
+                    <div class="appointment-new-customer-fields" id="appointmentNewCustomerFields" hidden>
+                        <p>Nh?p thông tin liên h? d? t?o h? so khách hàng ti?m nang và g?n l?ch h?n v?i h? so dó.</p>
+                        <div class="project-form-row">
+                            <div><label for="appointmentNewCustomerName">H? và tên</label><input id="appointmentNewCustomerName" name="newCustomerName" autocomplete="name" placeholder="Ví d?: Nguy?n Van An" /></div>
+                            <div><label for="appointmentNewCustomerPhone">S? di?n tho?i</label><input id="appointmentNewCustomerPhone" name="newCustomerPhone" type="tel" autocomplete="tel" placeholder="Ví d?: 0901 234 567" /></div>
+                        </div>
+                        <div class="project-form-row">
+                            <div><label for="appointmentNewCustomerEmail">Email (không b?t bu?c)</label><input id="appointmentNewCustomerEmail" name="newCustomerEmail" type="email" autocomplete="email" placeholder="ten@email.com" /></div>
+                            <div><label for="appointmentNewCustomerNeed">Nhu c?u quan tâm</label><input id="appointmentNewCustomerNeed" name="newCustomerNeed" placeholder="Ví d?: Tìm can h? 2 phòng ng?" /></div>
+                        </div>
+                    </div>
+                    <div class="project-form-row">
+                        <div><label for="appointmentStart">Ngày và gi? h?n</label><input id="appointmentStart" name="start" type="datetime-local" required /></div>
+                        <div><label for="appointmentType">Ho?t d?ng</label><select id="appointmentType" name="type"><option>Tu v?n t?i van phòng</option><option>D?n khách xem nhà</option><option>Tham quan nhà m?u</option><option>Bàn giao nhà</option><option>G?i tu v?n</option><option>H?p tr?c tuy?n</option></select></div>
+                    </div>
+                    <label for="appointmentPlace">Ð?a di?m ho?c cách liên h?</label><input id="appointmentPlace" name="place" maxlength="120" placeholder="Ch?n ho?t d?ng d? xem g?i ý" aria-describedby="appointmentPlaceHint" /><small class="appointment-field-note" id="appointmentPlaceHint">G?i ý d?a di?m s? thay d?i theo ho?t d?ng.</small>
+                    <div class="project-form-row">
+                        <div><label for="appointmentAssignee">Nhân viên ph? trách</label><select id="appointmentAssignee" name="assignee"><option value="">Chua phân công</option></select><small class="appointment-field-note" id="appointmentAssigneeHint">Ch?n d? án d? xem nhân viên phù h?p.</small></div>
+                        <div><label for="appointmentStatus">Tr?ng thái</label><select id="appointmentStatus" name="status"><option>Ch? phân công</option><option>Ðã phân công</option><option>Hoàn t?t</option><option>Ðã h?y</option></select></div>
+                    </div>
+                    <div class="modal-actions appointment-modal-actions"><button class="button button-danger" type="button" data-appointment-delete hidden><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Xóa l?ch</button><button class="button button-quiet" type="button" data-appointment-cancel hidden><i class="fa-solid fa-ban" aria-hidden="true"></i> H?y l?ch</button><span class="appointment-modal-actions-spacer"></span><button class="button button-secondary" type="button" data-appointment-close>Ðóng</button><button class="button button-primary" type="submit">Luu l?ch h?n</button></div>
+                </form>
+            </section>
+        </div>
+        <div class="modal-backdrop" id="calendarDayModal" hidden>
+            <section class="project-edit-dialog calendar-day-dialog" role="dialog" aria-modal="true" aria-labelledby="calendarDayTitle">
+                <button class="modal-close" type="button" data-calendar-day-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i></span>
+                <h2 id="calendarDayTitle">L?ch trong ngày</h2>
+                <div class="calendar-day-agenda" id="calendarDayAgenda"></div>
+                <div class="modal-actions">
+                    <button class="button button-secondary" type="button" data-calendar-day-close>Ðóng</button>
+                    <button class="button button-primary" type="button" data-calendar-day-add><i class="fa-solid fa-plus" aria-hidden="true"></i> X?p l?ch ngày này</button>
+                </div>
+            </section>
+        </div>
+        <div class="modal-backdrop" id="taskModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="taskModalTitle">
+                <button class="modal-close" type="button" data-task-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+                <h2 id="taskModalTitle">Thêm công vi?c</h2>
+                <p>Giao vi?c cho dúng ngu?i và ghi rõ h?n x? lý.</p>
+                <form id="taskForm" class="project-edit-form">
+                    <label for="taskTitle">N?i dung công vi?c</label><input id="taskTitle" name="title" required maxlength="120" placeholder="Ví d?: G?i l?i khách d? xác nh?n l?ch tham quan" />
+                    <div class="project-form-row">
+                        <div class="appointment-customer-picker searchable-customer-picker"><label for="taskCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="taskCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="taskCustomerOptions" aria-haspopup="listbox" placeholder="Tìm khách hàng ho?c d? tr?ng" autocomplete="off" /><select id="taskCustomer" name="customer" hidden><option value="">Không g?n khách hàng</option><option value="anh">Nguy?n Ng?c Anh</option><option value="khoa">Tr?n Minh Khoa</option><option value="yen">Lê Hoàng Y?n</option><option value="bao">Ph?m Qu?c B?o</option></select><div class="appointment-customer-options" id="taskCustomerOptions" role="listbox" hidden></div></div></div>
+                        <div><label for="taskProject">D? án</label><select id="taskProject" name="project" required><option value="">Ch?n d? án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
+                    </div>
+                    <div class="project-form-row">
+                        <div><label for="taskAssignee">Ngu?i ph? trách</label><select id="taskAssignee" name="assignee" required><option value="">Ch?n nhân viên ho?c qu?n lý</option></select></div>
+                        <div><label for="taskDeadline">H?n x? lý</label><input id="taskDeadline" name="deadline" type="datetime-local" required /></div>
+                    </div>
+                    <label for="taskPriority">M?c uu tiên</label><select id="taskPriority" name="priority"><option>Thông thu?ng</option><option>Uu tiên</option></select>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-task-close>H?y</button><button class="button button-primary" type="submit">Luu công vi?c</button></div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/appointment-store.js?v=20261026-linked-demo-v2"></script>
+        <script src="../public/js/appointments.js?v=20261027-shared-detail-v1"></script>
+        <script src="../public/js/workflow.js?v=20261027-search-customer-task-v1"></script>
+        <script src="../public/js/searchable-customer-select.js?v=20261027-search-all-customer-fields-v2"></script>
+</body>
+</html>
+
+
+

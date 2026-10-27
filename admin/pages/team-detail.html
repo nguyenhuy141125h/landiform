@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f6f8" />
+    <title>Chi ti?t nhân viên | LANDIFORM</title>
+    <link rel="icon" type="image/svg+xml" href="../../website/assets/favicon.svg" />
+    <link rel="stylesheet" href="../../website/public/css/be-vietnam-pro.css" />
+    <link rel="stylesheet" href="../../website/public/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+    <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+    <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+<body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+        <main class="main-panel">
+            <header class="topbar" data-admin-shared-topbar data-page-label="Chi ti?t"></header>
+            <div class="dashboard-content screen-content staff-detail-page">
+                <div id="staffDetailNotFound" class="panel screen-panel staff-detail-empty" hidden><h1>Không tìm th?y tài kho?n</h1><p>Tài kho?n có th? dã b? xóa ho?c du?ng d?n không h?p l?.</p><a class="button button-primary" href="team.html?type=employee">Quay l?i danh sách nhân viên</a></div>
+                <div id="staffDetailContent" hidden>
+                    <header class="screen-heading staff-detail-heading"><div><a class="project-back-link" id="staffDetailBack" href="team.html?type=employee"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Danh sách nhân viên</a><p class="screen-eyebrow">H? SO NHÂN S?</p><h1 id="staffDetailName">Nhân viên</h1><p id="staffDetailSubtitle">Thông tin tài kho?n, ch?c v? và quy?n dang nh?p.</p></div><span id="staffDetailStatus" class="screen-badge green">Ðang ho?t d?ng</span></header>
+                    <div class="staff-detail-grid">
+                        <section class="panel screen-panel staff-detail-panel"><div class="screen-panel-head"><div><span class="panel-kicker">THÔNG TIN NHÂN VIÊN</span><h2>Thông tin và phân công</h2><p>C?p nh?t liên h?, ch?c v?, ph?m vi và tr?ng thái làm vi?c.</p></div></div>
+                            <form id="staffDetailForm" class="project-edit-form staff-detail-form">
+                                <label for="staffDetailNameInput">H? và tên</label><input id="staffDetailNameInput" name="name" autocomplete="name" required />
+                                <div class="project-form-row"><div><label for="staffDetailEmail">Email dang nh?p</label><input id="staffDetailEmail" name="email" type="email" autocomplete="username" required /></div><div><label for="staffDetailPhone">S? di?n tho?i</label><input id="staffDetailPhone" name="phone" type="tel" autocomplete="tel" /></div></div>
+                                <div class="project-form-row"><div><label for="staffDetailGroupSelect">Nhóm tài kho?n</label><select id="staffDetailGroupSelect" name="accountType"><option value="management">Qu?n lý</option><option value="employee">Nhân viên</option></select></div><div><label for="staffDetailRole">Ch?c v?</label><select id="staffDetailRole" name="roleId" required></select></div></div>
+                                <div class="project-form-row"><fieldset class="staff-scope-picker"><legend>Ph?m vi ph? trách <small>Ch?n m?t ho?c nhi?u d? án</small></legend><div class="staff-scope-options" id="staffDetailScopeOptions"><label><input type="checkbox" name="staffDetailScopeOptions" value="Toàn doanh nghi?p" />Toàn doanh nghi?p</label><label><input type="checkbox" name="staffDetailScopeOptions" value="An Phú Riverside" />An Phú Riverside</label><label><input type="checkbox" name="staffDetailScopeOptions" value="Green Valley" />Green Valley</label><label><input type="checkbox" name="staffDetailScopeOptions" value="Central Park Towers" />Central Park Towers</label><label><input type="checkbox" name="staffDetailScopeOptions" value="Lumière Garden" />Lumière Garden</label></div></fieldset><div><label for="staffDetailWorkStatus">Tr?ng thái làm vi?c</label><select id="staffDetailWorkStatus" name="status"><option>Ðang ho?t d?ng</option><option>T?m ngung</option></select></div></div>
+                                <label class="staff-detail-login-access"><input id="staffDetailLoginAllowed" name="loginAllowed" type="checkbox" /> Cho phép tài kho?n dang nh?p h? th?ng</label>
+                                <div class="modal-actions"><a class="button button-secondary" id="staffDetailCancel" href="team.html?type=employee">H?y</a><button class="button button-primary" type="submit">Luu thay d?i</button></div>
+                            </form>
+                        </section>
+                        <aside class="staff-detail-side">
+                            <section class="panel screen-panel staff-detail-panel"><div class="screen-panel-head"><div><span class="panel-kicker">B?O M?T TÀI KHO?N</span><h2>C?p nh?t m?t kh?u</h2><p>Ð?t m?t kh?u m?i cho nhân viên. M?t kh?u hi?n t?i s? không du?c hi?n th?.</p></div></div>
+                                <form id="staffPasswordForm" class="project-edit-form"><label for="staffNewPassword">M?t kh?u m?i</label><input id="staffNewPassword" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="Ít nh?t 8 ký t?" /><label for="staffConfirmPassword">Nh?p l?i m?t kh?u m?i</label><input id="staffConfirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required placeholder="Nh?p l?i m?t kh?u" /><div class="staff-password-hint"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> B?n demo luu m?t kh?u d?ng mã bam trên trình duy?t này; tài kho?n th?t c?n k?t n?i máy ch? xác th?c.</div><div class="modal-actions"><button class="button button-primary" type="submit"><i class="fa-solid fa-key" aria-hidden="true"></i> C?p nh?t m?t kh?u</button></div></form>
+                            </section>
+                            <section class="panel screen-panel staff-detail-panel"><div class="screen-panel-head"><div><span class="panel-kicker">CH?C V? &amp; QUY?N</span><h2 id="staffDetailPermissionRole">Quy?n dang áp d?ng</h2><p id="staffDetailPermissionSummary">Quy?n truy c?p du?c quy?t d?nh theo ch?c v?.</p></div></div><div class="staff-role-permission-list" id="staffDetailPermissionList"></div><a class="button button-quiet" id="staffDetailPermissionLink" href="permissions.html">Xem c?u hình quy?n <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section>
+                        </aside>
+                    </div>
+                </div>
+                <footer class="dashboard-footer" data-admin-shared-footer></footer>
+            </div>
+        </main>
+    </div>
+    <script type="application/json" id="staffRecordExamples">[
+        {"id":"demo-manager-01","name":"Nguy?n Minh Anh","email":"minh.anh@example.com","roleId":"manager","role":"Qu?n lý kinh doanh","accountType":"management","scope":"Toàn doanh nghi?p","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"demo-manager-02","name":"Tr?n Qu?c B?o","email":"quoc.bao@example.com","roleId":"leader","role":"Ban lãnh d?o","accountType":"management","scope":"Toàn doanh nghi?p","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"demo-advisor-01","name":"Lê Hoàng Y?n","email":"hoang.yen@example.com","roleId":"advisor","role":"Nhân viên tu v?n","accountType":"employee","scope":"An Phú Riverside","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"demo-advisor-02","name":"Ph?m Gia Huy","email":"gia.huy@example.com","roleId":"advisor","role":"Nhân viên tu v?n","accountType":"employee","scope":"Green Valley","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"demo-marketing-01","name":"Ð? Khánh Linh","email":"khanh.linh@example.com","roleId":"marketing","role":"Marketing","accountType":"employee","scope":"Toàn doanh nghi?p","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"staff-long","name":"Tr?n Thanh Long","email":"thanh.long@example.com","roleId":"advisor","role":"Nhân viên tu v?n","accountType":"employee","scope":"An Phú Riverside","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"staff-quynh","name":"Qu?nh Dao","email":"quynh.dao@example.com","roleId":"advisor","role":"Nhân viên tu v?n","accountType":"employee","scope":"Green Valley","status":"Ðang ho?t d?ng","loginAllowed":true},
+        {"id":"demo-operation-01","name":"Bùi Ð?c Thành","email":"duc.thanh@example.com","roleId":"operation","role":"V?n hành","accountType":"employee","scope":"Lumière Garden","status":"T?m ngung","loginAllowed":false}
+    ]</script>
+    <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+    <script src="../public/js/staff-detail.js?v=20261027-html-team-examples-v1"></script>
+</body>
+</html>
+
+
+

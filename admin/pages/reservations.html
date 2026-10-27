@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Yêu c?u gi? ch? | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="Y&#234;u c?u gi? ch?"></header>
+                <div class="dashboard-content screen-content">
+  <header class="screen-heading"><div><p class="screen-eyebrow">QUY TRÌNH GIAO D?CH</p><h1>Yêu c?u gi? ch?</h1><p>Ki?m tra yêu c?u, theo dõi h?n gi? ch? và luu l?i l?ch s? x? lý d? s?n ph?m luôn có tr?ng thái chính xác.</p></div><div class="screen-heading-actions"><a class="button button-secondary" href="booking.html"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Danh m?c s?n ph?m</a></div></header>
+  <section class="booking-alert-panel" data-booking-alert-panel hidden aria-label="C?nh báo gi? ch?"><div class="booking-alert-heading"><div><strong>C?n chú ý</strong><span data-booking-alert-summary></span></div><button type="button" class="button button-quiet" data-booking-alert-close>Ðóng</button></div><div class="booking-alert-list" data-booking-alert-list></div></section>
+  <div class="screen-stats"><article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span><div><span>Ch? x? lý</span><strong id="bookingPendingCount">0</strong><small>Yêu c?u c?n ki?m tra</small></div></article><article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-key" aria-hidden="true"></i></span><div><span>Ðã gi? ch?</span><strong id="bookingHeldCount">0</strong><small>Ðang khóa s?n ph?m</small></div></article><article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-calendar" aria-hidden="true"></i></span><div><span>S?p h?t h?n</span><strong id="bookingExpiringCount">0</strong><small>Trong 3 ngày t?i</small></div></article><article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></span><div><span>Ðã gi?i phóng</span><strong id="bookingReleasedCount">0</strong><small>T? ch?i, gi?i phóng, h?t h?n</small></div></article></div>
+  <section class="panel screen-panel" id="bookingRequestsPanel"><div class="screen-panel-head"><div><span class="panel-kicker">THEO DÕI TR?NG THÁI</span><h2>Danh sách yêu c?u</h2><p>Duy?t d? gi? s?n ph?m, t? ch?i d? tr? s?n ph?m v? tr?ng thái còn bán. Yêu c?u du?c t? d?ng gi?i phóng khi h?t h?n.</p></div><div class="screen-heading-actions"><button class="button button-primary" type="button" data-booking-open><i class="fa-solid fa-plus" aria-hidden="true"></i> T?o yêu c?u</button></div></div>
+    <div class="booking-filters" aria-label="B? l?c yêu c?u gi? ch?"><label><span>D? án</span><select data-booking-filter aria-label="L?c yêu c?u theo d? án"><option value="">T?t c? d? án</option><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></select></label><label><span>Nhân viên ph? trách</span><select data-booking-assignee-filter aria-label="L?c theo nhân viên ph? trách"><option value="">T?t c? nhân viên</option></select></label><label><span>H?n gi? ch? t?</span><input type="date" data-booking-date-from aria-label="H?n gi? ch? t? ngày"></label><label><span>Ð?n ngày</span><input type="date" data-booking-date-to aria-label="H?n gi? ch? d?n ngày"></label><button class="button button-quiet" type="button" data-booking-filter-clear>Xóa b? l?c</button></div>
+    <div class="booking-filter-result" data-booking-filter-result aria-live="polite"></div>
+    <div class="screen-table-wrap"><table class="screen-table"><thead><tr><th>Mã yêu c?u</th><th>Khách hàng</th><th>S?n ph?m</th><th>D? án</th><th>Ph? trách</th><th>H?n gi? ch?</th><th>Tr?ng thái</th><th>Thao tác</th></tr></thead><tbody id="bookingRequests"><tr data-booking-code="BK-2026-084" data-customer-id="anh" data-product-id="unit-ap-a2-1208" data-assignee-id="staff-long" data-booking-deadline="2026-11-02T17:00" data-booking-created="2026-10-26T09:15"><td>BK-2026-084</td><td>Nguy?n Ng?c Anh</td><td>A2 · 12.08</td><td>An Phú Riverside</td><td>Tr?n Thanh Long</td><td>02/11/2026 · 17:00</td><td><span class="screen-badge amber">Ch? duy?t</span></td><td></td></tr></tbody></table></div>
+  </section>
+  <section class="panel screen-panel booking-audit-panel"><div class="screen-panel-head"><div><span class="panel-kicker">MINH B?CH V?N HÀNH</span><h2>L?ch s? thao tác</h2><p>Ghi nh?n ngu?i duy?t, t? ch?i, gi?i phóng ho?c t? d?ng tr? s?n ph?m v? tr?ng thái còn bán.</p></div><span class="screen-badge blue" data-booking-audit-count>0 thao tác</span></div><div class="screen-table-wrap"><table class="screen-table booking-audit-table"><thead><tr><th>Th?i di?m</th><th>Mã yêu c?u</th><th>S?n ph?m / d? án</th><th>Thao tác</th><th>Ngu?i th?c hi?n</th></tr></thead><tbody data-booking-audit><tr><td colspan="5">Chua có thao tác du?c ghi nh?n.</td></tr></tbody></table></div></section>
+  <div class="screen-empty-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> M?i thao tác duy?t/t? ch?i du?c luu cùng ngu?i th?c hi?n và th?i di?m. Khi m?t kho?n gi? ch? dã duy?t h?t h?n, s?n ph?m du?c t? d?ng tr? v? “Còn bán”.</div>
+  <footer class="dashboard-footer" data-admin-shared-footer></footer>
+</div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="bookingModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
+                <button class="modal-close" type="button" data-booking-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
+                <h2 id="bookingModalTitle">T?o yêu c?u gi? ch?</h2>
+                <p>Ch?n khách hàng, s?n ph?m, nhân viên ph? trách và th?i h?n d? theo dõi xuyên su?t yêu c?u.</p>
+                <form id="bookingForm" class="project-edit-form">
+                    <div class="appointment-customer-picker searchable-customer-picker"><label for="bookingCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="bookingCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bookingCustomerOptions" aria-haspopup="listbox" placeholder="Tìm theo tên ho?c s? di?n tho?i" autocomplete="off" /><select id="bookingCustomer" name="customer" hidden><option value="">Ch?n khách hàng</option><option>Nguy?n Ng?c Anh</option><option>Tr?n Minh Khoa</option><option>Lê Hoàng Y?n</option><option>Ph?m Qu?c B?o</option></select><div class="appointment-customer-options" id="bookingCustomerOptions" role="listbox" hidden></div></div></div>
+                    <div class="project-form-row">
+                        <div><label for="bookingProject">D? án</label><select id="bookingProject" name="project" required><option value="">Ch?n d? án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
+                        <div><label for="bookingProduct">Can / s?n ph?m còn bán</label><select id="bookingProduct" name="product" required><option value="">Ch?n s?n ph?m</option></select></div>
+                    </div>
+                    <label for="bookingAssignee">Nhân viên kinh doanh ph? trách</label>
+                    <select id="bookingAssignee" name="assignee" required><option value="">Ch?n nhân viên ph? trách</option><option>Tr?n Thanh Long</option><option>Qu?nh Dao</option><option>Minh Anh</option></select>
+                    <label for="bookingDeadline">Th?i h?n gi? ch?</label>
+                    <input id="bookingDeadline" name="deadline" type="datetime-local" required />
+                    <label for="bookingNote">Ghi chú</label>
+                    <textarea id="bookingNote" name="note" rows="3" maxlength="300" placeholder="Thông tin c?n luu ý cho ngu?i duy?t"></textarea>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-booking-close>H?y</button><button class="button button-primary" type="submit">Luu yêu c?u</button></div>
+                </form>
+            </section>
+        </div>
+        <div class="modal-backdrop" id="bookingAuditModal" hidden>
+            <section class="project-edit-dialog booking-audit-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingAuditTitle">
+                <button class="modal-close" type="button" data-booking-audit-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
+                <h2 id="bookingAuditTitle">L?ch s? yêu c?u</h2>
+                <p data-booking-audit-subtitle></p>
+                <ol class="booking-audit-timeline" data-booking-audit-timeline></ol>
+                <div class="modal-actions"><button class="button button-secondary" type="button" data-booking-audit-close>Ðóng</button></div>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div>
+        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/booking.js?v=20261027-search-customer-v1"></script>
+        <script src="../public/js/searchable-customer-select.js?v=20261027-search-all-customer-fields-v2"></script>
+</body>
+</html>
+
+
+

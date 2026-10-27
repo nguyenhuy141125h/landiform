@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f6f8" />
+    <title>Yêu c?u h? tr? | LANDIFORM</title>
+    <link rel="icon" type="image/svg+xml" href="../../website/assets/favicon.svg" />
+    <link rel="stylesheet" href="../../website/public/css/be-vietnam-pro.css" />
+    <link rel="stylesheet" href="../../website/public/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+    <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+    <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+    <link rel="stylesheet" href="../public/css/support.css?v=20261027-topbar-account-borderless-v1" />
+</head>
+<body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+<div class="app-shell">
+    <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+    <main class="main-panel">
+        <header class="topbar" data-admin-shared-topbar data-page-label="Y&#234;u c?u h? tr?"></header>
+        <div class="dashboard-content screen-content support-page">
+            <header class="screen-heading"><div><p class="screen-eyebrow">LANDIFORM CARE</p><h1>Trung tâm h? tr?</h1><p>G?i yêu c?u d?n d?i ngu LANDIFORM. Ch?n dúng n?i dung d? d?i h? tr? ti?p nh?n nhanh hon.</p></div></header>
+            <div class="support-layout">
+                <section class="panel screen-panel support-form-panel"><div class="screen-panel-head"><div><span class="panel-kicker">T?O PHI?U H? TR?</span><h2>Thông tin yêu c?u</h2><p>Các m?c có d?u * là b?t bu?c.</p></div></div>
+                    <form id="supportForm" class="support-form">
+                        <div class="support-form-row"><label>H? và tên *<input name="name" required autocomplete="name" placeholder="Tên ngu?i liên h?" /></label><label>Email nh?n ph?n h?i<input name="email" type="email" autocomplete="email" placeholder="ten@congty.vn" /></label></div>
+                        <div class="support-form-row"><label>Doanh nghi?p *<input name="company" required autocomplete="organization" placeholder="Tên doanh nghi?p" /></label><label>Chi nhánh<input name="branch" placeholder="Ví d?: H? Chí Minh" /></label></div>
+                        <div class="support-form-row"><label>S? di?n tho?i (b?t bu?c n?u ch?n g?i)<input name="phone" type="tel" autocomplete="tel" placeholder="09xx xxx xxx" /></label><label>Nh?n ph?n h?i qua<select name="replyVia"><option>Email</option><option>Ði?n tho?i</option><option>Email ho?c di?n tho?i</option></select></label></div>
+                        <div class="support-form-row"><label>Nhóm c?n h? tr? *<select name="category" required><option value="">Ch?n nhóm v?n d?</option><option>L?i k? thu?t</option><option>Tài kho?n và phân quy?n</option><option>Hu?ng d?n s? d?ng</option><option>Website, bi?u m?u và mã QR</option><option>Khách hàng và giao d?ch</option><option>Báo cáo và d? li?u</option><option>Khác</option></select></label><label>M?c d? ?nh hu?ng<select name="priority"><option>Bình thu?ng</option><option>?nh hu?ng m?t ph?n</option><option>Kh?n c?p</option></select></label></div>
+                        <label>Tiêu d? yêu c?u *<input name="subject" required maxlength="120" placeholder="Ví d?: Không luu du?c bi?u m?u dang ký" /></label>
+                        <label>Mô t? chi ti?t *<textarea name="description" rows="5" required minlength="15" placeholder="B?n dang ? trang nào? Ðã thao tác nh?ng bu?c gì? H? th?ng hi?n th? k?t qu? ra sao?"></textarea></label>
+                        <div class="support-form-actions"><button class="button button-primary" type="submit"><i class="fa-solid fa-paper-plane" aria-hidden="true"></i> G?i yêu c?u h? tr?</button></div>
+                    </form>
+                    <div class="support-success" id="supportSuccess" hidden role="status"><span><i class="fa-solid fa-circle-check" aria-hidden="true"></i></span><h3>Ðã hoàn t?t bi?u m?u</h3><p>Ðây là tr?ng thái minh h?a cho giao di?n h? tr?.</p><button class="button button-secondary" id="supportAgain" type="button">T?o yêu c?u khác</button></div>
+                </section>
+            </div>
+            <footer class="dashboard-footer" data-admin-shared-footer></footer>
+        </div>
+    </main>
+</div>
+<div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+<script src="../public/js/support.js?v=20261027-support-form-v2"></script>
+</body>
+</html>
+
+
+

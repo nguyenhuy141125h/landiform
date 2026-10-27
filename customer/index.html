@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f8fa" />
+    <meta name="description" content="Khám phá dự án, căn hộ, nhà phố và đất nền của An Phát Land. Xem sản phẩm và đăng ký lịch tư vấn." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Dự án & sản phẩm | An Phát Land" />
+    <meta property="og:description" content="Khám phá các dự án và sản phẩm bất động sản của An Phát Land." />
+    <title>Dự án & sản phẩm | An Phát Land</title>
+    <link rel="icon" type="image/svg+xml" href="../website/assets/favicon.svg" />
+    <link rel="stylesheet" href="../website/public/css/be-vietnam-pro.css" />
+    <link rel="stylesheet" href="../website/public/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="public/css/customer-storefront.css?v=20261027-reservation-colors-v1" />
+</head>
+<body data-customer-page="home">
+    <script src="../admin/public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+    <header class="store-header" data-customer-header></header>
+    <main id="home">
+        <section class="store-hero">
+            <div class="store-hero-backdrop"></div>
+            <div class="store-container store-hero-inner">
+                <div class="hero-copy"><span class="hero-kicker"><i class="fa-solid fa-building-circle-check" aria-hidden="true"></i> WEBSITE CHÍNH THỨC <span data-brand-name>An Phát Land</span></span><h1 data-hero-title>Khám phá dự án<br />cho <em>ngôi nhà tương lai.</em></h1><p data-hero-description>Tìm hiểu các dự án và sản phẩm bất động sản do An Phát Land phát triển. Xem thông tin từng căn, nhà hoặc lô đất và đặt lịch trao đổi cùng chuyên viên.</p><div class="hero-trust"><span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Thông tin theo từng dự án</span><span><i class="fa-solid fa-circle-check" aria-hidden="true"></i> Tư vấn trực tiếp từ chủ đầu tư</span></div></div>
+                <form class="hero-search" id="heroSearchForm"><div class="hero-search-heading"><span class="hero-search-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span><div><strong>Bắt đầu tìm kiếm</strong><small>Lọc sản phẩm theo điều bạn cần</small></div></div><label for="heroKeyword">Từ khóa</label><div class="search-input-wrap"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="heroKeyword" type="search" placeholder="Tên dự án, mã căn, khu vực" /></div><div class="hero-search-row"><div><label for="heroProject">Dự án</label><select id="heroProject"><option value="">Tất cả dự án</option></select></div><div><label for="heroType">Loại hình</label><select id="heroType"><option value="">Tất cả loại hình</option></select></div></div><button class="button button-primary search-submit" type="submit">Tìm sản phẩm <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button><small class="search-footnote"><i class="fa-solid fa-headset" aria-hidden="true"></i> Đội ngũ tư vấn sẽ hỗ trợ miễn phí</small></form>
+            </div>
+            <div class="hero-decoration hero-decoration-one"></div><div class="hero-decoration hero-decoration-two"></div>
+        </section>
+        <section class="store-container project-location-section" id="projectLocationSection" hidden><div class="project-location-heading"><div><p class="store-eyebrow">VỊ TRÍ DỰ ÁN</p><h2 id="projectLocationTitle">Vị trí dự án</h2><p id="projectLocationAddress"></p></div><a id="projectLocationLink" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">Mở Google Maps <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div><iframe id="projectLocationMap" title="Bản đồ vị trí dự án trên Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></section>
+        
+        <section class="store-container product-section" id="products"><div class="section-heading product-heading"><div><p class="store-eyebrow">SẢN PHẨM THEO DỰ ÁN</p><h2 data-product-heading>Căn hộ, nhà phố & đất nền</h2><p id="resultSummary">Đang tải danh sách sản phẩm...</p></div><div class="view-switch" role="group" aria-label="Kiểu hiển thị"><button class="is-active" type="button" data-layout="grid" aria-label="Xem dạng lưới"><i class="fa-solid fa-grip" aria-hidden="true"></i></button><button type="button" data-layout="list" aria-label="Xem dạng danh sách"><i class="fa-solid fa-list" aria-hidden="true"></i></button></div></div>
+            <div class="product-toolbar" id="productToolbar">
+    <div class="product-filter-heading"><span><i class="fa-solid fa-sliders" aria-hidden="true"></i></span><div><strong>Bộ lọc sản phẩm</strong><small>Tìm nhanh theo khu vực, loại hình hoặc mở bộ lọc chi tiết.</small></div></div>
+    <div class="product-filters">
+        <label class="filter-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="productSearch" type="search" placeholder="Mã sản phẩm, tên dự án..." aria-label="Tìm sản phẩm" /></label>
+        <select id="areaFilter" aria-label="Lọc theo khu vực"><option value="">Tất cả khu vực</option></select>
+        <select id="typeFilter" aria-label="Lọc theo loại hình"><option value="">Tất cả loại hình</option></select>
+        <select id="availabilityFilter" aria-label="Lọc theo tình trạng"><option value="available">Đang mở bán</option><option value="all">Tất cả tình trạng</option><option value="Còn bán">Còn bán</option><option value="Đang giữ chỗ">Đang giữ chỗ</option><option value="Đã bán">Đã bán</option><option value="Chưa mở bán">Sắp mở bán</option></select>
+        <button class="filter-advanced-toggle" id="toggleAdvancedFilters" type="button" aria-expanded="false" aria-controls="advancedFilters"><i class="fa-solid fa-sliders" aria-hidden="true"></i><span>Bộ lọc</span><b class="filter-count" id="filterCount" hidden>0</b><i class="fa-solid fa-chevron-down filter-toggle-chevron" aria-hidden="true"></i></button>
+    </div>
+    <div class="advanced-filters" id="advancedFilters" hidden>
+        <label class="filter-project-field"><span>Dự án</span><select id="projectFilter" aria-label="Lọc theo dự án"><option value="">Tất cả dự án</option></select></label>
+        <label class="filter-range"><span>Giá từ (tỷ)</span><input id="minPrice" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Không giới hạn" /></label>
+        <label class="filter-range"><span>Đến giá (tỷ)</span><input id="maxPrice" type="number" min="0" step="0.1" inputmode="decimal" placeholder="Không giới hạn" /></label>
+        <label class="filter-range"><span>Diện tích từ (m²)</span><input id="minArea" type="number" min="0" step="1" inputmode="numeric" placeholder="Bất kỳ" /></label>
+        <label class="filter-range"><span>Đến diện tích (m²)</span><input id="maxArea" type="number" min="0" step="1" inputmode="numeric" placeholder="Bất kỳ" /></label>
+        <label class="filter-bedroom-field"><span>Phòng ngủ</span><select id="bedroomFilter" aria-label="Lọc theo số phòng ngủ"><option value="">Tất cả</option><option value="studio">Studio</option><option value="1">1 phòng ngủ</option><option value="2">2 phòng ngủ</option><option value="3">3 phòng ngủ</option><option value="4">4+ phòng ngủ</option></select></label>
+        <label class="filter-sort-field"><span>Sắp xếp</span><select id="sortFilter" aria-label="Sắp xếp sản phẩm"><option value="featured">Nổi bật</option><option value="price-asc">Giá thấp đến cao</option><option value="price-desc">Giá cao đến thấp</option><option value="area-asc">Diện tích tăng dần</option><option value="area-desc">Diện tích giảm dần</option></select></label>
+        <button class="clear-filters" id="clearFilters" type="button"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i> Xóa tất cả</button>
+    </div>
+</div>
+            <div class="product-grid" id="productGrid" aria-live="polite"></div><div class="empty-products" id="emptyProducts" hidden><span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></span><h3>Chưa tìm thấy sản phẩm phù hợp</h3><p>Thử đổi dự án, loại hình hoặc khoảng giá để xem thêm lựa chọn.</p><button class="button button-secondary" type="button" id="emptyReset">Xóa bộ lọc</button></div>
+        </section>
+        <section class="store-container how-section" id="how-it-works"><div class="how-heading"><p class="store-eyebrow">KẾT NỐI VỚI CHUYÊN VIÊN</p><h2>Tìm hiểu sản phẩm,<br />đặt lịch theo nhu cầu.</h2><p>Chọn một sản phẩm cụ thể hoặc gửi yêu cầu tư vấn chung. Đội ngũ của <span data-brand-name>An Phát Land</span> sẽ liên hệ để xác nhận thông tin.</p></div><div class="how-steps"><article><span>01</span><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><h3>Chọn dự án</h3><p>Xem các dự án và khu vực do doanh nghiệp phát triển.</p></article><article><span>02</span><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i><h3>Xem từng sản phẩm</h3><p>Tham khảo loại hình, diện tích, vị trí và giá dự kiến.</p></article><article><span>03</span><svg class="calendar-action-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8.5 15l2 2 5-5"/></svg><h3>Gửi yêu cầu</h3><p>Chọn thời gian để chuyên viên liên hệ xác nhận.</p></article></div></section>
+    </main>
+    <footer class="customer-footer" data-customer-footer></footer>
+    <div class="store-toast" id="storeToast" role="status" aria-live="polite"></div>
+    <div class="store-modal-backdrop" id="productModal" hidden><section class="store-modal product-detail-modal" role="dialog" aria-modal="true" aria-labelledby="detailTitle"><button class="store-modal-close" type="button" data-close-modal aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button><div class="detail-image-wrap"><img id="detailImage" src="../website/assets/residential-exterior.jpg" alt="" /><span class="product-status" id="detailStatus"></span></div><div class="detail-content"><p class="store-eyebrow" id="detailProject"></p><h2 id="detailTitle">Thông tin sản phẩm</h2><p class="detail-location" id="detailLocation"></p><div class="detail-price"><span>Giá tham khảo</span><strong id="detailPrice"></strong></div><div class="detail-facts" id="detailFacts"></div><p class="detail-disclaimer">Thông tin và giá bán có thể thay đổi theo chính sách của dự án. Chuyên viên sẽ xác nhận khi tư vấn.</p><div class="detail-actions"><button class="button button-secondary" type="button" id="detailFavorite"><svg class="favorite-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78Z"/></svg> Lưu sản phẩm</button><button class="button button-primary" type="button" id="detailAppointment"><svg class="calendar-action-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8.5 15l2 2 5-5"/></svg> Đặt lịch xem</button></div></div></section></div>
+    <div class="store-modal-backdrop" id="appointmentModal" hidden><section class="store-modal appointment-modal" role="dialog" aria-modal="true" aria-labelledby="appointmentTitle"><button class="store-modal-close" type="button" data-close-modal aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button><span class="appointment-modal-icon"><svg class="calendar-action-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8.5 15l2 2 5-5"/></svg></span><p class="store-eyebrow">TƯ VẤN MIỄN PHÍ</p><h2 id="appointmentTitle">Đặt lịch với chuyên viên</h2><p class="appointment-modal-intro">Cho chúng tôi biết thời gian thuận tiện. Chuyên viên sẽ liên hệ xác nhận.</p><div class="appointment-selected-product" id="appointmentSelectedProduct" hidden></div><form id="appointmentRequestForm" class="appointment-request-form"><input type="hidden" name="productId" /><label class="appointment-branch-field" data-branch-field hidden>Chi nhánh muốn liên hệ<select name="branchId" data-branch-select><option value="">Chọn chi nhánh</option></select></label><div class="appointment-form-row"><label>Họ và tên<input name="name" required maxlength="100" placeholder="Nguyễn Văn A" /></label><label>Số điện thoại<input name="phone" required type="tel" minlength="9" maxlength="15" placeholder="09xx xxx xxx" /></label></div><label>Email (không bắt buộc)<input name="email" type="email" placeholder="ten@email.com" /></label><div class="appointment-form-row"><label>Ngày mong muốn
+                            <span class="date-picker" data-date-picker>
+                                <input class="date-picker-value" name="dateDisplay" type="text" inputmode="numeric" autocomplete="off" placeholder="dd/mm/yyyy" aria-label="Ngày mong muốn, định dạng ngày tháng năm" aria-haspopup="dialog" aria-expanded="false" required />
+                                <input name="date" type="hidden" />
+                                <button class="date-picker-toggle" type="button" aria-label="Mở lịch chọn ngày"><svg class="calendar-action-icon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg></button>
+                                <span class="date-picker-popover" role="dialog" aria-label="Chọn ngày mong muốn" hidden>
+                                    <span class="date-picker-header">
+                                        <button type="button" data-date-prev aria-label="Tháng trước"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+                                        <strong data-date-title></strong>
+                                        <button type="button" data-date-next aria-label="Tháng sau"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                                    </span>
+                                    <span class="date-picker-weekdays" aria-hidden="true"></span>
+                                    <span class="date-picker-days" role="grid"></span>
+                                    <span class="date-picker-footer"><button type="button" data-date-today>Hôm nay</button><span data-date-hint>Chọn ngày thuận tiện cho bạn</span></span>
+                                </span>
+                            </span>
+                        </label><label>Khung giờ<select name="time" required><option value="">Chọn khung giờ</option><option>09:00 – 11:00</option><option>13:30 – 15:00</option><option>15:00 – 17:00</option></select></label></div><label>Nội dung cần tư vấn<textarea name="message" rows="3" placeholder="Ví dụ: muốn xem nhà mẫu, cần tư vấn phương thức thanh toán..."></textarea></label><label class="appointment-consent"><input type="checkbox" name="consent" required /><span>Tôi đồng ý để chuyên viên liên hệ về yêu cầu tư vấn này.</span></label><div class="appointment-form-actions"><button class="button button-quiet" type="button" data-close-modal>Để sau</button><button class="button button-primary" type="submit">Gửi yêu cầu tư vấn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></form></section></div>
+    <script src="public/js/backend-ui.js?v=20261027-static-backend-hooks-v2"></script>
+    <script src="../admin/public/js/inventory.js?v=20261027-html-product-examples-v1"></script>
+    <script src="public/js/customer-header.js?v=20261026-info-label-v1"></script>
+    <script src="public/js/customer-footer.js?v=20261026-info-label-v1"></script>
+    <script src="public/js/customer-date-picker.js?v=20261026-styled-calendar-v2"></script>
+    <script src="public/js/customer-branches.js?v=20261026-branch-settings-v1"></script>
+    <script src="public/js/customer-storefront.js?v=20261027-html-product-examples-v1"></script>
+    <script src="public/js/customer-selects.js?v=20261026-compact-filters-v1"></script>
+</body>
+</html>

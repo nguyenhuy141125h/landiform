@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>H? so khách hàng | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="H? so kh&#225;ch h&#224;ng"></header>
+                <div class="dashboard-content screen-content customer-detail" id="customerDetail">
+                    <header class="screen-heading customer-detail-heading">
+                        <div>
+                            <a class="project-back-link" href="leads.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Danh sách khách hàng</a>
+                            <p class="screen-eyebrow">H? SO KHÁCH HÀNG</p>
+                            <h1 id="customerName">Nguy?n Ng?c Anh</h1>
+                            <p id="customerIntro">Theo dõi nhu c?u, l?ch s? trao d?i và bu?c cham sóc ti?p theo.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <a class="button button-quiet" id="customerPhoneLink" href="tel:0903456218"><i class="fa-solid fa-phone" aria-hidden="true"></i> G?i khách hàng</a>
+                            <a class="button button-quiet" id="customerTasksLink" href="workflow.html"><i class="fa-solid fa-list-check" aria-hidden="true"></i> Giao vi?c</a>
+                            <a class="button button-primary" id="customerAppointmentLink" href="workflow.html#appointments"><i class="fa-solid fa-calendar-plus" aria-hidden="true"></i> Ð?t l?ch tu v?n</a>
+                        </div>
+                    </header>
+
+                    <section class="customer-overview-bar" aria-label="Thông tin nhanh">
+                        <div><span>S? di?n tho?i</span><strong id="customerPhone">0903 456 218</strong></div>
+                        <div><span>D? án quan tâm</span><strong id="customerProject">An Phú Riverside</strong></div>
+                        <div><span>Ngu?i ph? trách</span><strong id="customerOwner">Tr?n Thanh Long</strong></div>
+                        <div><span>Tr?ng thái</span><span class="screen-badge amber" id="customerStatusBadge">Chua liên h?</span></div>
+                    </section>
+
+                    <div class="customer-record-grid">
+                        <div class="customer-record-main">
+                            <section class="panel screen-panel customer-record-panel customer-appointments-panel">
+                                <div class="screen-panel-head">
+                                    <div><span class="panel-kicker">L?CH H?N KHÁCH HÀNG</span><h2>L?ch h?n s?p t?i</h2><p>Th?i gian và nhân viên tu v?n dã du?c phân công cho khách.</p></div>
+                                    <a class="button button-quiet" id="customerAppointmentListLink" href="workflow.html#appointments">Xem t?t c? l?ch h?n</a>
+                                </div>
+                                <div id="customerAppointments" class="customer-appointment-list"><p>Chua có l?ch h?n s?p t?i.</p></div>
+                            </section>
+
+                            <section class="panel screen-panel customer-record-panel">
+                                <div class="screen-panel-head">
+                                    <div><span class="panel-kicker">THÔNG TIN KHÁCH</span><h2>Nhu c?u và ngu?n dang ký</h2></div>
+                                </div>
+                                <dl class="customer-facts">
+                                    <div><dt>Nhu c?u</dt><dd id="customerNeed">Can h? 2 phòng ng?</dd></div>
+                                    <div><dt>Ngân sách</dt><dd id="customerBudget">3–4 t?</dd></div>
+                                    <div><dt>D? án</dt><dd><a id="customerProjectLink" href="project-detail.html?code=AP-026">An Phú Riverside <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></dd></div>
+                                    <div><dt>Ngu?n dang ký</dt><dd id="customerSource">Google Ads · Customer website</dd></div>
+                                    <div><dt>Ngày ti?p nh?n</dt><dd id="customerReceived">21/10/2026 · 08:45</dd></div>
+                                    <div><dt>Email</dt><dd id="customerEmail">Chua c?p nh?t</dd></div>
+                                </dl>
+                            </section>
+
+                            <section class="panel screen-panel customer-record-panel">
+                                <div class="screen-panel-head">
+                                    <div><span class="panel-kicker">LIÊN K?T D? LI?U</span><h2>Hành trình dang ký</h2><p>Các m?c này cùng thu?c m?t h? so khách hàng, t? chi?n d?ch d?n s?n ph?m.</p></div>
+                                </div>
+                                <dl class="customer-facts" id="customerRelations"></dl>
+                            </section>
+
+                            <section class="panel screen-panel customer-record-panel">
+                                <div class="screen-panel-head">
+                                    <div><span class="panel-kicker">L?CH S? CHAM SÓC</span><h2>Trao d?i v?i khách hàng</h2><p>Cu?c g?i, l?ch h?n và ghi chú du?c s?p theo th?i gian.</p></div>
+                                </div>
+                                <ol class="customer-timeline" id="customerTimeline">
+                                    <li><span class="customer-timeline-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span><div><strong>Khách dã g?i thông tin quan tâm</strong><p>Ðang ký tìm hi?u d? án qua website.</p><time>21/10/2026 · 08:45</time></div></li>
+                                </ol>
+                            </section>
+                        </div>
+
+                        <aside class="customer-record-side">
+                            <section class="panel screen-panel customer-record-panel">
+                                <span class="panel-kicker">PHÂN CÔNG & TI?N Ð?</span>
+                                <h2>C?p nh?t cham sóc</h2>
+                                <form id="customerProgressForm" class="customer-form">
+                                    <label for="customerStatus">Tr?ng thái</label>
+                                    <select id="customerStatus" name="status">
+                                        <option>Chua liên h?</option>
+                                        <option>Ðang tu v?n</option>
+                                        <option>Ðã h?n tham quan</option>
+                                        <option>Ðang dàm phán</option>
+                                        <option>Ðã giao d?ch</option>
+                                        <option>Không phù h?p</option>
+                                    </select>
+                                    <label for="customerAssignee">Ngu?i ph? trách</label>
+                                    <select id="customerAssignee" name="owner">
+                                        <option>Tr?n Thanh Long</option>
+                                        <option>Qu?nh Dao</option>
+                                        <option>Mai Ng?c</option>
+                                        <option>Minh Anh</option>
+                                    </select>
+                                    <button class="button button-primary" type="submit">Luu c?p nh?t</button>
+                                </form>
+                            </section>
+
+                            <section class="panel screen-panel customer-record-panel">
+                                <span class="panel-kicker">HO?T Ð?NG M?I</span>
+                                <h2>Ghi nh?n trao d?i</h2>
+                                <form id="customerActivityForm" class="customer-form">
+                                    <label for="customerActivityType">Lo?i ho?t d?ng</label>
+                                    <select id="customerActivityType" name="type">
+                                        <option>Cu?c g?i</option>
+                                        <option>L?ch h?n</option>
+                                        <option>G?i thông tin</option>
+                                        <option>Ghi chú</option>
+                                    </select>
+                                    <label for="customerActivityNote">N?i dung</label>
+                                    <textarea id="customerActivityNote" name="note" rows="4" maxlength="600" placeholder="Ghi l?i k?t qu? trao d?i và bu?c ti?p theo" required></textarea>
+                                    <button class="button button-secondary" type="submit">Luu ho?t d?ng</button>
+                                </form>
+                            </section>
+
+                            <section class="panel screen-panel customer-record-panel customer-related">
+                                <span class="panel-kicker">GIAO D?CH</span>
+                                <h2>Sau khi khách mua</h2>
+                                <p>Theo dõi h? so ngu?i mua và ti?n d? bàn giao s?n ph?m.</p>
+                                <a href="buyers.html"><span><i class="fa-solid fa-house-user" aria-hidden="true"></i> Ngu?i mua & bàn giao</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                            </section>
+                        </aside>
+                    </div>
+
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/appointment-store.js?v=20261026-linked-demo-v2"></script>
+        <script src="../public/js/customer-detail.js?v=20261027-remove-reservations-v1"></script>
+</body>
+</html>
+
+
+

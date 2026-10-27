@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>V?n hành LANDIFORM | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="V?n h&#224;nh LANDIFORM"></header>
+                <div class="dashboard-content screen-content">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">QU?N TR? LANDIFORM</p>
+                            <h1>V?n hành LANDIFORM</h1>
+                            <p>Theo dõi doanh nghi?p s? d?ng, gói d?ch v? và tình tr?ng v?n hành c?a n?n t?ng.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <button
+                                class="button button-quiet"
+                                type="button"
+                                data-action="refresh-platform"
+                            >
+                                <i
+                                    class="fa-solid fa-rotate"
+                                    aria-hidden="true"
+                                ></i>
+                                Làm m?i tr?ng thái
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats">
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon blue"
+                                ><i
+                                    class="fa-solid fa-building-user"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Doanh nghi?p ho?t d?ng</span><strong>38</strong
+                                ><small>T?ng 42 doanh nghi?p</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon violet"
+                                ><i
+                                    class="fa-solid fa-globe"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Website dang ph?c v?</span
+                                ><strong>216</strong
+                                ><small>Customer website dùng chung</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon green"
+                                ><i
+                                    class="fa-solid fa-heart-pulse"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>T? l? ho?t d?ng</span
+                                ><strong>99,98%</strong
+                                ><small>Th?i gian ho?t d?ng trong 30 ngày</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon amber"
+                                ><i
+                                    class="fa-solid fa-triangle-exclamation"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>C?nh báo c?n xem</span><strong>2</strong
+                                ><small>Không có s? c? nghiêm tr?ng</small>
+                            </div>
+                        </article>
+                    </div>
+                    <section class="panel screen-panel">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker"
+                                    >QU?N LÝ DOANH NGHI?P</span
+                                >
+                                <h2>Doanh nghi?p trên n?n t?ng</h2>
+                                <p>
+                                    M?i doanh nghi?p có d? li?u, tên mi?n, gói d?ch v?
+                                    và quy?n s? d?ng riêng.
+                                </p>
+                            </div>
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-tenant-open
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm doanh nghi?p
+                            </button>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table">
+                                <thead>
+                                    <tr>
+                                        <th>Doanh nghi?p</th>
+                                        <th>Gói</th>
+                                        <th>D? án</th>
+                                        <th>Dung lu?ng</th>
+                                        <th>Ho?t d?ng g?n nh?t</th>
+                                        <th>Tr?ng thái</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tenantTableBody">
+                                    <tr>
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon blue"
+                                                    ><i
+                                                        class="fa-solid fa-building-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        >An Phát Land</strong
+                                                    ><small
+                                                        >tenant_ap_026 · Vi?t
+                                                        Nam</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>LANDIFORM Growth</td>
+                                        <td>12</td>
+                                        <td>68%</td>
+                                        <td>Hôm nay · 09:12</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Ho?t d?ng</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon green"
+                                                    ><i
+                                                        class="fa-solid fa-building-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        >Nam Vi?t
+                                                        Developments</strong
+                                                    ><small
+                                                        >tenant_nv_018 · Vi?t
+                                                        Nam</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>LANDIFORM Enterprise</td>
+                                        <td>24</td>
+                                        <td>42%</td>
+                                        <td>Hôm nay · 08:46</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Ho?t d?ng</span
+                                            >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon violet"
+                                                    ><i
+                                                        class="fa-solid fa-building-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        >Hung Th?nh
+                                                        Group</strong
+                                                    ><small
+                                                        >tenant_ht_011 · Vi?t
+                                                        Nam</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>LANDIFORM Sites</td>
+                                        <td>6</td>
+                                        <td>84%</td>
+                                        <td>20/10 · 18:04</td>
+                                        <td>
+                                            <span class="screen-badge amber"
+                                                >C?n theo dõi</span
+                                            >
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <div class="screen-columns">
+                        <section class="panel screen-panel" id="service-status">
+                            <span class="panel-kicker"
+                                >TÌNH TR?NG V?N HÀNH</span
+                            >
+                            <h2>Tình tr?ng d?ch v?</h2>
+                            <div class="service-health">
+                                <p>
+                                    <span class="health-dot"></span> Website
+                                    d? án <strong>Ðang ho?t d?ng</strong>
+                                </p>
+                                <p>
+                                    <span class="health-dot"></span> Bi?u m?u và
+                                    khách hàng <strong>Ðang ho?t d?ng</strong>
+                                </p>
+                                <p>
+                                    <span class="health-dot"></span> Thông báo
+                                    <strong>Ðang ho?t d?ng</strong>
+                                </p>
+                                <p>
+                                    <span class="health-dot warn"></span> Sao luu
+                                    g?n nh?t <strong>Hôm nay · 02:00</strong>
+                                </p>
+                            </div>
+                        </section>
+                        <section class="panel screen-panel">
+                            <span class="panel-kicker">NH?T KÝ VÀ B?O M?T</span>
+                            <h2>Ho?t d?ng qu?n tr? g?n dây</h2>
+                            <div class="audit-list">
+                                <p>
+                                    <time>09:12</time
+                                    ><span
+                                        ><strong>Minh Anh</strong> c?p nh?t c?u
+                                        hình tên mi?n</span
+                                    >
+                                </p>
+                                <p>
+                                    <time>08:46</time
+                                    ><span
+                                        ><strong>H? th?ng</strong> hoàn t?t d?ng
+                                        b? d? li?u GA4</span
+                                    >
+                                </p>
+                                <p>
+                                    <time>Hôm qua</time
+                                    ><span
+                                        ><strong>Qu?n tr? viên</strong> thay d?i
+                                        quy?n nhóm bán hàng</span
+                                    >
+                                </p>
+                            </div>
+                        </section>
+                    </div>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="tenantModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="tenantModalTitle">
+                <button class="modal-close" type="button" data-tenant-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-building-user" aria-hidden="true"></i></span>
+                <h2 id="tenantModalTitle">Thêm doanh nghi?p</h2>
+                <p>Ghi nh?n doanh nghi?p và ngu?i ph? trách d? thi?t l?p không gian qu?n lý riêng.</p>
+                <form id="tenantForm" class="project-edit-form">
+                    <label for="tenantName">Tên doanh nghi?p</label><input id="tenantName" name="name" required maxlength="100" placeholder="Nh?p tên doanh nghi?p" />
+                    <div class="project-form-row">
+                        <div><label for="tenantContact">Ngu?i ph? trách</label><input id="tenantContact" name="contact" required placeholder="H? tên ngu?i ph? trách" /></div>
+                        <div><label for="tenantEmail">Email liên h?</label><input id="tenantEmail" name="email" type="email" required placeholder="email@doanhnghiep.vn" /></div>
+                    </div>
+                    <div class="project-form-row">
+                        <div><label for="tenantPlan">Gói s? d?ng</label><select id="tenantPlan" name="plan"><option>LANDIFORM Sites</option><option>LANDIFORM CRM</option><option>LANDIFORM Enterprise</option></select></div>
+                        <div><label for="tenantRegion">Khu v?c</label><input id="tenantRegion" name="region" required value="Vi?t Nam" /></div>
+                    </div>
+                    <label for="tenantDomain">Tên mi?n doanh nghi?p</label><input id="tenantDomain" name="domain" placeholder="tencongty.vn" />
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-tenant-close>H?y</button><button class="button button-primary" type="submit">Luu doanh nghi?p</button></div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/platform.js"></script>
+</body>
+</html>
+
+
+

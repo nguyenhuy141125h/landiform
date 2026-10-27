@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Chi ti?t d? án | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="D? &#225;n"></header>
+                <div class="dashboard-content screen-content project-detail-page" id="projectDetailPage">
+  <header class="screen-heading"><div><a class="project-back-link" href="projects.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> T?t c? d? án</a><p class="screen-eyebrow">H? SO D? ÁN</p><h1>Chi ti?t d? án</h1><p>Qu?n lý thông tin co b?n và di ti?p t?i website ho?c danh m?c s?n ph?m.</p></div>
+    <div class="screen-heading-actions"><button class="button button-quiet" type="button" data-project-edit><i class="fa-solid fa-pen" aria-hidden="true"></i> S?a thông tin</button><button class="button project-delete-button" type="button" data-project-delete><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Xóa d? án</button></div>
+  </header>
+  <section class="project-detail-page-hero"><span class="project-detail-page-icon"><i class="fa-solid fa-building" aria-hidden="true"></i></span><div class="project-detail-page-title"><p>MÃ D? ÁN <span id="detailPageCode">—</span></p><h2 id="detailPageNameSecondary">Ðang t?i d? án...</h2><span class="screen-badge green" id="detailPageStatus">Ðang m? bán</span></div></section>
+  <section class="panel screen-panel"><div class="screen-panel-head"><div><span class="panel-kicker">THÔNG TIN CHUNG</span><h2>Thông tin t?ng quan</h2><p>Thông tin dùng chung trong danh sách, website và ho?t d?ng kinh doanh.</p></div></div><dl class="project-profile-facts"><div><dt>Lo?i hình</dt><dd id="detailPageType">—</dd></div><div><dt>Khu v?c</dt><dd id="detailPageArea">—</dd></div><div><dt>Khách quan tâm</dt><dd id="detailPageLeads">—</dd></div><div><dt>C?p nh?t l?n cu?i</dt><dd id="detailPageUpdated">—</dd></div></dl></section>
+  <section class="panel screen-panel project-units-panel"><div class="screen-panel-head"><div><span class="panel-kicker">KHO S?N PH?M</span><h2 id="projectUnitsTitle">S?n ph?m c?a d? án</h2><p id="projectUnitsIntro">Danh sách can h?, nhà ho?c lô d?t thu?c d? án.</p></div><a class="button button-quiet" href="booking.html" id="projectInventoryLink">M? danh m?c s?n ph?m <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div><div class="screen-table-wrap"><table class="screen-table"><thead><tr><th>Mã s?n ph?m</th><th>V? trí</th><th>Lo?i hình</th><th>Di?n tích</th><th>Tình tr?ng</th></tr></thead><tbody id="projectUnitRows"><tr><td colspan="5">Ðang t?i danh sách s?n ph?m...</td></tr></tbody></table></div></section>
+  <footer class="dashboard-footer" data-admin-shared-footer></footer>
+  <div class="project-not-found" id="projectNotFound" hidden><i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i><h2>Không tìm th?y d? án</h2><p>D? án dã b? xóa ho?c du?ng d?n không còn h?p l?.</p><a class="button button-primary" href="projects.html">Quay l?i danh sách d? án</a></div>
+</div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="projectEditModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="projectEditTitle">
+                <button class="modal-close" type="button" data-project-modal-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-pen" aria-hidden="true"></i></span>
+                <h2 id="projectEditTitle">S?a thông tin d? án</h2>
+                <p>C?p nh?t thông tin d? d?i ngu cùng theo dõi th?ng nh?t.</p>
+                <form id="projectEditForm" class="project-edit-form">
+                    <label for="editProjectName">Tên d? án</label><input id="editProjectName" name="name" required />
+                    <div class="project-form-row">
+                        <div><label for="editProjectType">Lo?i hình d? án</label><select id="editProjectType" name="type"><option value="Can h?">Khu can h?</option><option value="Tòa nhà can h?">Tòa nhà can h? riêng l?</option><option>Nhà ph?</option><option>Nhà riêng l?</option><option>Bi?t th?</option><option>Ð?t n?n</option><option>Lô d?t riêng l?</option><option>Khu dô th?</option><option>Khu ngh? du?ng</option><option>Thuong m?i / van phòng</option></select></div>
+                        <div><label for="editProjectArea">Khu v?c</label><input id="editProjectArea" name="area" required /></div>
+                    </div>
+                    <label for="editProjectStatus">Tr?ng thái</label><select id="editProjectStatus" name="status"><option>Chu?n b? m? bán</option><option>Ðang m? bán</option><option>T?m d?ng</option></select>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-project-modal-close>H?y</button><button class="button button-primary" type="submit">Luu thay d?i</button></div>
+                </form>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script>
+        <script src="../public/js/projects.js?v=20261027-memory-only-actions-v1"></script>
+</body>
+</html>
+
+
+

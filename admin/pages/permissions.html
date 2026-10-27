@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>Ch?c v? và quy?n truy c?p | LANDIFORM</title>
+        <link rel="icon" type="image/svg+xml" href="../../website/assets/favicon.svg" />
+        <link rel="stylesheet" href="../../website/public/css/be-vietnam-pro.css" />
+        <link rel="stylesheet" href="../../website/public/css/fontawesome.min.css" />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="Vai tr&#242; v&#224; quy?n truy c?p"></header>
+
+                <div class="dashboard-content screen-content permissions-page">
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">QU?N LÝ TRUY C?P</p>
+                            <h1>Ch?c v? và quy?n truy c?p</h1>
+                            <p>Thi?t l?p quy?n theo ch?c v?, r?i gán ch?c v? cho t?ng tài kho?n.</p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <a class="button button-quiet" href="team.html"><i class="fa-solid fa-users" aria-hidden="true"></i> Tài kho?n</a>
+                        </div>
+                    </header>
+
+                    <section class="panel role-groups-panel" id="roleGroupsPage" aria-labelledby="roleGroupsTitle">
+                        <div class="role-groups-heading"><div><h2 id="roleGroupsTitle">Ch?c v? & quy?n</h2><p>T?o ch?c v? theo nhóm tài kho?n, sau dó c?p quy?n cho t?ng ch?c v?.</p></div></div>
+                        <div class="role-groups-toolbar">
+                            <button class="button button-primary" type="button" data-role-create-open><i class="fa-solid fa-plus" aria-hidden="true"></i> T?o ch?c v?</button>
+                            <label class="role-status-filter">Tr?ng thái<select id="roleStatusFilter"><option value="all">T?t c?</option><option value="active">Ðang dùng</option><option value="inactive">Ðã t?m d?ng</option></select></label>
+                            <button class="button button-quiet role-overview-link" type="button" data-open-matrix><i class="fa-solid fa-user-shield" aria-hidden="true"></i> Quy?n h?n</button>
+                        </div>
+                        <div class="role-groups-table-wrap"><table class="role-groups-table"><thead><tr><th>#</th><th>Tên ch?c v?</th><th>Nhóm tài kho?n</th><th>Quy?n h?n</th><th>Tr?ng thái</th><th>Thao tác</th></tr></thead><tbody id="roleGroupsTableBody"></tbody></table></div>
+                    </section>
+                    <section class="panel permissions-simple" id="permissionEditor" aria-labelledby="permissionTitle" hidden>
+                        <div class="permissions-simple-head">
+                            <div>
+                                <span class="panel-kicker">PHÂN QUY?N</span>
+                                <h2 id="permissionTitle">Quy?n c?a ch?c v?</h2>
+                                <p>B?t nh?ng quy?n c?n thi?t cho nhóm tài kho?n này.</p>
+                            </div>
+                            <div class="permissions-matrix-actions">
+                                <button class="button button-quiet" type="button" data-permission-back><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Danh sách ch?c v?</button>
+                            </div>
+                        </div>
+                        <div class="permissions-role-bar">
+                            <label for="roleSelector">Ch?c v?</label>
+                            <select id="roleSelector" aria-label="Ch?n ch?c v?">
+                                <option value="admin">Qu?n tr? doanh nghi?p</option>
+                                <option value="manager">Qu?n lý kinh doanh</option>
+                                <option value="advisor">Nhân viên tu v?n</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="care">Cham sóc khách hàng</option>
+                                <option value="operation">V?n hành</option>
+                                <option value="leader">Ban lãnh d?o</option>
+                                <option value="customer">Khách hàng</option>
+                            </select>
+                            <span class="screen-badge blue" id="selectedRoleBadge">Toàn doanh nghi?p</span>
+                            <p id="selectedRoleDescription">Qu?n lý toàn b? thông tin, nhân s? và thi?t l?p doanh nghi?p.</p>
+                        </div>
+                        <div class="permissions-scope-bar">
+                            <label for="roleScope">Ph?m vi d? li?u</label>
+                            <select id="roleScope" aria-label="Ph?m vi d? li?u">
+                                <option value="company">Toàn doanh nghi?p</option>
+                                <option value="assigned-projects">D? án du?c phân công</option>
+                                <option value="own-records">D? li?u dang ph? trách</option>
+                            </select>
+                            <span>Nhân viên ch? xem d? li?u trong ph?m vi này.</span>
+                        </div>
+                        <div class="role-permission-table-wrap">
+                            <table class="role-permission-table">
+                                <thead><tr><th><label class="permission-check-label"><input type="checkbox" data-select-all /><span>B?t ho?c t?t t?t c? quy?n</span></label></th><th id="selectedRoleColumn">Qu?n tr? doanh nghi?p</th></tr></thead>
+                                <tbody>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="projects" /><span>D? án</span></label></th><td></td></tr>
+                                    <tr><td>Xem danh sách và thông tin d? án</td><td><input type="checkbox" data-permission="projects.view" aria-label="Xem d? án" /></td></tr>
+                                    <tr><td>T?o d? án</td><td><input type="checkbox" data-permission="projects.create" aria-label="T?o d? án" /></td></tr>
+                                    <tr><td>S?a thông tin d? án</td><td><input type="checkbox" data-permission="projects.edit" aria-label="S?a d? án" /></td></tr>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="products" /><span>S?n ph?m</span></label></th><td></td></tr>
+                                    <tr><td>Xem tòa nhà, t?ng và can</td><td><input type="checkbox" data-permission="products.view" aria-label="Xem s?n ph?m" /></td></tr>
+                                    <tr><td>Thêm s?n ph?m</td><td><input type="checkbox" data-permission="products.create" aria-label="Thêm s?n ph?m" /></td></tr>
+                                    <tr><td>S?a thông tin s?n ph?m</td><td><input type="checkbox" data-permission="products.edit" aria-label="S?a s?n ph?m" /></td></tr>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="customers" /><span>Khách hàng</span></label></th><td></td></tr>
+                                    <tr><td>Xem h? so khách hàng</td><td><input type="checkbox" data-permission="customers.view" aria-label="Xem khách hàng" /></td></tr>
+                                    <tr><td>Thêm khách hàng</td><td><input type="checkbox" data-permission="customers.create" aria-label="Thêm khách hàng" /></td></tr>
+                                    <tr><td>S?a h? so khách hàng</td><td><input type="checkbox" data-permission="customers.edit" aria-label="S?a khách hàng" /></td></tr>
+                                    <tr><td>Phân công khách hàng</td><td><input type="checkbox" data-permission="customers.assign" aria-label="Phân công khách hàng" /></td></tr>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="work" /><span>Công vi?c và l?ch h?n</span></label></th><td></td></tr>
+                                    <tr><td>Xem l?ch h?n và công vi?c</td><td><input type="checkbox" data-permission="work.view" aria-label="Xem l?ch h?n và công vi?c" /></td></tr>
+                                    <tr><td>T?o và c?p nh?t công vi?c</td><td><input type="checkbox" data-permission="work.edit" aria-label="C?p nh?t công vi?c" /></td></tr>
+                                    <tr><td>Giao vi?c cho nhân viên</td><td><input type="checkbox" data-permission="work.assign" aria-label="Giao vi?c" /></td></tr>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="transactions" /><span>Gi? ch? và giao d?ch</span></label></th><td></td></tr>
+                                    <tr><td>Xem tình tr?ng gi? ch? và giao d?ch</td><td><input type="checkbox" data-permission="transactions.view" aria-label="Xem giao d?ch" /></td></tr>
+                                    <tr><td>C?p nh?t giao d?ch và bàn giao</td><td><input type="checkbox" data-permission="transactions.edit" aria-label="C?p nh?t giao d?ch" /></td></tr>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="reports" /><span>Báo cáo</span></label></th><td></td></tr>
+                                    <tr><td>Xem báo cáo</td><td><input type="checkbox" data-permission="reports.view" aria-label="Xem báo cáo" /></td></tr>
+                                    <tr><td>T?i báo cáo</td><td><input type="checkbox" data-permission="reports.export" aria-label="T?i báo cáo" /></td></tr>
+                                    <tr class="permission-group-row"><th><label class="permission-check-label"><input type="checkbox" data-group-toggle="staff" /><span>Tài kho?n</span></label></th><td></td></tr>
+                                    <tr><td>Xem danh sách nhân viên</td><td><input type="checkbox" data-permission="staff.view" aria-label="Xem nhân viên" /></td></tr>
+                                    <tr><td>Thêm, s?a và phân quy?n nhân viên</td><td><input type="checkbox" data-permission="staff.edit" aria-label="Qu?n lý nhân viên" /></td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="permissions-simple-actions">
+                            <p>Thay d?i ch? áp d?ng sau khi luu.</p>
+                            <div><button class="button button-quiet" type="button" data-permission-reset>Khôi ph?c m?c d?nh</button><button class="button button-primary" type="button" data-permission-save><i class="fa-solid fa-check" aria-hidden="true"></i> Luu quy?n</button></div>
+                        </div>
+                    </section>
+                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                </div>
+            </main>
+        </div>
+        <dialog class="role-create-dialog" id="roleCreateDialog" aria-labelledby="roleCreateTitle">
+            <form class="role-create-form" id="roleCreateForm">
+                <header>
+                    <div><span class="panel-kicker">H? TH?NG</span><h2 id="roleCreateTitle">T?o nhóm ngu?i dùng</h2><p>T?o b? quy?n phù h?p v?i công vi?c c?a nhân viên.</p></div>
+                    <button class="icon-button" type="button" data-role-create-close aria-label="Ðóng">×</button>
+                </header>
+                <label>Tên ch?c v?<input name="name" required maxlength="50" placeholder="Ví d?: Tru?ng phòng kinh doanh" /></label>
+                <label>Nhóm tài kho?n<select name="group" required><option value="management">Qu?n lý</option><option value="employee" selected>Nhân viên</option><option value="customer">Khách hàng</option></select></label>
+                <label>Mô t?<input name="description" maxlength="120" placeholder="Vai trò này ph? trách công vi?c nào?" /></label>
+                <label>Ph?m vi ban d?u<select name="scope"><option value="assigned-projects">Các d? án du?c phân công</option><option value="own-records">D? li?u dang ph? trách</option><option value="company">Toàn doanh nghi?p</option></select></label>
+                <label data-role-template>Sao chép quy?n t?<select name="template"><option value="blank">B?t d?u chua có quy?n</option><option value="advisor">Nhân viên tu v?n</option><option value="manager">Qu?n lý kinh doanh</option><option value="admin">Qu?n tr? doanh nghi?p</option></select></label>
+                <footer><button class="button button-quiet" type="button" data-role-create-close>H?y</button><button class="button button-primary" type="submit" data-role-submit><i class="fa-solid fa-plus" aria-hidden="true"></i> Luu nhóm</button></footer>
+            </form>
+        </dialog>
+        <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/permissions.js?v=20261026-role-assignment-v2"></script>
+</body>
+</html>
+
+
+

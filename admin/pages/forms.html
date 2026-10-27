@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#f3f6f8" />
+        <title>M?u dang ký | LANDIFORM</title>
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="../../website/assets/favicon.svg"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/be-vietnam-pro.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../website/public/css/fontawesome.min.css"
+        />
+        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+</head>
+    <body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <div class="app-shell">
+            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+            <main class="main-panel">
+                <header class="topbar" data-admin-shared-topbar data-page-label="M?u dang k&#253;"></header>
+                <div class="dashboard-content screen-content">
+  <header class="screen-heading"><div><p class="screen-eyebrow">THU TH?P THÔNG TIN KHÁCH</p><h1>Bi?u m?u & mã QR</h1><p>Qu?n lý bi?u m?u tu v?n, nh?n b?ng giá và d?t l?ch; g?n m?i bi?u m?u v?i d? án và di?m ti?p nh?n.</p></div><div class="screen-heading-actions"><button class="button button-primary" type="button" data-form-open><i class="fa-solid fa-plus" aria-hidden="true"></i> T?o bi?u m?u</button></div></header>
+  <div class="screen-stats form-overview-stats"><article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span><div><span>T?ng bi?u m?u</span><strong id="formTotal">3</strong><small>Trong danh m?c qu?n lý</small></div></article><article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-circle-play" aria-hidden="true"></i></span><div><span>Ðang nh?n dang ký</span><strong id="formActive">3</strong><small>S?n sàng ti?p nh?n khách</small></div></article><article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><div><span>Có mã QR</span><strong id="formQrCount">1</strong><small>Có th? dùng t?i s? ki?n</small></div></article><article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-building" aria-hidden="true"></i></span><div><span>D? án dã k?t n?i</span><strong id="formProjectCount">3</strong><small>Có ít nh?t m?t bi?u m?u</small></div></article></div>
+  <section class="panel screen-panel"><div class="screen-panel-head"><div><span class="panel-kicker">C?U HÌNH TI?P NH?N</span><h2>Bi?u m?u theo d? án</h2><p>Ch?nh tru?ng d? li?u, di?m ti?p nh?n và tr?ng thái ho?t d?ng c?a t?ng bi?u m?u.</p></div><div class="screen-filter"><label class="inventory-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="formSearch" type="search" placeholder="Tìm bi?u m?u" aria-label="Tìm bi?u m?u"></label><select id="formProjectFilter" aria-label="L?c bi?u m?u theo d? án"><option value="">T?t c? d? án</option><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option></select><select id="formStatusFilter" aria-label="L?c bi?u m?u theo tr?ng thái"><option value="">M?i tr?ng thái</option><option>Ðang nh?n</option><option>B?n nháp</option><option>T?m d?ng</option></select></div></div><div class="screen-table-wrap"><table class="screen-table"><thead><tr><th>Bi?u m?u</th><th>D? án</th><th>Tru?ng thông tin</th><th>Noi s? d?ng</th><th>Tr?ng thái</th><th>Mã QR</th><th></th></tr></thead><tbody id="formTableBody" data-static-demo="true">
+    <tr data-form-id="consult"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span><span><strong>Ðang ký tu v?n</strong><small>Customer website · 5 tru?ng</small></span></span></td><td>An Phú Riverside</td><td>5</td><td>Customer website</td><td><span class="screen-badge green">Ðang nh?n</span></td><td><span class="screen-badge neutral">Chua b?t</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="record-detail.html?type=form&amp;id=consult">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-form-delete="consult" aria-label="Xóa bi?u m?u Ðang ký tu v?n"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+    <tr data-form-id="price"><td><span class="screen-entity"><span class="screen-entity-icon green"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span><span><strong>Nh?n b?ng giá</strong><small>Trang gi?i thi?u · 4 tru?ng</small></span></span></td><td>Green Valley</td><td>4</td><td>Trang gi?i thi?u</td><td><span class="screen-badge green">Ðang nh?n</span></td><td><span class="screen-badge neutral">Chua b?t</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="record-detail.html?type=form&amp;id=price">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-form-delete="price" aria-label="Xóa bi?u m?u Nh?n b?ng giá"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+    <tr data-form-id="viewing"><td><span class="screen-entity"><span class="screen-entity-icon violet"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><span><strong>Ðang ký tham quan</strong><small>Mã QR t?i s? ki?n · 6 tru?ng</small></span></span></td><td>Central Park Towers</td><td>6</td><td>Mã QR t?i s? ki?n</td><td><span class="screen-badge green">Ðang nh?n</span></td><td><span class="screen-badge violet">Ðã b?t</span></td><td><div class="screen-row-actions"><a class="project-detail-button" href="record-detail.html?type=form&amp;id=viewing">Ch?nh s?a <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-form-delete="viewing" aria-label="Xóa bi?u m?u Ðang ký tham quan"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
+  </tbody></table></div></section>
+  <section class="screen-columns"><article class="panel screen-panel"><span class="panel-kicker">D? LI?U ÐU?C CHUY?N TI?P</span><h2>Khách g?i bi?u m?u s? v? dâu?</h2><p>Thông tin dang ký du?c g?n v?i d? án và luu trong danh sách khách hàng quan tâm d? d?i ngu ti?p t?c cham sóc.</p><a class="button button-quiet" href="leads.html">M? danh sách khách hàng <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article><article class="panel screen-panel"><span class="panel-kicker">MÃ QR</span><h2>Dùng t?i s? ki?n ho?c di?m bán</h2><p>Ch?n bi?u m?u s? ki?n d? g?n mã QR. Khách quét mã s? m? dúng bi?u m?u dã c?u hình.</p><span class="screen-badge blue">Qu?n lý trong t?ng bi?u m?u</span></article></section>
+  <footer class="dashboard-footer" data-admin-shared-footer></footer>
+</div>
+            </main>
+        </div>
+        <div class="modal-backdrop" id="formEditorModal" hidden>
+            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="formEditorTitle">
+                <button class="modal-close" type="button" data-form-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
+                            <h2 id="formEditorTitle">T?o m?u dang ký</h2>
+                <p>Ch?n d? án và các thông tin c?n h?i d? khách dang ký nhanh.</p>
+                <form id="formEditor" class="project-edit-form">
+                    <label for="formName">Tên m?u</label><input id="formName" name="name" required maxlength="80" placeholder="Ví d?: Ðang ký tham quan" />
+                    <div class="project-form-row">
+                        <div><label for="formProject">D? án</label><select id="formProject" name="project" required><option value="">Ch?n d? án</option><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></select></div>
+                        <div><label for="formUse">Noi s? d?ng</label><select id="formUse" name="place"><option>Customer website</option><option>Trang gi?i thi?u</option><option>Trang m? bán</option><option>Mã QR t?i s? ki?n</option></select></div>
+                    </div>
+                    <span class="form-option-title">Thông tin c?n h?i</span>
+                    <div class="form-field-options">
+                        <label><input type="checkbox" checked disabled /> H? và tên <small>B?t bu?c</small></label>
+                        <label><input type="checkbox" checked disabled /> S? di?n tho?i <small>B?t bu?c</small></label>
+                        <label><input type="checkbox" name="email" /> Email</label>
+                        <label><input type="checkbox" name="need" checked /> Nhu c?u quan tâm</label>
+                        <label><input type="checkbox" name="budget" /> Ngân sách d? ki?n</label>
+                        <label><input type="checkbox" name="appointment" /> Th?i gian mu?n tham quan</label>
+                    </div>
+                    <label class="form-switch"><input type="checkbox" name="qr" /> <span>T?o mã QR d? khách m? m?u dang ký này</span></label>
+                    <label for="formStatus">Tr?ng thái nh?n dang ký</label><select id="formStatus" name="status"><option>Ðang nh?n</option><option>B?n nháp</option><option>T?m d?ng</option></select>
+                    <div class="modal-actions"><button class="button button-secondary" type="button" data-form-close>H?y</button><button class="button button-primary" type="submit">Luu m?u dang ký</button></div>
+                </form>
+            </section>
+        </div>
+        <div class="modal-backdrop" id="formQrModal" hidden>
+            <section class="project-edit-dialog form-qr-dialog" role="dialog" aria-modal="true" aria-labelledby="formQrTitle">
+                <button class="modal-close" type="button" data-form-qr-close aria-label="Ðóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                <span class="modal-icon"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span>
+                <h2 id="formQrTitle">Mã QR bi?u m?u</h2>
+                <p id="formQrDescription">Quét mã d? m? bi?u m?u trên trang customer.</p>
+                <div class="form-qr-preview"><img id="formQrImage" alt="Mã QR m? bi?u m?u" /><div><strong id="formQrProject"></strong><span id="formQrName"></span><small>Quét b?ng camera di?n tho?i d? m? trang dang ký.</small></div></div>
+                <label class="form-qr-link-label" for="formQrLink">Ðu?ng d?n khi quét mã</label>
+                <input id="formQrLink" class="form-qr-link" type="text" readonly />
+                <div class="modal-actions"><button class="button button-secondary" type="button" data-form-qr-copy><i class="fa-regular fa-copy" aria-hidden="true"></i> Sao chép link</button><a class="button button-primary" id="formQrOpen" href="#" target="_blank" rel="noopener">M? trang customer <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+            </section>
+        </div>
+        <div
+            class="toast-message"
+            id="toastMessage"
+            role="status"
+            aria-live="polite"
+        ></div><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+        <script src="../public/js/forms.js?v=20261027-memory-only-actions-v1"></script>
+</body>
+</html>
+
+
+

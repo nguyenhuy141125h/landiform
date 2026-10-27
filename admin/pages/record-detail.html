@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f6f8" />
+    <title>Chi ti?t h? so | LANDIFORM</title>
+    <link rel="icon" type="image/svg+xml" href="../../website/assets/favicon.svg" />
+    <link rel="stylesheet" href="../../website/public/css/be-vietnam-pro.css" />
+    <link rel="stylesheet" href="../../website/public/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
+    <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
+    <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+    <link rel="stylesheet" href="../public/css/product-detail.css?v=20261027-shared-product-detail-v1" />
+    <link rel="stylesheet" href="../public/css/record-detail.css?v=20261027-shared-record-detail-v1" />
+</head>
+<body class="dashboard-body">
+    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Ði?u hu?ng qu?n tr?"></aside>
+        <main class="main-panel">
+            <header class="topbar" data-admin-shared-topbar data-page-label="Chi ti?t h? so"></header>
+            <div class="dashboard-content screen-content product-detail-content">
+                <div class="product-detail-back"><a class="button button-secondary" id="recordBackLink" href="index.html"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Quay l?i danh sách</a></div>
+                <header class="screen-heading product-detail-heading"><div><p class="screen-eyebrow" id="recordEyebrow">H? SO QU?N TR?</p><h1 id="recordTitle">Chi ti?t h? so</h1><p id="recordSubtitle">Thông tin chi ti?t.</p></div><span class="screen-badge blue" id="recordBadge">H? so</span></header>
+                <div id="recordNotFound" class="panel product-not-found" hidden><h2>Không tìm th?y h? so</h2><p>Hãy quay l?i danh sách và ch?n m?t m?c có s?n.</p><a class="button button-primary" id="recordNotFoundLink" href="index.html">V? danh sách</a></div>
+                <form id="recordDetailForm" class="product-detail-layout">
+                    <section class="panel product-detail-panel">
+                        <div class="panel-heading"><div><h2 id="recordSectionTitle">Thông tin h? so</h2><p id="recordSectionIntro">Thông tin du?c l?y t? d? li?u ví d? trong trang HTML.</p></div></div>
+                        <div id="recordFields" class="product-fields"></div>
+                        <div id="recordChecks" class="record-checks" hidden></div>
+                        <div class="product-detail-actions"><a class="button button-secondary" id="recordCancelLink" href="index.html">H?y</a><button class="button button-primary" type="submit"><i class="fa-solid fa-floppy-disk" aria-hidden="true"></i> Luu thay d?i</button></div>
+                    </section>
+                    <aside class="product-detail-aside"><section class="panel product-summary"><span class="product-summary-icon"><i class="fa-solid fa-address-card" aria-hidden="true"></i></span><p class="panel-kicker">TÓM T?T H? SO</p><h2 id="recordSummaryTitle">—</h2><p id="recordSummarySubtitle">—</p><dl id="recordSummaryFacts"></dl></section><section class="panel product-detail-note"><h2>Trang chi ti?t dùng chung</h2><p id="recordHelpText">M?i m?c có các tru?ng riêng theo nghi?p v?, dùng chung b? c?c chi ti?t.</p><p>Thông tin m?u du?c khai báo trong HTML. Nút luu s? du?c n?i API khi backend s?n sàng.</p></section></aside>
+                </form>
+            </div>
+        </main>
+    </div>
+    <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
+    <script type="application/json" id="recordExamples">
+    [
+      {"type":"category","id":"category-apartment","name":"Can h?","level":"C?p 1","parent":"Nhóm b?t d?ng s?n","usage":"9 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-apartment-2br","name":"Can h? 2 phòng ng?","level":"C?p 2","parent":"Can h?","usage":"7 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-studio","name":"Can h? studio","level":"C?p 2","parent":"Can h?","usage":"0 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-apartment-1br","name":"Can h? 1 phòng ng?","level":"C?p 2","parent":"Can h?","usage":"1 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-apartment-3br","name":"Can h? 3 phòng ng?","level":"C?p 2","parent":"Can h?","usage":"2 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-house","name":"Nhà ?","level":"C?p 1","parent":"Nhóm b?t d?ng s?n","usage":"0 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-townhouse","name":"Nhà ph?","level":"C?p 2","parent":"Nhà ?","usage":"2 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-private-house","name":"Nhà riêng","level":"C?p 2","parent":"Nhà ?","usage":"1 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-land","name":"Ð?t n?n","level":"C?p 1","parent":"Nhóm b?t d?ng s?n","usage":"2 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-project-land","name":"Ð?t n?n d? án","level":"C?p 2","parent":"Ð?t n?n","usage":"1 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-residential-land","name":"Ð?t th? cu","level":"C?p 2","parent":"Ð?t n?n","usage":"1 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-commercial","name":"Thuong m?i","level":"C?p 1","parent":"Nhóm b?t d?ng s?n","usage":"0 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-shophouse","name":"Shophouse","level":"C?p 2","parent":"Thuong m?i","usage":"0 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"category","id":"category-officetel","name":"Officetel","level":"C?p 2","parent":"Thuong m?i","usage":"0 s?n ph?m","status":"Ðang s? d?ng"},
+      {"type":"form","id":"consult","name":"Ðang ký tu v?n","project":"An Phú Riverside","place":"Customer website","fieldsCount":"5","status":"Ðang nh?n","qr":"Chua b?t","email":true,"need":true,"budget":false,"appointment":false},
+      {"type":"form","id":"price","name":"Nh?n b?ng giá","project":"Green Valley","place":"Trang gi?i thi?u","fieldsCount":"4","status":"Ðang nh?n","qr":"Chua b?t","email":true,"need":true,"budget":true,"appointment":false},
+      {"type":"form","id":"viewing","name":"Ðang ký tham quan","project":"Central Park Towers","place":"Mã QR t?i s? ki?n","fieldsCount":"6","status":"Ðang nh?n","qr":"Ðã b?t","email":true,"need":true,"budget":true,"appointment":true},
+      {"type":"buyer","id":"buyer-00184","code":"KH-00184","name":"Lê Hoàng Y?n","phone":"0987 332 104","project":"Central Park Towers","product":"B1 · 08.03","handover":"2026-12-15","documents":"Ð? h? so"},
+      {"type":"buyer","id":"buyer-00179","code":"KH-00179","name":"Võ Thành Ð?t","phone":"0903 123 179","project":"An Phú Riverside","product":"A2 · 15.06","handover":"2026-12-22","documents":"Ðang b? sung"},
+      {"type":"buyer","id":"buyer-00168","code":"KH-00168","name":"Nguy?n Thu Hà","phone":"0903 123 168","project":"Green Valley","product":"N08 · 05","handover":"2027-01-10","documents":"Ð? h? so"},
+      {"type":"appointment","id":"appointment-anh","customer":"Nguy?n Ng?c Anh","project":"An Phú Riverside","product":"A2 · 12.08","start":"2026-10-28T09:30","activity":"Tu v?n t?i van phòng","place":"Van phòng An Phát Land","assignee":"Tr?n Thanh Long","status":"Ðã phân công"},
+      {"type":"appointment","id":"appointment-yen","customer":"Lê Hoàng Y?n","project":"Central Park Towers","product":"B1 · 08.03","start":"2026-12-16T14:00","activity":"Bàn giao can h?","place":"S?nh tòa B1 · Central Park Towers","assignee":"Mai Ng?c","status":"Ðã phân công"},
+      {"type":"appointment","id":"appointment-khoa","customer":"Tr?n Minh Khoa","project":"Green Valley","product":"N08 · 06","start":"2026-10-29T10:00","activity":"G?i tu v?n","place":"G?i di?n cho khách","assignee":"Qu?nh Dao","status":"Ðã phân công"},
+      {"type":"appointment","id":"appointment-tour","customer":"Võ Hoàng Nam","project":"Green Valley","product":"N08 · 06","start":"2026-10-30T09:30","activity":"D?n khách xem nhà","place":"Nhà ph? m?u Green Valley","assignee":"Qu?nh Dao","status":"Ðã phân công"},
+      {"type":"appointment","id":"appointment-handover","customer":"Võ Thành Ð?t","project":"An Phú Riverside","product":"A2 · 15.06","start":"2026-12-22T14:00","activity":"Bàn giao can h?","place":"S?nh tòa A2 · An Phú Riverside","assignee":"Tr?n Thanh Long","status":"Ðã phân công"}
+    ]
+    </script>
+    <script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
+    <script src="../public/js/record-detail.js?v=20261027-shared-record-detail-v1"></script>
+</body>
+</html>
