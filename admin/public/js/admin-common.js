@@ -29,10 +29,7 @@
             <a class="nav-link" href="${route("campaigns.html")}"><span>Chiến dịch tiếp thị</span></a>
         </nav></details>
         <nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="${route("workflow.html")}">${icon("fa-calendar-check")}<span>Công việc &amp; lịch hẹn</span></a></nav>
-        <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Giao dịch &amp; bàn giao</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Giao dịch và bàn giao">
-            <a class="nav-link" href="${route("reservations.html")}"><span>Lịch hẹn tư vấn</span></a>
-            <a class="nav-link" href="${route("buyers.html")}"><span>Người mua &amp; bàn giao</span></a>
-        </nav></details>
+        <nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="${route("buyers.html")}">${icon("fa-handshake")}<span>Người mua &amp; bàn giao</span></a></nav>
         <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Đội ngũ</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Đội ngũ">
             <a class="nav-link" href="${route("team.html?type=management")}"><span>Admin</span></a>
             <a class="nav-link" href="${route("team.html?type=employee")}"><span>Nhân viên</span></a>
@@ -879,12 +876,14 @@
         if (!sidebar) return;
         const projectGroup = findGroup(sidebar, ["Dự án & sản phẩm"]);
         const customerGroup = findGroup(sidebar, ["Khách hàng & tiếp thị"]);
-        const transactionGroup = findGroup(sidebar, ["Giao dịch & bàn giao"]);
+        const buyerLink = [...sidebar.querySelectorAll(".sidebar-overview .nav-link")]
+            .find((link) => new URL(link.href, window.location.href).pathname.endsWith("/buyers.html"));
+        const transactionNav = buyerLink?.closest("nav");
         const workflowLink = [...sidebar.querySelectorAll(".sidebar-overview .nav-link")]
             .find((link) => new URL(link.href, window.location.href).pathname.endsWith("/workflow.html"));
         const workflowNav = workflowLink?.closest("nav");
-        if (projectGroup && customerGroup && transactionGroup && workflowNav) {
-            projectGroup.after(customerGroup, workflowNav, transactionGroup);
+        if (projectGroup && customerGroup && transactionNav && workflowNav) {
+            projectGroup.after(customerGroup, workflowNav, transactionNav);
         }
     }
 

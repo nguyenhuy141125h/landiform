@@ -1,91 +1,13 @@
 <!doctype html>
 <html lang="vi">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#f3f6f8" />
-        <title>Yêu cầu giữ chỗ | LANDIFORM</title>
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="../../website/assets/favicon.svg"
-        />
-        <link
-            rel="stylesheet"
-            href="../../website/public/css/be-vietnam-pro.css"
-        />
-        <link
-            rel="stylesheet"
-            href="../../website/public/css/fontawesome.min.css"
-        />
-        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
-        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
-        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content="0; url=workflow.html#appointments" />
+    <title>Lịch hẹn tư vấn | LANDIFORM</title>
+    <script>window.location.replace("workflow.html#appointments");</script>
 </head>
-    <body class="dashboard-body">
-    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
-        <div class="app-shell">
-            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
-            <main class="main-panel">
-                <header class="topbar" data-admin-shared-topbar data-page-label="Yêu cầu giữ chỗ"></header>
-                <div class="dashboard-content screen-content">
-  <header class="screen-heading"><div><p class="screen-eyebrow">QUY TRÌNH GIAO DỊCH</p><h1>Yêu cầu giữ chỗ</h1><p>Kiểm tra yêu cầu, theo dõi hạn giữ chỗ và lưu lại lịch sử xử lý để sản phẩm luôn có trạng thái chính xác.</p></div><div class="screen-heading-actions"><a class="button button-secondary" href="booking.html"><i class="fa-solid fa-cubes-stacked" aria-hidden="true"></i> Danh mục sản phẩm</a></div></header>
-  <section class="booking-alert-panel" data-booking-alert-panel hidden aria-label="Cảnh báo giữ chỗ"><div class="booking-alert-heading"><div><strong>Cần chú ý</strong><span data-booking-alert-summary></span></div><button type="button" class="button button-quiet" data-booking-alert-close>Đóng</button></div><div class="booking-alert-list" data-booking-alert-list></div></section>
-  <div class="screen-stats"><article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-hourglass-half" aria-hidden="true"></i></span><div><span>Chờ xử lý</span><strong id="bookingPendingCount">0</strong><small>Yêu cầu cần kiểm tra</small></div></article><article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-key" aria-hidden="true"></i></span><div><span>Đã giữ chỗ</span><strong id="bookingHeldCount">0</strong><small>Đang khóa sản phẩm</small></div></article><article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-calendar" aria-hidden="true"></i></span><div><span>Sắp hết hạn</span><strong id="bookingExpiringCount">0</strong><small>Trong 3 ngày tới</small></div></article><article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-rotate-left" aria-hidden="true"></i></span><div><span>Đã giải phóng</span><strong id="bookingReleasedCount">0</strong><small>Từ chối, giải phóng, hết hạn</small></div></article></div>
-  <section class="panel screen-panel" id="bookingRequestsPanel"><div class="screen-panel-head"><div><span class="panel-kicker">THEO DÕI TRẠNG THÁI</span><h2>Danh sách yêu cầu</h2><p>Duyệt để giờ sản phẩm, từ chối để trả sản phẩm về trạng thái còn bán. Yêu cầu được tự động giải phóng khi hết hạn.</p></div><div class="screen-heading-actions"><button class="button button-primary" type="button" data-booking-open><i class="fa-solid fa-plus" aria-hidden="true"></i> Tạo yêu cầu</button></div></div>
-    <div class="booking-filters" aria-label="Bộ lọc yêu cầu giữ chỗ"><label><span>Dự án</span><select data-booking-filter aria-label="Lọc yêu cầu theo dự án"><option value="">Tất cả dự án</option><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></select></label><label><span>Nhân viên phụ trách</span><select data-booking-assignee-filter aria-label="Lọc theo nhân viên phụ trách"><option value="">Tất cả nhân viên</option></select></label><label><span>Hạn giữ chỗ tư</span><input type="date" data-booking-date-from aria-label="Hạn giữ chỗ tư ngày"></label><label><span>Đến ngày</span><input type="date" data-booking-date-to aria-label="Hạn giữ chỗ đến ngày"></label><button class="button button-quiet" type="button" data-booking-filter-clear>Xóa bộ lọc</button></div>
-    <div class="booking-filter-result" data-booking-filter-result aria-live="polite"></div>
-    <div class="screen-table-wrap"><table class="screen-table"><thead><tr><th>Mã yêu cầu</th><th>Khách hàng</th><th>Sản phẩm</th><th>Dự án</th><th>Phụ trách</th><th>Hạn giữ chỗ</th><th>Trạng thái</th><th>Thao tác</th></tr></thead><tbody id="bookingRequests"><tr data-booking-code="BK-2026-084" data-customer-id="anh" data-product-id="unit-ap-a2-1208" data-assignee-id="staff-long" data-booking-deadline="2026-11-02T17:00" data-booking-created="2026-10-26T09:15"><td>BK-2026-084</td><td>Nguyễn Ngọc Anh</td><td>A2 · 12.08</td><td>An Phú Riverside</td><td>Trần Thanh Long</td><td>02/11/2026 · 17:00</td><td><span class="screen-badge amber">Chờ duyệt</span></td><td></td></tr></tbody></table></div>
-  </section>
-  <section class="panel screen-panel booking-audit-panel"><div class="screen-panel-head"><div><span class="panel-kicker">MINH BẠCH VẬN HÀNH</span><h2>Lịch sử thao tác</h2><p>Ghi nhận người duyệt, từ chối, giải phóng hoặc tự động trả sản phẩm về trạng thái còn bán.</p></div><span class="screen-badge blue" data-booking-audit-count>0 thao tác</span></div><div class="screen-table-wrap"><table class="screen-table booking-audit-table"><thead><tr><th>Thời điểm</th><th>Mã yêu cầu</th><th>Sản phẩm / dự án</th><th>Thao tác</th><th>Người thực hiện</th></tr></thead><tbody data-booking-audit><tr><td colspan="5">Chưa có thao tác được ghi nhận.</td></tr></tbody></table></div></section>
-  <div class="screen-empty-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Mới thao tác duyệt/từ chối được lưu cùng người thực hiện và thời điểm. Khi một khoản giữ chỗ đã duyệt hết hạn, sản phẩm được tự động trả về “Còn bán”.</div>
-  <footer class="dashboard-footer" data-admin-shared-footer></footer>
-</div>
-            </main>
-        </div>
-        <div class="modal-backdrop" id="bookingModal" hidden>
-            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle">
-                <button class="modal-close" type="button" data-booking-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-key" aria-hidden="true"></i></span>
-                <h2 id="bookingModalTitle">Tạo yêu cầu giữ chỗ</h2>
-                <p>Chọn khách hàng, sản phẩm, nhân viên phụ trách và thời hạn để theo dõi xuyên suốt yêu cầu.</p>
-                <form id="bookingForm" class="project-edit-form">
-                    <div class="appointment-customer-picker searchable-customer-picker"><label for="bookingCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="bookingCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="bookingCustomerOptions" aria-haspopup="listbox" placeholder="Tìm theo tên hoặc số điền thoại" autocomplete="off" /><select id="bookingCustomer" name="customer" hidden><option value="">Chọn khách hàng</option><option>Nguyễn Ngọc Anh</option><option>Trần Minh Khoa</option><option>Lê Hoàng Yến</option><option>Phạm Quốc Bảo</option></select><div class="appointment-customer-options" id="bookingCustomerOptions" role="listbox" hidden></div></div></div>
-                    <div class="project-form-row">
-                        <div><label for="bookingProject">Dự án</label><select id="bookingProject" name="project" required><option value="">Chọn dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
-                        <div><label for="bookingProduct">Can / sản phẩm còn bán</label><select id="bookingProduct" name="product" required><option value="">Chọn sản phẩm</option></select></div>
-                    </div>
-                    <label for="bookingAssignee">Nhân viên kinh doanh phụ trách</label>
-                    <select id="bookingAssignee" name="assignee" required><option value="">Chọn nhân viên phụ trách</option><option>Trần Thanh Long</option><option>Quỳnh Dao</option><option>Minh Anh</option></select>
-                    <label for="bookingDeadline">Thời hạn giữ chỗ</label>
-                    <input id="bookingDeadline" name="deadline" type="datetime-local" required />
-                    <label for="bookingNote">Ghi chú</label>
-                    <textarea id="bookingNote" name="note" rows="3" maxlength="300" placeholder="Thông tin cần lưu ý cho người duyệt"></textarea>
-                    <div class="modal-actions"><button class="button button-secondary" type="button" data-booking-close>Hủy</button><button class="button button-primary" type="submit">Lưu yêu cầu</button></div>
-                </form>
-            </section>
-        </div>
-        <div class="modal-backdrop" id="bookingAuditModal" hidden>
-            <section class="project-edit-dialog booking-audit-dialog" role="dialog" aria-modal="true" aria-labelledby="bookingAuditTitle">
-                <button class="modal-close" type="button" data-booking-audit-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-clock-rotate-left" aria-hidden="true"></i></span>
-                <h2 id="bookingAuditTitle">Lịch sử yêu cầu</h2>
-                <p data-booking-audit-subtitle></p>
-                <ol class="booking-audit-timeline" data-booking-audit-timeline></ol>
-                <div class="modal-actions"><button class="button button-secondary" type="button" data-booking-audit-close>Đóng</button></div>
-            </section>
-        </div>
-        <div
-            class="toast-message"
-            id="toastMessage"
-            role="status"
-            aria-live="polite"
-        ></div>
-        <script src="../public/js/inventory.js?v=20261027-memory-only-actions-v1"></script><script src="../public/js/admin-common.js?v=20261027-topbar-line-fix-v1"></script>
-        <script src="../public/js/booking.js?v=20261027-search-customer-v1"></script>
-        <script src="../public/js/searchable-customer-select.js?v=20261027-search-all-customer-fields-v2"></script>
+<body>
+    <p>Lịch hẹn tư vấn đã chuyển sang <a href="workflow.html#appointments">Công việc &amp; lịch hẹn</a>.</p>
 </body>
 </html>
-
-
-
