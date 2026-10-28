@@ -2080,6 +2080,7 @@
     display: grid;
     gap: 8px;
 }
+.project-address-help { margin-top:-5px; color:#8194a4; font-size:11px; line-height:1.45; }
 .project-edit-form label {
     margin-top: 4px;
     color: #435e74;

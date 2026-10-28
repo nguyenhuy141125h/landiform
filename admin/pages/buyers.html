@@ -105,7 +105,7 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>Đã có hồ sơ</span
+                                <span>Hồ sơ hoàn tất</span
                                 ><strong id="buyerDocsComplete">0%</strong
                                 ><small id="buyerDocsCaption"
                                     >Chưa có hồ sơ</small
@@ -134,8 +134,8 @@
                                 >
                                 <h2>Danh sách người mua</h2>
                                 <p>
-                                    Thông tin giao dịch, sản phẩm và mục bàn
-                                    giao dự kiến.
+                                    Theo dõi trạng thái giao dịch, sản phẩm và
+                                    hồ sơ bàn giao.
                                 </p>
                             </div>
                             <div class="screen-filter">
@@ -158,13 +158,23 @@
                                     </option></select
                                 ><select
                                     id="buyerDocumentFilter"
-                                    aria-label="Lọc theo hồ sơ"
+                                    aria-label="Lọc theo tình trạng hồ sơ"
                                 >
-                                    <option value="">
-                                        Mọi tình trạng hồ sơ
-                                    </option>
-                                    <option>Đã có hồ sơ</option>
+                                    <option value="">Mọi tình trạng hồ sơ</option>
+                                    <option>Chưa tiếp nhận</option>
                                     <option>Đang bổ sung</option>
+                                    <option>Chờ kiểm tra</option>
+                                    <option>Cần chỉnh sửa</option>
+                                    <option>Đã đủ hồ sơ</option>
+                                </select>
+                                <select
+                                    id="buyerTransactionFilter"
+                                    aria-label="Lọc theo trạng thái giao dịch"
+                                >
+                                    <option value="">Mọi trạng thái giao dịch</option>
+                                    <option>Đang xử lý</option>
+                                    <option>Đã mua</option>
+                                    <option>Đã hủy</option>
                                 </select>
                             </div>
                         </div>
@@ -176,6 +186,7 @@
                                         <th>Sản phẩm</th>
                                         <th>Dự án</th>
                                         <th>Dự kiến bàn giao</th>
+                                        <th>Giao dịch</th>
                                         <th>Hồ sơ</th>
                                         <th>Thao tác</th>
                                     </tr>
@@ -252,7 +263,7 @@
                     ><i class="fa-solid fa-house-user" aria-hidden="true"></i
                 ></span>
                 <h2 id="buyerModalTitle">Thêm hồ sơ người mua</h2>
-                <p>Gắn người mua với sản phẩm và mục bàn giao dự kiến.</p>
+                <p>Gắn hồ sơ với sản phẩm, trạng thái mua và kế hoạch bàn giao.</p>
                 <form id="buyerForm" class="project-edit-form">
                     <label for="buyerName">Họ và tên</label
                     ><input
@@ -307,10 +318,19 @@
                             />
                         </div>
                     </div>
-                    <label for="buyerDocuments">Tình trạng giấy tờ</label
+                    <label for="buyerTransactionStatus">Trạng thái giao dịch</label>
+                    <select id="buyerTransactionStatus" name="transactionStatus">
+                        <option>Đang xử lý</option>
+                        <option>Đã mua</option>
+                        <option>Đã hủy</option>
+                    </select>
+                    <label for="buyerDocuments">Tình trạng hồ sơ</label
                     ><select id="buyerDocuments" name="documents">
+                        <option>Chưa tiếp nhận</option>
                         <option>Đang bổ sung</option>
-                        <option>Đã có hồ sơ</option>
+                        <option>Chờ kiểm tra</option>
+                        <option>Cần chỉnh sửa</option>
+                        <option>Đã đủ hồ sơ</option>
                     </select>
                     <div class="modal-actions">
                         <button

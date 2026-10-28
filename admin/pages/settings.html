@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
     <head>
         <meta charset="utf-8" />
@@ -18,26 +18,59 @@
             rel="stylesheet"
             href="../../website/public/css/fontawesome.min.css"
         />
-        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
-        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
-        <script src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
-</head>
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <script
+            src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"
+        ></script>
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
+        />
+    </head>
     <body class="dashboard-body">
-    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
+        <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
         <div class="app-shell">
-            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
+            <aside
+                class="sidebar"
+                id="sidebar"
+                data-admin-shared-shell
+                aria-label="Điều hướng quản trị"
+            ></aside>
             <main class="main-panel">
-                <header class="topbar" data-admin-shared-topbar data-page-label="Th&#244;ng tin doanh nghiệp"></header>
+                <header
+                    class="topbar"
+                    data-admin-shared-topbar
+                    data-page-label="Th&#244;ng tin doanh nghiệp"
+                ></header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
                             <p class="screen-eyebrow">DOANH NGHIỆP</p>
                             <h1>Thông tin doanh nghiệp</h1>
-                            <p>Quản lý tên pháp lý, mã số thuế, logo, địa chỉ và thông tin doanh nghiệp hiển thị trên trang khách hàng.</p>
+                            <p>
+                                Quản lý tên pháp lý, mã số thuế, logo, địa chỉ
+                                và thông tin doanh nghiệp hiển thị trên trang
+                                khách hàng.
+                            </p>
                         </div>
                         <div class="screen-heading-actions">
-                            <a class="button button-secondary" href="account.html"><i class="fa-solid fa-circle-user" aria-hidden="true"></i> Tài khoản cá nhân</a>
+                            <a
+                                class="button button-secondary"
+                                href="account.html"
+                                ><i
+                                    class="fa-solid fa-circle-user"
+                                    aria-hidden="true"
+                                ></i>
+                                Tài khoản cá nhân</a
+                            >
                             <button
                                 class="button button-primary"
                                 type="button"
@@ -55,51 +88,107 @@
                         <section class="panel screen-panel">
                             <span class="panel-kicker">HỒ SƠ DOANH NGHIỆP</span>
                             <h2>Hồ sơ doanh nghiệp</h2>
-                            <p class="settings-section-intro">Thông tin pháp lý và đầu mối liên hệ chung của công ty.</p>
+                            <p class="settings-section-intro">
+                                Thông tin pháp lý và đầu mối liên hệ chung của
+                                công ty.
+                            </p>
                             <div class="settings-form">
                                 <label>
                                     Tên pháp lý
-                                    <input name="legalName" data-setting required value="Công ty Cổ phần An Phát Land" />
+                                    <input
+                                        name="legalName"
+                                        data-setting
+                                        required
+                                        value="Công ty Cổ phần An Phát Land"
+                                    />
                                 </label>
                                 <label>
                                     Tên giao dịch
-                                    <input name="displayName" data-setting required value="An Phát Land" />
+                                    <input
+                                        name="displayName"
+                                        data-setting
+                                        required
+                                        value="An Phát Land"
+                                    />
                                 </label>
                                 <label>
                                     Mã số thuế
-                                    <input name="taxCode" data-setting required inputmode="numeric" value="0314567890" />
+                                    <input
+                                        name="taxCode"
+                                        data-setting
+                                        required
+                                        inputmode="numeric"
+                                        value="0314567890"
+                                    />
                                 </label>
                                 <label>
                                     Người đại diện
-                                    <input name="representative" data-setting required value="Nguyễn Minh Anh" />
+                                    <input
+                                        name="representative"
+                                        data-setting
+                                        required
+                                        value="Nguyễn Minh Anh"
+                                    />
                                 </label>
                                 <label>
                                     Chức vụ
-                                    <input name="representativeTitle" data-setting required value="Giám đọc" />
+                                    <input
+                                        name="representativeTitle"
+                                        data-setting
+                                        required
+                                        value="Giám đọc"
+                                    />
                                 </label>
                                 <label>
                                     Lĩnh vực hoạt động
                                     <select name="businessType" data-setting>
-                                        <option>Đầu tư và phát triển bất động sản</option>
+                                        <option>
+                                            Đầu tư và phát triển bất động sản
+                                        </option>
                                         <option>Phân phối bất động sản</option>
                                         <option>Môi giới bất động sản</option>
-                                        <option>Quản lý và vận hành bất động sản</option>
+                                        <option>
+                                            Quản lý và vận hành bất động sản
+                                        </option>
                                     </select>
                                 </label>
                             </div>
-                            <div class="settings-form-divider"><strong>Liên hệ chung</strong><span>Dùng làm thông tin mặc định trên website và biểu mẫu.</span></div>
+                            <div class="settings-form-divider">
+                                <strong>Liên hệ chung</strong
+                                ><span
+                                    >Dùng làm thông tin mặc định trên website và
+                                    biểu mẫu.</span
+                                >
+                            </div>
                             <div class="settings-form settings-form-single">
                                 <label>
                                     Số điện thoại
-                                    <input name="phone" data-setting required type="tel" value="028 7300 6868" />
+                                    <input
+                                        name="phone"
+                                        data-setting
+                                        required
+                                        type="tel"
+                                        value="028 7300 6868"
+                                    />
                                 </label>
                                 <label>
                                     Email doanh nghiệp
-                                    <input name="email" data-setting required type="email" value="contact@anphatland.vn" />
+                                    <input
+                                        name="email"
+                                        data-setting
+                                        required
+                                        type="email"
+                                        value="contact@anphatland.vn"
+                                    />
                                 </label>
                                 <label>
                                     Website
-                                    <input name="website" data-setting required value="https://anphatland.vn" />
+                                    <input
+                                        name="website"
+                                        data-setting
+                                        required
+                                        value="https://anphatland.vn"
+                                    />
                                 </label>
                                 <label>
                                     Tỉnh / Thành phố
@@ -113,80 +202,314 @@
                                 </label>
                                 <label class="settings-field-wide">
                                     Địa chỉ trụ sở chính
-                                    <textarea name="address" data-setting required rows="3">Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea>
+                                    <textarea
+                                        name="address"
+                                        data-setting
+                                        required
+                                        rows="3"
+                                    >
+Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
+                                    >
                                 </label>
                             </div>
-                            <p class="settings-help"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Mã số thuế và người đại diện dùng cho hồ sơ công ty; số điện thoại, email và địa chỉ được dùng làm liên hệ mặc định.</p>
+                            <p class="settings-help">
+                                <i
+                                    class="fa-solid fa-circle-info"
+                                    aria-hidden="true"
+                                ></i>
+                                Mã số thuế và người đại diện dùng cho hồ sơ công
+                                ty; số điện thoại, email và địa chỉ được dùng
+                                làm liên hệ mặc định.
+                            </p>
                         </section>
                     </div>
-                    <section class="panel screen-panel customer-site-settings" id="customer-site-settings">
-                        <div class="screen-panel-head"><div><span class="panel-kicker">TRANG KHÁCH HÀNG</span><h2>Nội dung trang chủ</h2><p>Chỉnh sửa phần giới thiệu của doanh nghiệp trên website khách hàng.</p></div><a class="button button-quiet" href="../../customer/index.html" target="_blank" rel="noopener">Xem trang khách hàng <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                    <section
+                        class="panel screen-panel customer-site-settings"
+                        id="customer-site-settings"
+                    >
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker"
+                                    >TRANG KHÁCH HÀNG</span
+                                >
+                                <h2>Nội dung trang chủ</h2>
+                                <p>
+                                    Chỉnh sửa phần giới thiệu của doanh nghiệp
+                                    trên website khách hàng.
+                                </p>
+                            </div>
+                            <a
+                                class="button button-quiet"
+                                href="../../customer/index.html"
+                                target="_blank"
+                                rel="noopener"
+                                >Xem trang khách hàng
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                        </div>
                         <div class="settings-form customer-site-form">
-                            <label class="settings-field-wide">Tiêu đề chính<input name="siteHeroTitle" data-customer-site-setting required maxlength="140" /></label>
-                            <label class="settings-field-wide">Mô tả ngắn<textarea name="siteHeroDescription" data-customer-site-setting required rows="3" maxlength="500"></textarea></label>
+                            <label class="settings-field-wide"
+                                >Tiêu đề chính<input
+                                    name="siteHeroTitle"
+                                    data-customer-site-setting
+                                    required
+                                    maxlength="140"
+                            /></label>
+                            <label class="settings-field-wide"
+                                >Mô tả ngắn<textarea
+                                    name="siteHeroDescription"
+                                    data-customer-site-setting
+                                    required
+                                    rows="3"
+                                    maxlength="500"
+                                ></textarea>
+                            </label>
                         </div>
                     </section>
-                    <section class="panel screen-panel branch-settings" id="branch-settings">
-                        <div class="screen-panel-head"><div><span class="panel-kicker">HỆ THỐNG CHI NHÁNH</span><h2>Văn phòng và khu vực phục vụ</h2><p>Thông tin này xuất hiện trong trang liên hệ và lựa chọn chi nhánh khi khách gọi yêu cầu.</p></div><button class="button button-secondary" type="button" id="addBranchButton"><i class="fa-solid fa-plus" aria-hidden="true"></i> Thêm chi nhánh</button></div>
-                        <div class="branch-editor-list" id="branchEditorList" aria-live="polite"></div>
-                        <p class="settings-help"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Để trống điện thoại hoặc email riêng nếu chi nhánh dùng thông tin liên hệ chung ở trên. Sản phẩm sẽ gợi ý chi nhánh theo khu vực dự án.</p>
+                    <section
+                        class="panel screen-panel branch-settings"
+                        id="branch-settings"
+                    >
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker"
+                                    >HỆ THỐNG CHI NHÁNH</span
+                                >
+                                <h2>Văn phòng và khu vực phục vụ</h2>
+                                <p>
+                                    Thông tin này xuất hiện trong trang liên hệ
+                                    và lựa chọn chi nhánh khi khách gọi yêu cầu.
+                                </p>
+                            </div>
+                            <button
+                                class="button button-secondary"
+                                type="button"
+                                id="addBranchButton"
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Thêm chi nhánh
+                            </button>
+                        </div>
+                        <div
+                            class="branch-editor-list"
+                            id="branchEditorList"
+                            aria-live="polite"
+                        ></div>
+                        <p class="settings-help">
+                            <i
+                                class="fa-solid fa-circle-info"
+                                aria-hidden="true"
+                            ></i>
+                            Để trống điện thoại hoặc email riêng nếu chi nhánh
+                            dùng thông tin liên hệ chung ở trên. Sản phẩm sẽ gợi
+                            ý chi nhánh theo khu vực dự án.
+                        </p>
                     </section>
                     <section class="panel screen-panel" id="company-identity">
                         <div class="screen-panel-head">
                             <div>
-                                <span class="panel-kicker">NHẬN DIỆN DOANH NGHIỆP</span>
+                                <span class="panel-kicker"
+                                    >NHẬN DIỆN DOANH NGHIỆP</span
+                                >
                                 <h2>Tên và logo thương hiệu</h2>
-                                <p>Tên và logo doanh nghiệp dùng trên website và không gian quản trị.</p>
+                                <p>
+                                    Tên và logo doanh nghiệp dùng trên website
+                                    và không gian quản trị.
+                                </p>
                             </div>
                         </div>
                         <div class="company-identity">
-                            <div class="company-logo-preview" id="companyLogoPreview" aria-label="Biểu tượng doanh nghiệp">
+                            <div
+                                class="company-logo-preview"
+                                id="companyLogoPreview"
+                                aria-label="Biểu tượng doanh nghiệp"
+                            >
                                 <span id="companyLogoInitials">AP</span>
-                                <img id="companyLogoImage" alt="Logo doanh nghiệp" hidden />
+                                <img
+                                    id="companyLogoImage"
+                                    alt="Logo doanh nghiệp"
+                                    hidden
+                                />
                             </div>
                             <div class="company-identity-copy">
                                 <strong>Logo thương hiệu</strong>
                                 <span>Logo hệ thống hiện tại · LANDIFORM</span>
-                                <small>Chọn logo doanh nghiệp để thay hình mặc định đang hiển thị.</small>
+                                <small
+                                    >Chọn logo doanh nghiệp để thay hình mặc
+                                    định đang hiển thị.</small
+                                >
                             </div>
                             <div class="company-logo-actions">
-                                <label class="button button-quiet" for="companyLogo"><i class="fa-solid fa-image" aria-hidden="true"></i> Chọn logo</label>
-                                <input id="companyLogo" type="file" accept="image/png,image/jpeg,image/webp" hidden />
-                                <button class="button button-quiet" type="button" data-logo-remove>Đặt lại</button>
+                                <label
+                                    class="button button-quiet"
+                                    for="companyLogo"
+                                    ><i
+                                        class="fa-solid fa-image"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Chọn logo</label
+                                >
+                                <input
+                                    id="companyLogo"
+                                    type="file"
+                                    accept="image/png,image/jpeg,image/webp"
+                                    hidden
+                                />
+                                <button
+                                    class="button button-quiet"
+                                    type="button"
+                                    data-logo-remove
+                                >
+                                    Đặt lại
+                                </button>
                             </div>
                         </div>
                     </section>
-                    <section class="panel screen-panel about-article-settings" id="about-article-settings">
+                    <section
+                        class="panel screen-panel about-article-settings"
+                        id="about-article-settings"
+                    >
                         <div class="screen-panel-head">
                             <div>
-                                <span class="panel-kicker">NỘI DUNG WEBSITE</span>
+                                <span class="panel-kicker"
+                                    >NỘI DUNG WEBSITE</span
+                                >
                                 <h2>Bài viết giới thiệu</h2>
-                                <p>Chỉnh sửa bài blog đang hiển thị tại mục Thông tin trên trang khách hàng.</p>
+                                <p>
+                                    Chỉnh sửa bài blog đang hiển thị tại mục
+                                    Thông tin trên trang khách hàng.
+                                </p>
                             </div>
-                            <a class="button button-quiet" href="../../customer/about.html" target="_blank" rel="noopener">Xem trang Thông tin <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                            <a
+                                class="button button-quiet"
+                                href="../../customer/about.html"
+                                target="_blank"
+                                rel="noopener"
+                                >Xem trang Thông tin
+                                <i
+                                    class="fa-solid fa-arrow-up-right-from-square"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
                         </div>
                         <div class="settings-form about-article-form">
-                            <label class="settings-field-wide">Tiêu đề bài viết<input name="aboutTitle" data-about-setting required maxlength="160" /></label>
-                            <label class="settings-field-wide">Đoạn giới thiệu<textarea name="aboutIntro" data-about-setting required rows="3" maxlength="600"></textarea></label>
+                            <label class="settings-field-wide"
+                                >Tiêu đề bài viết<input
+                                    name="aboutTitle"
+                                    data-about-setting
+                                    required
+                                    maxlength="160"
+                            /></label>
+                            <label class="settings-field-wide"
+                                >Đoạn giới thiệu<textarea
+                                    name="aboutIntro"
+                                    data-about-setting
+                                    required
+                                    rows="3"
+                                    maxlength="600"
+                                ></textarea>
+                            </label>
                             <div class="settings-field-wide about-cover-upload">
                                 <span class="about-cover-label">Ảnh bìa</span>
                                 <div class="about-cover-controls">
-                                    <label class="button button-quiet about-cover-picker" for="aboutCoverFile"><i class="fa-solid fa-image" aria-hidden="true"></i> Chọn ảnh</label>
-                                    <input id="aboutCoverFile" type="file" accept="image/*" hidden />
-                                    <span id="aboutCoverFileName" class="settings-inline-help">Chọn ảnh từ thiết bị. Ảnh mẫu hiện tại sẽ được giữ nếu bạn chưa chọn ảnh mới.</span>
+                                    <label
+                                        class="button button-quiet about-cover-picker"
+                                        for="aboutCoverFile"
+                                        ><i
+                                            class="fa-solid fa-image"
+                                            aria-hidden="true"
+                                        ></i>
+                                        Chọn ảnh</label
+                                    >
+                                    <input
+                                        id="aboutCoverFile"
+                                        type="file"
+                                        accept="image/*"
+                                        hidden
+                                    />
+                                    <span
+                                        id="aboutCoverFileName"
+                                        class="settings-inline-help"
+                                        >Chọn ảnh từ thiết bị. Ảnh mẫu hiện tại
+                                        sẽ được giữ nếu bạn chưa chọn ảnh
+                                        mới.</span
+                                    >
                                 </div>
-                                <input name="aboutCoverImage" data-about-setting type="hidden" />
-                                <div class="about-cover-preview" id="aboutCoverPreview" aria-live="polite">
-                                    <i class="fa-regular fa-image" aria-hidden="true"></i><span>Xem trước ảnh bìa</span>
+                                <input
+                                    name="aboutCoverImage"
+                                    data-about-setting
+                                    type="hidden"
+                                />
+                                <div
+                                    class="about-cover-preview"
+                                    id="aboutCoverPreview"
+                                    aria-live="polite"
+                                >
+                                    <i
+                                        class="fa-regular fa-image"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><span>Xem trước ảnh bìa</span>
                                 </div>
                             </div>
-                            <label>Văn bản mô tả ảnh<input name="aboutCoverAlt" data-about-setting maxlength="180" /></label>
-                            <label>Chú thích ảnh<input name="aboutCoverCaption" data-about-setting maxlength="240" /></label>
-                            <label class="settings-field-wide">Nội dung bài viết<textarea id="aboutBody" class="about-article-body-input" name="aboutBody" data-about-setting rows="20"></textarea><small class="settings-inline-help">Soạn thảo bằng TinyMCE; nội dung sẽ hiển thị trực tiếp trên trang Thông tin của khách hàng.</small></label>
+                            <label
+                                >Văn bản mô tả ảnh<input
+                                    name="aboutCoverAlt"
+                                    data-about-setting
+                                    maxlength="180"
+                            /></label>
+                            <label
+                                >Chú thích ảnh<input
+                                    name="aboutCoverCaption"
+                                    data-about-setting
+                                    maxlength="240"
+                            /></label>
+                            <label class="settings-field-wide"
+                                >Nội dung bài viết<textarea
+                                    id="aboutBody"
+                                    class="about-article-body-input"
+                                    name="aboutBody"
+                                    data-about-setting
+                                    rows="20"
+                                ></textarea
+                                ><small class="settings-inline-help"
+                                    >Soạn thảo bằng TinyMCE; nội dung sẽ hiển
+                                    thị trực tiếp trên trang Thông tin của khách
+                                    hàng.</small
+                                ></label
+                            >
                         </div>
-                        <div class="about-article-settings-footer"><span><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Nội dung tại đây là bản xem trước để kết nối dữ liệu sau.</span><a class="button button-primary" href="../../customer/about.html" target="_blank" rel="noopener">Mở trang khách hàng <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+                        <div class="about-article-settings-footer">
+                            <span
+                                ><i
+                                    class="fa-solid fa-circle-info"
+                                    aria-hidden="true"
+                                ></i>
+                                Nội dung tại đây là bản xem trước để kết nối dữ
+                                liệu sau.</span
+                            ><a
+                                class="button button-primary"
+                                href="../../customer/about.html"
+                                target="_blank"
+                                rel="noopener"
+                                >Mở trang khách hàng
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                        </div>
                     </section>
-                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                    <footer
+                        class="dashboard-footer"
+                        data-admin-shared-footer
+                    ></footer>
                 </div>
             </main>
         </div>
@@ -195,11 +518,9 @@
             id="toastMessage"
             role="status"
             aria-live="polite"
-        ></div><script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
+        ></div>
+        <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
         <script src="../../customer/public/js/about-article-data.js"></script>
         <script src="../public/js/settings.js?v=20261026-tinymce-v1"></script>
-</body>
+    </body>
 </html>
-
-
-

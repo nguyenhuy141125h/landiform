@@ -7,9 +7,9 @@
     const storageKey = "landiform.admin.buyers.v1";
     const projectKey = "landiform.admin.projects.v1";
     const seeds = [
-        { id: "buyer-00184", code: "KH-00184", leadId: "yen", projectCode: "CP-008", productId: "unit-cp-b1-0803", name: "Lê Hoàng Yến", phone: "0987 332 104", project: "Central Park Towers", unit: "B1 · 08.03", handover: "2026-12-15", documents: "Đủ hồ sơ", updated: "20/10" },
-        { id: "buyer-00179", code: "KH-00179", leadId: "dat", projectCode: "AP-026", productId: "unit-ap-a2-1506", name: "Võ Thành Đạt", phone: "0903 123 179", project: "An Phú Riverside", unit: "A2 · 15.06", handover: "2026-12-22", documents: "Đang bổ sung", updated: "19/10" },
-        { id: "buyer-00168", code: "KH-00168", leadId: "ha", projectCode: "GV-014", productId: "unit-gv-n08-05", name: "Nguyễn Thu Hà", phone: "0903 123 168", project: "Green Valley", unit: "N08 · 05", handover: "2027-01-10", documents: "Đủ hồ sơ", updated: "16/10" },
+        { id: "buyer-00184", code: "KH-00184", leadId: "yen", projectCode: "CP-008", productId: "unit-cp-b1-0803", name: "Lê Hoàng Yến", phone: "0987 332 104", project: "Central Park Towers", unit: "B1 · 08.03", handover: "2026-12-15", transactionStatus: "Đã mua", documents: "Đã đủ hồ sơ", updated: "20/10" },
+        { id: "buyer-00179", code: "KH-00179", leadId: "dat", projectCode: "AP-026", productId: "unit-ap-a2-1506", name: "Võ Thành Đạt", phone: "0903 123 179", project: "An Phú Riverside", unit: "A2 · 15.06", handover: "2026-12-22", transactionStatus: "Đang xử lý", documents: "Đang bổ sung", updated: "19/10" },
+        { id: "buyer-00168", code: "KH-00168", leadId: "ha", projectCode: "GV-014", productId: "unit-gv-n08-05", name: "Nguyễn Thu Hà", phone: "0903 123 168", project: "Green Valley", unit: "N08 · 05", handover: "2027-01-10", transactionStatus: "Đã mua", documents: "Chờ kiểm tra", updated: "16/10" },
     ];
     const demoBuyerActivities = {
         "buyer-00184": [
@@ -23,7 +23,7 @@
         ],
         "buyer-00168": [
             { type: "Tham quan", note: "Đã xem nhà mẫu Green Valley và chọn nhà phố N08 · 05.", at: "15/10/2026 · 10:00" },
-            { type: "Giao dịch", note: "Ghi nhận giao dịch mua nhà phố; hồ sơ đã đủ.", at: "16/10/2026 · 09:45" },
+            { type: "Hồ sơ", note: "Đã nộp giấy tờ giao dịch, đang chờ nhân viên kiểm tra.", at: "16/10/2026 · 09:45" },
         ],
     };
     const buyerOwners = { "buyer-00184": "Mai Ngọc", "buyer-00179": "Trần Thanh Long", "buyer-00168": "Quỳnh Dao" };
@@ -32,6 +32,7 @@
     const search = document.querySelector("#buyerSearch");
     const projectFilter = document.querySelector("#buyerProjectFilter");
     const documentFilter = document.querySelector("#buyerDocumentFilter");
+    const transactionFilter = document.querySelector("#buyerTransactionFilter");
     const emptyState = document.querySelector("#buyerEmptyState");
     const unitSuggestions = document.querySelector("#buyerUnitSuggestions");
     const deleteButton = document.querySelector("#buyerDelete");
@@ -192,9 +193,17 @@
             cell.textContent = value;
             row.append(cell);
         }
+        const transactionCell = document.createElement("td");
+        const transactionBadge = document.createElement("span");
+        const transactionStatus = buyer.transactionStatus || "Đang xử lý";
+        transactionBadge.className = `screen-badge ${transactionStatus === "Đã mua" ? "green" : transactionStatus === "Đã hủy" ? "red" : "amber"}`;
+        transactionBadge.textContent = transactionStatus;
+        transactionCell.append(transactionBadge);
+        row.append(transactionCell);
         const documentCell = document.createElement("td");
         const badge = document.createElement("span");
-        badge.className = `screen-badge ${buyer.documents === "Đủ hồ sơ" ? "green" : "amber"}`;
+        const documentTones = { "Chưa tiếp nhận": "neutral", "Đang bổ sung": "amber", "Chờ kiểm tra": "blue", "Cần chỉnh sửa": "red", "Đã đủ hồ sơ": "green" };
+        badge.className = `screen-badge ${documentTones[buyer.documents] || "neutral"}`;
         badge.textContent = buyer.documents;
         documentCell.append(badge);
         row.append(documentCell);
@@ -206,7 +215,7 @@
         const editParams = new URLSearchParams({
             type: "buyer", id: buyer.id, code: buyer.code || "", name: buyer.name || "",
             phone: buyer.phone || "", project: buyer.project || "", product: buyer.unit || "",
-            handover: buyer.handover || "", documents: buyer.documents || "",
+            handover: buyer.handover || "", transactionStatus: buyer.transactionStatus || "Đang xử lý", documents: buyer.documents || "",
         });
         editLink.href = `record-detail.html?${editParams.toString()}`;
         editLink.setAttribute("aria-label", `Chỉnh sửa hồ sơ người mua ${buyer.name}`);
@@ -224,8 +233,9 @@
 
     function updateSummary() {
         const total = buyers.length;
-        const complete = buyers.filter((buyer) => buyer.documents === "Đủ hồ sơ").length;
+        const complete = buyers.filter((buyer) => buyer.documents === "Đã đủ hồ sơ").length;
         const dueSoon = (windowDays) => buyers.filter((buyer) => {
+            if (buyer.transactionStatus === "Đã hủy") return false;
             const days = dateDistance(buyer.handover);
             return days >= 0 && days <= windowDays;
         }).length;
@@ -243,13 +253,15 @@
         const query = search?.value.trim().toLocaleLowerCase("vi") || "";
         const project = projectFilter?.value || "";
         const documentStatus = documentFilter?.value || "";
+        const transactionStatus = transactionFilter?.value || "";
         let visible = 0;
         tbody.querySelectorAll("tr").forEach((row) => {
             const buyer = buyers.find((item) => item.id === row.dataset.buyerId);
             if (!buyer) return;
             const matches = (!query || `${buyer.name} ${buyer.code} ${buyer.phone} ${buyer.unit}`.toLocaleLowerCase("vi").includes(query))
                 && (!project || buyer.project === project)
-                && (!documentStatus || buyer.documents === documentStatus);
+                && (!documentStatus || buyer.documents === documentStatus)
+                && (!transactionStatus || (buyer.transactionStatus || "Đang xử lý") === transactionStatus);
             row.hidden = !matches;
             if (matches) visible += 1;
         });
@@ -280,6 +292,7 @@
             ["Diện tích", inventoryItem?.area ? `${inventoryItem.area} m²` : "Chưa cập nhật"],
             ["Giá tham khảo", inventoryItem?.price ? `${new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 }).format(inventoryItem.price)} tỷ` : "Chưa cập nhật"],
             ["Tình trạng hồ sơ", buyer.documents],
+            ["Trạng thái giao dịch", buyer.transactionStatus || "Đang xử lý"],
             ["Dự kiến bàn giao", dateLabel(buyer.handover)],
         ];
         productFacts.forEach(([label, value]) => {
@@ -354,6 +367,7 @@
             form.elements.project.value = buyer.project;
             form.elements.unit.value = buyer.unit;
             form.elements.handover.value = buyer.handover;
+            form.elements.transactionStatus.value = buyer.transactionStatus || "Đang xử lý";
             form.elements.documents.value = buyer.documents;
         }
         syncUnitSuggestions();
@@ -414,7 +428,7 @@
             document.body.classList.remove("modal-open");
         }
     });
-    [search, projectFilter, documentFilter].forEach((control) => {
+    [search, projectFilter, documentFilter, transactionFilter].forEach((control) => {
         control?.addEventListener(control === search ? "input" : "change", applyFilters);
     });
     deleteButton.addEventListener("click", () => {
@@ -439,6 +453,7 @@
             project: form.elements.project.value,
             unit: form.elements.unit.value.trim(),
             handover: form.elements.handover.value,
+            transactionStatus: form.elements.transactionStatus.value,
             documents: form.elements.documents.value,
             updated: new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit" }).format(new Date()),
         };

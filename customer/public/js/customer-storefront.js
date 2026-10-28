@@ -132,7 +132,12 @@
             document.querySelector("#projectLocationSection").hidden = false;
             document.querySelector("#projectLocationTitle").textContent = project.name;
             document.querySelector("#projectLocationAddress").textContent = project.address || project.area;
-            document.querySelector("#projectLocationMap").src = `https://www.google.com/maps?q=${encodedMapQuery}&output=embed`;
+            const projectMapUrl = new URL("https://www.google.com/maps");
+            projectMapUrl.searchParams.set("hl", "vi");
+            projectMapUrl.searchParams.set("q", mapQuery);
+            projectMapUrl.searchParams.set("z", project.address ? "16" : "12");
+            projectMapUrl.searchParams.set("output", "embed");
+            document.querySelector("#projectLocationMap").src = projectMapUrl.href;
             document.querySelector("#projectLocationLink").href = `https://www.google.com/maps/search/?api=1&query=${encodedMapQuery}`;
             projectFilter.value = activeProjectCode;
             title.replaceChildren(`Khám phá ${project.name}`, document.createElement("br"));
@@ -615,6 +620,10 @@
     }
 
     configureBrandAndPage();
+    document.querySelector("#activateProjectMap")?.addEventListener("click", (event) => {
+        event.currentTarget.hidden = true;
+        document.querySelector("#projectLocationMap")?.focus();
+    });
     syncProjectOptions();
     syncAreaOptions();
     syncTypeOptions();

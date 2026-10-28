@@ -202,6 +202,7 @@
       name: String(values.get("name") || "").trim(),
       type: String(values.get("type") || "Căn hộ"),
       area: String(values.get("area") || "").trim(),
+      address: String(values.get("address") || "").trim(),
       leads: Math.max(0, Number(current.leads || 0)),
       status: String(values.get("status") || "Chuẩn bị mở bán"),
       updated: new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric" }).format(new Date()),
@@ -212,7 +213,7 @@
   function fillEditForm(project) {
     const form = document.querySelector("#projectEditForm");
     if (!form) return;
-    ["name", "type", "area", "leads", "status"].forEach((name) => {
+    ["name", "type", "area", "address", "leads", "status"].forEach((name) => {
       if (form.elements[name]) form.elements[name].value = project[name] ?? "";
     });
   }
@@ -233,6 +234,7 @@
       detailPageCode: project.code,
       detailPageType: project.type === "Căn hộ" ? "Khu căn hộ" : project.type,
       detailPageArea: project.area,
+      detailPageAddress: project.address || "Chưa cập nhật địa chỉ chính xác",
       detailPageLeads: Number(project.leads || 0).toLocaleString("vi-VN"),
       detailPageUpdated: project.updated || "Chưa cập nhật"
     };
