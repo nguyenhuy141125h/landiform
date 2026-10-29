@@ -2567,3 +2567,13 @@ body.customer-about-page { background:linear-gradient(180deg,#edf5f8 0,#f7fafc 5
     .customer-branch-card > header { align-items:flex-start; flex-direction:column; gap:7px; }
 }
 .customer-article-page-grid [hidden] { display: none !important; }
+
+/* The detail filter opens through the native checkbox state. */
+.filter-toggle-input { position:absolute; width:1px; height:1px; opacity:0; overflow:hidden; }
+.product-toolbar .advanced-filters { display:none; }
+.product-toolbar:has(.filter-toggle-input:checked) .advanced-filters { display:grid; }
+.product-toolbar:has(.filter-toggle-input:checked) .filter-advanced-toggle { border-color:#a9d0df; color:#087fb5; background:#f4fafc; }
+.product-toolbar:has(.filter-toggle-input:checked) .filter-toggle-chevron { transform:rotate(180deg); }
+.filter-toggle-input:focus-visible + .filter-advanced-toggle { outline:3px solid #1683b633; outline-offset:2px; }
+
+#productGrid .product-card[hidden] { display:none!important; }

@@ -1,29 +1,30 @@
 ﻿(() => {
+    if (document.body.dataset.customerPage !== "detail") return;
     const inventory = window.LandiformInventory;
     if (!inventory) return;
     const params = new URLSearchParams(window.location.search);
     const productId = params.get("id");
-    const projects = {
-        "AP-026": { area: "TP. Thủ Đức", type: "Căn hộ", image: "blue-residential-towers.jpg" },
-        "GV-014": { area: "Biên Hòa", type: "Nhà phố", image: "residential-exterior.jpg" },
-        "CP-008": { area: "Quận 7, TP. Hồ Chí Minh", type: "Căn hộ", image: "blue-residential-towers.jpg" },
-        "LG-031": { area: "Long An", type: "Đất nền", image: "planned-neighborhood.jpg" },
-    };
-    try {
-        const savedProjects = JSON.parse(null || "[]");
-        if (Array.isArray(savedProjects)) savedProjects.forEach((project) => {
-            if (project.code && project.name) projects[project.code] = { ...projects[project.code], name: project.name, area: project.area || projects[project.code]?.area || "Đang cập nhật", address: project.address || project.location || projects[project.code]?.address || "", type: project.type || projects[project.code]?.type || "Khác" };
+    const catalog = inventory.all();
+    const projects = Object.fromEntries(catalog.reduce((map, item) => {
+        if (item.projectCode && !map.has(item.projectCode)) map.set(item.projectCode, {
+            name: item.project,
+            area: item.projectArea || item.address || "Đang cập nhật",
+            address: item.address || "",
+            type: item.projectType || item.type,
         });
-    } catch { /* Dùng danh sách dự án mẫu. */ }
-    let company = { fields: { displayName: "An Phát Land", phone: "028 7300 6868", email: "contact@anphatland.vn", taxCode: "" }, logo: "" };
-    try {
-        const savedCompany = JSON.parse(null || "null");
-        if (savedCompany?.fields) company = { ...company, ...savedCompany, fields: { ...company.fields, ...savedCompany.fields } };
-    } catch { /* Dùng thông tin doanh nghiệp mẫu. */ }
+        return map;
+    }, new Map()));
+    const companyMarkup = document.querySelector("#customerCompanyProfile");
+    const company = { fields: {
+        displayName: companyMarkup?.dataset.name || "",
+        phone: companyMarkup?.dataset.phone || "",
+        email: companyMarkup?.dataset.email || "",
+        taxCode: companyMarkup?.dataset.taxCode || "",
+    }, logo: companyMarkup?.dataset.logo || "" };
     const companyName = company.fields.displayName || "Doanh nghiệp bất động sản";
     const tenantKey = String(company.fields.taxCode || companyName).toLocaleLowerCase("vi").replace(/[^\p{L}\p{N}]+/gu, "-");
     const favoritesKey = `landiform.customer.${tenantKey}.favorites.v1`;
-    const product = inventory.all().find((item) => item?.id === productId && item.code && item.status !== "Chờ duyệt" && projects[item.projectCode]);
+    const product = catalog.find((item) => item?.id === productId && item.code && item.status !== "Chờ duyệt" && projects[item.projectCode]);
     const modal = document.querySelector("#appointmentModal");
     const form = document.querySelector("#appointmentRequestForm");
     const toast = document.querySelector("#detailToast");
@@ -54,37 +55,8 @@
         if (/nhà|biệt thự|villa/i.test(type)) return "fa-house";
         return "fa-building";
     }
-    const propertyPhotos = {
-        apartment: "https://images.unsplash.com/photo-1758193431351-68538bf55ec3?auto=format&fit=crop&w=1600&q=85",
-        apartmentInterior: "https://images.unsplash.com/photo-1751945965597-71171ec7a458?auto=format&fit=crop&w=1600&q=85",
-        house: "https://images.unsplash.com/photo-1769805446592-35a4ed882bc4?auto=format&fit=crop&w=1600&q=85",
-        land: "https://images.unsplash.com/photo-1772325482422-55bc8dd65662?auto=format&fit=crop&w=1600&q=85",
-        villa: "https://images.unsplash.com/photo-1774280960001-ce8169cfc38f?auto=format&fit=crop&w=1600&q=85",
-        commercial: "https://images.unsplash.com/photo-1775577845258-5345de77e25d?auto=format&fit=crop&w=1600&q=85",
-    };
-    function imageFor(item) {
-        const type = `${item.type || ""} ${projects[item.projectCode]?.type || ""}`.toLocaleLowerCase("vi");
-        if (/đất|lô|khu đô thị/.test(type)) return propertyPhotos.land;
-        if (/biệt thự|nghỉ dưỡng|resort|villa|condotel/.test(type)) return propertyPhotos.villa;
-        if (/thương mại|văn phòng|shophouse|officetel|kho|nhà xưởng|commercial/.test(type)) return propertyPhotos.commercial;
-        if (/nhà|townhouse|house/.test(type)) return propertyPhotos.house;
-        if (/căn hộ|apartment/.test(type)) {
-            const key = String(item.id || item.code || item.projectCode || "");
-            const hash = [...key].reduce((sum, character) => sum + character.charCodeAt(0), 0);
-            return hash % 2 ? propertyPhotos.apartmentInterior : propertyPhotos.apartment;
-        }
-        return propertyPhotos.apartment;
-    }
-    function galleryImagesFor(item) {
-        const type = `${item.type || ""} ${projects[item.projectCode]?.type || ""}`.toLocaleLowerCase("vi");
-        let images = [imageFor(item)];
-        if (/đất|lô|khu đô thị/.test(type)) images = [...images, propertyPhotos.house, propertyPhotos.apartment];
-        else if (/biệt thự|nghỉ dưỡng|resort|villa|condotel/.test(type)) images = [...images, propertyPhotos.apartmentInterior, propertyPhotos.house];
-        else if (/thương mại|văn phòng|shophouse|officetel|kho|nhà xưởng|commercial/.test(type)) images = [...images, propertyPhotos.apartment, propertyPhotos.house];
-        else if (/nhà|townhouse|house/.test(type)) images = [...images, propertyPhotos.villa, propertyPhotos.apartmentInterior];
-        else images = [...images, propertyPhotos.apartmentInterior, propertyPhotos.commercial];
-        return [...new Set(images)];
-    }
+    function imageFor(item) { return item.galleryImages?.[0] || item.image || ""; }
+    function galleryImagesFor(item) { return item.galleryImages?.length ? item.galleryImages : [imageFor(item)]; }
     function renderGallery() {
         const image = document.querySelector("#detailPageImage");
         image.src = galleryImages[activeImageIndex];
@@ -160,10 +132,7 @@
         document.querySelector("#openImageViewer").focus();
     }
     function readFavorites() {
-        try {
-            const value = JSON.parse(null || "[]");
-            return Array.isArray(value) ? value : [];
-        } catch { return []; }
+        return [];
     }
     function setBrand() {
         document.querySelectorAll("[data-brand-name]").forEach((element) => { element.textContent = companyName; });
@@ -291,7 +260,6 @@
         if (!product) return;
         const favorites = readFavorites();
         const updated = favorites.includes(product.id) ? favorites.filter((id) => id !== product.id) : [...favorites, product.id];
-        try { void 0; } catch { /* Tiếp tục hiển thị trạng thái trong trang. */ }
         updateFavoriteButton();
         notify(updated.includes(product.id) ? "Đã lưu sản phẩm vào danh sách quan tâm." : "Đã bỏ sản phẩm khỏi danh sách đã lưu.");
     });
@@ -352,44 +320,5 @@
     document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) closeAppointment(); });
     const now = new Date();
     form.elements.date.min = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-    form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        if (!form.reportValidity()) return;
-        const name = form.elements.name.value.trim();
-        const intent = form.elements.intent.value;
-        const branch = window.CustomerBranches?.get(form.elements.branchId.value);
-        const nowLabel = new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" }).format(new Date());
-        const lead = {
-            id: `lead-${Date.now()}`,
-            name,
-            phone: form.elements.phone.value.trim(),
-            email: form.elements.email.value.trim(),
-            project: projectName(product),
-            projectCode: product.projectCode,
-            productId: product.id,
-            branch: branch?.name || "",
-            branchId: branch?.id || "",
-            need: form.elements.message.value.trim() || `${intent === "viewing" ? "Đặt lịch xem" : "Tư vấn"} ${product.type} · ${product.code}`,
-            ...(intent === "viewing" ? { appointment: { intent, date: form.elements.date.value, time: form.elements.time.value } } : {}),
-            budget: "Chưa cập nhật",
-            source: "Website · Chi tiết sản phẩm",
-            owner: "Chưa phân công",
-            status: "Chưa liên hệ",
-            received: nowLabel,
-            activities: [{ type: "Đăng ký", note: `Khách gửi yêu cầu ${intent === "viewing" ? "đặt lịch xem" : "tư vấn"}${branch ? ` tại ${branch.name}` : ""} cho ${product.code}.`, at: nowLabel }],
-        };
-        try {
-            const saved = JSON.parse(null || "[]");
-            const leads = Array.isArray(saved) ? saved : [];
-            leads.push(lead);
-            void 0;
-        } catch { return notify("Chưa lưu được yêu cầu. Vui lòng thử lại hoặc liên hệ trực tiếp."); }
-        form.reset();
-        window.CustomerSelects?.syncAll();
-        closeAppointment();
-        notify(intent === "viewing"
-            ? `Cảm ơn ${name}. Yêu cầu đặt lịch tại ${branch?.name || "chi nhánh phụ trách"} đã được ghi nhận.`
-            : `Cảm ơn ${name}. Yêu cầu tư vấn tại ${branch?.name || "chi nhánh phụ trách"} đã được ghi nhận.`);
-    });
 })();
 

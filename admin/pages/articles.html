@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
     <head>
         <meta charset="utf-8" />
@@ -8,7 +8,7 @@
         <link
             rel="icon"
             type="image/svg+xml"
-            href="../../website/assets/favicon.svg"
+            href="../../../website/assets/favicon.svg"
         />
         <link
             rel="stylesheet"
@@ -38,13 +38,23 @@
             src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js"
             referrerpolicy="origin"
         ></script>
-    </head>
+    <link rel="stylesheet" href="../public/css/notifications.css" />
+</head>
     <body class="dashboard-body">
-    <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
         <div class="app-shell">
-            <aside class="sidebar" id="sidebar" data-admin-shared-shell aria-label="Điều hướng quản trị"></aside>
+            <aside class="sidebar nav-ready" id="sidebar" aria-label="Điều hướng quản trị"><a class="brand" href="../index.html" aria-label="LANDIFORM - Tổng quan"><span class="brand-mark"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="brand-name">LANDI<span>FORM</span></span></a>
+<div class="workspace-switch" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"><span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span><i class="fa-solid fa-chevron-down workspace-switch-arrow" aria-hidden="true"></i></div><div class="workspace-branch-menu" role="menu" hidden><button type="button" class="workspace-branch-option is-selected" role="menuitemradio" aria-checked="true" data-branch-option="hcm">Chi nhánh Hồ Chí Minh</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="hanoi">Chi nhánh Hà Nội</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="all">Toàn bộ hệ thống</button></div>
+<nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="../index.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Tổng quan</span></a></nav>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-building" aria-hidden="true"></i><span class="nav-label-text">Dự án &amp; sản phẩm</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Dự án và sản phẩm"><a class="nav-link" href="projects.html"><span>Dự án</span></a><a class="nav-link" href="categories.html"><span>Danh mục sản phẩm</span></a><a class="nav-link" href="booking.html"><span>Sản phẩm dự án</span></a></nav></details>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-user-group" aria-hidden="true"></i><span class="nav-label-text">Khách hàng &amp; tiếp thị</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị"><a class="nav-link" href="leads.html"><span>Khách hàng tiềm năng</span></a><a class="nav-link" href="forms.html"><span>Biểu mẫu &amp; mã QR</span></a><a class="nav-link" href="campaigns.html"><span>Chiến dịch tiếp thị</span></a></nav></details>
+<nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="workflow.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Công việc &amp; lịch hẹn</span></a></nav>
+<nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="buyers.html"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Người mua &amp; bàn giao</span></a></nav>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-users" aria-hidden="true"></i><span class="nav-label-text">Đội ngũ</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Đội ngũ"><a class="nav-link" href="team.html?type=management"><span>Admin</span></a><a class="nav-link" href="team.html?type=employee"><span>Nhân viên</span></a></nav></details>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-chart-pie" aria-hidden="true"></i><span class="nav-label-text">Báo cáo</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Báo cáo"><a class="nav-link" href="reports.html"><span>Báo cáo hoạt động</span></a><a class="nav-link" href="staff-reports.html"><span>Báo cáo nhân viên</span></a></nav></details>
+<details class="nav-group" open><summary class="nav-label"><i class="nav-label-icon fa-solid fa-gear" aria-hidden="true"></i><span class="nav-label-text">Hệ thống</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Thiết lập hệ thống và nội dung"><a class="nav-link" href="permissions.html"><span>Phân quyền</span></a><a class="nav-link" href="settings.html"><span>Thông tin doanh nghiệp</span></a><a class="nav-link is-active" aria-current="page" href="articles.html"><span>Cẩm nang</span></a><a class="nav-link" href="account.html"><span>Tài khoản cá nhân</span></a></nav></details>
+<div class="sidebar-bottom"><a class="sidebar-support" href="support.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Trung tâm hỗ trợ</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></aside>
             <main class="main-panel">
-                <header class="topbar" data-admin-shared-topbar data-page-label="Cẩm nang"></header>
+                <header class="topbar"><button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><div class="breadcrumbs"><span>An Phát Land</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><strong>Cẩm nang</strong></div><div class="topbar-actions"><label class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><div class="topbar-account-actions"><a class="account-switch" href="account.html" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span><i class="fa-solid fa-gear" aria-hidden="true"></i></a><a class="account-logout" href="../login.html" data-account-logout="true" aria-label="Đăng xuất" title="Đăng xuất"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span></a></div><div class="notification-center"><button type="button" class="icon-button notification-button" aria-label="Mở thông báo" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-count" hidden></span></button><section class="notification-popover" hidden aria-label="Thông báo"><header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary>Bạn đã xem hết thông báo</small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list><p class="notification-empty">Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.</p></div><a class="notification-footer" href="workflow.html">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section></div></div></header>
                 <div class="dashboard-content screen-content guide-admin-page">
                     <header class="screen-heading">
                         <div>
@@ -91,11 +101,38 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="guide-list"
-                                id="guideList"
-                                aria-live="polite"
-                            ></div>
+                            <div class="guide-list" id="guideList" aria-live="polite">
+<div class="guide-list-item-wrap" data-guide-category="apartment" data-guide-kicker="CHỌN SẢN PHẨM" data-guide-summary="Xem vị trí, diện tích sử dụng, hướng căn và tiện ích cần thiết trước khi quyết định." data-guide-image="../../website/assets/blue-residential-towers.jpg" data-guide-image-alt="Các tòa căn hộ trong khu dân cư">
+  <button class="guide-list-item is-active" type="button" data-guide-id="guide-apartment-1" aria-label="Mở bài viết Cách so sánh căn hộ phù hợp với nhu cầu gia đình"><span class="guide-list-thumb"><img src="../../website/assets/blue-residential-towers.jpg" alt="" loading="lazy" /></span><span class="guide-list-copy"><strong>Cách so sánh căn hộ phù hợp với nhu cầu gia đình</strong><small>Căn hộ</small></span><span class="guide-status">Đang hiển thị</span></button>
+  <button class="button button-danger guide-list-delete" type="button" data-guide-delete="guide-apartment-1" aria-label="Xóa bài viết Cách so sánh căn hộ phù hợp với nhu cầu gia đình"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+  <template data-guide-body><p>Bắt đầu từ nhu cầu thực tế: số thành viên, thời gian dự định ở, nơi làm việc và mức ngân sách có thể chuẩn bị. Những tiêu chí này giúp thu hẹp lựa chọn trước khi so sánh từng căn.</p><h2>Những điểm nên kiểm tra</h2><ul><li>Diện tích thông thủy và cách bố trí các phòng.</li><li>Khoảng cách đến nơi làm việc, trường học và dịch vụ thiết yếu.</li><li>Tình trạng mở bán, giá tham khảo và các khoản chi phí cần hỏi thêm.</li><li>Hồ sơ dự án và thông tin pháp lý do đơn vị phụ trách cung cấp.</li></ul><p>Nên ghi lại câu hỏi còn thiếu và đề nghị chuyên viên xác nhận bằng thông tin cụ thể cho đúng sản phẩm.</p></template>
+</div>
+<div class="guide-list-item-wrap" data-guide-category="home" data-guide-kicker="ĐI XEM THỰC TẾ" data-guide-summary="Chuẩn bị trước các câu hỏi để buổi xem nhà tập trung vào điều bạn quan tâm." data-guide-image="../../website/assets/residential-exterior.jpg" data-guide-image-alt="Nhà phố trong khu dân cư">
+  <button class="guide-list-item" type="button" data-guide-id="guide-home-1" aria-label="Mở bài viết Checklist khi đi xem nhà hoặc nhà mẫu"><span class="guide-list-thumb"><img src="../../website/assets/residential-exterior.jpg" alt="" loading="lazy" /></span><span class="guide-list-copy"><strong>Checklist khi đi xem nhà hoặc nhà mẫu</strong><small>Nhà ở</small></span><span class="guide-status">Đang hiển thị</span></button>
+  <button class="button button-danger guide-list-delete" type="button" data-guide-delete="guide-home-1" aria-label="Xóa bài viết Checklist khi đi xem nhà hoặc nhà mẫu"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+  <template data-guide-body><p>Trước buổi hẹn, xác nhận địa chỉ, người đón tiếp, thời lượng dự kiến và sản phẩm sẽ xem. Nếu đi cùng gia đình, hãy thống nhất trước các tiêu chí ưu tiên.</p><h2>Khi tham quan</h2><ul><li>Quan sát ánh sáng, thông gió, lối đi và không gian sinh hoạt.</li><li>Hỏi rõ phần bàn giao, nội thất đi kèm và các hạng mục có thể phát sinh.</li><li>Ghi lại mã sản phẩm, mức giá tham khảo và thời điểm áp dụng.</li><li>Chụp ảnh hoặc ghi chú sau khi được cho phép để tiện đối chiếu.</li></ul><p>Thông tin tại buổi giới thiệu nên được đối chiếu với tài liệu và xác nhận chính thức của đơn vị bán hàng.</p></template>
+</div>
+<div class="guide-list-item-wrap" data-guide-category="land" data-guide-kicker="TÌM HIỂU ĐẤT NỀN" data-guide-summary="Đừng chỉ xem diện tích và vị trí; hãy làm rõ quy hoạch, hạ tầng và hồ sơ liên quan." data-guide-image="../../website/assets/planned-neighborhood.jpg" data-guide-image-alt="Khu đất quy hoạch và đường nội khu">
+  <button class="guide-list-item" type="button" data-guide-id="guide-land-1" aria-label="Mở bài viết Các thông tin cần hỏi khi tìm hiểu một lô đất"><span class="guide-list-thumb"><img src="../../website/assets/planned-neighborhood.jpg" alt="" loading="lazy" /></span><span class="guide-list-copy"><strong>Các thông tin cần hỏi khi tìm hiểu một lô đất</strong><small>Đất &amp; lô đất</small></span><span class="guide-status">Đang hiển thị</span></button>
+  <button class="button button-danger guide-list-delete" type="button" data-guide-delete="guide-land-1" aria-label="Xóa bài viết Các thông tin cần hỏi khi tìm hiểu một lô đất"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+  <template data-guide-body><p>Mỗi lô đất có mã, vị trí và thông tin quy hoạch riêng. Hãy đề nghị xem sơ đồ, ranh giới, đường tiếp cận và các tài liệu được phép cung cấp cho lô bạn quan tâm.</p><h2>Câu hỏi gợi ý</h2><ul><li>Lô thuộc phân khu nào, diện tích và kích thước cụ thể ra sao?</li><li>Hiện trạng hạ tầng và tình trạng mở bán được cập nhật khi nào?</li><li>Hồ sơ giao dịch, nghĩa vụ tài chính và điều kiện chuyển nhượng gồm những gì?</li><li>Thông tin nào cần được cơ quan hoặc đơn vị chuyên môn xác minh độc lập?</li></ul><p>Nội dung này chỉ là gợi ý tìm hiểu chung, không thay cho tư vấn pháp lý hoặc xác nhận hồ sơ của từng sản phẩm.</p></template>
+</div>
+<div class="guide-list-item-wrap" data-guide-category="urban" data-guide-kicker="QUY HOẠCH &amp; TIỆN ÍCH" data-guide-summary="Nhìn tổng thể quy hoạch, hạ tầng và tiện ích theo từng giai đoạn phát triển." data-guide-image="../../website/assets/city-living.jpg" data-guide-image-alt="Khu đô thị với không gian sống và tiện ích">
+  <button class="guide-list-item" type="button" data-guide-id="guide-urban-1" aria-label="Mở bài viết Đọc thông tin một khu đô thị trước khi chọn"><span class="guide-list-thumb"><img src="../../website/assets/city-living.jpg" alt="" loading="lazy" /></span><span class="guide-list-copy"><strong>Đọc thông tin một khu đô thị trước khi chọn</strong><small>Khu đô thị</small></span><span class="guide-status">Đang hiển thị</span></button>
+  <button class="button button-danger guide-list-delete" type="button" data-guide-delete="guide-urban-1" aria-label="Xóa bài viết Đọc thông tin một khu đô thị trước khi chọn"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+  <template data-guide-body><p>Khu đô thị thường gồm nhiều phân khu và loại sản phẩm. Hãy xác định vị trí phân khu bạn quan tâm, kết nối giao thông và những hạng mục tiện ích đã hình thành hoặc đang được giới thiệu.</p><h2>Các nội dung nên đối chiếu</h2><ul><li>Sơ đồ tổng thể và ranh giới phân khu.</li><li>Tiến độ hạ tầng, đường kết nối và tiện ích công cộng.</li><li>Loại sản phẩm, diện tích và tình trạng kinh doanh ở từng khu.</li><li>Thông tin bàn giao, vận hành và các tài liệu liên quan.</li></ul><p>Nên kiểm tra mốc thời gian cập nhật và xác nhận riêng từng hạng mục với đơn vị phụ trách dự án.</p></template>
+</div>
+<div class="guide-list-item-wrap" data-guide-category="resort" data-guide-kicker="KHÔNG GIAN NGHỈ DƯỠNG" data-guide-summary="Làm rõ mục đích sử dụng, dịch vụ vận hành và các điều kiện đi kèm." data-guide-image="../../website/assets/resort-villas.jpg" data-guide-image-alt="Khu nghỉ dưỡng với biệt thự và cảnh quan">
+  <button class="guide-list-item" type="button" data-guide-id="guide-resort-1" aria-label="Mở bài viết Tìm hiểu sản phẩm nghỉ dưỡng một cách thực tế"><span class="guide-list-thumb"><img src="../../website/assets/resort-villas.jpg" alt="" loading="lazy" /></span><span class="guide-list-copy"><strong>Tìm hiểu sản phẩm nghỉ dưỡng một cách thực tế</strong><small>Nghỉ dưỡng</small></span><span class="guide-status">Đang hiển thị</span></button>
+  <button class="button button-danger guide-list-delete" type="button" data-guide-delete="guide-resort-1" aria-label="Xóa bài viết Tìm hiểu sản phẩm nghỉ dưỡng một cách thực tế"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+  <template data-guide-body><p>Sản phẩm nghỉ dưỡng có thể gắn với dịch vụ và phương án khai thác riêng. Hãy tách biệt nhu cầu sử dụng cá nhân với nội dung giới thiệu về vận hành hoặc khai thác để đánh giá đúng điều bạn cần.</p><h2>Thông tin nên hỏi rõ</h2><ul><li>Phạm vi sử dụng, tiện ích và dịch vụ tại khu nghỉ dưỡng.</li><li>Đơn vị vận hành, chi phí quản lý và quy định sử dụng.</li><li>Điều kiện bàn giao, bảo trì và quyền lợi được mô tả trong hồ sơ.</li><li>Các cam kết về khai thác cần được thể hiện bằng tài liệu cụ thể.</li></ul><p>Không nên dựa vào một con số giới thiệu đơn lẻ; hãy đọc kỹ điều kiện, thời hạn và các khoản phí áp dụng.</p></template>
+</div>
+<div class="guide-list-item-wrap" data-guide-category="commercial" data-guide-kicker="MẶT BẰNG &amp; VẬN HÀNH" data-guide-summary="Đánh giá công năng, khả năng tiếp cận và chi phí vận hành trước khi quyết định." data-guide-image="../../website/assets/city-towers.jpg" data-guide-image-alt="Các tòa nhà thương mại và văn phòng">
+  <button class="guide-list-item" type="button" data-guide-id="guide-commercial-1" aria-label="Mở bài viết Chọn mặt bằng thương mại hoặc văn phòng"><span class="guide-list-thumb"><img src="../../website/assets/city-towers.jpg" alt="" loading="lazy" /></span><span class="guide-list-copy"><strong>Chọn mặt bằng thương mại hoặc văn phòng</strong><small>Thương mại</small></span><span class="guide-status">Đang hiển thị</span></button>
+  <button class="button button-danger guide-list-delete" type="button" data-guide-delete="guide-commercial-1" aria-label="Xóa bài viết Chọn mặt bằng thương mại hoặc văn phòng"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button>
+  <template data-guide-body><p>Với mặt bằng kinh doanh hoặc văn phòng, vị trí phù hợp cần đi cùng công năng sử dụng. Hãy đối chiếu nhu cầu hoạt động thực tế với thiết kế, điều kiện bàn giao và quy định của tòa nhà.</p><h2>Checklist tham khảo</h2><ul><li>Diện tích sử dụng, mặt tiền, tầng và mục đích được phép.</li><li>Lối tiếp cận, chỗ đỗ xe, thang máy và lưu lượng khách.</li><li>Phí quản lý, thời gian hoạt động và điều kiện thi công.</li><li>Điều khoản thuê hoặc giao dịch, thời hạn và trách nhiệm bảo trì.</li></ul><p>Đề nghị cung cấp bảng chi phí và điều khoản vận hành để so sánh tổng thể giữa các lựa chọn.</p></template>
+</div>
+</div>
                         </section>
                         <section class="panel screen-panel guide-editor-panel">
                             <div class="screen-panel-head">
@@ -207,7 +244,7 @@
                                 >
                                 <div class="guide-form-actions">
                                     <button
-                                        class="button button-đanger"
+                                        class="button button-danger"
                                         id="guideDelete"
                                         type="button"
                                     >
@@ -246,7 +283,7 @@
                             </div>
                         </section>
                     </div>
-                    <footer class="dashboard-footer" data-admin-shared-footer></footer>
+                    <footer class="dashboard-footer"><span>LANDIFORM · An Phát Land</span><span>Cẩm nang</span><a href="support.html">Trung tâm hỗ trợ</a></footer>
                 </div>
             </main>
         </div>
@@ -255,9 +292,14 @@
             id="toastMessage"
             role="status"
             aria-live="polite"
-        ></div><script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-        <script src="../public/js/guide-management.js?v=20261027-memory-only-actions-v1"></script>
-    </body>
+        ></div>
+    <script
+            src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js"
+            referrerpolicy="origin"
+        ></script>
+    <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
+    <script src="../public/js/guide-management.js?v=20261027-memory-only-actions-v1"></script>
+</body>
 </html>
 
 

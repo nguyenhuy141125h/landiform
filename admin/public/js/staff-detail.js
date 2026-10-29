@@ -1,6 +1,4 @@
 ﻿(() => {
-    const teamKey = "landiform.admin.team.v1";
-    const roleKey = "landiform.admin.roles.v1";
     const staffId = new URLSearchParams(location.search).get("id");
     const detail = document.querySelector("#staffDetailContent");
     const notFound = document.querySelector("#staffDetailNotFound");
@@ -11,16 +9,18 @@
     const toast = document.querySelector("#toastMessage");
     if (!detail || !notFound || !profileForm || !passwordForm || !roleSelect || !groupSelect) return;
 
-    const roleDefaults = {
-        admin: { name: "Quản trị doanh nghiệp", group: "management", locked: true },
-        manager: { name: "Quản lý kinh doanh", group: "management" },
-        leader: { name: "Ban lãnh đạo", group: "management" },
-        advisor: { name: "Nhân viên tư vấn", group: "employee" },
-        marketing: { name: "Marketing", group: "employee" },
-        care: { name: "Chăm sóc khách hàng", group: "employee" },
-        operation: { name: "Vận hành", group: "employee" },
-    };
-    let roles = { ...roleDefaults };
+    const roles = Object.fromEntries(
+        [...document.querySelectorAll("#staffRoleExamples [data-key]")].map((element) => {
+            const data = element.dataset;
+            return [data.key, {
+                name: data.name,
+                group: data.group,
+                status: data.status,
+                locked: data.locked === "true",
+                permissions: data.permissions ? data.permissions.split(/\s+/) : [],
+            }];
+        }),
+    );
     let people = [];
     let person = null;
     let toastTimer;
@@ -34,31 +34,13 @@
     }
 
     function loadData() {
-        try {
-            const customRoles = JSON.parse(null || "{}");
-            if (customRoles && typeof customRoles === "object" && !Array.isArray(customRoles)) {
-                Object.entries(customRoles).forEach(([id, role]) => {
-                    if (role?.name) roles[id] = { ...role, group: role.group === "management" ? "management" : "employee" };
-                });
-            }
-            const examples = document.querySelector("#staffRecordExamples")?.textContent || "[]";
-            const storedPeople = JSON.parse(examples);
-            people = Array.isArray(storedPeople) ? storedPeople : [];
-        } catch {
-            people = [];
-        }
+        people = [...document.querySelectorAll("#staffRecordExamples [data-id]")].map((element) => ({
+            ...element.dataset,
+            loginAllowed: element.dataset.loginAllowed === "true",
+        }));
         person = people.find((item) => item.id === staffId) || null;
     }
 
-    function savePeople() {
-        try {
-            void 0;
-            return true;
-        } catch {
-            notify("Không thể lưu thay đổi trên trình duyệt này.");
-            return false;
-        }
-    }
 
     function getScopes(record) {
         const raw = Array.isArray(record.scopes) ? record.scopes : (Array.isArray(record.scope) ? record.scope : [record.scope || "Toàn doanh nghiệp"]);
@@ -93,21 +75,6 @@
 
     function selectedScopes() {
         return [...(scopePicker()?.querySelectorAll('input[name="staffDetailScopeOptions"]:checked') || [])].map((input) => input.value);
-    }
-
-    function addProjectScopes() {
-        try {
-            const projects = JSON.parse(null || "[]");
-            const picker = scopePicker();
-            if (!Array.isArray(projects) || !picker) return;
-            projects.forEach((project) => {
-                if (!project.name || [...picker.querySelectorAll('input[name="staffDetailScopeOptions"]')].some((input) => input.value === project.name)) return;
-                const label = document.createElement("label");
-                const input = document.createElement("input");
-                input.type = "checkbox"; input.name = "staffDetailScopeOptions"; input.value = project.name;
-                label.append(input, document.createTextNode(project.name)); picker.append(label);
-            });
-        } catch { /* Keep the example projects available if saved projects cannot be read. */ }
     }
 
     function populateRoles(group, selected = "") {
@@ -213,13 +180,6 @@
         return [...bytes].map((value) => value.toString(16).padStart(2, "0")).join("");
     }
 
-    async function hashPassword(password) {
-        const salt = crypto.getRandomValues(new Uint8Array(16));
-        const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveBits"]);
-        const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", salt, iterations: 120000, hash: "SHA-256" }, key, 256);
-        return { passwordSalt: hex(salt), passwordHash: hex(new Uint8Array(bits)), passwordAlgorithm: "PBKDF2-SHA-256", passwordUpdatedAt: new Date().toISOString() };
-    }
-
     groupSelect.addEventListener("change", () => {
         populateRoles(groupSelect.value);
         renderPermissionSummary(roleSelect.value);
@@ -238,59 +198,34 @@
         }
         const scopes = selectedScopes();
         if (!scopes.length) { notify("Chọn ít nhất một phạm vi phụ trách."); return; }
-        const previous = person;
-        const next = {
-            ...person,
-            name: profileForm.elements.name.value.trim(),
-            email: profileForm.elements.email.value.trim().toLocaleLowerCase("vi"),
-            phone: profileForm.elements.phone.value.trim(),
-            accountType: role.group,
-            roleId: roleSelect.value,
-            role: role.name,
-            scopes,
-            scope: scopes.join(" · "),
-            status: profileForm.elements.status.value,
-            loginAllowed: profileForm.elements.loginAllowed.checked,
-        };
         if (people.some((item) => item.id !== person.id && (item.email || "").toLocaleLowerCase("vi") === next.email)) {
-            profileForm.elements.email.setCustomValidity("Email này đã được dùng cho một tài khoản khác.");
+            profileForm.elements.email.setCustomValidity("Email n\u00e0y \u0111\u00e3 \u0111\u01b0\u1ee3c d\u00f9ng cho m\u1ed9t t\u00e0i kho\u1ea3n kh\u00e1c.");
             profileForm.reportValidity();
             return;
         }
-        people = people.map((item) => item.id === person.id ? next : item);
-        if (!savePeople()) { people = people.map((item) => item.id === previous.id ? previous : item); return; }
-        person = next;
-        render();
-        notify("Đã cập nhật hồ sơ nhân viên.");
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "staff-profile", id: person.id, values: new FormData(profileForm) },
+        }));
+        notify("H\u1ed3 s\u01a1 ch\u01b0a \u0111\u01b0\u1ee3c l\u01b0u v\u00ec trang ch\u01b0a k\u1ebft n\u1ed1i backend.");
     });
     profileForm.elements.email.addEventListener("input", () => profileForm.elements.email.setCustomValidity(""));
 
     passwordForm.elements.password.addEventListener("input", () => passwordForm.elements.confirmPassword.setCustomValidity(""));
     passwordForm.elements.confirmPassword.addEventListener("input", () => passwordForm.elements.confirmPassword.setCustomValidity(""));
-    passwordForm.addEventListener("submit", async (event) => {
+    passwordForm.addEventListener("submit", (event) => {
         event.preventDefault();
         if (!passwordForm.reportValidity()) return;
-        const password = passwordForm.elements.password.value;
-        if (password !== passwordForm.elements.confirmPassword.value) {
-            passwordForm.elements.confirmPassword.setCustomValidity("Mật khẩu nhập lại chưa khớp.");
+        if (passwordForm.elements.password.value !== passwordForm.elements.confirmPassword.value) {
+            passwordForm.elements.confirmPassword.setCustomValidity("M\u1eadt kh\u1ea9u nh\u1eadp l\u1ea1i ch\u01b0a kh\u1edbp.");
             passwordForm.reportValidity();
             return;
         }
-        try {
-            const credentials = await hashPassword(password);
-            const next = { ...person, ...credentials };
-            const previousPeople = people;
-            people = people.map((item) => item.id === person.id ? next : item);
-            if (!savePeople()) { people = previousPeople; return; }
-            person = next;
-            passwordForm.reset();
-            notify("Đã cập nhật mật khẩu đăng nhập cho nhân viên.");
-        } catch {
-            notify("Không thể mã hóa và lưu mật khẩu trên trình duyệt này.");
-        }
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "staff-password", id: person.id, values: new FormData(passwordForm) },
+        }));
+        notify("M\u1eadt kh\u1ea9u ch\u01b0a \u0111\u01b0\u1ee3c c\u1eadp nh\u1eadt v\u00ec trang ch\u01b0a k\u1ebft n\u1ed1i backend.");
     });
 
-    addProjectScopes();
     loadData();
     render();
 })();

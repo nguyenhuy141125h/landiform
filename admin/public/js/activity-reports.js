@@ -4,40 +4,23 @@
     const tableBody = document.querySelector("#reportProjectRows");
     if (!monthInput || !tableBody) return;
 
-    const fallbackProjects = [
-        { code: "AP-026", name: "An Phú Riverside", type: "Căn hộ", area: "TP. Thủ Đức", color: "blue", icon: "fa-building" },
-        { code: "GV-014", name: "Green Valley", type: "Nhà phố", area: "Biên Hòa", color: "green", icon: "fa-house" },
-        { code: "CP-008", name: "Central Park Towers", type: "Căn hộ", area: "Quận 7", color: "violet", icon: "fa-building" },
-        { code: "LG-031", name: "Lumière Garden", type: "Đất nền", area: "Long An", color: "amber", icon: "fa-leaf" },
-    ];
-    const fallbackLeads = [
-        { id: "anh", projectCode: "AP-026", ownerId: "staff-long", owner: "Trần Thanh Long", productId: "unit-ap-a2-1208", source: "Google Ads · UTM", status: "Chưa liên hệ", received: "21/10/2026 · 08:45" },
-        { id: "khoa", projectCode: "GV-014", ownerId: "staff-quynh", owner: "Quỳnh Dao", productId: "unit-gv-n08-06", source: "SEO · Customer website", status: "Đang tư vấn", received: "19/10/2026 · 10:20" },
-        { id: "yen", projectCode: "CP-008", ownerId: "staff-mai", owner: "Mai Ngọc", productId: "unit-cp-b1-0803", source: "QR · Sự kiện mở bán", status: "Đã giao dịch", received: "20/10/2026 · 14:10" },
-        { id: "bao", projectCode: "AP-026", ownerId: "staff-long", owner: "Trần Thanh Long", productId: "unit-ap-a2-1210", source: "Meta Ads · Campaign T10", status: "Đang đàm phán", received: "15/10/2026 · 11:35" },
-        { id: "nam", projectCode: "GV-014", ownerId: "staff-quynh", owner: "Quỳnh Dao", productId: "unit-gv-n08-06", source: "SEO · Customer website", status: "Đang tư vấn", received: "21/10/2026 · 09:10" },
-        { id: "dat", projectCode: "AP-026", ownerId: "staff-long", owner: "Trần Thanh Long", productId: "unit-ap-a2-1506", source: "Meta Ads · Campaign T10", status: "Đã giao dịch", received: "12/10/2026 · 10:15" },
-        { id: "ha", projectCode: "GV-014", ownerId: "staff-quynh", owner: "Quỳnh Dao", productId: "unit-gv-n08-05", source: "SEO · Customer website", status: "Đã giao dịch", received: "08/10/2026 · 11:30" },
-    ];
-    const fallbackUnits = [
-        { id: "unit-cp-b1-0803", price: 5.1 }, { id: "unit-ap-a2-1506", price: 3.8 },
-        { id: "unit-gv-n08-05", price: 8.2 }, { id: "unit-ap-a2-1208", price: 3.8 },
-        { id: "unit-ap-a2-1210", price: 5.2 }, { id: "unit-gv-n08-06", price: 8.4 },
-    ];
+    const reportExamples = document.querySelector("#reportExampleData");
+    const readExamples = (kind) => [...(reportExamples?.querySelectorAll(`[data-report-example="${kind}"]`) || [])]
+        .map((element) => {
+            const row = { ...element.dataset };
+            delete row.reportExample;
+            if (row.price != null) row.price = Number(row.price);
+            return row;
+        });
+    const fallbackProjects = readExamples("project");
+    const fallbackLeads = readExamples("lead");
+    const fallbackUnits = readExamples("unit");
+    const fallbackBuyers = readExamples("buyer");
     const qualifiedStatuses = new Set(["Đang tư vấn", "Đã hẹn tham quan", "Đang đàm phán", "Đã giao dịch"]);
     const appointmentStatuses = new Set(["Đã hẹn tham quan", "Đang đàm phán", "Đã giao dịch"]);
     const wonStatus = "Đã giao dịch";
     const fmt = (value) => Number(value || 0).toLocaleString("vi-VN");
     const money = (value) => `${Number(value || 0).toLocaleString("vi-VN", { maximumFractionDigits: 1 })} tỷ`;
-
-    function readArray(key, fallback) {
-        try {
-            const value = JSON.parse(null || "null");
-            if (Array.isArray(value)) return value;
-            if (Array.isArray(value?.items)) return value.items;
-        } catch { /* Continue with the linked sample records. */ }
-        return fallback;
-    }
 
     function dateFor(value) {
         if (value instanceof Date) return Number.isNaN(value.getTime()) ? null : value;
@@ -49,8 +32,7 @@
     }
 
     function projectList() {
-        const saved = readArray("landiform.admin.projects.v1", fallbackProjects);
-        const source = saved.length ? saved : fallbackProjects;
+        const source = fallbackProjects;
         return source.filter((item) => item?.code && item?.name).map((project) => {
             const fallback = fallbackProjects.find((item) => item.code === project.code);
             const type = project.type || fallback?.type || "Bất động sản";
@@ -62,15 +44,11 @@
     }
 
     function populateProjectFilter() {
-        if (!projectFilter) return;
-        const selected = projectFilter.value;
-        projectFilter.replaceChildren(new Option("Tất cả dự án", ""));
-        projectList().forEach((project) => projectFilter.add(new Option(project.name, project.code)));
-        if ([...projectFilter.options].some((option) => option.value === selected)) projectFilter.value = selected;
+        if (projectFilter && ![...projectFilter.options].some((option) => option.value === projectFilter.value)) projectFilter.value = "";
     }
 
     function monthLeads(date, projectCode) {
-        return readArray("landiform.admin.leads.v1", fallbackLeads).filter((lead) => {
+        return fallbackLeads.filter((lead) => {
             const received = dateFor(lead.received || lead.createdAt || lead.created);
             const code = lead.projectCode || lead.project;
             return received && received.getFullYear() === date.getFullYear() && received.getMonth() === date.getMonth() && (!projectCode || code === projectCode);
@@ -94,12 +72,8 @@
             const code = appointment.projectCode || appointment.project;
             return start && start.getFullYear() === date.getFullYear() && start.getMonth() === date.getMonth() && appointment.status !== "Đã hủy" && (!selectedProject || code === selectedProject);
         });
-        const buyers = readArray("landiform.admin.buyers.v1", [
-            { leadId: "yen", productId: "unit-cp-b1-0803" },
-            { leadId: "dat", productId: "unit-ap-a2-1506" },
-            { leadId: "ha", productId: "unit-gv-n08-05" },
-        ]);
-        const units = [...fallbackUnits, ...readArray("landiform.admin.units.v1", [])];
+        const buyers = fallbackBuyers;
+        const units = fallbackUnits;
         const unitById = new Map(units.map((unit) => [unit.id, unit]));
         const buyerByLead = new Map(buyers.map((buyer) => [buyer.leadId, buyer]));
         const deals = leads.filter((lead) => lead.status === wonStatus);
@@ -136,10 +110,9 @@
             const label = sourceGroup(lead.source || lead.utmSource || lead.channel);
             sources.set(label, (sources.get(label) || 0) + 1);
         });
-        const statuses = (() => { try { return JSON.parse(null || "{}"); } catch { return {}; } })();
-        const bookings = readArray("landiform.admin.bookings.v1", [{ code: "BK-2026-084", projectCode: "AP-026", createdAt: "2026-10-22T09:15:00" }]).filter((booking) => {
+        const bookings = readExamples("booking").filter((booking) => {
             const created = dateFor(booking.createdAt || booking.created);
-            const status = statuses[booking.code] || booking.status || "Chờ duyệt";
+            const status = booking.status || "Chờ duyệt";
             return created && created.getFullYear() === date.getFullYear() && created.getMonth() === date.getMonth() && status === "Chờ duyệt" && (!selectedProject || (booking.projectCode || booking.project) === selectedProject);
         });
         const handoffs = buyers.filter((buyer) => {
@@ -311,12 +284,6 @@
     populateProjectFilter();
     monthInput.addEventListener("change", render);
     projectFilter?.addEventListener("change", render);
-    window.addEventListener("storage", (event) => {
-        if (["landiform.admin.leads.v1", "landiform.admin.projects.v1", "landiform.admin.units.v1", "landiform.admin.buyers.v1"].includes(event.key)) {
-            populateProjectFilter();
-            render();
-        }
-    });
     render();
 })();
 

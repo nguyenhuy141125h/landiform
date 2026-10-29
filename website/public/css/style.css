@@ -48,10 +48,6 @@ button {
 [hidden] {
     display: none !important;
 }
-site-header,
-site-footer {
-    display: block;
-}
 .skip-link {
     position: fixed;
     z-index: 200;

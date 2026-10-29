@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
     <head>
         <meta charset="utf-8" />
@@ -38,22 +38,23 @@
             rel="stylesheet"
             href="../public/css/record-detail.css?v=20261027-shared-record-detail-v1"
         />
-    </head>
+    <link rel="stylesheet" href="../public/css/notifications.css" />
+</head>
     <body class="dashboard-body">
-        <script src="../public/js/clear-landiform-storage.js?v=20261027-clear-old-storage-v1"></script>
         <div class="app-shell">
-            <aside
-                class="sidebar"
-                id="sidebar"
-                data-admin-shared-shell
-                aria-label="Điều hướng quản trị"
-            ></aside>
+            <aside class="sidebar nav-ready" id="sidebar" aria-label="Điều hướng quản trị"><a class="brand" href="../index.html" aria-label="LANDIFORM - Tổng quan"><span class="brand-mark"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="brand-name">LANDI<span>FORM</span></span></a>
+<div class="workspace-switch" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"><span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span><i class="fa-solid fa-chevron-down workspace-switch-arrow" aria-hidden="true"></i></div><div class="workspace-branch-menu" role="menu" hidden><button type="button" class="workspace-branch-option is-selected" role="menuitemradio" aria-checked="true" data-branch-option="hcm">Chi nhánh Hồ Chí Minh</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="hanoi">Chi nhánh Hà Nội</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="all">Toàn bộ hệ thống</button></div>
+<nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="../index.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Tổng quan</span></a></nav>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-building" aria-hidden="true"></i><span class="nav-label-text">Dự án &amp; sản phẩm</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Dự án và sản phẩm"><a class="nav-link" href="projects.html"><span>Dự án</span></a><a class="nav-link" href="categories.html"><span>Danh mục sản phẩm</span></a><a class="nav-link" href="booking.html"><span>Sản phẩm dự án</span></a></nav></details>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-user-group" aria-hidden="true"></i><span class="nav-label-text">Khách hàng &amp; tiếp thị</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị"><a class="nav-link" href="leads.html"><span>Khách hàng tiềm năng</span></a><a class="nav-link" href="forms.html"><span>Biểu mẫu &amp; mã QR</span></a><a class="nav-link" href="campaigns.html"><span>Chiến dịch tiếp thị</span></a></nav></details>
+<nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="workflow.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Công việc &amp; lịch hẹn</span></a></nav>
+<nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="buyers.html"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Người mua &amp; bàn giao</span></a></nav>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-users" aria-hidden="true"></i><span class="nav-label-text">Đội ngũ</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Đội ngũ"><a class="nav-link" href="team.html?type=management"><span>Admin</span></a><a class="nav-link" href="team.html?type=employee"><span>Nhân viên</span></a></nav></details>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-chart-pie" aria-hidden="true"></i><span class="nav-label-text">Báo cáo</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Báo cáo"><a class="nav-link" href="reports.html"><span>Báo cáo hoạt động</span></a><a class="nav-link" href="staff-reports.html"><span>Báo cáo nhân viên</span></a></nav></details>
+<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-gear" aria-hidden="true"></i><span class="nav-label-text">Hệ thống</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Thiết lập hệ thống và nội dung"><a class="nav-link" href="permissions.html"><span>Phân quyền</span></a><a class="nav-link" href="settings.html"><span>Thông tin doanh nghiệp</span></a><a class="nav-link" href="articles.html"><span>Cẩm nang</span></a><a class="nav-link" href="account.html"><span>Tài khoản cá nhân</span></a></nav></details>
+<div class="sidebar-bottom"><a class="sidebar-support" href="support.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Trung tâm hỗ trợ</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></aside>
             <main class="main-panel">
-                <header
-                    class="topbar"
-                    data-admin-shared-topbar
-                    data-page-label="Chi tiết hồ sơ"
-                ></header>
+                <header class="topbar"><button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><div class="breadcrumbs"><span>An Phát Land</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><strong>Chi tiết hồ sơ</strong></div><div class="topbar-actions"><label class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><div class="topbar-account-actions"><a class="account-switch" href="account.html" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span><i class="fa-solid fa-gear" aria-hidden="true"></i></a><a class="account-logout" href="../login.html" data-account-logout="true" aria-label="Đăng xuất" title="Đăng xuất"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span></a></div><div class="notification-center"><button type="button" class="icon-button notification-button" aria-label="Mở thông báo" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-count" hidden></span></button><section class="notification-popover" hidden aria-label="Thông báo"><header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary>Bạn đã xem hết thông báo</small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list><p class="notification-empty">Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.</p></div><a class="notification-footer" href="workflow.html">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section></div></div></header>
                 <div
                     class="dashboard-content screen-content product-detail-content"
                 >
@@ -61,7 +62,7 @@
                         <a
                             class="button button-secondary"
                             id="recordBackLink"
-                            href="index.html"
+                            href="../index.html"
                             ><i
                                 class="fa-solid fa-arrow-left"
                                 aria-hidden="true"
@@ -91,7 +92,7 @@
                         <a
                             class="button button-primary"
                             id="recordNotFoundLink"
-                            href="index.html"
+                            href="../index.html"
                             >Về danh sách</a
                         >
                     </div>
@@ -118,7 +119,7 @@
                                 <a
                                     class="button button-secondary"
                                     id="recordCancelLink"
-                                    href="index.html"
+                                    href="../index.html"
                                     >Hủy</a
                                 ><button
                                     class="button button-primary"
@@ -159,6 +160,7 @@
                         </aside>
                     </form>
                 </div>
+                <footer class="dashboard-footer"><span>LANDIFORM · An Phát Land</span><span>Chi tiết hồ sơ</span><a href="support.html">Trung tâm hỗ trợ</a></footer>
             </main>
         </div>
         <div
@@ -167,272 +169,61 @@
             role="status"
             aria-live="polite"
         ></div>
-        <script type="application/json" id="recordExamples">
-            [
-                {
-                    "type": "category",
-                    "id": "category-apartment",
-                    "name": "Căn hộ",
-                    "level": "Cấp 1",
-                    "parent": "Nhóm bất động sản",
-                    "usage": "9 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-apartment-2br",
-                    "name": "Căn hộ 2 phòng ngủ",
-                    "level": "Cấp 2",
-                    "parent": "Căn hộ",
-                    "usage": "7 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-studio",
-                    "name": "Căn hộ studio",
-                    "level": "Cấp 2",
-                    "parent": "Căn hộ",
-                    "usage": "0 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-apartment-1br",
-                    "name": "Căn hộ 1 phòng ngủ",
-                    "level": "Cấp 2",
-                    "parent": "Căn hộ",
-                    "usage": "1 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-apartment-3br",
-                    "name": "Căn hộ 3 phòng ngủ",
-                    "level": "Cấp 2",
-                    "parent": "Căn hộ",
-                    "usage": "2 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-house",
-                    "name": "Nhà ở",
-                    "level": "Cấp 1",
-                    "parent": "Nhóm bất động sản",
-                    "usage": "0 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-townhouse",
-                    "name": "Nhà phố",
-                    "level": "Cấp 2",
-                    "parent": "Nhà ở",
-                    "usage": "2 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-private-house",
-                    "name": "Nhà riêng",
-                    "level": "Cấp 2",
-                    "parent": "Nhà ở",
-                    "usage": "1 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-land",
-                    "name": "Đất nền",
-                    "level": "Cấp 1",
-                    "parent": "Nhóm bất động sản",
-                    "usage": "2 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-project-land",
-                    "name": "Đất nền dự án",
-                    "level": "Cấp 2",
-                    "parent": "Đất nền",
-                    "usage": "1 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-residential-land",
-                    "name": "Đất thổ cư",
-                    "level": "Cấp 2",
-                    "parent": "Đất nền",
-                    "usage": "1 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-commercial",
-                    "name": "Thương mại",
-                    "level": "Cấp 1",
-                    "parent": "Nhóm bất động sản",
-                    "usage": "0 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-shophouse",
-                    "name": "Shophouse",
-                    "level": "Cấp 2",
-                    "parent": "Thương mại",
-                    "usage": "0 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "category",
-                    "id": "category-officetel",
-                    "name": "Officetel",
-                    "level": "Cấp 2",
-                    "parent": "Thương mại",
-                    "usage": "0 sản phẩm",
-                    "status": "Đang sử dụng"
-                },
-                {
-                    "type": "form",
-                    "id": "consult",
-                    "name": "Đăng ký tư vấn",
-                    "project": "An Phú Riverside",
-                    "place": "Customer website",
-                    "fieldsCount": "5",
-                    "status": "Đang nhận",
-                    "qr": "Chưa bật",
-                    "email": true,
-                    "need": true,
-                    "budget": false,
-                    "appointment": false
-                },
-                {
-                    "type": "form",
-                    "id": "price",
-                    "name": "Nhận bảng giá",
-                    "project": "Green Valley",
-                    "place": "Trang giới thiệu",
-                    "fieldsCount": "4",
-                    "status": "Đang nhận",
-                    "qr": "Chưa bật",
-                    "email": true,
-                    "need": true,
-                    "budget": true,
-                    "appointment": false
-                },
-                {
-                    "type": "form",
-                    "id": "viewing",
-                    "name": "Đăng ký tham quan",
-                    "project": "Central Park Towers",
-                    "place": "Mã QR tại sự kiện",
-                    "fieldsCount": "6",
-                    "status": "Đang nhận",
-                    "qr": "Đã bật",
-                    "email": true,
-                    "need": true,
-                    "budget": true,
-                    "appointment": true
-                },
-                {
-                    "type": "buyer",
-                    "id": "buyer-00184",
-                    "code": "KH-00184",
-                    "name": "Lê Hoàng Yến",
-                    "phone": "0987 332 104",
-                    "project": "Central Park Towers",
-                    "product": "B1 · 08.03",
-                    "handover": "2026-12-15",
-                    "documents": "Đã có hồ sơ"
-                },
-                {
-                    "type": "buyer",
-                    "id": "buyer-00179",
-                    "code": "KH-00179",
-                    "name": "Võ Thành Đạt",
-                    "phone": "0903 123 179",
-                    "project": "An Phú Riverside",
-                    "product": "A2 · 15.06",
-                    "handover": "2026-12-22",
-                    "documents": "Đang bổ sung"
-                },
-                {
-                    "type": "buyer",
-                    "id": "buyer-00168",
-                    "code": "KH-00168",
-                    "name": "Nguyễn Thu Hà",
-                    "phone": "0903 123 168",
-                    "project": "Green Valley",
-                    "product": "N08 · 05",
-                    "handover": "2027-01-10",
-                    "documents": "Đã có hồ sơ"
-                },
-                {
-                    "type": "appointment",
-                    "id": "appointment-anh",
-                    "customer": "Nguyễn Ngọc Anh",
-                    "project": "An Phú Riverside",
-                    "product": "A2 · 12.08",
-                    "start": "2026-10-28T09:30",
-                    "activity": "Tư vấn tại văn phòng",
-                    "place": "Văn phòng An Phát Land",
-                    "assignee": "Trần Thanh Long",
-                    "status": "Đã phân công"
-                },
-                {
-                    "type": "appointment",
-                    "id": "appointment-yen",
-                    "customer": "Lê Hoàng Yến",
-                    "project": "Central Park Towers",
-                    "product": "B1 · 08.03",
-                    "start": "2026-12-16T14:00",
-                    "activity": "Bàn giao căn hộ",
-                    "place": "Sảnh tòa B1 · Central Park Towers",
-                    "assignee": "Mai Ngọc",
-                    "status": "Đã phân công"
-                },
-                {
-                    "type": "appointment",
-                    "id": "appointment-khoa",
-                    "customer": "Trần Minh Khoa",
-                    "project": "Green Valley",
-                    "product": "N08 · 06",
-                    "start": "2026-10-29T10:00",
-                    "activity": "Gọi tư vấn",
-                    "place": "Gọi điện cho khách",
-                    "assignee": "Quỳnh Dao",
-                    "status": "Đã phân công"
-                },
-                {
-                    "type": "appointment",
-                    "id": "appointment-tour",
-                    "customer": "Võ Hoàng Nam",
-                    "project": "Green Valley",
-                    "product": "N08 · 06",
-                    "start": "2026-10-30T09:30",
-                    "activity": "Đón khách xem nhà",
-                    "place": "Nhà phố mẫu Green Valley",
-                    "assignee": "Quỳnh Dao",
-                    "status": "Đã phân công"
-                },
-                {
-                    "type": "appointment",
-                    "id": "appointment-handover",
-                    "customer": "Võ Thành Đạt",
-                    "project": "An Phú Riverside",
-                    "product": "A2 · 15.06",
-                    "start": "2026-12-22T14:00",
-                    "activity": "Bàn giao căn hộ",
-                    "place": "Sảnh tòa A2 · An Phú Riverside",
-                    "assignee": "Trần Thanh Long",
-                    "status": "Đã phân công"
-                }
-            ]
-        </script>
-        <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-        <script src="../public/js/record-detail.js?v=20261027-shared-record-detail-v1"></script>
-    </body>
+        <section hidden id="recordSchemas">
+            <article data-type="category" data-label="Danh mục sản phẩm" data-eyebrow="CẤU TRÚC DANH MỤC" data-back="categories.html" data-title="Thông tin danh mục" data-intro="Cập nhật cấp danh mục và mối liên hệ với danh mục cha." data-facts="level parent usage" data-help="Cấp 1 là nhóm bất động sản; cấp 2 là loại sản phẩm thuộc danh mục cha.">
+                <div data-record-field="name" data-label="Tên danh mục" data-control="text"></div>
+                <div data-record-field="level" data-label="Cấp danh mục" data-control="select"><option>Cấp 1</option><option>Cấp 2</option></div>
+                <div data-record-field="parent" data-label="Danh mục cha / nhóm" data-control="text"></div>
+                <div data-record-field="usage" data-label="Sản phẩm đang sử dụng" data-control="text" data-readonly="true"></div>
+                <div data-record-field="status" data-label="Trạng thái" data-control="select"><option>Đang sử dụng</option><option>Tạm ẩn</option></div>
+            </article>
+            <article data-type="form" data-label="Biểu mẫu &amp; mã QR" data-eyebrow="THU THẬP THÔNG TIN" data-back="forms.html" data-title="Cấu hình biểu mẫu" data-intro="Chỉnh nội dung nhận khách, dự án và nơi sử dụng biểu mẫu." data-facts="project place qr" data-help="QR mở chính biểu mẫu này trên trang customer; khách gửi thông tin sẽ gắn với dự án.">
+                <div data-record-field="name" data-label="Tên biểu mẫu" data-control="text"></div>
+                <div data-record-field="project" data-label="Dự án" data-control="select"><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></div>
+                <div data-record-field="place" data-label="Nơi sử dụng" data-control="select"><option>Customer website</option><option>Trang giới thiệu</option><option>Mã QR tại sự kiện</option></div>
+                <div data-record-field="status" data-label="Trạng thái nhận đăng ký" data-control="select"><option>Đang nhận</option><option>Bản nháp</option><option>Tạm dừng</option></div>
+                <div data-record-field="qr" data-label="Mã QR" data-control="select"><option>Chưa bật</option><option>Đã bật</option></div>
+                <div data-record-field="fieldsCount" data-label="Số trường thông tin" data-control="text" data-readonly="true"></div>
+                <div data-record-check="email" data-label="Email"></div><div data-record-check="need" data-label="Nhu cầu quan tâm"></div><div data-record-check="budget" data-label="Ngân sách dự kiến"></div><div data-record-check="appointment" data-label="Thời gian muốn tham quan"></div>
+            </article>
+            <article data-type="buyer" data-label="Người mua &amp; bàn giao" data-eyebrow="HỒ SƠ NGƯỜI MUA" data-back="buyers.html" data-title="Thông tin người mua" data-intro="Theo dõi trạng thái giao dịch, sản phẩm và hồ sơ bàn giao." data-facts="project product transactionStatus documents" data-help="Hồ sơ đi qua các bước: chưa tiếp nhận, bổ sung, chờ kiểm tra, chỉnh sửa nếu cần và xác nhận đủ hồ sơ. Trạng thái giao dịch được theo dõi riêng.">
+                <div data-record-field="code" data-label="Mã khách hàng" data-control="text" data-readonly="true"></div><div data-record-field="name" data-label="Họ và tên" data-control="text"></div><div data-record-field="phone" data-label="Số điện thoại" data-control="tel"></div>
+                <div data-record-field="project" data-label="Dự án" data-control="select"><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></div><div data-record-field="product" data-label="Sản phẩm đã mua" data-control="text"></div>
+                <div data-record-field="transactionStatus" data-label="Trạng thái giao dịch" data-control="select"><option>Đang xử lý</option><option>Đã mua</option><option>Đã hủy</option></div><div data-record-field="documents" data-label="Tình trạng hồ sơ" data-control="select"><option>Chưa tiếp nhận</option><option>Đang bổ sung</option><option>Chờ kiểm tra</option><option>Cần chỉnh sửa</option><option>Đã đủ hồ sơ</option></div><div data-record-field="handover" data-label="Ngày dự kiến bàn giao" data-control="date"></div>
+            </article>
+            <article data-type="appointment" data-label="Công việc &amp; lịch hẹn" data-eyebrow="LỊCH CHĂM SÓC KHÁCH HÀNG" data-back="workflow.html#appointments" data-title="Thông tin lịch hẹn" data-intro="Xem lịch tư vấn, khách hàng, sản phẩm quan tâm và người phụ trách." data-facts="project activity assignee status" data-help="Trang này gom thông tin lịch hẹn vào hồ sơ riêng. Nút lưu sẽ nối backend khi API lịch hẹn sẵn sàng.">
+                <div data-record-field="customer" data-label="Khách hàng" data-control="text"></div><div data-record-field="project" data-label="Dự án" data-control="select"><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></div><div data-record-field="product" data-label="Sản phẩm quan tâm" data-control="text"></div><div data-record-field="start" data-label="Ngày và giờ hẹn" data-control="datetime-local"></div>
+                <div data-record-field="activity" data-label="Hoạt động" data-control="select"><option>Gọi tư vấn</option><option>Tư vấn tại văn phòng</option><option>Dẫn khách xem nhà</option><option>Tham quan nhà mẫu</option><option>Bàn giao căn hộ</option></div><div data-record-field="place" data-label="Địa điểm / cách liên hệ" data-control="text"></div><div data-record-field="assignee" data-label="Nhân viên phụ trách" data-control="text"></div><div data-record-field="status" data-label="Trạng thái" data-control="select"><option>Chờ phân công</option><option>Đã phân công</option><option>Đã xác nhận</option><option>Hoàn tất</option><option>Đã hủy</option></div>
+            </article>
+        </section>
+        <div hidden id="recordExamples">
+            <article data-type="category" data-id="category-apartment" data-name="Căn hộ" data-level="Cấp 1" data-parent="Nhóm bất động sản" data-usage="9 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-apartment-2br" data-name="Căn hộ 2 phòng ngủ" data-level="Cấp 2" data-parent="Căn hộ" data-usage="7 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-studio" data-name="Căn hộ studio" data-level="Cấp 2" data-parent="Căn hộ" data-usage="0 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-apartment-1br" data-name="Căn hộ 1 phòng ngủ" data-level="Cấp 2" data-parent="Căn hộ" data-usage="1 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-apartment-3br" data-name="Căn hộ 3 phòng ngủ" data-level="Cấp 2" data-parent="Căn hộ" data-usage="2 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-house" data-name="Nhà ở" data-level="Cấp 1" data-parent="Nhóm bất động sản" data-usage="0 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-townhouse" data-name="Nhà phố" data-level="Cấp 2" data-parent="Nhà ở" data-usage="2 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-private-house" data-name="Nhà riêng" data-level="Cấp 2" data-parent="Nhà ở" data-usage="1 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-land" data-name="Đất nền" data-level="Cấp 1" data-parent="Nhóm bất động sản" data-usage="2 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-project-land" data-name="Đất nền dự án" data-level="Cấp 2" data-parent="Đất nền" data-usage="1 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-residential-land" data-name="Đất thổ cư" data-level="Cấp 2" data-parent="Đất nền" data-usage="1 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-commercial" data-name="Thương mại" data-level="Cấp 1" data-parent="Nhóm bất động sản" data-usage="0 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-shophouse" data-name="Shophouse" data-level="Cấp 2" data-parent="Thương mại" data-usage="0 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="category" data-id="category-officetel" data-name="Officetel" data-level="Cấp 2" data-parent="Thương mại" data-usage="0 sản phẩm" data-status="Đang sử dụng"></article>
+            <article data-type="form" data-id="consult" data-name="Đăng ký tư vấn" data-project="An Phú Riverside" data-place="Customer website" data-fieldsCount="5" data-status="Đang nhận" data-qr="Chưa bật" data-email="true" data-need="true" data-budget="false" data-appointment="false"></article>
+            <article data-type="form" data-id="price" data-name="Nhận bảng giá" data-project="Green Valley" data-place="Trang giới thiệu" data-fieldsCount="4" data-status="Đang nhận" data-qr="Chưa bật" data-email="true" data-need="true" data-budget="true" data-appointment="false"></article>
+            <article data-type="form" data-id="viewing" data-name="Đăng ký tham quan" data-project="Central Park Towers" data-place="Mã QR tại sự kiện" data-fieldsCount="6" data-status="Đang nhận" data-qr="Đã bật" data-email="true" data-need="true" data-budget="true" data-appointment="true"></article>
+            <article data-type="buyer" data-id="buyer-00184" data-code="KH-00184" data-name="Lê Hoàng Yến" data-phone="0987 332 104" data-project="Central Park Towers" data-product="B1 · 08.03" data-handover="2026-12-15" data-documents="Đã có hồ sơ"></article>
+            <article data-type="buyer" data-id="buyer-00179" data-code="KH-00179" data-name="Võ Thành Đạt" data-phone="0903 123 179" data-project="An Phú Riverside" data-product="A2 · 15.06" data-handover="2026-12-22" data-documents="Đang bổ sung"></article>
+            <article data-type="buyer" data-id="buyer-00168" data-code="KH-00168" data-name="Nguyễn Thu Hà" data-phone="0903 123 168" data-project="Green Valley" data-product="N08 · 05" data-handover="2027-01-10" data-documents="Đã có hồ sơ"></article>
+            <article data-type="appointment" data-id="appointment-anh" data-customer="Nguyễn Ngọc Anh" data-project="An Phú Riverside" data-product="A2 · 12.08" data-start="2026-10-28T09:30" data-activity="Tư vấn tại văn phòng" data-place="Văn phòng An Phát Land" data-assignee="Trần Thanh Long" data-status="Đã phân công"></article>
+            <article data-type="appointment" data-id="appointment-yen" data-customer="Lê Hoàng Yến" data-project="Central Park Towers" data-product="B1 · 08.03" data-start="2026-12-16T14:00" data-activity="Bàn giao căn hộ" data-place="Sảnh tòa B1 · Central Park Towers" data-assignee="Mai Ngọc" data-status="Đã phân công"></article>
+            <article data-type="appointment" data-id="appointment-khoa" data-customer="Trần Minh Khoa" data-project="Green Valley" data-product="N08 · 06" data-start="2026-10-29T10:00" data-activity="Gọi tư vấn" data-place="Gọi điện cho khách" data-assignee="Quỳnh Dao" data-status="Đã phân công"></article>
+            <article data-type="appointment" data-id="appointment-tour" data-customer="Võ Hoàng Nam" data-project="Green Valley" data-product="N08 · 06" data-start="2026-10-30T09:30" data-activity="Đón khách xem nhà" data-place="Nhà phố mẫu Green Valley" data-assignee="Quỳnh Dao" data-status="Đã phân công"></article>
+            <article data-type="appointment" data-id="appointment-handover" data-customer="Võ Thành Đạt" data-project="An Phú Riverside" data-product="A2 · 15.06" data-start="2026-12-22T14:00" data-activity="Bàn giao căn hộ" data-place="Sảnh tòa A2 · An Phú Riverside" data-assignee="Trần Thanh Long" data-status="Đã phân công"></article>
+        </div>
+    <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
+    <script src="../public/js/record-detail.js?v=20261027-shared-record-detail-v1"></script>
+</body>
 </html>

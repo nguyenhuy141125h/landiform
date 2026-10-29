@@ -1,20 +1,13 @@
 ﻿(() => {
-    const key = "landiform.admin.categories.v1";
-    const defaults = [
-        ["Căn hộ studio", "apartment"], ["Căn hộ 1 phòng ngủ", "apartment"], ["Căn hộ 2 phòng ngủ", "apartment"], ["Căn hộ 3 phòng ngủ", "apartment"], ["Căn hộ 4 phòng ngủ", "apartment"], ["Penthouse", "apartment"], ["Duplex", "apartment"], ["Shophouse", "commercial"],
-        ["Nhà phố", "house"], ["Nhà phố liền kề", "house"], ["Nhà phố thương mại", "house"], ["Nhà riêng", "house"], ["Biệt thự song lập", "house"], ["Biệt thự đơn lập", "house"],
-        ["Đất nền", "land"], ["Đất nền dự án", "land"], ["Đất thổ cư", "land"],
-        ["Officetel", "commercial"], ["Văn phòng", "commercial"], ["Mặt bằng thương mại", "commercial"], ["Kho / nhà xưởng", "commercial"],
-        ["Biệt thự nghỉ dưỡng", "other"], ["Condotel", "other"],
-    ].map(([name, group], index) => ({ id: `category-${index + 1}`, name, group }));
-    let memory = null;
-
     function all() {
-        try {
-            const saved = JSON.parse(null || "null");
-            if (Array.isArray(saved)) return saved.filter((item) => item && item.id && item.name && item.group);
-        } catch { /* Use the standard catalog if browser storage is unavailable. */ }
-        return (memory || defaults).map((item) => ({ ...item }));
+        const source = document.querySelector("#categoryExampleData") || document.querySelector("#categoryTableBody");
+        return [...(source?.querySelectorAll("[data-category-id]") || [])].map((element) => ({
+            id: element.dataset.categoryId,
+            name: element.dataset.name,
+            group: element.dataset.group,
+            level: Number(element.dataset.level || 2),
+            parentId: element.dataset.parentId || "",
+        }));
     }
 
     function groupForProject(project) {
@@ -43,13 +36,9 @@
     }
 
     function save(categories) {
-        try {
-            memory = categories.map((item) => ({ ...item }));
-            document.dispatchEvent(new CustomEvent("landiform:categories-updated"));
-            return true;
-        } catch { return false; }
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", { detail: { entity: "categories", categories } }));
+        return false;
     }
 
-    window.LandiformCategories = Object.freeze({ all, forProject, findByName, groupForType, groupForProject, save, defaults: () => defaults.map((item) => ({ ...item })) });
+    window.LandiformCategories = Object.freeze({ all, forProject, findByName, groupForType, groupForProject, save, defaults: all });
 })();
-

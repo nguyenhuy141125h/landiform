@@ -31,22 +31,16 @@
     const detailEdit = document.querySelector("#unitDetailEdit");
     const detailBook = document.querySelector("#unitDetailBook");
     const pageSize = 15;
-    const projects = {
-        "AP-026": { name: "An Phú Riverside", type: "Căn hộ" },
-        "CP-008": { name: "Central Park Towers", type: "Căn hộ" },
-        "GV-014": { name: "Green Valley", type: "Nhà phố" },
-        "LG-031": { name: "Lumière Garden", type: "Đất nền" },
-    };
-    try {
-        const stored = JSON.parse(null || "[]");
-        if (Array.isArray(stored)) stored.forEach((project) => {
-            if (project.code && project.name) projects[project.code] = { name: project.name, type: project.type };
+    const staticInventory = inventory.all();
+    const projects = Object.fromEntries(staticInventory.reduce((map, unit) => {
+        if (unit.projectCode && !map.has(unit.projectCode)) map.set(unit.projectCode, {
+            name: unit.project,
+            type: unit.projectType || unit.type,
+            address: unit.address || "",
         });
-    } catch {
-        // Dự án có sẵn trên trang vẫn được hiển thị.
-    }
-
-    let units = inventory.all();
+        return map;
+    }, new Map()));
+    let units = staticInventory;
     let page = 1;
     let editingId = null;
     let viewingId = null;
@@ -83,38 +77,17 @@
     }
 
     function productTypesFor(project) {
-        if (window.LandiformCategories) return window.LandiformCategories.forProject(project);
-        const apartments = ["Căn hộ studio", "Căn hộ 1 phòng ngủ", "Căn hộ 2 phòng ngủ", "Căn hộ 3 phòng ngủ", "Căn hộ 4 phòng ngủ", "Penthouse", "Duplex", "Shophouse"];
-        const houses = ["Nhà phố", "Nhà phố liền kề", "Nhà phố thương mại", "Nhà riêng", "Biệt thự song lập", "Biệt thự đơn lập", "Shophouse"];
-        const land = ["Đất nền", "Đất nền dự án", "Đất thổ cư"];
-        const commercial = ["Shophouse", "Officetel", "Văn phòng", "Mặt bằng thương mại", "Kho / nhà xưởng"];
-        if (isApartment(project)) return apartments;
-        if (isHouseProject(project)) return houses;
-        if (isLandProject(project)) return land;
-        if (project?.type === "Thương mại / văn phòng") return commercial;
-        return [...new Set([...apartments, ...houses, ...land, ...commercial, "Biệt thự nghỉ dưỡng", "Condotel"])];
+        return window.LandiformCategories?.forProject(project) || [];
     }
 
-    const productGroupLabels = { apartment: "Căn hộ", house: "Nhà ở", land: "Đất nền / lô đất", commercial: "Thương mại / văn phòng", other: "Nghỉ dưỡng / loại khác" };
-    const productAttributeDefinitions = {
-        apartment: [
-            ["bedrooms", "Số phòng ngủ", "number", "Ví dụ: 2"],
-            ["bathrooms", "Số phòng tắm", "number", "Ví dụ: 2"],
-        ],
-        house: [
-            ["bedrooms", "Số phòng ngủ", "number", "Ví dụ: 3"],
-            ["bathrooms", "Số phòng tắm", "number", "Ví dụ: 2"],
-            ["storeys", "Số tầng xây dựng", "number", "Ví dụ: 3"],
-            ["frontage", "Mặt tiền (m)", "number", "Ví dụ: 5"],
-        ],
-        land: [
-            ["frontage", "Mặt tiền (m)", "number", "Ví dụ: 5"],
-            ["depth", "Chiều sâu (m)", "number", "Ví dụ: 20"],
-            ["landUse", "Pháp lý / mục đích sử dụng", "text", "Ví dụ: Đất ở đô thị, sổ riêng"],
-        ],
-        commercial: [["usage", "Mục đích sử dụng", "text", "Ví dụ: Văn phòng, kinh doanh"]],
-        other: [],
-    };
+    const attributeTemplates = new Map(
+        [...document.querySelectorAll('#unitAttributeTemplates [data-product-group]')]
+            .map((template) => [template.dataset.productGroup, template])
+    );
+
+    function groupLabel(group) {
+        return attributeTemplates.get(group)?.dataset.groupLabel || 'S\u1ea3n ph\u1ea9m';
+    }
 
     function updateUnitTypeOptions(group, preferredType = "") {
         const catalog = window.LandiformCategories?.all() || [];
@@ -126,8 +99,8 @@
 
     function populateUnitGroupOptions(selected = "") {
         const catalog = window.LandiformCategories?.all() || [];
-        const groups = Object.keys(productGroupLabels).filter((group) => catalog.some((item) => String(item.level || 2) !== "1" && item.group === group));
-        unitGroup.replaceChildren(...groups.map((group) => new Option(productGroupLabels[group], group)));
+        const groups = [...attributeTemplates.keys()].filter((group) => catalog.some((item) => String(item.level || 2) !== "1" && item.group === group));
+        unitGroup.replaceChildren(...groups.map((group) => new Option(groupLabel(group), group)));
         if (groups.includes(selected)) unitGroup.value = selected;
         else unitGroup.value = groups[0] || "";
         unitGroup.disabled = !groups.length;
@@ -135,31 +108,16 @@
 
     function renderUnitAttributes(group, values = {}) {
         if (!unitAttributeFields) return;
-        const definitions = productAttributeDefinitions[group] || [];
+        const template = attributeTemplates.get(group);
         unitAttributeFields.replaceChildren();
-        unitAttributeFields.hidden = !definitions.length;
-        if (!definitions.length) return;
-        const heading = document.createElement("p");
-        heading.className = "inventory-attribute-heading";
-        heading.textContent = `Thông tin thêm · ${productGroupLabels[group] || "Sản phẩm"}`;
-        const fields = document.createElement("div");
-        fields.className = "project-form-row inventory-attribute-grid";
-        definitions.forEach(([name, labelText, type, placeholder]) => {
-            const field = document.createElement("div");
-            const label = document.createElement("label");
-            label.htmlFor = `unitAttribute-${name}`;
-            label.textContent = labelText;
-            const input = document.createElement("input");
-            input.id = `unitAttribute-${name}`;
-            input.name = `attribute_${name}`;
-            input.type = type;
-            if (type === "number") { input.min = "0"; input.step = "0.1"; }
-            input.placeholder = placeholder;
-            input.value = values[name] ?? "";
-            field.append(label, input);
-            fields.append(field);
+        unitAttributeFields.hidden = !template || !template.content.children.length;
+        if (!template || unitAttributeFields.hidden) return;
+        const fragment = template.content.cloneNode(true);
+        fragment.querySelectorAll('[name^="attribute_"]').forEach((input) => {
+            const name = input.name.slice('attribute_'.length);
+            input.value = values[name] ?? '';
         });
-        unitAttributeFields.append(heading, fields);
+        unitAttributeFields.append(fragment);
     }
 
     function updateBulkTypeOptions(preferredType = bulkForm.elements.type.value) {
@@ -419,28 +377,7 @@
         renderMap();
         if (tbody.dataset.staticDemo === "true") {
             const query = search.value.trim().toLocaleLowerCase("vi");
-            const currentIds = new Set([...tbody.querySelectorAll('a[href*="product-detail.html?id="]')]
-                .map((link) => new URL(link.href, location.href).searchParams.get("id")));
-            units.filter((unit) => !currentIds.has(unit.id)).forEach((unit) => tbody.append(makeRow(unit)));
             const rows = [...tbody.rows];
-            rows.forEach((row) => {
-                const actionCell = row.cells[10];
-                const editLink = actionCell?.querySelector('a[href*="product-detail.html?id="]');
-                if (!actionCell || !editLink || actionCell.querySelector("[data-inventory-delete]")) return;
-                const id = new URL(editLink.href, location.href).searchParams.get("id");
-                if (!id) return;
-                const actions = document.createElement("div");
-                actions.className = "screen-row-actions";
-                editLink.innerHTML = 'Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>';
-                const remove = document.createElement("button");
-                remove.className = "button button-danger screen-row-delete";
-                remove.type = "button";
-                remove.dataset.inventoryDelete = id;
-                remove.setAttribute("aria-label", `Xóa sản phẩm ${row.cells[0]?.textContent.trim() || ""}`);
-                remove.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span>';
-                actions.append(editLink, remove);
-                actionCell.replaceChildren(actions);
-            });
             const visible = rows.filter((row) => {
                 const text = row.textContent.toLocaleLowerCase("vi");
                 const matchesProject = !projectFilter.value || row.cells[1]?.textContent.trim() === projects[projectFilter.value]?.name;
@@ -580,7 +517,7 @@
             title.textContent = `Chỉnh sửa ${units.find((item) => item.id === editingId)?.code || "sản phẩm"}`;
             return;
         }
-        title.textContent = `Thêm ${unitForm.elements.type.value || productGroupLabels[unitGroup.value] || "sản phẩm"}`;
+        title.textContent = `Thêm ${unitForm.elements.type.value || groupLabel(unitGroup.value) || "sản phẩm"}`;
     }
 
     function openUnit(id = null) {
@@ -590,7 +527,7 @@
         const unit = units.find((item) => item.id === id);
         const project = projects[unit?.projectCode || projectFilter.value];
         const projectGroup = window.LandiformCategories?.groupForProject(project) || "apartment";
-        const group = unit ? (window.LandiformCategories?.groupForType(unit.type) || "other") : (productGroupLabels[projectGroup] ? projectGroup : "apartment");
+        const group = unit ? (window.LandiformCategories?.groupForType(unit.type) || "other") : (attributeTemplates.has(projectGroup) ? projectGroup : "apartment");
         populateUnitGroupOptions(group);
         const apartment = group === "apartment";
         updateUnitTypeOptions(group, unit?.type || "");
@@ -733,18 +670,6 @@
         updateUnitFormLabels();
         updateUnitModalTitle();
     });
-    window.addEventListener("storage", (event) => {
-        if (event.key !== "landiform.admin.categories.v1" || unitModal.hidden) return;
-        const selectedGroup = unitGroup.value;
-        const selectedType = unitForm.elements.type.value;
-        const attributeValues = Object.fromEntries([...unitAttributeFields.querySelectorAll('[name^="attribute_"]')]
-            .map((input) => [input.name.slice("attribute_".length), input.value]));
-        populateUnitGroupOptions(selectedGroup);
-        updateUnitTypeOptions(unitGroup.value, selectedType);
-        renderUnitAttributes(unitGroup.value, attributeValues);
-        updateUnitFormLabels();
-        updateUnitModalTitle();
-    });
     unitForm.elements.type.addEventListener("change", () => {
         updateUnitModalTitle();
     });
@@ -765,8 +690,6 @@
             unitForm.reportValidity();
             return;
         }
-        const wasEditing = Boolean(editingId);
-        const previousUnit = units.find((unit) => unit.id === editingId);
         const record = {
             id: editingId || `unit-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
             projectCode,

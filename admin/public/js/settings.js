@@ -16,19 +16,10 @@
     const toast = document.querySelector("#toastMessage");
     const branchEditorList = document.querySelector("#branchEditorList");
     const addBranchButton = document.querySelector("#addBranchButton");
+    const branchTemplate = document.querySelector("#branchEditorTemplate");
     if (!fields.length || !saveButton || !logoField || !logoImage || !logoInitials) return;
 
-    const storageKey = "landiform.admin.company.v1";
     const systemLogo = "../../website/assets/logo.png";
-    const aboutArticleKey = "landiform.admin.about-article.v1";
-    const customerSiteKey = "landiform.admin.customer-site.v1";
-    const branchesKey = "landiform.admin.branches.v1";
-    const aboutDefaults = window.CustomerAboutArticleDefaults || {};
-    const customerSiteDefaults = {
-        heroTitle: "Khám phá dự án cho ngôi nhà tương lai.",
-        heroDescription: "Tìm hiểu các dự án và sản phẩm bất động sản do An Phát Land phát triển. Xem thông tin từng căn, nhà hoặc lô đất và đặt lịch trao đổi cùng chuyên viên.",
-    };
-    let branches = [];
     let logoData = "";
     let toastTimer;
     let articleEditor;
@@ -122,82 +113,6 @@
         logoInitials.hidden = false;
     });
 
-    function defaultBranch() {
-        return {
-            id: "head-office",
-            name: "Trụ sở chính",
-            city: document.querySelector('[name="province"]')?.value || "TP. Hồ Chí Minh",
-            address: "",
-            phone: "",
-            email: "",
-            isDefault: true,
-        };
-    }
-
-    function renderBranches() {
-        if (!branchEditorList) return;
-        branchEditorList.replaceChildren(...branches.map((branch, index) => {
-            const card = document.createElement("article");
-            card.className = "branch-editor-card";
-            card.dataset.branchId = branch.id;
-            const header = document.createElement("header");
-            const actions = document.createElement("div");
-            actions.className = "branch-editor-actions";
-            const defaultLabel = document.createElement("label");
-            defaultLabel.className = "branch-default-choice";
-            const radio = document.createElement("input");
-            radio.type = "radio";
-            radio.name = "defaultBranchId";
-            radio.value = branch.id;
-            radio.checked = Boolean(branch.isDefault) || (!branches.some((item) => item.isDefault) && index === 0);
-            defaultLabel.title = "Đặt làm chi nhánh mặc định";
-            defaultLabel.setAttribute("aria-label", "Đặt làm chi nhánh mặc định");
-            defaultLabel.append(radio);
-            const remove = document.createElement("button");
-            remove.type = "button";
-            remove.className = "button button-quiet branch-remove-button";
-            remove.dataset.removeBranch = branch.id;
-            remove.disabled = branches.length <= 1;
-            remove.title = "Xóa chi nhánh";
-            remove.setAttribute("aria-label", "Xóa chi nhánh");
-            remove.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i>';
-            actions.append(defaultLabel, remove);
-            header.append(actions);
-
-            const grid = document.createElement("div");
-            grid.className = "branch-editor-fields";
-            const makeField = (key, labelText, value, required = true, type = "text") => {
-                const label = document.createElement("label");
-                label.textContent = labelText;
-                const input = document.createElement("input");
-                input.type = type;
-                input.value = value || "";
-                input.dataset.branchField = key;
-                input.required = required;
-                if (key === "phone") { input.autocomplete = "tel"; input.placeholder = "Để trống nếu dùng số chung"; }
-                if (key === "email") { input.autocomplete = "email"; input.placeholder = "Để trống nếu dùng email chung"; }
-                if (key === "city") input.placeholder = "Hà Nội, TP. Hồ Chí Minh...";
-                if (key === "address") { input.placeholder = branch.isDefault ? "Để trống nếu dùng địa chỉ trụ sở chính" : "Số nhà, đường, phường/xã..."; input.className = "branch-address-input"; }
-                input.addEventListener("input", () => input.setCustomValidity(""));
-                label.append(input);
-                return label;
-            };
-            grid.append(
-                makeField("name", "Tên chi nhánh", branch.name),
-                makeField("city", "Tỉnh / Thành phố", branch.city),
-                makeField("address", "Địa chỉ", branch.address, !branch.isDefault),
-                makeField("phone", "Số điện thoại riêng", branch.phone, false),
-                makeField("email", "Email riêng", branch.email, false, "email"),
-            );
-            card.append(header, grid);
-            return card;
-        }));
-    }
-
-    function newBranch() {
-        return { id: `branch-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`, name: "Chi nhánh mới", city: "", address: "", phone: "", email: "", isDefault: branches.length === 0 };
-    }
-
     function collectBranches() {
         const cards = [...branchEditorList.querySelectorAll(".branch-editor-card")];
         const result = cards.map((card) => {
@@ -207,54 +122,7 @@
         return result;
     }
 
-    try {
-        const saved = JSON.parse(null || "null");
-        if (saved?.fields && typeof saved.fields === "object") {
-            fields.forEach((field) => {
-                if (typeof saved.fields[field.name] === "string") field.value = saved.fields[field.name];
-            });
-        }
-        if (typeof saved?.logo === "string") logoData = saved.logo;
-    } catch {
-        logoData = "";
-    }
-    try {
-        const savedArticle = JSON.parse(null || "null") || {};
-        const articleValues = {
-            aboutTitle: savedArticle.title ?? aboutDefaults.title ?? "",
-            aboutIntro: savedArticle.intro ?? aboutDefaults.intro ?? "",
-            aboutCoverImage: savedArticle.coverImage ?? aboutDefaults.coverImage ?? "",
-            aboutCoverAlt: savedArticle.coverAlt ?? aboutDefaults.coverAlt ?? "",
-            aboutCoverCaption: savedArticle.caption ?? aboutDefaults.caption ?? "",
-            aboutBody: bodyToHtml(savedArticle.bodyHtml ?? savedArticle.body ?? aboutDefaults.body ?? ""),
-        };
-        aboutFields.forEach((field) => { field.value = articleValues[field.name] || ""; });
-        if (articleBodySource) articleBodySource.value = articleValues.aboutBody || "";
-        initializeTinyMce();
-    } catch { /* Use the built-in introduction article as the editor starting point. */ }
-    try {
-        const savedSite = JSON.parse(null || "null") || {};
-        customerSiteFields.forEach((field) => {
-            const key = field.name === "siteHeroTitle" ? "heroTitle" : "heroDescription";
-            field.value = savedSite[key] ?? customerSiteDefaults[key] ?? "";
-        });
-    } catch { /* Use the default Customer homepage introduction. */ }
-    try {
-        const savedBranches = JSON.parse(null || "null");
-        branches = Array.isArray(savedBranches) && savedBranches.length
-            ? savedBranches.filter((branch) => branch && branch.id)
-            : [defaultBranch()];
-        if (!branches.length) branches = [defaultBranch()];
-        if (!branches.some((branch) => branch.isDefault)) branches[0].isDefault = true;
-    } catch { branches = [defaultBranch()]; }
-    const companyDefaults = Object.fromEntries(fields.map((field) => [field.name, field.value.trim()]));
-    branches.forEach((branch) => {
-        if (!branch.isDefault) return;
-        ["address", "phone", "email"].forEach((key) => {
-            if (branch[key] && branch[key] === companyDefaults[key]) branch[key] = "";
-        });
-    });
-    renderBranches();
+    initializeTinyMce();
     updatePreview();
 
     function renderAboutCoverPreview() {
@@ -311,13 +179,40 @@
     });
     aboutFields.forEach((field) => field.addEventListener("input", () => field.setCustomValidity("")));
     customerSiteFields.forEach((field) => field.addEventListener("input", () => field.setCustomValidity("")));
-    addBranchButton?.addEventListener("click", () => { branches = collectBranches(); branches.push(newBranch()); renderBranches(); branchEditorList.lastElementChild?.querySelector('[data-branch-field="name"]')?.focus(); });
+    addBranchButton?.addEventListener("click", () => {
+        if (!branchEditorList || !branchTemplate) return;
+        const id = `branch-${Date.now()}`;
+        const fragment = branchTemplate.content.cloneNode(true);
+        const card = fragment.querySelector(".branch-editor-card");
+        card.dataset.branchId = id;
+        const radio = card.querySelector('input[name="defaultBranchId"]');
+        radio.value = id;
+        radio.checked = !branchEditorList.querySelector('input[name="defaultBranchId"]:checked');
+        const remove = card.querySelector("[data-remove-branch]");
+        remove.dataset.removeBranch = id;
+        card.querySelector('[data-branch-field="address"]').placeholder = "Số nhà, đường, phường/xã...";
+        branchEditorList.append(fragment);
+        branchEditorList.querySelectorAll(".branch-remove-button").forEach((button) => { button.disabled = false; });
+        branchEditorList.lastElementChild?.querySelector('[data-branch-field="name"]')?.focus();
+    });
     branchEditorList?.addEventListener("click", (event) => {
         const removeButton = event.target.closest("[data-remove-branch]");
-        if (!removeButton || branches.length <= 1) return;
-        branches = collectBranches().filter((branch) => branch.id !== removeButton.dataset.removeBranch);
-        if (!branches.some((branch) => branch.isDefault)) branches[0].isDefault = true;
-        renderBranches();
+        if (!removeButton || branchEditorList.querySelectorAll(".branch-editor-card").length <= 1) return;
+        const wasDefault = removeButton.closest(".branch-editor-card")?.querySelector('input[name="defaultBranchId"]')?.checked;
+        removeButton.closest(".branch-editor-card")?.remove();
+        const cards = [...branchEditorList.querySelectorAll(".branch-editor-card")];
+        branchEditorList.querySelectorAll(".branch-remove-button").forEach((button) => { button.disabled = cards.length <= 1; });
+        if (wasDefault) cards[0]?.querySelector('input[name="defaultBranchId"]')?.click();
+    });
+    branchEditorList?.addEventListener("change", (event) => {
+        if (event.target.matches('input[name="defaultBranchId"]')) {
+            const card = event.target.closest(".branch-editor-card");
+            const address = card?.querySelector('[data-branch-field="address"]');
+            if (address) {
+                address.required = !event.target.checked;
+                address.placeholder = event.target.checked ? "Để trống nếu dùng địa chỉ trụ sở chính" : "Số nhà, đường, phường/xã...";
+            }
+        }
     });
 
     logoField.addEventListener("change", () => {
@@ -405,19 +300,10 @@
             branch.isDefault = branch.id === defaultId;
             if (branch.isDefault) ["address", "phone", "email"].forEach((key) => { if (branch[key] === values[key]) branch[key] = ""; });
         });
-        try {
-            void 0;
-            void 0;
-            void 0;
-            void 0;
-            document.querySelector(".workspace-copy strong").textContent = values.displayName;
-            window.refreshAdminCompanyBranding?.();
-            branches = savedBranches;
-            renderBranches();
-            notify("Đã cập nhật bản xem trước của hồ sơ doanh nghiệp.");
-        } catch {
-            notify("Không thể lưu thay đổi trên trình duyệt này.");
-        }
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "company-settings", values, article, siteValues, branches: savedBranches, logo: logoData },
+        }));
+        notify("Th\u00f4ng tin ch\u01b0a \u0111\u01b0\u1ee3c l\u01b0u v\u00ec trang ch\u01b0a k\u1ebft n\u1ed1i backend.");
     });
 })();
 

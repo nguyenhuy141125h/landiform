@@ -481,7 +481,8 @@ body.buyer-body {
     color: #7e90a0;
     font-size: 10px;
 }
-.buyer-support button {
+.buyer-support button,
+.buyer-support a {
     min-height: 37px;
     padding: 0 13px;
     border: 1px solid #d5e4ed;
@@ -493,7 +494,11 @@ body.buyer-body {
     font-weight: 650;
     cursor: pointer;
 }
-.buyer-support button:hover {
+.buyer-support a {
+    text-decoration: none;
+}
+.buyer-support button:hover,
+.buyer-support a:hover {
     background: #f7fbfd;
 }
 .buyer-footer {
@@ -633,8 +638,10 @@ body.buyer-body {
     .buyer-support > div {
         flex-basis: calc(100% - 56px);
     }
-    .buyer-support button {
+    .buyer-support button,
+    .buyer-support a {
         margin-left: 51px;
+        text-decoration: none;
     }
     .buyer-footer {
         flex-wrap: wrap;

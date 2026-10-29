@@ -1,233 +1,63 @@
-﻿(() => {
-    const sidebar = document.querySelector("#sidebar[data-admin-shared-shell]");
-    const topbar = document.querySelector("[data-admin-shared-topbar]");
-    if (!sidebar || !topbar) return;
 
-    const inPages = location.pathname.includes("/admin/pages/");
-    const route = (file) => `${inPages ? "" : "pages/"}${file}`;
-    const overview = inPages ? "../index.html" : "index.html";
-    const documentTitle = document.title.split("|")[0].trim();
-    const title = topbar.dataset.pageLabel === "Chi tiết" ? documentTitle : (topbar.dataset.pageLabel || documentTitle);
-    const icon = (name) => `<i class="fa-solid ${name}" aria-hidden="true"></i>`;
-
-    sidebar.innerHTML = `
-        <a class="brand" href="${overview}" aria-label="LANDIFORM - Tổng quan">
-            <span class="brand-mark">${icon("fa-city")}</span><span class="brand-name">LANDI<span>FORM</span></span>
-        </a>
-        <div class="workspace-switch" role="group" aria-label="Không gian làm việc hiện tại">
-            <span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span>
-        </div>
-        <nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="${overview}">${icon("fa-table-cells-large")}<span>Tổng quan</span></a></nav>
-        <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Dự án &amp; sản phẩm</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Dự án và sản phẩm">
-            <a class="nav-link" href="${route("projects.html")}"><span>Dự án</span></a>
-            <a class="nav-link" href="${route("categories.html")}"><span>Danh mục sản phẩm</span></a>
-            <a class="nav-link" href="${route("booking.html")}"><span>Sản phẩm dự án</span></a>
-        </nav></details>
-        <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Khách hàng &amp; tiếp thị</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị">
-            <a class="nav-link" href="${route("leads.html")}"><span>Khách hàng tiềm năng</span></a>
-            <a class="nav-link" href="${route("forms.html")}"><span>Biểu mẫu &amp; mã QR</span></a>
-            <a class="nav-link" href="${route("campaigns.html")}"><span>Chiến dịch tiếp thị</span></a>
-        </nav></details>
-        <nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="${route("workflow.html")}">${icon("fa-calendar-check")}<span>Công việc &amp; lịch hẹn</span></a></nav>
-        <nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="${route("buyers.html")}">${icon("fa-handshake")}<span>Người mua &amp; bàn giao</span></a></nav>
-        <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Đội ngũ</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Đội ngũ">
-            <a class="nav-link" href="${route("team.html?type=management")}"><span>Admin</span></a>
-            <a class="nav-link" href="${route("team.html?type=employee")}"><span>Nhân viên</span></a>
-        </nav></details>
-        <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Báo cáo</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Báo cáo">
-            <a class="nav-link" href="${route("reports.html")}"><span>Báo cáo hoạt động</span></a>
-            <a class="nav-link" href="${route("staff-reports.html")}"><span>Báo cáo nhân viên</span></a>
-        </nav></details>
-        <details class="nav-group"><summary class="nav-label"><span class="nav-label-text">Hệ thống</span>${icon("fa-chevron-down")}</summary><nav class="main-nav" aria-label="Thiết lập hệ thống">
-            <a class="nav-link" href="${route("permissions.html")}"><span>Phân quyền</span></a>
-            <a class="nav-link" href="${route("settings.html")}"><span>Thông tin doanh nghiệp</span></a>
-        </nav></details>
-        <div class="sidebar-bottom">
-            <a class="sidebar-support" href="${route("support.html")}">${icon("fa-circle-question")}<span>Trung tâm hỗ trợ</span>${icon("fa-arrow-up-right-from-square")}</a>
-            <div class="sidebar-account-actions"><a class="account-switch" href="${route("account.html")}" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span>${icon("fa-gear")}</a></div>
-        </div>`;
-
-    if (location.pathname.endsWith("/support.html")) {
-        const supportLink = sidebar.querySelector(".sidebar-support");
-        supportLink?.classList.add("is-active");
-        supportLink?.setAttribute("aria-current", "page");
-    }
-
-    topbar.innerHTML = `
-        <button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false">${icon("fa-bars")}</button>
-        <div class="breadcrumbs"><span>An Phát Land</span>${icon("fa-chevron-right")}<strong>${title.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char])}</strong></div>
-        <div class="topbar-actions"><label class="global-search">${icon("fa-magnifying-glass")}<input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><a class="icon-button notification-button" href="${route("workflow.html")}" aria-label="Mở thông báo"><i class="fa-solid fa-bell" aria-hidden="true"></i><span></span></a><a class="topbar-avatar" href="${route("account.html")}" aria-label="Mở thông tin tài khoản">MA</a></div>`;
-
-    document.querySelectorAll("[data-admin-shared-footer]").forEach((footer) => {
-        footer.innerHTML = `<span>LANDIFORM · An Phát Land</span><span>${title.replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char])}</span><a href="${route("support.html")}">Trung tâm hỗ trợ</a>`;
-    });
-})();
 
 
 (() => {
-    // The prototype updates the current view in memory. Page scripts own actions;
-    // reload restores the sample markup and no action writes to browser storage.
+    // Keep examples in the HTML. Forms may validate and prepare backend payloads,
+    // while destructive controls stay inactive until a backend is connected.
+    document.addEventListener("submit", (event) => {
+        if (!event.target.matches("form")) return;
+        event.preventDefault();
+    }, true);
+
+    document.addEventListener("click", (event) => {
+        const action = event.target.closest("button, a");
+        if (!action) return;
+        const actionLabel = (action.textContent || "").trim().toLocaleLowerCase("vi");
+        const destructive = action.matches([
+            "[data-appointment-delete]", "[data-appointment-cancel]",
+            "[data-buyer-delete]", "[data-category-delete]", "[data-form-delete]",
+            "[data-guide-delete]", "[data-inventory-delete]", "[data-delete-role]",
+            "[data-permanent-delete-role]", "[data-project-delete]",
+            "[data-project-row-delete]", "[data-staff-delete-action]"
+        ].join(",")) || action.matches(".screen-row-delete, .role-icon-action.is-danger") ||
+            /^xóa(?:\s|$)/i.test(action.getAttribute("aria-label") || "") ||
+            ["xóa", "xóa vĩnh viễn", "duyệt", "từ chối", "hủy lịch"].includes(actionLabel);
+        if (!destructive) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+    }, true);
+
     const sidebar = document.querySelector("#sidebar");
     const menuToggle = document.querySelector("#menuToggle");
     const search = document.querySelector("#globalSearch");
     const toast = document.querySelector("#toastMessage");
     let toastTimer;
 
-    function refreshAdminCompanyBranding() {
-        try {
-            const saved = JSON.parse(null || "null");
-            const name = saved?.fields?.displayName?.trim() || "An Phát Land";
-            document.querySelectorAll(".workspace-copy strong").forEach((element) => { element.textContent = name; });
-            document.querySelectorAll(".workspace-avatar").forEach((avatar) => {
-                if (saved?.logo) {
-                    const image = document.createElement("img");
-                    image.src = saved.logo;
-                    image.alt = "";
-                    avatar.replaceChildren(image);
-                } else {
-                    avatar.textContent = name.split(/\s+/).filter(Boolean).slice(-2).map((part) => part[0]).join("").toLocaleUpperCase("vi") || "AP";
-                }
-            });
-        } catch { /* Use the default workspace name and initials. */ }
-    }
-
-    refreshAdminCompanyBranding();
-    window.refreshAdminCompanyBranding = refreshAdminCompanyBranding;
-
-    function refreshAdminAccount() {
-        let account = { name: "Minh Anh", role: "Quản lý kinh doanh" };
-        try {
-            const saved = JSON.parse(null || "null");
-            if (saved && typeof saved === "object") account = { ...account, ...saved };
-        } catch { /* Keep the demo account shown in the page. */ }
-        const initials = String(account.name || "Minh Anh").trim().split(/\s+/).slice(-2).map((part) => part[0]).join("").toLocaleUpperCase("vi") || "MA";
-        document.querySelectorAll(".account-copy strong").forEach((element) => { element.textContent = account.name || "Minh Anh"; });
-        document.querySelectorAll(".account-copy small").forEach((element) => { element.textContent = account.role || "Quản lý kinh doanh"; });
-        document.querySelectorAll(".account-avatar").forEach((element) => { element.textContent = initials; });
-        document.querySelectorAll(".topbar-avatar").forEach((element) => { element.textContent = initials; });
-    }
-
-    refreshAdminAccount();
-    window.refreshAdminAccount = refreshAdminAccount;
-
-    function addAccountNavigation() {
-        const nav = document.querySelector('.nav-group nav[aria-label="Thiết lập hệ thống"]');
-        if (!nav) return;
-        const link = document.createElement("a");
-        link.className = "nav-link";
-        link.href = location.pathname.includes("/pages/") ? "account.html" : "pages/account.html";
-        link.innerHTML = '<i class="fa-solid fa-circle-user" aria-hidden="true"></i><span>Tài khoản cá nhân</span>';
-        if (location.pathname.endsWith("/account.html")) {
-            link.classList.add("is-active");
-            link.setAttribute("aria-current", "page");
-        }
-        nav.append(link);
-    }
-
-    addAccountNavigation();
-
-    function addGuideNavigation() {
-        const nav = document.querySelector('.nav-group nav[aria-label="Kinh doanh"]');
-        if (!nav) return;
-        const link = document.createElement("a");
-        link.className = "nav-link";
-        link.href = location.pathname.includes("/pages/") ? "articles.html" : "pages/articles.html";
-        link.innerHTML = '<i class="fa-solid fa-book-open" aria-hidden="true"></i><span>Cẩm nang</span>';
-        const isActive = location.pathname.endsWith("/articles.html");
-        if (isActive) {
-            link.classList.add("is-active");
-            link.setAttribute("aria-current", "page");
-            nav.closest(".nav-group")?.setAttribute("open", "");
-        }
-        nav.append(link);
-    }
-
-    addGuideNavigation();
-
     function initializeBranchSwitcher() {
         const switcher = document.querySelector(".workspace-switch");
-        if (!switcher || switcher.dataset.branchSwitcherReady) return;
-        switcher.dataset.branchSwitcherReady = "true";
-        switcher.setAttribute("role", "button");
-        switcher.setAttribute("tabindex", "0");
-        switcher.setAttribute("aria-haspopup", "menu");
-        switcher.setAttribute("aria-expanded", "false");
-        switcher.setAttribute("aria-label", "Chọn chi nhánh hoặc phạm vi hệ thống");
-
-        const copy = switcher.querySelector(".workspace-copy");
-        const company = copy?.querySelector("strong");
-        const subtitle = copy?.querySelector("small");
-        if (!copy || !company || !subtitle) return;
-        subtitle.textContent = "Chi nhánh Hồ Chí Minh";
-
-        const arrow = document.createElement("i");
-        arrow.className = "fa-solid fa-chevron-down workspace-switch-arrow";
-        arrow.setAttribute("aria-hidden", "true");
-        switcher.append(arrow);
-
-        const menu = document.createElement("div");
-        menu.className = "workspace-branch-menu";
-        menu.setAttribute("role", "menu");
-        menu.hidden = true;
-        switcher.insertAdjacentElement("afterend", menu);
-
-        function getOptions() {
-            let branches = [];
-            try {
-                const saved = JSON.parse(null || "null");
-                if (Array.isArray(saved)) branches = saved.filter((branch) => branch && branch.id).map((branch) => ({
-                    id: branch.id,
-                    label: [branch.name || "Chi nhánh", branch.city].filter(Boolean).join(" · "),
-                }));
-            } catch { /* Show the two configured demo branches below. */ }
-            if (!branches.length) branches = [
-                { id: "hcm", label: "Chi nhánh Hồ Chí Minh" },
-                { id: "hanoi", label: "Chi nhánh Hà Nội" },
-            ];
-            if (!branches.some((branch) => /hà nội/i.test(branch.label))) {
-                branches.push({ id: "hanoi", label: "Chi nhánh Hà Nội" });
-            }
-            return [...branches, { id: "all", label: "Toàn bộ hệ thống" }];
-        }
-
+        const menu = document.querySelector(".workspace-branch-menu");
+        const subtitle = switcher?.querySelector(".workspace-copy small");
+        if (!switcher || !menu || !subtitle) return;
+        const options = [...menu.querySelectorAll("[data-branch-option]")];
         function closeMenu() {
             menu.hidden = true;
-            switcher.setAttribute("aria-expanded", "false");
             switcher.classList.remove("is-open");
+            switcher.setAttribute("aria-expanded", "false");
         }
-
-        function renderMenu() {
-            let selectedId = "hcm";
-            try { selectedId = null || selectedId; } catch { /* Use Hồ Chí Minh. */ }
-            const options = getOptions();
-            if (!options.some((option) => option.id === selectedId)) selectedId = options[0].id;
-            menu.replaceChildren(...options.map((option) => {
-                const button = document.createElement("button");
-                button.type = "button";
-                button.className = "workspace-branch-option";
-                button.setAttribute("role", "menuitemradio");
-                button.setAttribute("aria-checked", String(option.id === selectedId));
-                button.textContent = option.label;
-                if (option.id === selectedId) button.classList.add("is-selected");
-                button.addEventListener("click", () => {
-                    try { void 0; } catch { /* Keep the selected branch for this page. */ }
-                    subtitle.textContent = option.label;
-                    switcher.dataset.branchScope = option.id;
-                    document.body.dataset.branchScope = option.id;
-                    document.dispatchEvent(new CustomEvent("landiform:branch-change", { detail: { id: option.id, label: option.label } }));
-                    closeMenu();
-                });
-                return button;
-            }));
-            const active = options.find((option) => option.id === selectedId);
-            subtitle.textContent = active?.label || "Chi nhánh Hồ Chí Minh";
-            switcher.dataset.branchScope = selectedId;
-            document.body.dataset.branchScope = selectedId;
+        function selectOption(button) {
+            options.forEach((option) => {
+                const active = option === button;
+                option.classList.toggle("is-selected", active);
+                option.setAttribute("aria-checked", String(active));
+            });
+            subtitle.textContent = button.textContent.trim();
+            switcher.dataset.branchScope = button.dataset.branchOption;
+            document.body.dataset.branchScope = button.dataset.branchOption;
+            document.dispatchEvent(new CustomEvent("landiform:branch-change", { detail: { id: button.dataset.branchOption, label: subtitle.textContent } }));
+            closeMenu();
         }
-
         function toggleMenu() {
             if (!menu.hidden) return closeMenu();
-            renderMenu();
             const rect = switcher.getBoundingClientRect();
             menu.style.top = `${rect.bottom + 5}px`;
             menu.style.left = `${rect.left}px`;
@@ -236,7 +66,10 @@
             switcher.classList.add("is-open");
             switcher.setAttribute("aria-expanded", "true");
         }
-
+        menu.addEventListener("click", (event) => {
+            const option = event.target.closest("[data-branch-option]");
+            if (option) selectOption(option);
+        });
         switcher.addEventListener("click", toggleMenu);
         switcher.addEventListener("keydown", (event) => {
             if (event.key === "Enter" || event.key === " ") { event.preventDefault(); toggleMenu(); }
@@ -246,7 +79,6 @@
             if (!switcher.contains(event.target) && !menu.contains(event.target)) closeMenu();
         });
         document.querySelector("#sidebar")?.addEventListener("scroll", closeMenu, { passive: true });
-        renderMenu();
     }
 
     initializeBranchSwitcher();
@@ -268,9 +100,6 @@
         logout.setAttribute("aria-label", "Đăng xuất");
         logout.title = "Đăng xuất";
         logout.innerHTML = '<i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span>';
-        logout.addEventListener("click", () => {
-            try { void 0; } catch { /* Không có phiên lưu trên trình duyệt. */ }
-        });
         actions.append(logout);
     }
 
@@ -306,138 +135,25 @@
     routeSupportLinks();
 
     function initializeNotifications() {
-        const existingButton = document.querySelector(".notification-button");
-        if (!existingButton || existingButton.matches("[data-booking-alert-toggle]") || existingButton.dataset.notificationsReady) return;
-        existingButton.dataset.notificationsReady = "true";
-        const notificationStyles = document.createElement("link");
-        notificationStyles.rel = "stylesheet";
-        notificationStyles.href = location.pathname.includes("/pages/") ? "../public/css/notifications.css?v=20261027-notifications-v1" : "public/css/notifications.css?v=20261027-notifications-v1";
-        document.head.append(notificationStyles);
-        const center = document.createElement("div");
-        center.className = "notification-center";
-        existingButton.replaceWith(center);
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = existingButton.className;
-        button.setAttribute("aria-label", "Mở thông báo");
-        button.setAttribute("aria-haspopup", "dialog");
-        button.setAttribute("aria-expanded", "false");
-        button.innerHTML = existingButton.innerHTML;
-        const indicator = button.querySelector("span");
-        if (indicator) indicator.className = "notification-count";
-        center.append(button);
-        const panel = document.createElement("section");
-        panel.className = "notification-popover";
-        panel.hidden = true;
-        panel.setAttribute("aria-label", "Thông báo");
-        panel.innerHTML = '<header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary></small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list></div><a class="notification-footer" href="' + (location.pathname.includes("/pages/") ? "workflow.html" : "pages/workflow.html") + '">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>';
-        center.append(panel);
-        const list = panel.querySelector("[data-notification-list]");
-        const summary = panel.querySelector("[data-notification-summary]");
-        const readKey = "landiform.admin.notifications.read.v1";
-
-        function readJson(key, fallback) {
-            try {
-                const value = JSON.parse(null || "null");
-                return value ?? fallback;
-            } catch { return fallback; }
+        const center = document.querySelector(".notification-center");
+        const button = center?.querySelector(".notification-button");
+        const panel = center?.querySelector(".notification-popover");
+        if (!center || !button || !panel) return;
+        function close() {
+            panel.hidden = true;
+            button.setAttribute("aria-expanded", "false");
         }
-
-        function getNotifications() {
-            const notifications = [];
-            const leads = readJson("landiform.admin.leads.v1", []);
-            if (Array.isArray(leads)) leads.filter((lead) => lead?.name && ["Chưa liên hệ", "Chưa gọi"].includes(lead.status)).slice(0, 3).forEach((lead) => {
-                notifications.push({ id: `lead-${lead.id}`, icon: "fa-user-plus", tone: "blue", title: "Khách hàng cần liên hệ", detail: `${lead.name}${lead.project ? ` · ${lead.project}` : ""}`, href: `customer-detail.html?id=${encodeURIComponent(lead.id)}` });
-            });
-            const tasks = readJson("landiform.admin.tasks.v1", []);
-            if (Array.isArray(tasks)) tasks.filter((task) => task?.title && !["Hoàn tất", "Đã hủy"].includes(task.status)).slice(0, 3).forEach((task) => {
-                const due = task.deadline ? new Date(task.deadline) : null;
-                const detail = [task.assignee, due && !Number.isNaN(due.getTime()) ? new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(due) : "Chưa đặt hạn"].filter(Boolean).join(" · ");
-                notifications.push({ id: `task-${task.id || task.title}`, icon: "fa-list-check", tone: "amber", title: task.title, detail: `Công việc cần xử lý · ${detail}`, href: location.pathname.includes("/pages/") ? "workflow.html" : "pages/workflow.html" });
-            });
-            const appointments = readJson("landiform.admin.appointments.v1", []);
-            if (Array.isArray(appointments)) appointments.filter((item) => item?.customerName && !["Hoàn tất", "Đã hủy"].includes(item.status) && new Date(item.start).getTime() >= Date.now()).slice(0, 3).forEach((item) => {
-                const when = new Date(item.start);
-                notifications.push({ id: `appointment-${item.id}`, icon: "fa-calendar-check", tone: "violet", title: `Lịch hẹn: ${item.customerName}`, detail: `${item.type || "Tư vấn"} · ${new Intl.DateTimeFormat("vi-VN", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }).format(when)}`, href: location.pathname.includes("/pages/") ? "workflow.html#appointments" : "pages/workflow.html#appointments" });
-            });
-            return notifications.slice(0, 7);
-        }
-
-        function render() {
-            const notifications = getNotifications();
-            const read = new Set(readJson(readKey, []));
-            const unreadCount = notifications.filter((item) => !read.has(item.id)).length;
-            if (indicator) {
-                indicator.textContent = unreadCount ? String(unreadCount > 9 ? "9+" : unreadCount) : "";
-                indicator.hidden = unreadCount === 0;
-            }
-            button.setAttribute("aria-label", unreadCount ? `Thông báo, ${unreadCount} chưa đọc` : "Thông báo");
-            summary.textContent = unreadCount ? `${unreadCount} thông báo chưa đọc` : "Bạn đã xem hết thông báo";
-            list.replaceChildren();
-            if (!notifications.length) {
-                const empty = document.createElement("p");
-                empty.className = "notification-empty";
-                empty.textContent = "Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.";
-                list.append(empty);
-                return;
-            }
-            notifications.forEach((notification) => {
-                const link = document.createElement("a");
-                link.className = `notification-item${read.has(notification.id) ? " is-read" : ""}`;
-                link.href = location.pathname.includes("/pages/") ? notification.href : notification.href.replace(/^customer-detail\.html/, "pages/customer-detail.html").replace(/^workflow\.html/, "pages/workflow.html");
-                link.dataset.notificationId = notification.id;
-                const icon = document.createElement("span");
-                icon.className = `notification-item-icon ${notification.tone}`;
-                icon.innerHTML = `<i class="fa-solid ${notification.icon}" aria-hidden="true"></i>`;
-                const content = document.createElement("span");
-                content.className = "notification-item-copy";
-                const title = document.createElement("strong");
-                title.textContent = notification.title;
-                const detail = document.createElement("small");
-                detail.textContent = notification.detail;
-                content.append(title, detail);
-                link.append(icon, content);
-                list.append(link);
-            });
-        }
-
-        function setRead(ids) {
-            const read = new Set(readJson(readKey, []));
-            ids.forEach((id) => read.add(id));
-            try { void 0; } catch { /* Keep the panel usable when storage is unavailable. */ }
-            render();
-        }
-
         button.addEventListener("click", () => {
-            const willOpen = panel.hidden;
-            panel.hidden = !willOpen;
-            button.setAttribute("aria-expanded", String(willOpen));
-            if (willOpen) render();
+            const opening = panel.hidden;
+            panel.hidden = !opening;
+            button.setAttribute("aria-expanded", String(opening));
         });
-        panel.addEventListener("click", (event) => {
-            const link = event.target.closest("[data-notification-id]");
-            if (!link) return;
-            const notificationId = link.dataset.notificationId;
-            setTimeout(() => setRead([notificationId]), 0);
+        panel.querySelector("[data-notification-read]")?.addEventListener("click", () => {
+            panel.querySelectorAll(".notification-item").forEach((item) => item.classList.add("is-read"));
+            center.querySelector(".notification-count")?.setAttribute("hidden", "");
         });
-        panel.querySelector("[data-notification-read]").addEventListener("click", () => setRead(getNotifications().map((item) => item.id)));
-        document.addEventListener("click", (event) => {
-            if (!center.contains(event.target)) {
-                panel.hidden = true;
-                button.setAttribute("aria-expanded", "false");
-            }
-        });
-        document.addEventListener("keydown", (event) => {
-            if (event.key === "Escape" && !panel.hidden) {
-                panel.hidden = true;
-                button.setAttribute("aria-expanded", "false");
-                button.focus();
-            }
-        });
-        window.addEventListener("storage", (event) => {
-            if (!event.key || event.key.startsWith("landiform.admin.")) render();
-        });
-        render();
+        document.addEventListener("click", (event) => { if (!center.contains(event.target)) close(); });
+        document.addEventListener("keydown", (event) => { if (event.key === "Escape") close(); });
     }
 
     initializeNotifications();
@@ -723,210 +439,11 @@
 
 
 (() => {
-    function findGroup(sidebar, names) {
-        return [...sidebar.querySelectorAll("details.nav-group")].find((item) =>
-            names.some((name) => item.querySelector(".nav-label")?.textContent.trim().startsWith(name))
-        );
-    }
-
-    function setGroupLabel(group, label) {
-        const summary = group?.querySelector(".nav-label");
-        const labelElement = summary?.querySelector(".nav-label-text");
-        if (labelElement) {
-            labelElement.textContent = label;
-            return;
-        }
-        const textNode = [...(summary?.childNodes || [])].find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
-        if (textNode) textNode.textContent = label;
-    }
-
-    function syncGroupHeadingIcons() {
-        document.querySelectorAll(".sidebar details.nav-group").forEach((group) => {
-            const summary = group.querySelector(".nav-label");
-            if (!summary) return;
-            let label = summary.querySelector(".nav-label-text");
-            if (!label) {
-                const textNode = [...summary.childNodes].find((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
-                if (!textNode) return;
-                label = document.createElement("span");
-                label.className = "nav-label-text";
-                label.textContent = textNode.textContent.trim();
-                textNode.replaceWith(label);
-            }
-            const paths = [...group.querySelectorAll(".main-nav .nav-link")].map((link) => new URL(link.href, window.location.href).pathname);
-            const hasPage = (page) => paths.some((path) => path.endsWith(`/${page}`));
-            const iconName = hasPage("projects.html") ? "fa-building"
-                : hasPage("leads.html") ? "fa-user-group"
-                : hasPage("buyers.html") ? "fa-handshake"
-                : hasPage("team.html") ? "fa-users"
-                : hasPage("reports.html") ? "fa-chart-pie"
-                : hasPage("settings.html") || hasPage("permissions.html") ? "fa-gear"
-                : "";
-            if (iconName) {
-                let icon = summary.querySelector(".nav-label-icon");
-                if (!icon) {
-                    icon = document.createElement("i");
-                    icon.className = "nav-label-icon";
-                    icon.setAttribute("aria-hidden", "true");
-                    summary.insertBefore(icon, label);
-                }
-                icon.className = `nav-label-icon fa-solid ${iconName}`;
-            }
-            const chevron = [...summary.querySelectorAll("i")].find((icon) => icon.classList.contains("fa-chevron-down"));
-            chevron?.classList.add("nav-group-chevron");
-        });
-    }
-
-    function syncProjectNavigation() {
-        const sidebar = document.querySelector(".sidebar");
-        if (!sidebar) return;
-        const group = findGroup(sidebar, ["Danh mục dự án", "Dự án & sản phẩm"]);
-        const nav = group?.querySelector(".main-nav");
-        if (!group || !nav) return;
-
-        const prefix = window.location.pathname.includes("/admin/pages/") ? "" : "pages/";
-        const items = [
-            ["projects.html", "Dự án", "fa-building"],
-            ["categories.html", "Danh mục sản phẩm", "fa-layer-group"],
-            ["booking.html", "Sản phẩm dự án", "fa-table-cells"],
-        ];
-        const currentPath = window.location.pathname;
-        const activePath = currentPath.endsWith("/project-detail.html")
-            ? `${currentPath.slice(0, currentPath.lastIndexOf("/") + 1)}projects.html`
-            : currentPath.endsWith("/product-detail.html")
-                ? `${currentPath.slice(0, currentPath.lastIndexOf("/") + 1)}booking.html`
-                : currentPath;
-        setGroupLabel(group, "Dự án & sản phẩm");
-        nav.setAttribute("aria-label", "Dự án và sản phẩm");
-        nav.replaceChildren(...items.map(([file, label, iconName]) => {
-            const link = document.createElement("a");
-            link.className = "nav-link";
-            link.href = `${prefix}${file}`;
-            if (new URL(link.href, window.location.href).pathname === activePath) {
-                link.classList.add("is-active");
-                link.setAttribute("aria-current", "page");
-            }
-            const icon = document.createElement("i");
-            icon.className = `fa-solid ${iconName}`;
-            icon.setAttribute("aria-hidden", "true");
-            const text = document.createElement("span");
-            text.textContent = label;
-            link.append(icon, text);
-            return link;
-        }));
-    }
-
-    function syncCustomerNavigation() {
-        const sidebar = document.querySelector(".sidebar");
-        if (!sidebar) return;
-        const group = findGroup(sidebar, ["Kinh doanh", "Khách hàng & tiếp thị", "Khách hàng"]);
-        const nav = group?.querySelector(".main-nav");
-        if (!group || !nav) return;
-
-        const prefix = window.location.pathname.includes("/admin/pages/") ? "" : "pages/";
-        const items = [
-            ["leads.html", "Khách hàng tiềm năng", "fa-user-group"],
-            ["forms.html", "Biểu mẫu & mã QR", "fa-qrcode"],
-            ["campaigns.html", "Chiến dịch tiếp thị", "fa-user-plus"],
-        ];
-        setGroupLabel(group, "Khách hàng & tiếp thị");
-        nav.setAttribute("aria-label", "Khách hàng và tiếp thị");
-        nav.replaceChildren(...items.map(([file, label, iconName]) => {
-            const link = document.createElement("a");
-            link.className = "nav-link";
-            link.href = `${prefix}${file}`;
-            const icon = document.createElement("i");
-            icon.className = `fa-solid ${iconName}`;
-            icon.setAttribute("aria-hidden", "true");
-            const text = document.createElement("span");
-            text.textContent = label;
-            link.append(icon, text);
-            return link;
-        }));
-    }
-
-    function syncSystemNavigation() {
-        const sidebar = document.querySelector(".sidebar");
-        if (!sidebar) return;
-        const group = findGroup(sidebar, ["Hệ thống"]);
-        const nav = group?.querySelector(".main-nav");
-        if (!group || !nav) return;
-        const prefix = window.location.pathname.includes("/admin/pages/") ? "" : "pages/";
-        const existing = [...nav.querySelectorAll(".nav-link")].find((link) => new URL(link.href, window.location.href).pathname.endsWith("/articles.html"));
-        const link = existing || document.createElement("a");
-        link.className = "nav-link";
-        link.href = `${prefix}articles.html`;
-        if (!existing) {
-            const text = document.createElement("span");
-            text.textContent = "Cẩm nang";
-            link.append(text);
-            const settings = [...nav.querySelectorAll(".nav-link")].find((item) => new URL(item.href, window.location.href).pathname.endsWith("/settings.html"));
-            if (settings) settings.after(link);
-            else nav.append(link);
-        }
-        nav.setAttribute("aria-label", "Thiết lập hệ thống và nội dung");
-    }
-
-    function syncSubmenuIcons() {
-        document.querySelectorAll(".sidebar details.nav-group .main-nav .nav-link i").forEach((icon) => icon.remove());
-    }
-
-    function organizeNavigation() {
-        const sidebar = document.querySelector(".sidebar");
-        if (!sidebar) return;
-        const projectGroup = findGroup(sidebar, ["Dự án & sản phẩm"]);
-        const customerGroup = findGroup(sidebar, ["Khách hàng & tiếp thị"]);
-        const buyerLink = [...sidebar.querySelectorAll(".sidebar-overview .nav-link")]
-            .find((link) => new URL(link.href, window.location.href).pathname.endsWith("/buyers.html"));
-        const transactionNav = buyerLink?.closest("nav");
-        const workflowLink = [...sidebar.querySelectorAll(".sidebar-overview .nav-link")]
-            .find((link) => new URL(link.href, window.location.href).pathname.endsWith("/workflow.html"));
-        const workflowNav = workflowLink?.closest("nav");
-        if (projectGroup && customerGroup && transactionNav && workflowNav) {
-            projectGroup.after(customerGroup, workflowNav, transactionNav);
-        }
-    }
-
-    function syncAnalyticsNavigation() {
-        const sidebar = document.querySelector(".sidebar");
-        if (!sidebar) return;
-        const group = findGroup(sidebar, ["Phân tích", "Báo cáo"]);
-        const nav = group?.querySelector(".main-nav");
-        if (!group || !nav) return;
-
-        const prefix = window.location.pathname.includes("/admin/pages/") ? "" : "pages/";
-        const items = [
-            ["reports.html", "Báo cáo hoạt động"],
-            ["staff-reports.html", "Báo cáo nhân viên"],
-        ];
-        const activePath = window.location.pathname;
-        setGroupLabel(group, "Báo cáo");
-        nav.setAttribute("aria-label", "Báo cáo");
-        nav.replaceChildren(...items.map(([file, label]) => {
-            const link = document.createElement("a");
-            link.className = "nav-link";
-            link.href = `${prefix}${file}`;
-            if (new URL(link.href, window.location.href).pathname === activePath) {
-                link.classList.add("is-active");
-                link.setAttribute("aria-current", "page");
-            }
-            const text = document.createElement("span");
-            text.textContent = label;
-            link.append(text);
-            return link;
-        }));
-    }
+    const sidebar = document.querySelector(".sidebar");
+    if (!sidebar) return;
 
     function syncActiveNavigation() {
-        syncProjectNavigation();
-        syncCustomerNavigation();
-        syncSystemNavigation();
-        syncAnalyticsNavigation();
-        syncGroupHeadingIcons();
-        organizeNavigation();
-        syncSubmenuIcons();
         const currentUrl = new URL(window.location.href);
-        const links = Array.from(document.querySelectorAll(".sidebar .nav-link"));
         const detailAliases = {
             category: "categories.html",
             form: "forms.html",
@@ -935,21 +452,23 @@
         };
         const detailTarget = currentUrl.pathname.endsWith("/record-detail.html")
             ? detailAliases[currentUrl.searchParams.get("type")]
-            : null;
+            : currentUrl.pathname.endsWith("/project-detail.html")
+                ? "projects.html"
+                : currentUrl.pathname.endsWith("/product-detail.html")
+                    ? "booking.html"
+                    : null;
         const activePath = detailTarget
             ? `${currentUrl.pathname.slice(0, currentUrl.pathname.lastIndexOf("/") + 1)}${detailTarget}`
             : currentUrl.pathname;
-        const matchingLinks = links.filter((link) => new URL(link.href).pathname === activePath);
+        const links = [...sidebar.querySelectorAll(".nav-link")];
+        const matchingLinks = links.filter((link) => new URL(link.href, window.location.href).pathname === activePath);
         const currentType = currentUrl.searchParams.get("type") || "management";
-        const teamLink = currentUrl.pathname.endsWith("/team.html")
-            ? matchingLinks.find((link) => new URL(link.href).searchParams.get("type") === currentType)
-            : null;
-        const activeLink =
-            teamLink ||
-            (currentUrl.hash && matchingLinks.find((link) => new URL(link.href).hash === currentUrl.hash)) ||
-            matchingLinks.find((link) => !new URL(link.href).hash) ||
-            matchingLinks[0] ||
-            links.find((link) => link.classList.contains("is-active"));
+        const activeLink = currentUrl.pathname.endsWith("/team.html")
+            ? matchingLinks.find((link) => new URL(link.href, window.location.href).searchParams.get("type") === currentType) || matchingLinks[0]
+            : (currentUrl.hash && matchingLinks.find((link) => new URL(link.href, window.location.href).hash === currentUrl.hash))
+                || matchingLinks.find((link) => !new URL(link.href, window.location.href).hash)
+                || matchingLinks[0]
+                || [...sidebar.querySelectorAll(".sidebar-support")].find((link) => new URL(link.href, window.location.href).pathname === currentUrl.pathname);
 
         if (!activeLink) return;
         links.forEach((link) => {
@@ -958,18 +477,200 @@
         });
         activeLink.classList.add("is-active");
         activeLink.setAttribute("aria-current", "page");
-
         const activeGroup = activeLink.closest("details.nav-group");
-        document.querySelectorAll(".sidebar details.nav-group").forEach((group) => {
+        sidebar.querySelectorAll("details.nav-group").forEach((group) => {
             group.open = group === activeGroup;
         });
     }
 
     syncActiveNavigation();
-    // Sidebar markup differs slightly between legacy pages. Finish normalizing
-    // its groups and active state before revealing it to avoid visible reflow.
-    document.querySelector(".sidebar")?.classList.add("nav-ready");
     window.addEventListener("hashchange", syncActiveNavigation);
 })();
 
+(() => {
+    const button = document.querySelector(".password-toggle");
+    const input = document.querySelector("#password");
+    if (!button || !input) return;
+    button.addEventListener("click", () => {
+        const show = input.type === "password";
+        input.type = show ? "text" : "password";
+        button.setAttribute("aria-label", show ? "\u1ea8n m\u1eadt kh\u1ea9u" : "Hi\u1ec7n m\u1eadt kh\u1ea9u");
+        button.innerHTML = `<i class="fa-regular fa-eye${show ? "-slash" : ""}" aria-hidden="true"></i>`;
+    });
+})();
 
+/* Merged from appointment-store.js; retained as a page-guarded interaction. */
+(() => {
+    const source = document.querySelector("#appointmentExamples");
+    if (!source) return;
+
+    function all() {
+        return [...source.querySelectorAll("[data-id]")].map((element) => ({ ...element.dataset }));
+    }
+
+    function dateInput(daysAhead, hour, minute = 0) {
+        const date = new Date();
+        date.setDate(date.getDate() + daysAhead);
+        date.setHours(hour, minute, 0, 0);
+        const pad = (value) => String(value).padStart(2, "0");
+        return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}T${pad(date.getHours())}:${pad(date.getMinutes())}`;
+    }
+
+    function replace(items) {
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "appointment", records: items },
+        }));
+        return false;
+    }
+
+    window.LandiformAppointments = Object.freeze({ all, replace, dateInput });
+})();
+
+/* Merged from customer-detail.js; retained as a page-guarded interaction. */
+(() => {
+    const root = document.querySelector("#customerDetail");
+    if (!root) return;
+
+    const requestedProfile = new URLSearchParams(window.location.search).get("id") || "anh";
+    const profileNodes = [...root.querySelectorAll("[data-profile]")];
+    const profileId = profileNodes.some((node) => node.dataset.profile === requestedProfile)
+        ? requestedProfile
+        : "anh";
+
+    document.body.dataset.customerProfile = profileId;
+    profileNodes.forEach((node) => {
+        node.hidden = node.dataset.profile !== profileId;
+    });
+
+    const status = root.querySelector(`#customerStatusBadge [data-profile="${profileId}"]`);
+    const owner = root.querySelector(`#customerOwner [data-profile="${profileId}"]`);
+    const statusSelect = root.querySelector("#customerStatus");
+    const ownerSelect = root.querySelector("#customerAssignee");
+
+    if (status && statusSelect) statusSelect.value = status.textContent.trim();
+    if (owner && ownerSelect) ownerSelect.value = owner.textContent.trim();
+})();
+
+/* Merged from chart-tooltips.js; retained as a page-guarded interaction. */
+(() => {
+    const formatNumber = new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 1 });
+    const numericValue = (value) => Number(String(value || "").replace(/[^\d,.-]/g, "").replace(/\./g, "").replace(",", ".")) || 0;
+
+    function addTooltip(target, message) {
+        if (!target || !message) return;
+        target.classList.add("chart-hover-tip");
+        target.dataset.chartTip = message;
+        target.title = message;
+        target.tabIndex = 0;
+        target.setAttribute("role", "img");
+        target.setAttribute("aria-label", message);
+    }
+
+    document.querySelectorAll("#barChart .bar-group").forEach((group) => {
+        const month = group.querySelector(":scope > span")?.textContent.trim() || "Tháng";
+        group.querySelectorAll(":scope > .bar").forEach((bar) => {
+            const series = bar.classList.contains("current") ? "Năm nay" : "Năm trước";
+            const height = Number.parseFloat(bar.style.getPropertyValue("--height")) || 0;
+            const value = Number(bar.dataset.chartValue ?? Math.round(height * 2));
+            const detail = value ? `${formatNumber.format(value)} khách quan tâm` : "Chưa có dữ liệu";
+            addTooltip(bar, bar.dataset.chartTip || `${month} · ${series}: ${detail}`);
+        });
+    });
+
+    document.querySelectorAll(".funnel-panel .funnel-row").forEach((row) => {
+        const total = numericValue(row.closest(".funnel-panel")?.querySelector(".funnel-total strong")?.textContent);
+        const stage = row.querySelector(".funnel-meta > span")?.textContent.trim() || "Trạng thái";
+        const value = numericValue(row.querySelector(".funnel-meta > strong")?.textContent);
+        const share = total ? formatNumber.format((value / total) * 100) : "0";
+        addTooltip(row, `${stage}: ${formatNumber.format(value)} khách · ${share}% tổng số khách`);
+    });
+
+    document.querySelectorAll(".report-funnel > div").forEach((row) => {
+        const rows = [...row.parentElement.children];
+        const total = numericValue(rows[0]?.querySelector("b")?.textContent);
+        const stage = row.querySelector("span")?.textContent.trim() || "Giai đoạn";
+        const value = numericValue(row.querySelector("b")?.textContent);
+        const share = total ? formatNumber.format((value / total) * 100) : "0";
+        addTooltip(row, `${stage}: ${formatNumber.format(value)} khách · ${share}% tổng lượt đăng ký`);
+    });
+
+    document.querySelectorAll(".screen-bar-row").forEach((row) => {
+        const label = row.querySelector(":scope > span")?.textContent.trim() || "Chỉ số";
+        const value = row.querySelector(":scope > strong")?.textContent.trim() || "";
+        addTooltip(row, `${label}: ${value}`);
+    });
+})();
+
+/* Merged from platform.js; retained as a page-guarded interaction. */
+(() => {
+    const modal = document.querySelector("#tenantModal");
+    const form = document.querySelector("#tenantForm");
+    const tbody = document.querySelector("#tenantTableBody");
+    const toast = document.querySelector("#toastMessage");
+    if (!modal || !form || !tbody) return;
+
+    let toastTimer;
+
+    function notify(message) {
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 3200);
+    }
+
+    function close() {
+        modal.hidden = true;
+        document.body.classList.remove("modal-open");
+        form.reset();
+    }
+
+    document.querySelector("[data-tenant-open]")?.addEventListener("click", () => {
+        modal.hidden = false;
+        document.body.classList.add("modal-open");
+        form.elements.name.focus();
+    });
+    document.querySelectorAll("[data-tenant-close]").forEach((button) => button.addEventListener("click", close));
+    modal.addEventListener("click", (event) => { if (event.target === modal) close(); });
+    document.addEventListener("keydown", (event) => { if (event.key === "Escape" && !modal.hidden) close(); });
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        close();
+        notify("Biểu mẫu sẵn sàng kết nối backend để tạo doanh nghiệp.");
+    });
+})();
+
+/* Merged from support.js; retained as a page-guarded interaction. */
+(() => {
+    const form = document.querySelector("#supportForm");
+    const success = document.querySelector("#supportSuccess");
+    if (!form || !success) return;
+
+    const fields = form.elements;
+    function updateReplyRequirements() {
+        fields.email.required = fields.replyVia.value !== "Điện thoại";
+        fields.phone.required = fields.replyVia.value === "Điện thoại";
+    }
+    fields.replyVia.addEventListener("change", updateReplyRequirements);
+    updateReplyRequirements();
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+        if (!fields.email.value.trim() && !fields.phone.value.trim()) return;
+        form.hidden = true;
+        success.hidden = false;
+        success.querySelector("h3").textContent = `Đã hoàn tất yêu cầu: ${fields.subject.value.trim()}`;
+    });
+
+    document.querySelector("#supportAgain")?.addEventListener("click", () => {
+        success.hidden = true;
+        form.hidden = false;
+        fields.subject.value = "";
+        fields.description.value = "";
+        fields.category.value = "";
+        form.scrollIntoView({ behavior: "smooth", block: "start" });
+        fields.category.focus();
+    });
+})();

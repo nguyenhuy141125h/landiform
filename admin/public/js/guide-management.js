@@ -1,8 +1,4 @@
-﻿(() => {
-    const categoryNames = {
-        apartment: "Căn hộ", home: "Nhà ở", land: "Đất & lô đất",
-        urban: "Khu đô thị", resort: "Nghỉ dưỡng", commercial: "Thương mại",
-    };
+(() => {
     const list = document.querySelector("#guideList");
     const caption = document.querySelector("#guideListCaption");
     const form = document.querySelector("#guideForm");
@@ -11,6 +7,7 @@
     const imagePreview = document.querySelector("#guideImagePreview");
     const toast = document.querySelector("#toastMessage");
     if (!list || !form) return;
+    const categoryNames = Object.fromEntries([...form.elements.category.options].map((option) => [option.value, option.textContent.trim()]));
 
     let guides = [];
     let activeId = null;
@@ -28,38 +25,21 @@
         toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 3200);
     }
 
-    function parseDefaults(html) {
-        const doc = new DOMParser().parseFromString(html, "text/html");
-        const tabs = new Map([...doc.querySelectorAll("[data-article-tab]")].map((tab) => [tab.dataset.articleTab, tab.querySelector("strong")?.textContent.trim() || ""]));
-        return [...doc.querySelectorAll(".customer-article-page-grid [data-article-category]")].map((card, index) => ({
-            id: card.dataset.articleId || `guide-${card.dataset.articleCategory}-${index + 1}`,
-            category: card.dataset.articleCategory,
-            kicker: card.querySelector(".customer-article-copy small")?.textContent.trim() || "CẨM NANG",
-            title: card.querySelector(".customer-article-copy strong")?.textContent.trim() || "",
-            summary: card.querySelector(".customer-article-copy span")?.textContent.trim() || "",
-            image: card.querySelector(".article-feature-image")?.getAttribute("src") || "",
-            imageAlt: card.querySelector(".article-feature-image")?.getAttribute("alt") || "",
-            bodyHtml: card.querySelector(".customer-article-body")?.innerHTML || "",
-            categoryName: tabs.get(card.dataset.articleCategory) || categoryNames[card.dataset.articleCategory] || "Cẩm nang",
-            published: true,
-        }));
-    }
-
-    async function loadGuides() {
-        try {
-            const saved = JSON.parse(null || "null");
-            if (Array.isArray(saved)) return saved;
-        } catch { /* Import the current Customer guide content below. */ }
-        try {
-            const response = await fetch("../../customer/articles.html", { cache: "no-store" });
-            if (!response.ok) throw new Error("Không tải được bài viết Customer.");
-            const seeded = parseDefaults(await response.text());
-            void 0;
-            return seeded;
-        } catch {
-            notify("Không tải được bài viết mẫu. Hãy mở trang Cẩm nang Customer một lần rồi tải lại.");
-            return [];
-        }
+    function loadGuides() {
+        return [...list.querySelectorAll(".guide-list-item-wrap")].map((row) => {
+            const button = row.querySelector("[data-guide-id]");
+            return {
+                id: button.dataset.guideId,
+                category: row.dataset.guideCategory,
+                kicker: row.dataset.guideKicker,
+                title: button.querySelector(".guide-list-copy strong")?.textContent.trim() || "",
+                summary: row.dataset.guideSummary,
+                image: row.dataset.guideImage,
+                imageAlt: row.dataset.guideImageAlt,
+                bodyHtml: row.querySelector("template[data-guide-body]")?.innerHTML || "",
+                published: !button.querySelector(".guide-status")?.classList.contains("is-hidden"),
+            };
+        });
     }
 
     function imageUrl(value) {
@@ -92,70 +72,16 @@
         return dataUrl;
     }
 
-    function updateGuidesInMemory(next) {
-        guides = next;
-        return true;
-    }
-
-    function renderList() {
-        caption.textContent = `${guides.length} bài viết · ${guides.filter((guide) => guide.published !== false).length} đang hiển thị trên Customer`;
-        if (!guides.length) {
-            const note = document.createElement("p");
-            note.className = "guide-list-empty";
-            note.textContent = "Chưa có bài viết. Hãy tạo bài đầu tiên.";
-            list.replaceChildren(note);
-            return;
-        }
-        list.replaceChildren(...guides.map((guide) => {
-            const row = document.createElement("div");
-            row.className = "guide-list-item-wrap";
-            const open = document.createElement("button");
-            open.type = "button";
-            open.className = `guide-list-item${guide.id === activeId ? " is-active" : ""}`;
-            open.dataset.guideId = guide.id;
-            open.setAttribute("aria-label", `Mở bài viết ${guide.title || "chưa có tiêu đề"}`);
-            const thumb = document.createElement("span");
-            thumb.className = "guide-list-thumb";
-            const src = imageUrl(guide.image);
-            if (src) {
-                const img = document.createElement("img");
-                img.src = src;
-                img.alt = "";
-                img.loading = "lazy";
-                thumb.append(img);
-            } else thumb.innerHTML = '<i class="fa-regular fa-image" aria-hidden="true"></i>';
-            const copy = document.createElement("span");
-            copy.className = "guide-list-copy";
-            const title = document.createElement("strong");
-            title.textContent = guide.title || "Bài viết chưa có tiêu đề";
-            const meta = document.createElement("small");
-            meta.textContent = categoryNames[guide.category] || "Cẩm nang";
-            copy.append(title, meta);
-            const status = document.createElement("span");
-            status.className = `guide-status${guide.published === false ? " is-hidden" : ""}`;
-            status.textContent = guide.published === false ? "Bản nháp" : "Đang hiển thị";
-            open.append(thumb, copy, status);
-            const remove = document.createElement("button");
-            remove.type = "button";
-            remove.className = "button button-danger guide-list-delete";
-            remove.dataset.guideDelete = guide.id;
-            remove.setAttribute("aria-label", `Xóa bài viết ${guide.title || "chưa có tiêu đề"}`);
-            remove.innerHTML = '<i class="fa-solid fa-trash-can" aria-hidden="true"></i>';
-            row.append(open, remove);
-            return row;
-        }));
-    }
-
     function setBody(value) {
         const editor = window.tinymce?.get("guideBody");
         if (editor) editor.setContent(value || "<p></p>");
         else bodyInput.value = value || "";
     }
 
-    function openGuide(id) {
-        const guide = guides.find((item) => item.id === id);
+    function openGuide(idOrGuide) {
+        const guide = typeof idOrGuide === "object" ? idOrGuide : guides.find((item) => item.id === idOrGuide);
         if (!guide) return;
-        activeId = id;
+        activeId = guide.id;
         form.hidden = false;
         empty.hidden = true;
         editorTitle.textContent = guide.title || "Bài viết mới";
@@ -172,7 +98,7 @@
         setBody(guide.bodyHtml || "");
         renderImagePreview();
         document.querySelector("#guideDelete").hidden = guide.id.startsWith("draft-");
-        renderList();
+        list.querySelectorAll("[data-guide-id]").forEach((item) => item.classList.toggle("is-active", item.dataset.guideId === guide.id));
     }
 
     function renderImagePreview() {
@@ -191,10 +117,20 @@
     }
 
     function newGuide() {
-        const id = `draft-${Date.now()}`;
-        const guide = { id, category: "apartment", kicker: "CẨM NANG", title: "", summary: "", image: "", imageAlt: "", bodyHtml: "<p></p>", published: false };
-        guides = [...guides, guide];
-        openGuide(id);
+        activeId = `draft-${Date.now()}`;
+        form.reset();
+        form.hidden = false;
+        empty.hidden = true;
+        editorTitle.textContent = "Bài viết mới";
+        form.elements.id.value = activeId;
+        form.elements.published.checked = false;
+        imageInput.value = "";
+        imageFileInput.value = "";
+        imageFileName.textContent = "Chưa chọn ảnh. Chọn ảnh từ thiết bị để làm ảnh bìa.";
+        setBody("<p></p>");
+        renderImagePreview();
+        document.querySelector("#guideDelete").hidden = true;
+        list.querySelectorAll("[data-guide-id]").forEach((item) => item.classList.remove("is-active"));
         form.elements.title.focus();
     }
 
@@ -223,18 +159,11 @@
 
     function deleteGuide(id) {
         const guide = guides.find((item) => item.id === id);
-        if (!guide || !window.confirm(`Xóa bài viết “${guide.title || "Bài viết mới"}”?`)) return;
-        updateGuidesInMemory(guides.filter((item) => item.id !== id));
-        if (activeId === id) {
-            activeId = null;
-            form.reset();
-            form.hidden = true;
-            empty.hidden = false;
-            editorTitle.textContent = "Chọn bài viết để chỉnh sửa";
-            setBody("");
-        }
-        renderList();
-        notify("Đã xóa bài viết khỏi danh sách xem trước.");
+        if (!guide) return;
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "guide-delete", id: guide.id },
+        }));
+        notify("Thao t\u00e1c x\u00f3a ch\u01b0a th\u1ef1c hi\u1ec7n v\u00ec trang ch\u01b0a k\u1ebft n\u1ed1i backend.");
     }
 
     list.addEventListener("click", (event) => {
@@ -250,14 +179,12 @@
     document.querySelector("#guideCreate")?.addEventListener("click", newGuide);
     document.querySelector("#guideReset")?.addEventListener("click", () => {
         if (activeId?.startsWith("draft-")) {
-            guides = guides.filter((guide) => guide.id !== activeId);
             activeId = null;
             form.reset();
             form.hidden = true;
             empty.hidden = false;
             editorTitle.textContent = "Chọn bài viết để chỉnh sửa";
             setBody("");
-            renderList();
             return;
         }
         const guide = guides.find((item) => item.id === activeId);
@@ -279,56 +206,25 @@
     });
     form.addEventListener("submit", (event) => {
         event.preventDefault();
-        const previousId = form.elements.id.value;
-        const id = previousId.startsWith("draft-") ? `guide-${Date.now()}-${Math.random().toString(36).slice(2, 6)}` : previousId;
         const bodyHtml = window.tinymce?.get("guideBody")?.getContent().trim() || bodyInput.value.trim();
         const bodyText = new DOMParser().parseFromString(bodyHtml, "text/html").body.textContent.trim();
         if (!bodyText) return notify("Vui lòng nhập nội dung bài viết.");
         if (!imageUrl(imageInput.value)) return notify("Vui lòng nhập liên kết ảnh hợp lệ.");
-        const nextGuide = {
-            id,
-            category: form.elements.category.value,
-            kicker: form.elements.kicker.value.trim(),
-            title: form.elements.title.value.trim(),
-            summary: form.elements.summary.value.trim(),
-            image: imageInput.value.trim(),
-            imageAlt: form.elements.imageAlt.value.trim(),
-            bodyHtml,
-            published: form.elements.published.checked,
-        };
-        const next = guides.filter((guide) => guide.id !== previousId);
-        next.push(nextGuide);
-        updateGuidesInMemory(next);
-        activeId = id;
-        form.elements.id.value = id;
-        document.querySelector("#guideDelete").hidden = false;
-        editorTitle.textContent = nextGuide.title;
-        renderList();
-        notify("Đã cập nhật bài viết trong danh sách xem trước.");
+        const values = new FormData(form);
+        values.set("bodyHtml", bodyHtml);
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "guide", id: activeId, values },
+        }));
+        notify("Bài viết chưa được lưu vì trang chưa kết nối backend.");
     });
-    document.querySelector("#guideDelete")?.addEventListener("click", () => {
-        const guide = guides.find((item) => item.id === activeId);
-        if (!guide || !window.confirm(`Xóa bài viết “${guide.title || "Bài viết mới"}”?`)) return;
-        updateGuidesInMemory(guides.filter((item) => item.id !== activeId));
-        activeId = null;
-        form.reset();
-        form.hidden = true;
-        empty.hidden = false;
-        editorTitle.textContent = "Chọn bài viết để chỉnh sửa";
-        setBody("");
-        renderList();
-        notify("Đã xóa bài viết khỏi danh sách xem trước.");
-    });
+    document.querySelector("#guideDelete")?.addEventListener("click", () => deleteGuide(activeId));
     document.querySelector("#globalSearch")?.addEventListener("input", (event) => {
         const query = event.currentTarget.value.trim().toLocaleLowerCase("vi");
         list.querySelectorAll("[data-guide-id]").forEach((item) => { item.hidden = Boolean(query) && !item.textContent.toLocaleLowerCase("vi").includes(query); });
     });
 
-    loadGuides().then((items) => {
-        guides = items;
-        renderList();
-        if (guides[0]) openGuide(guides[0].id);
-        initializeEditor();
-    });
+    guides = loadGuides();
+    if (guides[0]) openGuide(guides[0].id);
+    initializeEditor();
 })();
 

@@ -1,4 +1,5 @@
 ﻿(() => {
+    if (!document.querySelector("#barChart")) return;
     const sidebar = document.querySelector("#sidebar");
     const menuToggle = document.querySelector("#menuToggle");
     const dateLabel = document.querySelector("#dashboardDate");
@@ -19,9 +20,6 @@
         logout.setAttribute("aria-label", "Đăng xuất");
         logout.title = "Đăng xuất";
         logout.innerHTML = '<i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span>';
-        logout.addEventListener("click", () => {
-            try { void 0; } catch { /* Không có phiên lưu trên trình duyệt. */ }
-        });
         actions.append(logout);
     }
 
@@ -49,43 +47,19 @@
         }
     });
 
-    const taskStateKey = "landiform.admin.dashboard.task-completion.v1";
-    let completedTasks = {};
-    try {
-        const saved = JSON.parse(null || "{}");
-        if (saved && typeof saved === "object" && !Array.isArray(saved)) completedTasks = saved;
-    } catch { /* Keep dashboard tasks usable if browser storage is unavailable. */ }
-
-    const demoLeads = [
-        { id: "anh", status: "Chưa liên hệ", received: "21/10/2026 · 08:45" },
-        { id: "khoa", status: "Đang tư vấn", received: "19/10/2026 · 10:20" },
-        { id: "yen", status: "Đã giao dịch", received: "20/10/2026 · 14:10" },
-        { id: "bao", status: "Đang đàm phán", received: "15/10/2026 · 11:35" },
-        { id: "nam", status: "Đang tư vấn", received: "21/10/2026 · 09:10" },
-        { id: "dat", status: "Đã giao dịch", received: "12/10/2026 · 10:15" },
-        { id: "ha", status: "Đã giao dịch", received: "08/10/2026 · 11:30" },
-    ];
-    const demoBuyers = [
-        { productId: "unit-cp-b1-0803" },
-        { productId: "unit-ap-a2-1506" },
-        { productId: "unit-gv-n08-05" },
-    ];
-    const demoUnits = [
-        { id: "unit-cp-b1-0803", price: 5.1 },
-        { id: "unit-ap-a2-1506", price: 3.8 },
-        { id: "unit-gv-n08-05", price: 8.2 },
-    ];
-    function readStoredRecords(key, fallback) {
-        try {
-            const value = JSON.parse(null || "null");
-            if (Array.isArray(value)) return value;
-            if (Array.isArray(value?.items)) return value.items;
-        } catch { /* Dùng dữ liệu ví dụ khi bộ nhớ trình duyệt không đọc được. */ }
-        return fallback;
-    }
-    const leads = readStoredRecords("landiform.admin.leads.v1", demoLeads);
-    const buyers = readStoredRecords("landiform.admin.buyers.v1", demoBuyers);
-    const inventory = readStoredRecords("landiform.admin.units.v1", demoUnits);
+    const completedTasks = {};
+    const exampleSource = document.querySelector("#dashboardExampleData");
+    const examples = (kind) => [...(exampleSource?.querySelectorAll(`[data-dashboard-example="${kind}"]`) || [])]
+        .map((element) => {
+            const item = { ...element.dataset };
+            delete item.dashboardExample;
+            if (item.price != null) item.price = Number(item.price);
+            if (item.revenue != null) item.revenue = Number(item.revenue);
+            return item;
+        });
+    const leads = examples("lead");
+    const buyers = examples("buyer");
+    const inventory = examples("unit");
     const unitsById = new Map(inventory.map((unit) => [unit.id, unit]));
     const recordedRevenue = buyers.reduce((sum, buyer) => {
         const unit = unitsById.get(buyer.productId);
@@ -131,54 +105,10 @@
         const iso = text.match(/(\d{4})-(\d{2})-(\d{2})/);
         return iso ? new Date(Number(iso[1]), Number(iso[2]) - 1, Number(iso[3])) : null;
     }
-    function createDemoRevenueEvents(now) {
-        const previousYear = [2.1, 2.7, 2.4, 3.5, 3.1, 4.0, 3.6, 4.4, 4.7, 4.5, 4.8, 5.2];
-        const currentYear = Array(12).fill(0);
-        const revenueWeights = [0.4, 0.6, 0.5, 1, 0.8, 1.2, 1.1, 1.5, 0, 5, 0, 0];
-        const availableMonths = Array.from({ length: now.getMonth() + 1 }, (_, month) => month);
-        const previousMonthIndex = now.getMonth() - 1;
-        const previousMonthRevenue = previousMonthIndex >= 0 && recordedRevenue >= 5 ? 5 : 0;
-        currentYear[previousMonthIndex] = previousMonthRevenue;
-        const distributableRevenue = Math.max(0, recordedRevenue - previousMonthRevenue);
-        const distributableMonths = availableMonths.filter((month) => month !== previousMonthIndex);
-        const weightTotal = distributableMonths.reduce((sum, month) => sum + revenueWeights[month], 0);
-        distributableMonths.forEach((month, index) => {
-            const weight = weightTotal > 0 ? revenueWeights[month] / weightTotal : 1 / distributableMonths.length;
-            currentYear[month] = index === distributableMonths.length - 1
-                ? Number((distributableRevenue - distributableMonths.slice(0, -1).reduce((sum, item) => sum + currentYear[item], 0)).toFixed(2))
-                : Number((distributableRevenue * weight).toFixed(2));
-        });
-        const profiles = new Map([
-            [now.getFullYear() - 1, previousYear],
-            [now.getFullYear(), currentYear],
-        ]);
-        const records = [];
-        const eventDays = [8, 17, 26];
-        const shares = [0.4, 0.35, 0.25];
-        profiles.forEach((monthlyTotals, year) => {
-            monthlyTotals.forEach((total, month) => {
-                if (year === now.getFullYear() && month > now.getMonth()) return;
-                const daysInMonth = new Date(year, month + 1, 0).getDate();
-                let assignedRevenue = 0;
-                eventDays.forEach((day, index) => {
-                    if (day > daysInMonth || (year === now.getFullYear() && month === now.getMonth() && day > now.getDate())) return;
-                    const eventRevenue = index === eventDays.length - 1
-                        ? Number((total - assignedRevenue).toFixed(2))
-                        : Number((total * shares[index]).toFixed(2));
-                    assignedRevenue += eventRevenue;
-                    records.push({
-                        received: `${String(day).padStart(2, "0")}/${String(month + 1).padStart(2, "0")}/${year}`,
-                        revenue: eventRevenue,
-                    });
-                });
-            });
-        });
-        return records;
-    }
-    const demoRevenueEvents = createDemoRevenueEvents(new Date());
+    const demoRevenueEvents = examples("revenue");
     const startOfDay = (date) => new Date(date.getFullYear(), date.getMonth(), date.getDate());
     const shiftDays = (date, count) => new Date(date.getFullYear(), date.getMonth(), date.getDate() + count);
-    const monthNames = ["Thg 1", "Thg 2", "Thg 3", "Thg 4", "Thg 5", "Thg 6", "Thg 7", "Thg 8", "Thg 9", "Thg 10", "Thg 11", "Thg 12"];
+    const monthNames = Array.from({ length: 12 }, (_, index) => `Thg ${index + 1}`);
     function buildChartPeriod(period, now) {
         const today = startOfDay(now);
         if (period === "year") {
@@ -327,16 +257,7 @@
         checkbox.checked = completedTasks[taskId] === true;
         checkbox.setAttribute("aria-label", `${checkbox.checked ? "Bỏ hoàn tất" : "Hoàn tất"} ${item.querySelector(".task-copy strong")?.textContent.trim() || "công việc"}`);
         checkbox.addEventListener("change", () => {
-            const previous = completedTasks[taskId] === true;
             completedTasks[taskId] = checkbox.checked;
-            try {
-                void 0;
-            } catch {
-                checkbox.checked = previous;
-                completedTasks[taskId] = previous;
-                showToast("Không thể lưu trạng thái công việc trên trình duyệt này.");
-                return;
-            }
             checkbox.setAttribute("aria-label", `${checkbox.checked ? "Bỏ hoàn tất" : "Hoàn tất"} ${item.querySelector(".task-copy strong")?.textContent.trim() || "công việc"}`);
             updateTaskCount();
             showToast(checkbox.checked ? "Đã hoàn tất công việc." : "Đã mở lại công việc.");

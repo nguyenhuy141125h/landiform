@@ -1,7 +1,7 @@
 ﻿(() => {
     const monthInput = document.querySelector("#reportMonth");
     const tableBody = document.querySelector("#reportProjectRows");
-    if (!monthInput) return;
+    if (!monthInput || (!tableBody && !document.querySelector("#reportStaffRows"))) return;
 
     const now = new Date();
     const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
@@ -9,36 +9,22 @@
     monthInput.max = currentMonth;
     monthInput.min = "2020-01";
 
-    const monthFactors = [0.52, 0.56, 0.61, 0.65, 0.7, 0.75, 0.81, 0.85, 0.8865, 1, 1.05, 1.1];
-    const projects = [
-        { code: "AP-026", name: "An Phú Riverside", detail: "Căn hộ · TP. Thủ Đức", color: "blue", icon: "fa-building", visits: 18420 },
-        { code: "GV-014", name: "Green Valley", detail: "Nhà phố · Biên Hòa", color: "green", icon: "fa-house", visits: 12860 },
-        { code: "CP-008", name: "Central Park Towers", detail: "Căn hộ · Quận 7", color: "violet", icon: "fa-building", visits: 7240 },
-    ];
-    const demoLeads = [
-        { id: "anh", projectCode: "AP-026", ownerId: "staff-long", owner: "Trần Thanh Long", status: "Chưa liên hệ", received: "21/10/2026 · 08:45" },
-        { id: "khoa", projectCode: "GV-014", ownerId: "staff-quynh", owner: "Quỳnh Dao", status: "Đang tư vấn", received: "19/10/2026 · 10:20" },
-        { id: "yen", projectCode: "CP-008", ownerId: "staff-mai", owner: "Mai Ngọc", status: "Đã giao dịch", received: "20/10/2026 · 14:10" },
-        { id: "bao", projectCode: "AP-026", ownerId: "staff-long", owner: "Trần Thanh Long", status: "Đang đàm phán", received: "15/10/2026 · 11:35" },
-        { id: "nam", projectCode: "GV-014", ownerId: "staff-quynh", owner: "Quỳnh Dao", status: "Đang tư vấn", received: "21/10/2026 · 09:10" },
-        { id: "dat", projectCode: "AP-026", ownerId: "staff-long", owner: "Trần Thanh Long", status: "Đã giao dịch", received: "12/10/2026 · 10:15" },
-        { id: "ha", projectCode: "GV-014", ownerId: "staff-quynh", owner: "Quỳnh Dao", status: "Đã giao dịch", received: "08/10/2026 · 11:30" },
-    ];
-    const demoStaff = [
-        { id: "staff-long", name: "Trần Thanh Long", role: "Nhân viên tư vấn", accountType: "employee" },
-        { id: "staff-quynh", name: "Quỳnh Dao", role: "Nhân viên tư vấn", accountType: "employee" },
-        { id: "staff-mai", name: "Mai Ngọc", role: "Chăm sóc khách hàng", accountType: "employee" },
-    ];
-    const demoBuyers = [
-        { leadId: "yen", productId: "unit-cp-b1-0803" },
-        { leadId: "dat", productId: "unit-ap-a2-1506" },
-        { leadId: "ha", productId: "unit-gv-n08-05" },
-    ];
-    const demoUnits = [
-        { id: "unit-cp-b1-0803", price: 5.1, commissionPercent: 2 },
-        { id: "unit-ap-a2-1506", price: 3.8, commissionPercent: 2 },
-        { id: "unit-gv-n08-05", price: 8.2, commissionPercent: 2 },
-    ];
+    const exampleSource = document.querySelector("#reportExampleData");
+    const readExampleRows = (type) => [...(exampleSource?.querySelectorAll(`[data-report-example="${type}"]`) || [])]
+        .map((element) => {
+            const row = { ...element.dataset };
+            delete row.reportExample;
+            ["visits", "price", "commissionPercent"].forEach((key) => {
+                if (row[key] != null) row[key] = Number(row[key]);
+            });
+            return row;
+        });
+    const monthFactors = (exampleSource?.dataset.monthFactors || "").split(",").map(Number);
+    const projects = readExampleRows("project");
+    const demoLeads = readExampleRows("lead");
+    const demoStaff = readExampleRows("staff");
+    const demoBuyers = readExampleRows("buyer");
+    const demoUnits = readExampleRows("unit");
     const format = (value) => Math.round(value).toLocaleString("vi-VN");
     const percent = (value, total) => total ? `${Math.round(value / total * 100)}%` : "0%";
     const formatMoney = (value) => value >= 1
@@ -47,7 +33,7 @@
 
     function getMonthlyData(date) {
         const factor = monthFactors[date.getMonth()] * Math.pow(0.88, Math.max(0, now.getFullYear() - date.getFullYear()));
-        const leads = readList("landiform.admin.leads.v1", demoLeads).filter((lead) => {
+        const leads = demoLeads.filter((lead) => {
             const received = dateFor(lead.received || lead.createdAt);
             return received && received.getFullYear() === date.getFullYear() && received.getMonth() === date.getMonth();
         });
@@ -73,9 +59,9 @@
             appointments: sum.appointments + row.appointments,
             deals: sum.deals + row.deals,
         }), { leads: 0, qualified: 0, appointments: 0, deals: 0 });
-        const buyers = readList("landiform.admin.buyers.v1", demoBuyers);
-        const bookingStatuses = (() => { try { return JSON.parse(null || "{}"); } catch { return {}; } })();
-        const bookings = readList("landiform.admin.bookings.v1", [{ code: "BK-2026-084", createdAt: "2026-10-22T09:15:00" }]).filter((booking) => {
+        const buyers = demoBuyers;
+        const bookingStatuses = {};
+        const bookings = readExampleRows("booking").filter((booking) => {
             const created = dateFor(booking.createdAt || booking.created);
             const status = bookingStatuses[booking.code] || "Chờ duyệt";
             return created && created.getFullYear() === date.getFullYear() && created.getMonth() === date.getMonth() && !["Đã hủy", "Hoàn tất"].includes(status);
@@ -124,15 +110,6 @@
         return tr;
     }
 
-    function readList(key, fallback) {
-        try {
-            const saved = JSON.parse(null || "null");
-            if (Array.isArray(saved)) return saved;
-            if (Array.isArray(saved?.items)) return saved.items;
-        } catch { /* Use linked report examples when browser storage is unavailable. */ }
-        return fallback;
-    }
-
     function dateFor(value) {
         const text = String(value || "");
         const localized = text.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/);
@@ -146,9 +123,9 @@
         const empty = document.querySelector("#reportStaffEmpty");
         const chart = document.querySelector("#reportStaffRevenueChart");
         if (!rows || !empty || !chart) return;
-        const storedStaff = readList("landiform.admin.team.v1", demoStaff);
+        const storedStaff = demoStaff;
         const staff = storedStaff.filter((person) => person?.name && person.accountType !== "customer" && person.status !== "Tạm ngưng");
-        const leads = readList("landiform.admin.leads.v1", demoLeads).filter((lead) => {
+        const leads = demoLeads.filter((lead) => {
             const received = dateFor(lead.received || lead.createdAt);
             return received && received.getFullYear() === date.getFullYear() && received.getMonth() === date.getMonth();
         });
@@ -160,21 +137,14 @@
         const byName = new Map(staff.map((person) => [person.name.toLocaleLowerCase("vi"), person]));
         const totals = new Map(staff.map((person) => [person.id, { leads: 0, qualified: 0, appointments: 0, deals: 0, revenue: 0, commission: 0 }]));
 
-        function ensureOwner(id, name) {
+        function findOwner(id, name) {
             let person = id ? ownerLookup.get(id) : null;
             if (!person && name) person = byName.get(String(name).toLocaleLowerCase("vi"));
-            if (!person && name) {
-                person = { id: id || `owner-${name}`, name: String(name), role: "Nhân viên", accountType: "employee" };
-                staff.push(person);
-                ownerLookup.set(person.id, person);
-                byName.set(person.name.toLocaleLowerCase("vi"), person);
-                totals.set(person.id, { leads: 0, qualified: 0, appointments: 0, deals: 0, revenue: 0, commission: 0 });
-            }
             return person;
         }
 
         leads.forEach((lead) => {
-            const person = ensureOwner(lead.ownerId, lead.owner);
+            const person = findOwner(lead.ownerId, lead.owner);
             if (!person) return;
             const stats = totals.get(person.id);
             stats.leads += 1;
@@ -182,17 +152,17 @@
             if (lead.status === "Đã giao dịch") stats.deals += 1;
         });
         appointments.forEach((appointment) => {
-            const person = ensureOwner(appointment.assigneeId, appointment.assignee);
+            const person = findOwner(appointment.assigneeId, appointment.assignee);
             if (person) totals.get(person.id).appointments += 1;
         });
 
         const leadById = new Map(leads.map((lead) => [lead.id, lead]));
-        const units = [...demoUnits, ...readList("landiform.admin.units.v1", [])];
+        const units = demoUnits;
         const unitById = new Map(units.map((unit) => [unit.id, unit]));
-        readList("landiform.admin.buyers.v1", demoBuyers).forEach((buyer) => {
+        demoBuyers.forEach((buyer) => {
             const lead = leadById.get(buyer.leadId);
             if (!lead || lead.status !== "Đã giao dịch") return;
-            const person = ensureOwner(lead.ownerId, lead.owner);
+            const person = findOwner(lead.ownerId, lead.owner);
             if (!person) return;
             const unit = unitById.get(buyer.productId);
             const revenue = Number(buyer.salePrice ?? buyer.amount ?? unit?.price ?? 0);

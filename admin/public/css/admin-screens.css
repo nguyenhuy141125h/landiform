@@ -1651,6 +1651,9 @@
 .customer-facts dd a:hover {
     text-decoration: underline;
 }
+[data-profile][hidden] {
+    display: none !important;
+}
 .customer-timeline {
     display: grid;
     gap: 0;
@@ -5613,6 +5616,9 @@
 .buyer-detail-dialog > .panel-kicker { display: block; margin: 16px 0 -11px; color: #1681bb; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
 .buyer-detail-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; margin: 17px 0; }
 .buyer-detail-summary > div,.buyer-detail-product > div { display: grid; gap: 5px; min-width: 0; padding: 11px; border: 1px solid #e3edf3; border-radius: 9px; background: #f8fbfd; }
+.buyer-detail-variant { display: contents; }
+[data-buyer-profile][hidden] { display: none !important; }
+.buyer-detail-timeline [data-buyer-profile][hidden] { display: none !important; }
 .buyer-detail-summary small,.buyer-detail-product small { color: #7a8fa0; font-size: 10px; }
 .buyer-detail-summary strong,.buyer-detail-product strong { overflow-wrap: anywhere; color: #294a63; font-size: 11px; }
 .buyer-detail-columns { display: grid; grid-template-columns: minmax(250px, .8fr) minmax(0, 1.2fr); gap: 14px; }

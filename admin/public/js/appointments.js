@@ -11,27 +11,15 @@
     if (!form || !modal || !rows || !calendar || !calendarTitle || !appointmentStore) return;
 
     const dateInput = appointmentStore.dateInput;
-    const projectNames = {
-        "AP-026": "An Phú Riverside",
-        "GV-014": "Green Valley",
-        "CP-008": "Central Park Towers",
-        "LG-031": "Lumière Garden",
-    };
-    const customerProjects = {
-        anh: "AP-026", khoa: "GV-014", yen: "CP-008", bao: "AP-026", nam: "GV-014",
-    };
-    const leadsStorageKey = "landiform.admin.leads.v1";
-    const newCustomerOption = "__new__";
-    let leadRecords = [];
-    let customerOptions = [
-        { value: "anh", label: "Nguyễn Ngọc Anh" },
-        { value: "khoa", label: "Trần Minh Khoa" },
-        { value: "yen", label: "Lê Hoàng Yến" },
-        { value: "bao", label: "Phạm Quốc Bảo" },
-        { value: "nam", label: "Võ Hoàng Nam" },
-        { value: newCustomerOption, label: "+ Tạo hồ sơ khách hàng mới" },
-    ];
-    const staff = [];
+    const projectNames = Object.fromEntries([...form.elements.project.options].filter((option) => option.value).map((option) => [option.value, option.textContent.trim()]));
+    const customerRows = [...document.querySelectorAll('#appointmentPeopleExamples [data-person-kind="customer"]')];
+    const customerProjects = Object.fromEntries(customerRows.map((row) => [row.dataset.id, row.dataset.projectCode]));
+    const newCustomerOption = document.querySelector('#appointmentPeopleExamples [data-person-kind="new"]')?.dataset.id || "__new__";
+    const customerOptions = [...document.querySelectorAll("#appointmentPeopleExamples [data-person-kind]")]
+        .filter((row) => row.dataset.personKind !== "staff")
+        .map((row) => ({ value: row.dataset.id, label: row.dataset.name, phone: row.dataset.phone || "" }));
+    const staff = [...document.querySelectorAll('#appointmentPeopleExamples [data-person-kind="staff"]')]
+        .map((row) => ({ id: row.dataset.id, name: row.dataset.name, role: row.dataset.role, scope: row.dataset.project, status: row.dataset.status }));
     const toast = document.querySelector("#toastMessage");
     const projectFilter = document.querySelector("#appointmentProjectFilter");
     const assigneeHint = document.querySelector("#appointmentAssigneeHint");
@@ -54,48 +42,6 @@
     let customerSearchHasQuery = false;
     let toastTimer;
     let appointments = appointmentStore.all();
-
-    try {
-        const leads = JSON.parse(null || "[]");
-        if (Array.isArray(leads)) {
-            leadRecords = leads;
-            leads.forEach((lead) => {
-                if (!lead.id || !lead.name) return;
-                customerProjects[lead.id] = lead.projectCode;
-            });
-        }
-        const savedProjects = JSON.parse(null || "[]");
-        if (Array.isArray(savedProjects)) savedProjects.forEach((project) => {
-            if (!project.code || !project.name) return;
-            projectNames[project.code] = project.name;
-            for (const select of [form.elements.project, projectFilter]) {
-                if (![...select.options].some((option) => option.value === project.code)) {
-                    select.add(new Option(project.name, project.code));
-                }
-            }
-        });
-        const savedStaff = JSON.parse(null || "[]");
-        if (Array.isArray(savedStaff)) savedStaff.forEach((person) => {
-            if (person.name && person.accountType !== "customer" && !staff.some((member) => member.name === person.name)) staff.push(person);
-        });
-    } catch {
-        // Các khách hàng, dự án và nhân viên có sẵn vẫn sử dụng được.
-    }
-
-    customerOptions = [
-        ...customerOptions.filter((option) => option.value !== newCustomerOption),
-        ...leadRecords.filter((lead) => lead.id && lead.name).map((lead) => ({ value: lead.id, label: lead.name })),
-        { value: newCustomerOption, label: "+ Tạo hồ sơ khách hàng mới" },
-    ];
-
-    if (staffFilter) {
-        const selectedStaff = staffFilter.value;
-        staffFilter.replaceChildren(new Option("Tất cả nhân viên", ""));
-        staff.forEach((person) => {
-            if (person.name) staffFilter.add(new Option(person.name, person.name));
-        });
-        staffFilter.value = selectedStaff;
-    }
 
     function notify(message) {
         if (!toast) return;
@@ -144,8 +90,7 @@
             if (option.value === newCustomerOption) return true;
             if (!query) return false;
             if (option.value === selected) return true;
-            const lead = leadRecords.find((record) => record.id === option.value);
-            return `${option.label} ${lead?.phone || ""}`.toLocaleLowerCase("vi").includes(query);
+            return `${option.label} ${option.phone}`.toLocaleLowerCase("vi").includes(query);
         });
         customerOptionsList.replaceChildren(...visible.map((option) => {
             const button = document.createElement("button");
@@ -157,10 +102,9 @@
             const name = document.createElement("span");
             name.textContent = option.label;
             button.append(name);
-            const lead = leadRecords.find((record) => record.id === option.value);
-            if (lead?.phone) {
+            if (option.phone) {
                 const phone = document.createElement("small");
-                phone.textContent = lead.phone;
+                phone.textContent = option.phone;
                 button.append(phone);
             }
             return button;
@@ -237,82 +181,6 @@
     document.addEventListener("pointerdown", (event) => {
         if (!event.target.closest(".appointment-customer-picker")) syncCustomerOptions(false);
     });
-
-    function createCustomerProfile(product) {
-        const name = newCustomerName.value.trim();
-        const phone = newCustomerPhone.value.trim();
-        const normalizedPhone = phone.replace(/\D/g, "");
-        if (!name) {
-            newCustomerName.setCustomValidity("Nhập họ tên khách hàng.");
-            newCustomerName.reportValidity();
-            return null;
-        }
-        newCustomerName.setCustomValidity("");
-        if (!normalizedPhone) {
-            newCustomerPhone.setCustomValidity("Nhập số điện thoại khách hàng.");
-            newCustomerPhone.reportValidity();
-            return null;
-        }
-        const duplicate = leadRecords.find((lead) => String(lead.phone || "").replace(/\D/g, "") === normalizedPhone);
-        if (duplicate) {
-            newCustomerPhone.setCustomValidity("Số điện thoại đã có hồ sơ. Hãy chọn khách hàng đó trong danh sách.");
-            newCustomerPhone.reportValidity();
-            return null;
-        }
-        newCustomerPhone.setCustomValidity("");
-        const projectCode = form.elements.project.value;
-        const owner = form.elements.assignee.value;
-        const ownerId = staff.find((person) => person.name === owner)?.id || "";
-        const received = new Intl.DateTimeFormat("vi-VN", {
-            day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit",
-        }).format(new Date());
-        const lead = {
-            id: `lead-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-            name,
-            phone,
-            email: form.elements.newCustomerEmail.value.trim(),
-            project: projectNames[projectCode] || "",
-            projectCode,
-            formId: "",
-            productId: product?.id || "",
-            need: form.elements.newCustomerNeed.value.trim() || product?.type || "Tư vấn bất động sản",
-            budget: "Chưa cập nhật",
-            source: "Gọi điện",
-            owner,
-            ownerId,
-            status: "Chưa liên hệ",
-            received,
-            activities: [{ type: "Lịch hẹn", note: `Đã tạo lịch ${form.elements.type.value.toLocaleLowerCase("vi")} cho khách.`, at: received }],
-        };
-        const next = [...leadRecords, lead];
-        try {
-            void 0;
-        } catch {
-            notify("Không thể lưu hồ sơ khách hàng trên trình duyệt này.");
-            return null;
-        }
-        leadRecords = next;
-        customerProjects[lead.id] = projectCode;
-        customerOptions.push({ value: lead.id, label: lead.name });
-        form.elements.customer.value = lead.id;
-        customerSearch.value = lead.name;
-        setNewCustomerMode();
-        syncCustomerOptions(false);
-        return lead;
-    }
-
-    function rollbackCustomerProfile(lead) {
-        if (!lead) return;
-        leadRecords = leadRecords.filter((item) => item.id !== lead.id);
-        try { void 0; } catch { /* Keep the appointment form usable if browser storage is unavailable. */ }
-        delete customerProjects[lead.id];
-        customerOptions = customerOptions.filter((option) => option.value !== lead.id);
-        form.elements.customer.value = newCustomerOption;
-        customerSearch.value = "Tạo hồ sơ khách hàng mới";
-        newCustomerFields.hidden = false;
-        newCustomerName.required = true;
-        newCustomerPhone.required = true;
-    }
 
     function statusTone(status) {
         return ({ "Chờ phân công": "amber", "Đã phân công": "blue", "Hoàn tất": "green", "Đã hủy": "neutral" })[status] || "neutral";
@@ -520,12 +388,11 @@
             return true;
         }).sort((a, b) => new Date(a.start) - new Date(b.start));
 
-        const eligibleRoles = ["Nhân viên tư vấn", "Chăm sóc khách hàng", "Quản lý kinh doanh", "Vận hành"];
         let people = staffFilter?.value
             ? staff.filter((person) => person.name === staffFilter.value)
             : projectFilter.value
                 ? eligibleStaff(projectFilter.value)
-                : staff.filter((person) => person.name && person.status !== "Tạm ngưng" && eligibleRoles.includes(person.role));
+                : staff.filter((person) => person.name && person.accountType !== "customer" && person.status !== "Tạm ngưng" && person.loginAllowed !== false);
         const displayedNames = new Set(people.map((person) => person.name));
         if (!staffFilter?.value) {
             dayAppointments.forEach((item) => {
@@ -809,30 +676,16 @@
     cancelAppointmentButton?.addEventListener("click", () => {
         const appointment = appointments.find((item) => item.id === editingId);
         if (!appointment || ["Hoàn tất", "Đã hủy"].includes(appointment.status)) return;
-        if (!window.confirm(`Hủy lịch của ${appointment.customerName}? Lịch vẫn được giữ trong hệ thống với trạng thái Đã hủy.`)) return;
-        const next = appointments.map((item) => item.id === editingId ? { ...item, status: "Đã hủy" } : item);
-        if (!appointmentStore.replace(next)) {
-            notify("Không thể lưu thay đổi trên trình duyệt này.");
-            return;
-        }
-        appointments = next;
-        render();
+        document.dispatchEvent(new CustomEvent("landiform:backend-action", { detail: { entity: "appointment", action: "cancel", id: editingId } }));
         close();
-        notify("Đã hủy lịch hẹn. Hồ sơ vẫn được lưu trong danh sách.");
+        notify("Thao tác hủy lịch đã sẵn sàng để kết nối backend.");
     });
     deleteButton?.addEventListener("click", () => {
         const appointment = appointments.find((item) => item.id === editingId);
         if (!appointment) return;
-        if (!window.confirm(`Xóa hẳn lịch của ${appointment.customerName}? Thao tác này không thể hoàn tác.`)) return;
-        const next = appointments.filter((item) => item.id !== editingId);
-        if (!appointmentStore.replace(next)) {
-            notify("Không thể xóa lịch trên trình duyệt này.");
-            return;
-        }
-        appointments = next;
-        render();
+        document.dispatchEvent(new CustomEvent("landiform:backend-action", { detail: { entity: "appointment", action: "delete", id: editingId } }));
         close();
-        notify("Đã xóa lịch hẹn.");
+        notify("Thao tác xóa lịch đã sẵn sàng để kết nối backend.");
     });
     modal.addEventListener("click", (event) => { if (event.target === modal) close(); });
     document.addEventListener("keydown", (event) => {
@@ -977,35 +830,11 @@
             form.reportValidity();
             return;
         }
-        const createdLead = form.elements.customer.value === newCustomerOption
-            ? createCustomerProfile(linkedProduct)
-            : null;
-        if (form.elements.customer.value === newCustomerOption && !createdLead) return;
-        const customer = customerOptions.find((option) => option.value === form.elements.customer.value);
-        const appointment = {
-            id: editingId || `appointment-${Date.now()}`,
-            customer: form.elements.customer.value,
-            customerName: customer?.label || "Khách hàng",
-            project: form.elements.project.value,
-            productId: linkedProduct?.id || "",
-            start: form.elements.start.value,
-            type: form.elements.type.value,
-            place: form.elements.place.value.trim(),
-            assignee,
-            status,
-        };
-        const next = editingId
-            ? appointments.map((item) => item.id === editingId ? appointment : item)
-            : [...appointments, appointment];
-        if (!appointmentStore.replace(next)) {
-            rollbackCustomerProfile(createdLead);
-            notify("Không thể lưu lịch hẹn trên trình duyệt này.");
-            return;
-        }
-        appointments = next;
-        render();
+        document.dispatchEvent(new CustomEvent("landiform:backend-submit", {
+            detail: { entity: "appointment", id: editingId, values: new FormData(form) },
+        }));
         close();
-        notify(previous ? "Đã cập nhật lịch hẹn và người tư vấn." : "Đã tạo lịch hẹn cho khách hàng.");
+        notify("Thông tin lịch hẹn đã sẵn sàng để kết nối backend.");
     });
     if (new URLSearchParams(location.search).get("appointment") === "1") open();
     render();

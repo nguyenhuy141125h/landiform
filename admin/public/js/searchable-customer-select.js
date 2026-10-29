@@ -20,7 +20,7 @@
                 ? input.value.trim().toLocaleLowerCase("vi")
                 : "";
             const options = [...select.options].filter((option) =>
-                (option.value === "" && !query) || (Boolean(query) && `${option.textContent} ${option.dataset.phone || ""}`.toLocaleLowerCase("vi").includes(query)
+                (option.value === "" && !query) || (Boolean(query) && `${option.textContent} ${option.dataset.phone || ""}`.toLocaleLowerCase("vi").includes(query))
             );
 
             list.replaceChildren(...options.map((option) => {
