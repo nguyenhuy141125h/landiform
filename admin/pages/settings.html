@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="vi">
     <head>
         <meta charset="utf-8" />
@@ -34,23 +34,342 @@
             rel="stylesheet"
             href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
         />
-    <link rel="stylesheet" href="../public/css/notifications.css" />
-</head>
+        <link rel="stylesheet" href="../public/css/notifications.css" />
+    </head>
     <body class="dashboard-body">
         <div class="app-shell">
-            <aside class="sidebar nav-ready" id="sidebar" aria-label="Điều hướng quản trị"><a class="brand" href="../index.html" aria-label="LANDIFORM - Tổng quan"><span class="brand-mark"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="brand-name">LANDI<span>FORM</span></span></a>
-<div class="workspace-switch" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"><span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span><i class="fa-solid fa-chevron-down workspace-switch-arrow" aria-hidden="true"></i></div><div class="workspace-branch-menu" role="menu" hidden><button type="button" class="workspace-branch-option is-selected" role="menuitemradio" aria-checked="true" data-branch-option="hcm">Chi nhánh Hồ Chí Minh</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="hanoi">Chi nhánh Hà Nội</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="all">Toàn bộ hệ thống</button></div>
-<nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="../index.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Tổng quan</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-building" aria-hidden="true"></i><span class="nav-label-text">Dự án &amp; sản phẩm</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Dự án và sản phẩm"><a class="nav-link" href="projects.html"><span>Dự án</span></a><a class="nav-link" href="categories.html"><span>Danh mục sản phẩm</span></a><a class="nav-link" href="booking.html"><span>Sản phẩm dự án</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-user-group" aria-hidden="true"></i><span class="nav-label-text">Khách hàng &amp; tiếp thị</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị"><a class="nav-link" href="leads.html"><span>Khách hàng tiềm năng</span></a><a class="nav-link" href="forms.html"><span>Biểu mẫu &amp; mã QR</span></a><a class="nav-link" href="campaigns.html"><span>Chiến dịch tiếp thị</span></a></nav></details>
-<nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="workflow.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Công việc &amp; lịch hẹn</span></a></nav>
-<nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="buyers.html"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Người mua &amp; bàn giao</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-users" aria-hidden="true"></i><span class="nav-label-text">Đội ngũ</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Đội ngũ"><a class="nav-link" href="team.html?type=management"><span>Admin</span></a><a class="nav-link" href="team.html?type=employee"><span>Nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-chart-pie" aria-hidden="true"></i><span class="nav-label-text">Báo cáo</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Báo cáo"><a class="nav-link" href="reports.html"><span>Báo cáo hoạt động</span></a><a class="nav-link" href="staff-reports.html"><span>Báo cáo nhân viên</span></a></nav></details>
-<details class="nav-group" open><summary class="nav-label"><i class="nav-label-icon fa-solid fa-gear" aria-hidden="true"></i><span class="nav-label-text">Hệ thống</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Thiết lập hệ thống và nội dung"><a class="nav-link" href="permissions.html"><span>Phân quyền</span></a><a class="nav-link is-active" aria-current="page" href="settings.html"><span>Thông tin doanh nghiệp</span></a><a class="nav-link" href="articles.html"><span>Cẩm nang</span></a><a class="nav-link" href="account.html"><span>Tài khoản cá nhân</span></a></nav></details>
-<div class="sidebar-bottom"><a class="sidebar-support" href="support.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Trung tâm hỗ trợ</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></aside>
+            <aside
+                class="sidebar nav-ready"
+                id="sidebar"
+                aria-label="Điều hướng quản trị"
+            >
+                <a
+                    class="brand"
+                    href="../index.html"
+                    aria-label="LANDIFORM - Tổng quan"
+                    ><span class="brand-mark"
+                        ><i
+                            class="fa-solid fa-city"
+                            aria-hidden="true"
+                        ></i></span
+                    ><span class="brand-name">LANDI<span>FORM</span></span></a
+                >
+                <div
+                    class="workspace-switch"
+                    role="button"
+                    tabindex="0"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"
+                >
+                    <span class="workspace-avatar">AP</span
+                    ><span class="workspace-copy"
+                        ><strong>An Phát Land</strong
+                        ><small>Chi nhánh Hồ Chí Minh</small></span
+                    ><i
+                        class="fa-solid fa-chevron-down workspace-switch-arrow"
+                        aria-hidden="true"
+                    ></i>
+                </div>
+                <div class="workspace-branch-menu" role="menu" hidden>
+                    <button
+                        type="button"
+                        class="workspace-branch-option is-selected"
+                        role="menuitemradio"
+                        aria-checked="true"
+                        data-branch-option="hcm"
+                    >
+                        Chi nhánh Hồ Chí Minh</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="hanoi"
+                    >
+                        Chi nhánh Hà Nội</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="all"
+                    >
+                        Toàn bộ hệ thống
+                    </button>
+                </div>
+                <nav class="main-nav sidebar-overview" aria-label="Tổng quan">
+                    <a class="nav-link" href="../index.html"
+                        ><i
+                            class="fa-solid fa-table-cells-large"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Tổng quan</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-building"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Dự án &amp; sản phẩm</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Dự án và sản phẩm">
+                        <a class="nav-link" href="projects.html"
+                            ><span>Dự án</span></a
+                        ><a class="nav-link" href="categories.html"
+                            ><span>Danh mục sản phẩm</span></a
+                        ><a class="nav-link" href="booking.html"
+                            ><span>Sản phẩm dự án</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-user-group"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text"
+                            >Khách hàng &amp; tiếp thị</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Khách hàng và tiếp thị">
+                        <a class="nav-link" href="leads.html"
+                            ><span>Khách hàng tiềm năng</span></a
+                        ><a class="nav-link" href="forms.html"
+                            ><span>Biểu mẫu &amp; mã QR</span></a
+                        ><a class="nav-link" href="campaigns.html"
+                            ><span>Chiến dịch tiếp thị</span></a
+                        >
+                    </nav>
+                </details>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Lịch hẹn và công việc"
+                >
+                    <a class="nav-link" href="workflow.html"
+                        ><i
+                            class="fa-solid fa-calendar-check"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Công việc &amp; lịch hẹn</span></a
+                    >
+                </nav>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Người mua và bàn giao"
+                >
+                    <a class="nav-link" href="buyers.html"
+                        ><i class="fa-solid fa-handshake" aria-hidden="true"></i
+                        ><span>Người mua &amp; bàn giao</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-users"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Đội ngũ</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Đội ngũ">
+                        <a class="nav-link" href="team.html?type=management"
+                            ><span>Admin</span></a
+                        ><a class="nav-link" href="team.html?type=employee"
+                            ><span>Nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-chart-pie"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Báo cáo</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Báo cáo">
+                        <a class="nav-link" href="reports.html"
+                            ><span>Báo cáo hoạt động</span></a
+                        ><a class="nav-link" href="staff-reports.html"
+                            ><span>Báo cáo nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group" open>
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Hệ thống</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav
+                        class="main-nav"
+                        aria-label="Thiết lập hệ thống và nội dung"
+                    >
+                        <a class="nav-link" href="permissions.html"
+                            ><span>Phân quyền</span></a
+                        ><a
+                            class="nav-link is-active"
+                            aria-current="page"
+                            href="settings.html"
+                            ><span>Thông tin doanh nghiệp</span></a
+                        ><a class="nav-link" href="articles.html"
+                            ><span>Cẩm nang</span></a
+                        ><a class="nav-link" href="account.html"
+                            ><span>Tài khoản cá nhân</span></a
+                        >
+                    </nav>
+                </details>
+                <div class="sidebar-bottom">
+                    <a class="sidebar-support" href="support.html"
+                        ><i
+                            class="fa-solid fa-circle-question"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Trung tâm hỗ trợ</span
+                        ><i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                </div>
+            </aside>
             <main class="main-panel">
-                <header class="topbar"><button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><div class="breadcrumbs"><span>An Phát Land</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><strong>Thông tin doanh nghiệp</strong></div><div class="topbar-actions"><label class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><div class="topbar-account-actions"><a class="account-switch" href="account.html" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span><i class="fa-solid fa-gear" aria-hidden="true"></i></a><a class="account-logout" href="../login.html" data-account-logout="true" aria-label="Đăng xuất" title="Đăng xuất"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span></a></div><div class="notification-center"><button type="button" class="icon-button notification-button" aria-label="Mở thông báo" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-count" hidden></span></button><section class="notification-popover" hidden aria-label="Thông báo"><header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary>Bạn đã xem hết thông báo</small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list><p class="notification-empty">Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.</p></div><a class="notification-footer" href="workflow.html">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section></div></div></header>
+                <header class="topbar">
+                    <button
+                        class="icon-button mobile-menu"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Mở menu"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <div class="breadcrumbs">
+                        <span>An Phát Land</span
+                        ><i
+                            class="fa-solid fa-chevron-right"
+                            aria-hidden="true"
+                        ></i
+                        ><strong>Thông tin doanh nghiệp</strong>
+                    </div>
+                    <div class="topbar-actions">
+                        <label class="global-search"
+                            ><i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i
+                            ><input
+                                id="globalSearch"
+                                type="search"
+                                placeholder="Tìm trong trang này..."
+                                aria-label="Tìm trong trang hiện tại"
+                        /></label>
+                        <div class="topbar-account-actions">
+                            <a
+                                class="account-switch"
+                                href="account.html"
+                                aria-label="Mở thông tin tài khoản"
+                                ><span class="account-avatar">MA</span
+                                ><span class="account-copy"
+                                    ><strong>Minh Anh</strong
+                                    ><small>Quản lý kinh doanh</small></span
+                                ><i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i></a
+                            ><a
+                                class="account-logout"
+                                href="../login.html"
+                                data-account-logout="true"
+                                aria-label="Đăng xuất"
+                                title="Đăng xuất"
+                                ><i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i
+                                ><span>Đăng xuất</span></a
+                            >
+                        </div>
+                        <div class="notification-center">
+                            <button
+                                type="button"
+                                class="icon-button notification-button"
+                                aria-label="Mở thông báo"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                            >
+                                <i
+                                    class="fa-solid fa-bell"
+                                    aria-hidden="true"
+                                ></i
+                                ><span class="notification-count" hidden></span>
+                            </button>
+                            <section
+                                class="notification-popover"
+                                hidden
+                                aria-label="Thông báo"
+                            >
+                                <header class="notification-popover-head">
+                                    <div>
+                                        <strong>Thông báo</strong
+                                        ><small data-notification-summary
+                                            >Bạn đã xem hết thông báo</small
+                                        >
+                                    </div>
+                                    <button
+                                        type="button"
+                                        data-notification-read
+                                    >
+                                        Đánh dấu đã đọc
+                                    </button>
+                                </header>
+                                <div
+                                    class="notification-list"
+                                    data-notification-list
+                                >
+                                    <p class="notification-empty">
+                                        Chưa có thông báo mới. Thông báo về
+                                        khách hàng, công việc và lịch hẹn sẽ
+                                        hiện ở đây.
+                                    </p>
+                                </div>
+                                <a
+                                    class="notification-footer"
+                                    href="workflow.html"
+                                    >Mở công việc & lịch hẹn
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i
+                                ></a>
+                            </section>
+                        </div>
+                    </div>
+                </header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
@@ -258,7 +577,8 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                                     data-customer-site-setting
                                     required
                                     maxlength="140"
-                             value="Khám phá dự án cho ngôi nhà tương lai."/></label>
+                                    value="Khám phá dự án cho ngôi nhà tương lai."
+                            /></label>
                             <label class="settings-field-wide"
                                 >Mô tả ngắn<textarea
                                     name="siteHeroDescription"
@@ -266,7 +586,9 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                                     required
                                     rows="3"
                                     maxlength="500"
-                                >Tìm hiểu các dự án và sản phẩm bất động sản do An Phát Land phát triển. Xem thông tin từng căn, nhà hoặc lô đất và đặt lịch trao đổi cùng chuyên viên.</textarea>
+                                >
+Tìm hiểu các dự án và sản phẩm bất động sản do An Phát Land phát triển. Xem thông tin từng căn, nhà hoặc lô đất và đặt lịch trao đổi cùng chuyên viên.</textarea
+                                >
                             </label>
                         </div>
                     </section>
@@ -301,8 +623,137 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                             class="branch-editor-list"
                             id="branchEditorList"
                             aria-live="polite"
-                        ><article class="branch-editor-card" data-branch-id="head-office"><header><div class="branch-editor-actions"><label class="branch-default-choice" title="Đặt làm chi nhánh mặc định" aria-label="Đặt làm chi nhánh mặc định"><input type="radio" name="defaultBranchId" value="head-office" checked /></label><button type="button" class="button button-quiet branch-remove-button" data-remove-branch="head-office" disabled title="Xóa chi nhánh" aria-label="Xóa chi nhánh"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button></div></header><div class="branch-editor-fields"><label>Tên chi nhánh<input type="text" data-branch-field="name" value="Trụ sở chính" required /></label><label>Tỉnh / Thành phố<input type="text" data-branch-field="city" value="TP. Hồ Chí Minh" required placeholder="Hà Nội, TP. Hồ Chí Minh..." /></label><label>Địa chỉ<input class="branch-address-input" type="text" data-branch-field="address" placeholder="Để trống nếu dùng địa chỉ trụ sở chính" /></label><label>Số điện thoại riêng<input type="text" data-branch-field="phone" autocomplete="tel" placeholder="Để trống nếu dùng số chung" /></label><label>Email riêng<input type="email" data-branch-field="email" autocomplete="email" placeholder="Để trống nếu dùng email chung" /></label></div></article></div>
-                        <template id="branchEditorTemplate"><article class="branch-editor-card" data-branch-id=""><header><div class="branch-editor-actions"><label class="branch-default-choice" title="Đặt làm chi nhánh mặc định" aria-label="Đặt làm chi nhánh mặc định"><input type="radio" name="defaultBranchId" value="" /></label><button type="button" class="button button-quiet branch-remove-button" data-remove-branch="" title="Xóa chi nhánh" aria-label="Xóa chi nhánh"><i class="fa-solid fa-trash-can" aria-hidden="true"></i></button></div></header><div class="branch-editor-fields"><label>Tên chi nhánh<input type="text" data-branch-field="name" value="Chi nhánh mới" required /></label><label>Tỉnh / Thành phố<input type="text" data-branch-field="city" required placeholder="Hà Nội, TP. Hồ Chí Minh..." /></label><label>Địa chỉ<input class="branch-address-input" type="text" data-branch-field="address" required placeholder="Số nhà, đường, phường/xã..." /></label><label>Số điện thoại riêng<input type="text" data-branch-field="phone" autocomplete="tel" placeholder="Để trống nếu dùng số chung" /></label><label>Email riêng<input type="email" data-branch-field="email" autocomplete="email" placeholder="Để trống nếu dùng email chung" /></label></div></article></template>
+                        >
+                            <article
+                                class="branch-editor-card"
+                                data-branch-id="head-office"
+                            >
+                                <header>
+                                    <div class="branch-editor-actions">
+                                        <label
+                                            class="branch-default-choice"
+                                            title="Đặt làm chi nhánh mặc định"
+                                            aria-label="Đặt làm chi nhánh mặc định"
+                                            ><input
+                                                type="radio"
+                                                name="defaultBranchId"
+                                                value="head-office"
+                                                checked /></label
+                                        ><button
+                                            type="button"
+                                            class="button button-quiet branch-remove-button"
+                                            data-remove-branch="head-office"
+                                            disabled
+                                            title="Xóa chi nhánh"
+                                            aria-label="Xóa chi nhánh"
+                                        >
+                                            <i
+                                                class="fa-solid fa-trash-can"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </button>
+                                    </div>
+                                </header>
+                                <div class="branch-editor-fields">
+                                    <label
+                                        >Tên chi nhánh<input
+                                            type="text"
+                                            data-branch-field="name"
+                                            value="Trụ sở chính"
+                                            required /></label
+                                    ><label
+                                        >Tỉnh / Thành phố<input
+                                            type="text"
+                                            data-branch-field="city"
+                                            value="TP. Hồ Chí Minh"
+                                            required
+                                            placeholder="Hà Nội, TP. Hồ Chí Minh..." /></label
+                                    ><label
+                                        >Địa chỉ<input
+                                            class="branch-address-input"
+                                            type="text"
+                                            data-branch-field="address"
+                                            placeholder="Để trống nếu dùng địa chỉ trụ sở chính" /></label
+                                    ><label
+                                        >Số điện thoại riêng<input
+                                            type="text"
+                                            data-branch-field="phone"
+                                            autocomplete="tel"
+                                            placeholder="Để trống nếu dùng số chung" /></label
+                                    ><label
+                                        >Email riêng<input
+                                            type="email"
+                                            data-branch-field="email"
+                                            autocomplete="email"
+                                            placeholder="Để trống nếu dùng email chung"
+                                    /></label>
+                                </div>
+                            </article>
+                        </div>
+                        <template id="branchEditorTemplate"
+                            ><article
+                                class="branch-editor-card"
+                                data-branch-id=""
+                            >
+                                <header>
+                                    <div class="branch-editor-actions">
+                                        <label
+                                            class="branch-default-choice"
+                                            title="Đặt làm chi nhánh mặc định"
+                                            aria-label="Đặt làm chi nhánh mặc định"
+                                            ><input
+                                                type="radio"
+                                                name="defaultBranchId"
+                                                value="" /></label
+                                        ><button
+                                            type="button"
+                                            class="button button-quiet branch-remove-button"
+                                            data-remove-branch=""
+                                            title="Xóa chi nhánh"
+                                            aria-label="Xóa chi nhánh"
+                                        >
+                                            <i
+                                                class="fa-solid fa-trash-can"
+                                                aria-hidden="true"
+                                            ></i>
+                                        </button>
+                                    </div>
+                                </header>
+                                <div class="branch-editor-fields">
+                                    <label
+                                        >Tên chi nhánh<input
+                                            type="text"
+                                            data-branch-field="name"
+                                            value="Chi nhánh mới"
+                                            required /></label
+                                    ><label
+                                        >Tỉnh / Thành phố<input
+                                            type="text"
+                                            data-branch-field="city"
+                                            required
+                                            placeholder="Hà Nội, TP. Hồ Chí Minh..." /></label
+                                    ><label
+                                        >Địa chỉ<input
+                                            class="branch-address-input"
+                                            type="text"
+                                            data-branch-field="address"
+                                            required
+                                            placeholder="Số nhà, đường, phường/xã..." /></label
+                                    ><label
+                                        >Số điện thoại riêng<input
+                                            type="text"
+                                            data-branch-field="phone"
+                                            autocomplete="tel"
+                                            placeholder="Để trống nếu dùng số chung" /></label
+                                    ><label
+                                        >Email riêng<input
+                                            type="email"
+                                            data-branch-field="email"
+                                            autocomplete="email"
+                                            placeholder="Để trống nếu dùng email chung"
+                                    /></label>
+                                </div></article
+                        ></template>
                         <p class="settings-help">
                             <i
                                 class="fa-solid fa-circle-info"
@@ -407,7 +858,8 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                                     data-about-setting
                                     required
                                     maxlength="160"
-                             value="Một nơi để bắt đầu hành trình tìm kiếm bất động sản"/></label>
+                                    value="Một nơi để bắt đầu hành trình tìm kiếm bất động sản"
+                            /></label>
                             <label class="settings-field-wide"
                                 >Đoạn giới thiệu<textarea
                                     name="aboutIntro"
@@ -415,7 +867,9 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                                     required
                                     rows="3"
                                     maxlength="600"
-                                >Mỗi người tìm nhà với một câu chuyện và một nhu cầu khác nhau. Website của An Phát Land được xây dựng để giúp bạn bắt đầu hành trình ấy bằng những thông tin dễ tìm, dễ đối chiếu và dễ trao đổi hơn.</textarea>
+                                >
+Mỗi người tìm nhà với một câu chuyện và một nhu cầu khác nhau. Website của An Phát Land được xây dựng để giúp bạn bắt đầu hành trình ấy bằng những thông tin dễ tìm, dễ đối chiếu và dễ trao đổi hơn.</textarea
+                                >
                             </label>
                             <div class="settings-field-wide about-cover-upload">
                                 <span class="about-cover-label">Ảnh bìa</span>
@@ -465,13 +919,15 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                                     name="aboutCoverAlt"
                                     data-about-setting
                                     maxlength="180"
-                             value="Không gian làm việc và tìm hiểu thông tin bất động sản"/></label>
+                                    value="Không gian làm việc và tìm hiểu thông tin bất động sản"
+                            /></label>
                             <label
                                 >Chú thích ảnh<input
                                     name="aboutCoverCaption"
                                     data-about-setting
                                     maxlength="240"
-                             value="Một hành trình tìm kiếm tốt bắt đầu từ thông tin phù hợp với nhu cầu của mỗi người."/></label>
+                                    value="Một hành trình tìm kiếm tốt bắt đầu từ thông tin phù hợp với nhu cầu của mỗi người."
+                            /></label>
                             <label class="settings-field-wide"
                                 >Nội dung bài viết<textarea
                                     id="aboutBody"
@@ -479,7 +935,8 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                                     name="aboutBody"
                                     data-about-setting
                                     rows="20"
-                                >&lt;p class=&quot;about-blog-opening&quot;&gt;Tìm một nơi để sống, một căn nhà phù hợp cho gia đình hay một sản phẩm để kinh doanh hiếm khi chỉ là việc chọn một tấm hình đẹp. Người mua thường cần trả lời nhiều câu hỏi: vị trí có thuận tiện không, diện tích có phù hợp không, tình trạng sản phẩm ra sao và cần xác nhận thêm những thông tin nào?&lt;/p&gt;
+                                >
+&lt;p class=&quot;about-blog-opening&quot;&gt;Tìm một nơi để sống, một căn nhà phù hợp cho gia đình hay một sản phẩm để kinh doanh hiếm khi chỉ là việc chọn một tấm hình đẹp. Người mua thường cần trả lời nhiều câu hỏi: vị trí có thuận tiện không, diện tích có phù hợp không, tình trạng sản phẩm ra sao và cần xác nhận thêm những thông tin nào?&lt;/p&gt;
                 &lt;h3&gt;Bắt đầu từ nhu cầu của bạn&lt;/h3&gt;
                 &lt;p&gt;Trước khi xem danh sách sản phẩm, hãy nghĩ đến mục tiêu của mình. Bạn đang tìm nơi ở lâu dài, cần thêm không gian cho gia đình, muốn tìm mặt bằng kinh doanh hay đang xem xét một lô đất? Ngân sách, khu vực mong muốn và thời điểm dự định sử dụng cũng là những tiêu chí giúp thu hẹp lựa chọn.&lt;/p&gt;
                 &lt;p&gt;Website tập hợp các dự án và sản phẩm được giới thiệu để bạn có thể bắt đầu từ những tiêu chí đó. Bạn có thể lọc theo dự án, loại hình và một số thông tin sản phẩm; sau đó mở từng mục để xem chi tiết và lưu lại lựa chọn muốn tìm hiểu thêm.&lt;/p&gt;
@@ -521,7 +978,11 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
                             ></a>
                         </div>
                     </section>
-                    <footer class="dashboard-footer"><span>LANDIFORM · An Phát Land</span><span>Thông tin doanh nghiệp</span><a href="support.html">Trung tâm hỗ trợ</a></footer>
+                    <footer class="dashboard-footer">
+                        <span>LANDIFORM · An Phát Land</span
+                        ><span>Thông tin doanh nghiệp</span
+                        ><a href="support.html">Trung tâm hỗ trợ</a>
+                    </footer>
                 </div>
             </main>
         </div>
@@ -531,13 +992,7 @@ Tầng 12, 125 Nguyễn Huệ, Phường Sài Gòn, TP. Hồ Chí Minh</textarea
             role="status"
             aria-live="polite"
         ></div>
-    <script
-            src="https://cdn.tiny.cloud/1/u6bv7802yqn5d6wu81pi7mgfbjkzcwvygouuzpopkcxyp0cn/tinymce/5/tinymce.min.js"
-            referrerpolicy="origin"
-        ></script>
-    <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
 
-
-    <script src="../public/js/settings.js?v=20261026-tinymce-v1"></script>
-</body>
+        <script src="../public/js/admin.js"></script>
+    </body>
 </html>

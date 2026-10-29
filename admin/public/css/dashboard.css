@@ -256,63 +256,8 @@ button {
 .nav-link.is-active > i {
     color: #83cef8;
 }
-.nav-count {
-    display: grid;
-    min-width: 23px;
-    height: 20px;
-    margin-left: auto;
-    place-items: center;
-    border-radius: 4px;
-    color: #d2e0e9;
-    background: rgba(255, 255, 255, 0.1);
-    font-size: 10px;
-}
-.nav-dot {
-    width: 7px;
-    height: 7px;
-    margin-left: auto;
-    border-radius: 50%;
-    background: #e8b064;
-}
 .sidebar-bottom {
     margin-top: auto;
-}
-.sidebar-help {
-    padding: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.11);
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.045);
-}
-.help-icon {
-    display: grid;
-    width: 28px;
-    height: 28px;
-    margin-bottom: 9px;
-    place-items: center;
-    border-radius: 6px;
-    color: #a8d8f2;
-    background: rgba(39, 145, 222, 0.18);
-}
-.sidebar-help strong {
-    display: block;
-    color: white;
-    font-size: 11px;
-}
-.sidebar-help small {
-    display: block;
-    margin-top: 5px;
-    color: #aabccc;
-    font-size: 10px;
-    line-height: 1.55;
-}
-.sidebar-help a {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    margin-top: 10px;
-    color: #a4d7f3;
-    font-size: 10px;
-    font-weight: 650;
 }
 .account-switch {
     display: flex;
@@ -669,30 +614,10 @@ button {
     letter-spacing: -0.04em;
     line-height: 1;
 }
-.metric-trend {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    padding: 4px 6px;
-    border-radius: 4px;
-    font-size: 9px;
-    font-weight: 650;
-}
-.metric-trend.positive {
-    color: #267255;
-    background: #eef6f1;
-}
-.metric-trend.attention {
-    color: #986b37;
-    background: #f7f1e8;
-}
 .metric-card > p {
     margin: 7px 0 0;
     color: var(--quiet);
     font-size: 10px;
-}
-.metric-sparkline {
-    display: none;
 }
 
 /* Trends and lead progression */
@@ -1105,10 +1030,6 @@ button {
     color: #267158;
     background: #edf5f0;
 }
-.status-soon {
-    color: #956b37;
-    background: #f6f0e7;
-}
 .row-more,
 .more-button {
     display: grid;
@@ -1336,16 +1257,6 @@ button {
 .modal-backdrop[hidden] {
     display: none;
 }
-.action-modal {
-    position: relative;
-    width: min(100%, 440px);
-    padding: 27px;
-    border: 1px solid var(--line);
-    border-radius: 10px;
-    background: white;
-    box-shadow: 0 20px 60px rgba(16, 38, 59, 0.2);
-    animation: modal-enter 0.18s ease-out;
-}
 @keyframes modal-enter {
     from {
         opacity: 0;
@@ -1379,35 +1290,6 @@ button {
     color: var(--blue-deep);
     background: var(--blue-soft);
     font-size: 15px;
-}
-.action-modal h2 {
-    margin: 16px 0 5px;
-    color: var(--ink);
-    font-size: 18px;
-}
-.action-modal > p {
-    margin: 0 0 20px;
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 1.6;
-}
-.action-modal form {
-    display: grid;
-    gap: 8px;
-}
-.action-modal label {
-    color: #4e6478;
-    font-size: 11px;
-    font-weight: 650;
-}
-.action-modal input {
-    height: 41px;
-    padding: 0 11px;
-    border: 1px solid #dce4ea;
-    border-radius: 5px;
-    outline-color: #91bfdc;
-    color: var(--ink);
-    font-size: 12px;
 }
 .modal-actions {
     display: flex;
@@ -1457,7 +1339,7 @@ body.modal-open {
     outline-offset: 2px;
 }
 
-@media (min-width: 1600px) {
+@media (min-width: 1600px){
     .dashboard-content {
         padding-right: 50px;
         padding-left: 50px;
@@ -1467,7 +1349,7 @@ body.modal-open {
         padding-left: 50px;
     }
 }
-@media (max-width: 1300px) {
+@media (max-width: 1300px){
     .sidebar {
         width: 232px;
     }
@@ -1504,7 +1386,7 @@ body.modal-open {
         grid-template-columns: minmax(0, 1.2fr) minmax(300px, 1fr);
     }
 }
-@media (max-width: 760px) {
+@media (max-width: 760px){
     .sidebar {
         z-index: 40;
         width: 258px;
@@ -1539,7 +1421,7 @@ body.modal-open {
         grid-template-columns: minmax(0, 1fr);
     }
 }
-@media (max-width: 620px) {
+@media (max-width: 620px){
     .topbar {
         height: 60px;
         padding: 0 14px;
@@ -1612,10 +1494,6 @@ body.modal-open {
     .metric-value-row > strong {
         font-size: 24px;
     }
-    .metric-trend {
-        padding: 3px 4px;
-        font-size: 8px;
-    }
     .metric-card > p {
         font-size: 8px;
     }
@@ -1665,7 +1543,7 @@ body.modal-open {
         grid-template-columns: minmax(0, 1fr);
     }
 }
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce){
     *,
     *::before,
     *::after {
@@ -1719,21 +1597,7 @@ body.modal-open {
 .bar {
     position: relative;
 }
-.bar-value {
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    color: #8395a5;
-    font-size: 9px;
-    font-weight: 650;
-    line-height: 1;
-    transform: translateX(-50%);
-    pointer-events: none;
-}
-.bar.current .bar-value {
-    color: #176fa8;
-}
-@media (max-width: 620px) {
+@media (max-width: 620px){
     .chart-summary {
         gap: 5px;
     }
@@ -1746,10 +1610,6 @@ body.modal-open {
     }
     .chart-summary-item > strong {
         font-size: 16px;
-    }
-    .bar-value {
-        top: -13px;
-        font-size: 7px;
     }
 }
 
@@ -1768,12 +1628,6 @@ body.modal-open {
 .sidebar .account-copy small,
 .sidebar .sidebar-help small,
 .sidebar .sidebar-help a {
-    font-size: 13px;
-}
-.sidebar .sidebar-help strong {
-    font-size: 14px;
-}
-.nav-count {
     font-size: 13px;
 }
 
@@ -1814,9 +1668,6 @@ body.modal-open {
 }
 .metric-value-row > strong {
     font-size: 38px;
-}
-.metric-trend {
-    font-size: 12px;
 }
 .metric-card > p {
     font-size: 13px;
@@ -1903,17 +1754,11 @@ body.modal-open {
 .dashboard-footer {
     font-size: 12px;
 }
-
-.action-modal > p,
-.action-modal label,
-.action-modal input {
-    font-size: 14px;
-}
 .toast-message {
     font-size: 13px;
 }
 
-@media (max-width: 620px) {
+@media (max-width: 620px){
     .welcome-row h1 {
         font-size: 29px;
     }
@@ -1929,9 +1774,6 @@ body.modal-open {
     }
     .metric-value-row > strong {
         font-size: 28px;
-    }
-    .metric-trend {
-        font-size: 11px;
     }
     .metric-card > p {
         font-size: 11px;
@@ -2225,10 +2067,6 @@ body.modal-open {
     color: #197451;
     background: #e8f5ed;
 }
-.status-soon {
-    color: #92652e;
-    background: #fff3df;
-}
 
 .task-list {
     margin-top: 15px;
@@ -2312,7 +2150,7 @@ body.modal-open {
     border-top: 1px solid #e3eaf0;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1300px){
     .metric-grid {
         gap: 12px;
     }
@@ -2323,7 +2161,7 @@ body.modal-open {
         padding: 21px;
     }
 }
-@media (max-width: 620px) {
+@media (max-width: 620px){
     .dashboard-content {
         padding: 16px 12px 24px;
     }
@@ -2390,7 +2228,9 @@ body.modal-open {
 }
 .workspace-switch {
     border-radius: 11px;
-    transition: background 0.18s ease, border-color 0.18s ease;
+    transition:
+        background 0.18s ease,
+        border-color 0.18s ease;
 }
 .workspace-switch:hover {
     border-color: rgba(155, 211, 243, 0.35);
@@ -2406,7 +2246,11 @@ body.modal-open {
     border-radius: 8px;
 }
 .nav-link.is-active {
-    background: linear-gradient(100deg, rgba(57, 132, 179, 0.34), rgba(57, 132, 179, 0.15));
+    background: linear-gradient(
+        100deg,
+        rgba(57, 132, 179, 0.34),
+        rgba(57, 132, 179, 0.15)
+    );
 }
 .sidebar:not(.nav-ready) {
     visibility: hidden;
@@ -2421,14 +2265,18 @@ body.modal-open {
 }
 .global-search {
     border-radius: 10px;
-    transition: border-color 0.16s ease, box-shadow 0.16s ease;
+    transition:
+        border-color 0.16s ease,
+        box-shadow 0.16s ease;
 }
 .global-search:focus-within {
     border-color: #9bc9e8;
     box-shadow: 0 0 0 3px rgba(22, 130, 198, 0.1);
 }
 .welcome-row {
-    background-position: center, center 44%;
+    background-position:
+        center,
+        center 44%;
     box-shadow: 0 14px 32px rgba(22, 63, 96, 0.12);
 }
 .metric-card {
@@ -2463,7 +2311,9 @@ body.modal-open {
             rgba(18, 66, 101, 0.53) 100%
         ),
         url("../../../website/assets/blue-residential-towers.jpg");
-    background-position: center, right 43%;
+    background-position:
+        center,
+        right 43%;
 }
 .date-line {
     font-size: 12px;
@@ -2483,9 +2333,6 @@ body.modal-open {
 }
 .metric-heading {
     font-size: 12px;
-}
-.metric-trend {
-    font-size: 10px;
 }
 .metric-card > p {
     font-size: 11px;
@@ -2525,9 +2372,11 @@ body.modal-open {
     outline: 3px solid rgba(67, 164, 225, 0.42);
     outline-offset: 2px;
 }
-@media (max-width: 700px) {
+@media (max-width: 700px){
     .welcome-row {
-        background-position: center, 62% center;
+        background-position:
+            center,
+            62% center;
     }
     .welcome-subtitle {
         font-size: 13px;
@@ -2536,7 +2385,7 @@ body.modal-open {
         font-size: 11px;
     }
 }
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce){
     .dashboard-content *,
     .dashboard-content *::before,
     .dashboard-content *::after {

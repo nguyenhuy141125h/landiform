@@ -42,7 +42,10 @@
     text-align: left;
     -webkit-appearance: none;
     appearance: none;
-    transition: border-color 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+    transition:
+        border-color 0.16s ease,
+        box-shadow 0.16s ease,
+        background-color 0.16s ease;
 }
 
 .select-menu-trigger:hover,
@@ -84,7 +87,9 @@
     border-right: 1.5px solid #71899b;
     border-bottom: 1.5px solid #71899b;
     transform: rotate(45deg);
-    transition: transform 0.16s ease, margin 0.16s ease;
+    transition:
+        transform 0.16s ease,
+        margin 0.16s ease;
 }
 
 .select-menu-control.is-open .select-menu-arrow {
@@ -103,7 +108,9 @@
     border: 1px solid #d4e1e9;
     border-radius: 10px;
     background: #fff;
-    box-shadow: 0 12px 28px rgba(22, 48, 68, 0.17), 0 2px 6px rgba(22, 48, 68, 0.07);
+    box-shadow:
+        0 12px 28px rgba(22, 48, 68, 0.17),
+        0 2px 6px rgba(22, 48, 68, 0.07);
     overscroll-behavior: contain;
     scrollbar-color: #c5d5e0 transparent;
     scrollbar-width: thin;
@@ -129,7 +136,9 @@
     font: inherit;
     font-size: 13px;
     line-height: 1.4;
-    transition: color 0.12s ease, background-color 0.12s ease;
+    transition:
+        color 0.12s ease,
+        background-color 0.12s ease;
 }
 
 .select-menu-option:hover,
@@ -232,12 +241,7 @@
     flex: 0 1 220px;
 }
 
-.permission-scope .select-menu-control {
-    width: min(275px, 100%);
-    flex: 0 1 275px;
-}
-
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce){
     .select-menu-trigger,
     .select-menu-arrow,
     .select-menu-option {

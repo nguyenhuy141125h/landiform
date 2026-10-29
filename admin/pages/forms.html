@@ -18,76 +18,935 @@
             rel="stylesheet"
             href="../../website/public/css/fontawesome.min.css"
         />
-        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
-        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
-        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
-<link rel="stylesheet" href="../public/css/notifications.css" />
-</head>
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
+        />
+        <link rel="stylesheet" href="../public/css/notifications.css" />
+    </head>
     <body class="dashboard-body">
         <div class="app-shell">
-            <aside class="sidebar nav-ready" id="sidebar" aria-label="Điều hướng quản trị"><a class="brand" href="../index.html" aria-label="LANDIFORM - Tổng quan"><span class="brand-mark"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="brand-name">LANDI<span>FORM</span></span></a>
-<div class="workspace-switch" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"><span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span><i class="fa-solid fa-chevron-down workspace-switch-arrow" aria-hidden="true"></i></div><div class="workspace-branch-menu" role="menu" hidden><button type="button" class="workspace-branch-option is-selected" role="menuitemradio" aria-checked="true" data-branch-option="hcm">Chi nhánh Hồ Chí Minh</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="hanoi">Chi nhánh Hà Nội</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="all">Toàn bộ hệ thống</button></div>
-<nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="../index.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Tổng quan</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-building" aria-hidden="true"></i><span class="nav-label-text">Dự án &amp; sản phẩm</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Dự án và sản phẩm"><a class="nav-link" href="projects.html"><span>Dự án</span></a><a class="nav-link" href="categories.html"><span>Danh mục sản phẩm</span></a><a class="nav-link" href="booking.html"><span>Sản phẩm dự án</span></a></nav></details>
-<details class="nav-group" open><summary class="nav-label"><i class="nav-label-icon fa-solid fa-user-group" aria-hidden="true"></i><span class="nav-label-text">Khách hàng &amp; tiếp thị</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị"><a class="nav-link" href="leads.html"><span>Khách hàng tiềm năng</span></a><a class="nav-link is-active" aria-current="page" href="forms.html"><span>Biểu mẫu &amp; mã QR</span></a><a class="nav-link" href="campaigns.html"><span>Chiến dịch tiếp thị</span></a></nav></details>
-<nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="workflow.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Công việc &amp; lịch hẹn</span></a></nav>
-<nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="buyers.html"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Người mua &amp; bàn giao</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-users" aria-hidden="true"></i><span class="nav-label-text">Đội ngũ</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Đội ngũ"><a class="nav-link" href="team.html?type=management"><span>Admin</span></a><a class="nav-link" href="team.html?type=employee"><span>Nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-chart-pie" aria-hidden="true"></i><span class="nav-label-text">Báo cáo</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Báo cáo"><a class="nav-link" href="reports.html"><span>Báo cáo hoạt động</span></a><a class="nav-link" href="staff-reports.html"><span>Báo cáo nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-gear" aria-hidden="true"></i><span class="nav-label-text">Hệ thống</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Thiết lập hệ thống và nội dung"><a class="nav-link" href="permissions.html"><span>Phân quyền</span></a><a class="nav-link" href="settings.html"><span>Thông tin doanh nghiệp</span></a><a class="nav-link" href="articles.html"><span>Cẩm nang</span></a><a class="nav-link" href="account.html"><span>Tài khoản cá nhân</span></a></nav></details>
-<div class="sidebar-bottom"><a class="sidebar-support" href="support.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Trung tâm hỗ trợ</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></aside>
+            <aside
+                class="sidebar nav-ready"
+                id="sidebar"
+                aria-label="Điều hướng quản trị"
+            >
+                <a
+                    class="brand"
+                    href="../index.html"
+                    aria-label="LANDIFORM - Tổng quan"
+                    ><span class="brand-mark"
+                        ><i
+                            class="fa-solid fa-city"
+                            aria-hidden="true"
+                        ></i></span
+                    ><span class="brand-name">LANDI<span>FORM</span></span></a
+                >
+                <div
+                    class="workspace-switch"
+                    role="button"
+                    tabindex="0"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"
+                >
+                    <span class="workspace-avatar">AP</span
+                    ><span class="workspace-copy"
+                        ><strong>An Phát Land</strong
+                        ><small>Chi nhánh Hồ Chí Minh</small></span
+                    ><i
+                        class="fa-solid fa-chevron-down workspace-switch-arrow"
+                        aria-hidden="true"
+                    ></i>
+                </div>
+                <div class="workspace-branch-menu" role="menu" hidden>
+                    <button
+                        type="button"
+                        class="workspace-branch-option is-selected"
+                        role="menuitemradio"
+                        aria-checked="true"
+                        data-branch-option="hcm"
+                    >
+                        Chi nhánh Hồ Chí Minh</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="hanoi"
+                    >
+                        Chi nhánh Hà Nội</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="all"
+                    >
+                        Toàn bộ hệ thống
+                    </button>
+                </div>
+                <nav class="main-nav sidebar-overview" aria-label="Tổng quan">
+                    <a class="nav-link" href="../index.html"
+                        ><i
+                            class="fa-solid fa-table-cells-large"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Tổng quan</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-building"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Dự án &amp; sản phẩm</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Dự án và sản phẩm">
+                        <a class="nav-link" href="projects.html"
+                            ><span>Dự án</span></a
+                        ><a class="nav-link" href="categories.html"
+                            ><span>Danh mục sản phẩm</span></a
+                        ><a class="nav-link" href="booking.html"
+                            ><span>Sản phẩm dự án</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group" open>
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-user-group"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text"
+                            >Khách hàng &amp; tiếp thị</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Khách hàng và tiếp thị">
+                        <a class="nav-link" href="leads.html"
+                            ><span>Khách hàng tiềm năng</span></a
+                        ><a
+                            class="nav-link is-active"
+                            aria-current="page"
+                            href="forms.html"
+                            ><span>Biểu mẫu &amp; mã QR</span></a
+                        ><a class="nav-link" href="campaigns.html"
+                            ><span>Chiến dịch tiếp thị</span></a
+                        >
+                    </nav>
+                </details>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Lịch hẹn và công việc"
+                >
+                    <a class="nav-link" href="workflow.html"
+                        ><i
+                            class="fa-solid fa-calendar-check"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Công việc &amp; lịch hẹn</span></a
+                    >
+                </nav>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Người mua và bàn giao"
+                >
+                    <a class="nav-link" href="buyers.html"
+                        ><i class="fa-solid fa-handshake" aria-hidden="true"></i
+                        ><span>Người mua &amp; bàn giao</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-users"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Đội ngũ</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Đội ngũ">
+                        <a class="nav-link" href="team.html?type=management"
+                            ><span>Admin</span></a
+                        ><a class="nav-link" href="team.html?type=employee"
+                            ><span>Nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-chart-pie"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Báo cáo</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Báo cáo">
+                        <a class="nav-link" href="reports.html"
+                            ><span>Báo cáo hoạt động</span></a
+                        ><a class="nav-link" href="staff-reports.html"
+                            ><span>Báo cáo nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Hệ thống</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav
+                        class="main-nav"
+                        aria-label="Thiết lập hệ thống và nội dung"
+                    >
+                        <a class="nav-link" href="permissions.html"
+                            ><span>Phân quyền</span></a
+                        ><a class="nav-link" href="settings.html"
+                            ><span>Thông tin doanh nghiệp</span></a
+                        ><a class="nav-link" href="articles.html"
+                            ><span>Cẩm nang</span></a
+                        ><a class="nav-link" href="account.html"
+                            ><span>Tài khoản cá nhân</span></a
+                        >
+                    </nav>
+                </details>
+                <div class="sidebar-bottom">
+                    <a class="sidebar-support" href="support.html"
+                        ><i
+                            class="fa-solid fa-circle-question"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Trung tâm hỗ trợ</span
+                        ><i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                </div>
+            </aside>
             <main class="main-panel">
-                <header class="topbar"><button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><div class="breadcrumbs"><span>An Phát Land</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><strong>Mẫu đăng ký</strong></div><div class="topbar-actions"><label class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><div class="topbar-account-actions"><a class="account-switch" href="account.html" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span><i class="fa-solid fa-gear" aria-hidden="true"></i></a><a class="account-logout" href="../login.html" data-account-logout="true" aria-label="Đăng xuất" title="Đăng xuất"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span></a></div><div class="notification-center"><button type="button" class="icon-button notification-button" aria-label="Mở thông báo" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-count" hidden></span></button><section class="notification-popover" hidden aria-label="Thông báo"><header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary>Bạn đã xem hết thông báo</small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list><p class="notification-empty">Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.</p></div><a class="notification-footer" href="workflow.html">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section></div></div></header>
+                <header class="topbar">
+                    <button
+                        class="icon-button mobile-menu"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Mở menu"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <div class="breadcrumbs">
+                        <span>An Phát Land</span
+                        ><i
+                            class="fa-solid fa-chevron-right"
+                            aria-hidden="true"
+                        ></i
+                        ><strong>Mẫu đăng ký</strong>
+                    </div>
+                    <div class="topbar-actions">
+                        <label class="global-search"
+                            ><i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i
+                            ><input
+                                id="globalSearch"
+                                type="search"
+                                placeholder="Tìm trong trang này..."
+                                aria-label="Tìm trong trang hiện tại"
+                        /></label>
+                        <div class="topbar-account-actions">
+                            <a
+                                class="account-switch"
+                                href="account.html"
+                                aria-label="Mở thông tin tài khoản"
+                                ><span class="account-avatar">MA</span
+                                ><span class="account-copy"
+                                    ><strong>Minh Anh</strong
+                                    ><small>Quản lý kinh doanh</small></span
+                                ><i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i></a
+                            ><a
+                                class="account-logout"
+                                href="../login.html"
+                                data-account-logout="true"
+                                aria-label="Đăng xuất"
+                                title="Đăng xuất"
+                                ><i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i
+                                ><span>Đăng xuất</span></a
+                            >
+                        </div>
+                        <div class="notification-center">
+                            <button
+                                type="button"
+                                class="icon-button notification-button"
+                                aria-label="Mở thông báo"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                            >
+                                <i
+                                    class="fa-solid fa-bell"
+                                    aria-hidden="true"
+                                ></i
+                                ><span class="notification-count" hidden></span>
+                            </button>
+                            <section
+                                class="notification-popover"
+                                hidden
+                                aria-label="Thông báo"
+                            >
+                                <header class="notification-popover-head">
+                                    <div>
+                                        <strong>Thông báo</strong
+                                        ><small data-notification-summary
+                                            >Bạn đã xem hết thông báo</small
+                                        >
+                                    </div>
+                                    <button
+                                        type="button"
+                                        data-notification-read
+                                    >
+                                        Đánh dấu đã đọc
+                                    </button>
+                                </header>
+                                <div
+                                    class="notification-list"
+                                    data-notification-list
+                                >
+                                    <p class="notification-empty">
+                                        Chưa có thông báo mới. Thông báo về
+                                        khách hàng, công việc và lịch hẹn sẽ
+                                        hiện ở đây.
+                                    </p>
+                                </div>
+                                <a
+                                    class="notification-footer"
+                                    href="workflow.html"
+                                    >Mở công việc & lịch hẹn
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i
+                                ></a>
+                            </section>
+                        </div>
+                    </div>
+                </header>
                 <div class="dashboard-content screen-content">
-  <header class="screen-heading"><div><p class="screen-eyebrow">THU THẬP THÔNG TIN KHÁCH</p><h1>Biểu mẫu & mã QR</h1><p>Quản lý biểu mẫu tư vấn, nhận bảng giá và đặt lịch; gắn mỗi biểu mẫu với dự án và điểm tiếp nhận.</p></div><div class="screen-heading-actions"><button class="button button-primary" type="button" data-form-open><i class="fa-solid fa-plus" aria-hidden="true"></i> Tạo biểu mẫu</button></div></header>
-  <div class="screen-stats form-overview-stats"><article class="screen-stat"><span class="screen-stat-icon blue"><i class="fa-solid fa-file-circle-check" aria-hidden="true"></i></span><div><span>Tổng biểu mẫu</span><strong id="formTotal">3</strong><small>Trong danh mục quản lý</small></div></article><article class="screen-stat"><span class="screen-stat-icon green"><i class="fa-solid fa-circle-play" aria-hidden="true"></i></span><div><span>Đang nhận đăng ký</span><strong id="formActive">3</strong><small>Sẵn sàng tiếp nhận khách</small></div></article><article class="screen-stat"><span class="screen-stat-icon violet"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><div><span>Có mã QR</span><strong id="formQrCount">1</strong><small>Có thể dùng tại sự kiện</small></div></article><article class="screen-stat"><span class="screen-stat-icon amber"><i class="fa-solid fa-building" aria-hidden="true"></i></span><div><span>Dự án đã kết nối</span><strong id="formProjectCount">3</strong><small>Có ít nhất một biểu mẫu</small></div></article></div>
-  <section class="panel screen-panel"><div class="screen-panel-head"><div><span class="panel-kicker">CẤU HÌNH TIẾP NHẬN</span><h2>Biểu mẫu theo dự án</h2><p>Chỉnh trường dữ liệu, điểm tiếp nhận và trạng thái hoạt động của từng biểu mẫu.</p></div><div class="screen-filter"><label class="inventory-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="formSearch" type="search" placeholder="Tìm biểu mẫu" aria-label="Tìm biểu mẫu"></label><select id="formProjectFilter" aria-label="Lọc biểu mẫu theo dự án"><option value="">Tất cả dự án</option><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option></select><select id="formStatusFilter" aria-label="Lọc biểu mẫu theo trạng thái"><option value="">Mọi trạng thái</option><option>Đang nhận</option><option>Bản nháp</option><option>Tìm kiếm</option></select></div></div><div class="screen-table-wrap"><table class="screen-table"><thead><tr><th>Biểu mẫu</th><th>Dự án</th><th>Trường thông tin</th><th>Nơi sử dụng</th><th>Trạng thái</th><th>Mã QR</th><th>Thao tác</th></tr></thead><tbody id="formTableBody" data-static-demo="true">
-    <tr data-form-id="consult" data-name="Đăng ký tư vấn" data-project="An Phú Riverside" data-project-code="AP-026" data-place="Customer website" data-status="Đang nhận" data-email="true" data-need="true" data-budget="true" data-appointment="false" data-qr="false"><td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span><span><strong>Đăng ký tư vấn</strong><small>Customer website · 5 trường</small></span></span></td><td>An Phú Riverside</td><td>5</td><td>Customer website</td><td><span class="screen-badge green">Đang nhận</span></td><td><div class="form-qr-cell"><span class="screen-badge neutral">Chưa bật</span><small>Bật trong Chỉnh sửa</small></div></td><td><div class="screen-row-actions"><a class="project-detail-button" href="record-detail.html?type=form&amp;id=consult">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-form-delete="consult" aria-label="Xóa biểu mẫu Đăng ký tư vấn"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
-    <tr data-form-id="price" data-name="Nhận bảng giá" data-project="Green Valley" data-project-code="GV-014" data-place="Trang giới thiệu" data-status="Đang nhận" data-email="true" data-need="true" data-budget="false" data-appointment="false" data-qr="false"><td><span class="screen-entity"><span class="screen-entity-icon green"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span><span><strong>Nhận bảng giá</strong><small>Trang giới thiệu · 4 trường</small></span></span></td><td>Green Valley</td><td>4</td><td>Trang giới thiệu</td><td><span class="screen-badge green">Đang nhận</span></td><td><div class="form-qr-cell"><span class="screen-badge neutral">Chưa bật</span><small>Bật trong Chỉnh sửa</small></div></td><td><div class="screen-row-actions"><a class="project-detail-button" href="record-detail.html?type=form&amp;id=price">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-form-delete="price" aria-label="Xóa biểu mẫu Nhận bảng giá"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
-    <tr data-form-id="viewing" data-name="Đăng ký tham quan" data-project="Central Park Towers" data-project-code="CP-008" data-place="Mã QR tại sự kiện" data-status="Đang nhận" data-email="true" data-need="true" data-budget="true" data-appointment="true" data-qr="true"><td><span class="screen-entity"><span class="screen-entity-icon violet"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span><span><strong>Đăng ký tham quan</strong><small>Mã QR tại sự kiện · 6 trường</small></span></span></td><td>Central Park Towers</td><td>6</td><td>Mã QR tại sự kiện</td><td><span class="screen-badge green">Đang nhận</span></td><td><div class="form-qr-cell"><span class="screen-badge violet">Đã bật</span><button class="project-detail-button form-qr-action" type="button" data-form-qr="viewing"><i class="fa-solid fa-qrcode" aria-hidden="true"></i> Xem mã QR</button></div></td><td><div class="screen-row-actions"><a class="project-detail-button" href="record-detail.html?type=form&amp;id=viewing">Chỉnh sửa <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a><button class="button button-danger screen-row-delete" type="button" data-form-delete="viewing" aria-label="Xóa biểu mẫu Đăng ký tham quan"><i class="fa-solid fa-trash-can" aria-hidden="true"></i><span>Xóa</span></button></div></td></tr>
-  </tbody></table></div></section>
-  <section class="screen-columns"><article class="panel screen-panel"><span class="panel-kicker">DỮ LIỆU ĐƯỢC CHUYỂN TIẾP</span><h2>Khách gửi biểu mẫu sẽ về đâu?</h2><p>Thông tin đăng ký được gắn với dự án và lưu trong danh sách khách hàng quan tâm để đội ngũ tiếp tục chăm sóc.</p><a class="button button-quiet" href="leads.html">Mở danh sách khách hàng <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article><article class="panel screen-panel"><span class="panel-kicker">MÃ QR</span><h2>Dùng tại sự kiện hoặc điểm bán</h2><p>Chọn biểu mẫu sự kiện để gắn mã QR. Khách quét mã sẽ mở đúng biểu mẫu đã cấu hình.</p><span class="screen-badge blue">Quản lý trong từng biểu mẫu</span></article></section>
-  <footer class="dashboard-footer"><span>LANDIFORM · An Phát Land</span><span>Mẫu đăng ký</span><a href="support.html">Trung tâm hỗ trợ</a></footer>
-</div>
+                    <header class="screen-heading">
+                        <div>
+                            <p class="screen-eyebrow">
+                                THU THẬP THÔNG TIN KHÁCH
+                            </p>
+                            <h1>Biểu mẫu & mã QR</h1>
+                            <p>
+                                Quản lý biểu mẫu tư vấn, nhận bảng giá và đặt
+                                lịch; gắn mỗi biểu mẫu với dự án và điểm tiếp
+                                nhận.
+                            </p>
+                        </div>
+                        <div class="screen-heading-actions">
+                            <button
+                                class="button button-primary"
+                                type="button"
+                                data-form-open
+                            >
+                                <i
+                                    class="fa-solid fa-plus"
+                                    aria-hidden="true"
+                                ></i>
+                                Tạo biểu mẫu
+                            </button>
+                        </div>
+                    </header>
+                    <div class="screen-stats form-overview-stats">
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon blue"
+                                ><i
+                                    class="fa-solid fa-file-circle-check"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Tổng biểu mẫu</span
+                                ><strong id="formTotal">3</strong
+                                ><small>Trong danh mục quản lý</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon green"
+                                ><i
+                                    class="fa-solid fa-circle-play"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Đang nhận đăng ký</span
+                                ><strong id="formActive">3</strong
+                                ><small>Sẵn sàng tiếp nhận khách</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon violet"
+                                ><i
+                                    class="fa-solid fa-qrcode"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Có mã QR</span
+                                ><strong id="formQrCount">1</strong
+                                ><small>Có thể dùng tại sự kiện</small>
+                            </div>
+                        </article>
+                        <article class="screen-stat">
+                            <span class="screen-stat-icon amber"
+                                ><i
+                                    class="fa-solid fa-building"
+                                    aria-hidden="true"
+                                ></i
+                            ></span>
+                            <div>
+                                <span>Dự án đã kết nối</span
+                                ><strong id="formProjectCount">3</strong
+                                ><small>Có ít nhất một biểu mẫu</small>
+                            </div>
+                        </article>
+                    </div>
+                    <section class="panel screen-panel">
+                        <div class="screen-panel-head">
+                            <div>
+                                <span class="panel-kicker"
+                                    >CẤU HÌNH TIẾP NHẬN</span
+                                >
+                                <h2>Biểu mẫu theo dự án</h2>
+                                <p>
+                                    Chỉnh trường dữ liệu, điểm tiếp nhận và
+                                    trạng thái hoạt động của từng biểu mẫu.
+                                </p>
+                            </div>
+                            <div class="screen-filter">
+                                <label class="inventory-search"
+                                    ><i
+                                        class="fa-solid fa-magnifying-glass"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><input
+                                        id="formSearch"
+                                        type="search"
+                                        placeholder="Tìm biểu mẫu"
+                                        aria-label="Tìm biểu mẫu" /></label
+                                ><select
+                                    id="formProjectFilter"
+                                    aria-label="Lọc biểu mẫu theo dự án"
+                                >
+                                    <option value="">Tất cả dự án</option>
+                                    <option>An Phú Riverside</option>
+                                    <option>Green Valley</option>
+                                    <option>Central Park Towers</option></select
+                                ><select
+                                    id="formStatusFilter"
+                                    aria-label="Lọc biểu mẫu theo trạng thái"
+                                >
+                                    <option value="">Mọi trạng thái</option>
+                                    <option>Đang nhận</option>
+                                    <option>Bản nháp</option>
+                                    <option>Tìm kiếm</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="screen-table-wrap">
+                            <table class="screen-table">
+                                <thead>
+                                    <tr>
+                                        <th>Biểu mẫu</th>
+                                        <th>Dự án</th>
+                                        <th>Trường thông tin</th>
+                                        <th>Nơi sử dụng</th>
+                                        <th>Trạng thái</th>
+                                        <th>Mã QR</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody
+                                    id="formTableBody"
+                                    data-static-demo="true"
+                                >
+                                    <tr
+                                        data-form-id="consult"
+                                        data-name="Đăng ký tư vấn"
+                                        data-project="An Phú Riverside"
+                                        data-project-code="AP-026"
+                                        data-place="Customer website"
+                                        data-status="Đang nhận"
+                                        data-email="true"
+                                        data-need="true"
+                                        data-budget="true"
+                                        data-appointment="false"
+                                        data-qr="false"
+                                    >
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon blue"
+                                                    ><i
+                                                        class="fa-solid fa-file-lines"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        >Đăng ký tư vấn</strong
+                                                    ><small
+                                                        >Customer website · 5
+                                                        trường</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>An Phú Riverside</td>
+                                        <td>5</td>
+                                        <td>Customer website</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Đang nhận</span
+                                            >
+                                        </td>
+                                        <td>
+                                            <div class="form-qr-cell">
+                                                <span
+                                                    class="screen-badge neutral"
+                                                    >Chưa bật</span
+                                                ><small
+                                                    >Bật trong Chỉnh sửa</small
+                                                >
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="screen-row-actions">
+                                                <a
+                                                    class="project-detail-button"
+                                                    href="record-detail.html?type=form&amp;id=consult"
+                                                    >Chỉnh sửa
+                                                    <i
+                                                        class="fa-solid fa-arrow-right"
+                                                        aria-hidden="true"
+                                                    ></i></a
+                                                ><button
+                                                    class="button button-danger screen-row-delete"
+                                                    type="button"
+                                                    data-form-delete="consult"
+                                                    aria-label="Xóa biểu mẫu Đăng ký tư vấn"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-trash-can"
+                                                        aria-hidden="true"
+                                                    ></i
+                                                    ><span>Xóa</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        data-form-id="price"
+                                        data-name="Nhận bảng giá"
+                                        data-project="Green Valley"
+                                        data-project-code="GV-014"
+                                        data-place="Trang giới thiệu"
+                                        data-status="Đang nhận"
+                                        data-email="true"
+                                        data-need="true"
+                                        data-budget="false"
+                                        data-appointment="false"
+                                        data-qr="false"
+                                    >
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon green"
+                                                    ><i
+                                                        class="fa-solid fa-file-lines"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        >Nhận bảng giá</strong
+                                                    ><small
+                                                        >Trang giới thiệu · 4
+                                                        trường</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Green Valley</td>
+                                        <td>4</td>
+                                        <td>Trang giới thiệu</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Đang nhận</span
+                                            >
+                                        </td>
+                                        <td>
+                                            <div class="form-qr-cell">
+                                                <span
+                                                    class="screen-badge neutral"
+                                                    >Chưa bật</span
+                                                ><small
+                                                    >Bật trong Chỉnh sửa</small
+                                                >
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="screen-row-actions">
+                                                <a
+                                                    class="project-detail-button"
+                                                    href="record-detail.html?type=form&amp;id=price"
+                                                    >Chỉnh sửa
+                                                    <i
+                                                        class="fa-solid fa-arrow-right"
+                                                        aria-hidden="true"
+                                                    ></i></a
+                                                ><button
+                                                    class="button button-danger screen-row-delete"
+                                                    type="button"
+                                                    data-form-delete="price"
+                                                    aria-label="Xóa biểu mẫu Nhận bảng giá"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-trash-can"
+                                                        aria-hidden="true"
+                                                    ></i
+                                                    ><span>Xóa</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr
+                                        data-form-id="viewing"
+                                        data-name="Đăng ký tham quan"
+                                        data-project="Central Park Towers"
+                                        data-project-code="CP-008"
+                                        data-place="Mã QR tại sự kiện"
+                                        data-status="Đang nhận"
+                                        data-email="true"
+                                        data-need="true"
+                                        data-budget="true"
+                                        data-appointment="true"
+                                        data-qr="true"
+                                    >
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon violet"
+                                                    ><i
+                                                        class="fa-solid fa-qrcode"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        >Đăng ký tham
+                                                        quan</strong
+                                                    ><small
+                                                        >Mã QR tại sự kiện · 6
+                                                        trường</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Central Park Towers</td>
+                                        <td>6</td>
+                                        <td>Mã QR tại sự kiện</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Đang nhận</span
+                                            >
+                                        </td>
+                                        <td>
+                                            <div class="form-qr-cell">
+                                                <span
+                                                    class="screen-badge violet"
+                                                    >Đã bật</span
+                                                ><button
+                                                    class="project-detail-button form-qr-action"
+                                                    type="button"
+                                                    data-form-qr="viewing"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-qrcode"
+                                                        aria-hidden="true"
+                                                    ></i>
+                                                    Xem mã QR
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="screen-row-actions">
+                                                <a
+                                                    class="project-detail-button"
+                                                    href="record-detail.html?type=form&amp;id=viewing"
+                                                    >Chỉnh sửa
+                                                    <i
+                                                        class="fa-solid fa-arrow-right"
+                                                        aria-hidden="true"
+                                                    ></i></a
+                                                ><button
+                                                    class="button button-danger screen-row-delete"
+                                                    type="button"
+                                                    data-form-delete="viewing"
+                                                    aria-label="Xóa biểu mẫu Đăng ký tham quan"
+                                                >
+                                                    <i
+                                                        class="fa-solid fa-trash-can"
+                                                        aria-hidden="true"
+                                                    ></i
+                                                    ><span>Xóa</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                    <section class="screen-columns">
+                        <article class="panel screen-panel">
+                            <span class="panel-kicker"
+                                >DỮ LIỆU ĐƯỢC CHUYỂN TIẾP</span
+                            >
+                            <h2>Khách gửi biểu mẫu sẽ về đâu?</h2>
+                            <p>
+                                Thông tin đăng ký được gắn với dự án và lưu
+                                trong danh sách khách hàng quan tâm để đội ngũ
+                                tiếp tục chăm sóc.
+                            </p>
+                            <a class="button button-quiet" href="leads.html"
+                                >Mở danh sách khách hàng
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true"
+                                ></i
+                            ></a>
+                        </article>
+                        <article class="panel screen-panel">
+                            <span class="panel-kicker">MÃ QR</span>
+                            <h2>Dùng tại sự kiện hoặc điểm bán</h2>
+                            <p>
+                                Chọn biểu mẫu sự kiện để gắn mã QR. Khách quét
+                                mã sẽ mở đúng biểu mẫu đã cấu hình.
+                            </p>
+                            <span class="screen-badge blue"
+                                >Quản lý trong từng biểu mẫu</span
+                            >
+                        </article>
+                    </section>
+                    <footer class="dashboard-footer">
+                        <span>LANDIFORM · An Phát Land</span
+                        ><span>Mẫu đăng ký</span
+                        ><a href="support.html">Trung tâm hỗ trợ</a>
+                    </footer>
+                </div>
             </main>
         </div>
         <div class="modal-backdrop" id="formEditorModal" hidden>
-            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="formEditorTitle">
-                <button class="modal-close" type="button" data-form-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></span>
-                            <h2 id="formEditorTitle">Tạo mẫu đăng ký</h2>
-                <p>Chọn dự án và các thông tin cần hỏi để khách đăng ký nhanh.</p>
+            <section
+                class="project-edit-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="formEditorTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-form-close
+                    aria-label="Đóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-file-lines" aria-hidden="true"></i
+                ></span>
+                <h2 id="formEditorTitle">Tạo mẫu đăng ký</h2>
+                <p>
+                    Chọn dự án và các thông tin cần hỏi để khách đăng ký nhanh.
+                </p>
                 <form id="formEditor" class="project-edit-form">
-                    <label for="formName">Tên mẫu</label><input id="formName" name="name" required maxlength="80" placeholder="Ví dụ: Đăng ký tham quan" />
+                    <label for="formName">Tên mẫu</label
+                    ><input
+                        id="formName"
+                        name="name"
+                        required
+                        maxlength="80"
+                        placeholder="Ví dụ: Đăng ký tham quan"
+                    />
                     <div class="project-form-row">
-                        <div><label for="formProject">Dự án</label><select id="formProject" name="project" required><option value="">Chọn dự án</option><option>An Phú Riverside</option><option>Green Valley</option><option>Central Park Towers</option><option>Lumière Garden</option></select></div>
-                        <div><label for="formUse">Nơi sử dụng</label><select id="formUse" name="place"><option>Customer website</option><option>Trang giới thiệu</option><option>Trang mở bán</option><option>Mã QR tại sự kiện</option></select></div>
+                        <div>
+                            <label for="formProject">Dự án</label
+                            ><select id="formProject" name="project" required>
+                                <option value="">Chọn dự án</option>
+                                <option>An Phú Riverside</option>
+                                <option>Green Valley</option>
+                                <option>Central Park Towers</option>
+                                <option>Lumière Garden</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="formUse">Nơi sử dụng</label
+                            ><select id="formUse" name="place">
+                                <option>Customer website</option>
+                                <option>Trang giới thiệu</option>
+                                <option>Trang mở bán</option>
+                                <option>Mã QR tại sự kiện</option>
+                            </select>
+                        </div>
                     </div>
                     <span class="form-option-title">Thông tin cần hỏi</span>
                     <div class="form-field-options">
-                        <label><input type="checkbox" checked disabled /> Họ và tên <small>Bắt buộc</small></label>
-                        <label><input type="checkbox" checked disabled /> Số điện thoại <small>Bắt buộc</small></label>
-                        <label><input type="checkbox" name="email" /> Email</label>
-                        <label><input type="checkbox" name="need" checked /> Nhu cầu quan tâm</label>
-                        <label><input type="checkbox" name="budget" /> Ngân sách dự kiến</label>
-                        <label><input type="checkbox" name="appointment" /> Thời gian muốn tham quan</label>
+                        <label
+                            ><input type="checkbox" checked disabled /> Họ và
+                            tên <small>Bắt buộc</small></label
+                        >
+                        <label
+                            ><input type="checkbox" checked disabled /> Số điện
+                            thoại <small>Bắt buộc</small></label
+                        >
+                        <label
+                            ><input type="checkbox" name="email" /> Email</label
+                        >
+                        <label
+                            ><input type="checkbox" name="need" checked /> Nhu
+                            cầu quan tâm</label
+                        >
+                        <label
+                            ><input type="checkbox" name="budget" /> Ngân sách
+                            dự kiến</label
+                        >
+                        <label
+                            ><input type="checkbox" name="appointment" /> Thời
+                            gian muốn tham quan</label
+                        >
                     </div>
-                    <label class="form-switch"><input type="checkbox" name="qr" /> <span>Tạo mã QR để khách mở mẫu đăng ký này</span></label>
-                    <label for="formStatus">Trạng thái nhận đăng ký</label><select id="formStatus" name="status"><option>Đang nhận</option><option>Bản nháp</option><option>Tìm kiếm</option></select>
-                    <div class="modal-actions"><button class="button button-secondary" type="button" data-form-close>Hủy</button><button class="button button-primary" type="submit">Lưu mẫu đăng ký</button></div>
+                    <label class="form-switch"
+                        ><input type="checkbox" name="qr" />
+                        <span
+                            >Tạo mã QR để khách mở mẫu đăng ký này</span
+                        ></label
+                    >
+                    <label for="formStatus">Trạng thái nhận đăng ký</label
+                    ><select id="formStatus" name="status">
+                        <option>Đang nhận</option>
+                        <option>Bản nháp</option>
+                        <option>Tìm kiếm</option>
+                    </select>
+                    <div class="modal-actions">
+                        <button
+                            class="button button-secondary"
+                            type="button"
+                            data-form-close
+                        >
+                            Hủy</button
+                        ><button class="button button-primary" type="submit">
+                            Lưu mẫu đăng ký
+                        </button>
+                    </div>
                 </form>
             </section>
         </div>
         <div class="modal-backdrop" id="formQrModal" hidden>
-            <section class="project-edit-dialog form-qr-dialog" role="dialog" aria-modal="true" aria-labelledby="formQrTitle">
-                <button class="modal-close" type="button" data-form-qr-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-qrcode" aria-hidden="true"></i></span>
+            <section
+                class="project-edit-dialog form-qr-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="formQrTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-form-qr-close
+                    aria-label="Đóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-qrcode" aria-hidden="true"></i
+                ></span>
                 <h2 id="formQrTitle">Mã QR biểu mẫu</h2>
-                <p id="formQrDescription">Khách quét mã để mở đúng biểu mẫu đăng ký của dự án.</p>
-                <div class="form-qr-preview"><img id="formQrImage" alt="Mã QR mở biểu mẫu" /><div><strong id="formQrProject"></strong><span id="formQrName"></span><small>Quét bằng camera điện thoại để mở trang đăng ký.</small></div></div>
-                <label class="form-qr-link-label" for="formQrLink">Liên kết đích của mã QR</label>
-                <input id="formQrLink" class="form-qr-link" type="text" readonly />
-                <div class="modal-actions"><button class="button button-secondary" type="button" data-form-qr-copy><i class="fa-regular fa-copy" aria-hidden="true"></i> Sao chép liên kết</button><a class="button button-primary" id="formQrOpen" href="#" target="_blank" rel="noopener">Mở trang khách hàng <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div>
+                <p id="formQrDescription">
+                    Khách quét mã để mở đúng biểu mẫu đăng ký của dự án.
+                </p>
+                <div class="form-qr-preview">
+                    <img id="formQrImage" alt="Mã QR mở biểu mẫu" />
+                    <div>
+                        <strong id="formQrProject"></strong
+                        ><span id="formQrName"></span
+                        ><small
+                            >Quét bằng camera điện thoại để mở trang đăng
+                            ký.</small
+                        >
+                    </div>
+                </div>
+                <label class="form-qr-link-label" for="formQrLink"
+                    >Liên kết đích của mã QR</label
+                >
+                <input
+                    id="formQrLink"
+                    class="form-qr-link"
+                    type="text"
+                    readonly
+                />
+                <div class="modal-actions">
+                    <button
+                        class="button button-secondary"
+                        type="button"
+                        data-form-qr-copy
+                    >
+                        <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                        Sao chép liên kết</button
+                    ><a
+                        class="button button-primary"
+                        id="formQrOpen"
+                        href="#"
+                        target="_blank"
+                        rel="noopener"
+                        >Mở trang khách hàng
+                        <i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                </div>
             </section>
         </div>
         <div
@@ -96,10 +955,7 @@
             role="status"
             aria-live="polite"
         ></div>
-    <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-    <script src="../public/js/forms.js?v=20261027-memory-only-actions-v1"></script>
-</body>
+
+        <script src="../public/js/admin.js"></script>
+    </body>
 </html>
-
-
-

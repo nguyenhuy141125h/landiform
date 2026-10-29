@@ -1,22 +1,18 @@
 (() => {
-    const header = document.querySelector(".site-header");
-    const toggle = header?.querySelector(".menu-toggle");
-    const nav = header?.querySelector(".main-nav");
-    if (!toggle || !nav) return;
-    const closeMenu = () => {
-        nav.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "M\u1edf menu");
-        toggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-    };
-    toggle.addEventListener("click", () => {
-        const open = nav.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute("aria-label", open ? "\u0110\u00f3ng menu" : "M\u1edf menu");
-        toggle.innerHTML = `<i class="fa-solid fa-${open ? "xmark" : "bars"}" aria-hidden="true"></i>`;
+    const form = document.querySelector("#contactForm");
+    if (!form) return;
+
+    const interest = new URLSearchParams(location.search).get("interest");
+    const interestField = form.querySelector('[name="interest"]');
+    if (interest && interestField && [...interestField.options].some((option) => option.value === interest)) {
+        interestField.value = interest;
+    }
+
+    form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const status = form.querySelector("#formNote");
+        if (status) status.textContent = "Bạn đã nhập xong thông tin. Đây là bản dùng thử, thông tin chưa được gửi đến LANDIFORM.";
     });
-    nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-    document.addEventListener("keydown", (event) => { if (event.key === "Escape") closeMenu(); });
 })();
 
 (() => {

@@ -18,32 +18,363 @@
             rel="stylesheet"
             href="../../website/public/css/fontawesome.min.css"
         />
-        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
-        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
-        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
-<link rel="stylesheet" href="../public/css/notifications.css" />
-</head>
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
+        />
+        <link rel="stylesheet" href="../public/css/notifications.css" />
+    </head>
     <body class="dashboard-body">
         <div class="app-shell">
-            <aside class="sidebar nav-ready" id="sidebar" aria-label="Điều hướng quản trị"><a class="brand" href="../index.html" aria-label="LANDIFORM - Tổng quan"><span class="brand-mark"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="brand-name">LANDI<span>FORM</span></span></a>
-<div class="workspace-switch" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"><span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span><i class="fa-solid fa-chevron-down workspace-switch-arrow" aria-hidden="true"></i></div><div class="workspace-branch-menu" role="menu" hidden><button type="button" class="workspace-branch-option is-selected" role="menuitemradio" aria-checked="true" data-branch-option="hcm">Chi nhánh Hồ Chí Minh</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="hanoi">Chi nhánh Hà Nội</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="all">Toàn bộ hệ thống</button></div>
-<nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="../index.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Tổng quan</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-building" aria-hidden="true"></i><span class="nav-label-text">Dự án &amp; sản phẩm</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Dự án và sản phẩm"><a class="nav-link" href="projects.html"><span>Dự án</span></a><a class="nav-link" href="categories.html"><span>Danh mục sản phẩm</span></a><a class="nav-link" href="booking.html"><span>Sản phẩm dự án</span></a></nav></details>
-<details class="nav-group" open><summary class="nav-label"><i class="nav-label-icon fa-solid fa-user-group" aria-hidden="true"></i><span class="nav-label-text">Khách hàng &amp; tiếp thị</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị"><a class="nav-link is-active" aria-current="page" href="leads.html"><span>Khách hàng tiềm năng</span></a><a class="nav-link" href="forms.html"><span>Biểu mẫu &amp; mã QR</span></a><a class="nav-link" href="campaigns.html"><span>Chiến dịch tiếp thị</span></a></nav></details>
-<nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link" href="workflow.html"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Công việc &amp; lịch hẹn</span></a></nav>
-<nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="buyers.html"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Người mua &amp; bàn giao</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-users" aria-hidden="true"></i><span class="nav-label-text">Đội ngũ</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Đội ngũ"><a class="nav-link" href="team.html?type=management"><span>Admin</span></a><a class="nav-link" href="team.html?type=employee"><span>Nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-chart-pie" aria-hidden="true"></i><span class="nav-label-text">Báo cáo</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Báo cáo"><a class="nav-link" href="reports.html"><span>Báo cáo hoạt động</span></a><a class="nav-link" href="staff-reports.html"><span>Báo cáo nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-gear" aria-hidden="true"></i><span class="nav-label-text">Hệ thống</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Thiết lập hệ thống và nội dung"><a class="nav-link" href="permissions.html"><span>Phân quyền</span></a><a class="nav-link" href="settings.html"><span>Thông tin doanh nghiệp</span></a><a class="nav-link" href="articles.html"><span>Cẩm nang</span></a><a class="nav-link" href="account.html"><span>Tài khoản cá nhân</span></a></nav></details>
-<div class="sidebar-bottom"><a class="sidebar-support" href="support.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Trung tâm hỗ trợ</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></aside>
+            <aside
+                class="sidebar nav-ready"
+                id="sidebar"
+                aria-label="Điều hướng quản trị"
+            >
+                <a
+                    class="brand"
+                    href="../index.html"
+                    aria-label="LANDIFORM - Tổng quan"
+                    ><span class="brand-mark"
+                        ><i
+                            class="fa-solid fa-city"
+                            aria-hidden="true"
+                        ></i></span
+                    ><span class="brand-name">LANDI<span>FORM</span></span></a
+                >
+                <div
+                    class="workspace-switch"
+                    role="button"
+                    tabindex="0"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"
+                >
+                    <span class="workspace-avatar">AP</span
+                    ><span class="workspace-copy"
+                        ><strong>An Phát Land</strong
+                        ><small>Chi nhánh Hồ Chí Minh</small></span
+                    ><i
+                        class="fa-solid fa-chevron-down workspace-switch-arrow"
+                        aria-hidden="true"
+                    ></i>
+                </div>
+                <div class="workspace-branch-menu" role="menu" hidden>
+                    <button
+                        type="button"
+                        class="workspace-branch-option is-selected"
+                        role="menuitemradio"
+                        aria-checked="true"
+                        data-branch-option="hcm"
+                    >
+                        Chi nhánh Hồ Chí Minh</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="hanoi"
+                    >
+                        Chi nhánh Hà Nội</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="all"
+                    >
+                        Toàn bộ hệ thống
+                    </button>
+                </div>
+                <nav class="main-nav sidebar-overview" aria-label="Tổng quan">
+                    <a class="nav-link" href="../index.html"
+                        ><i
+                            class="fa-solid fa-table-cells-large"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Tổng quan</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-building"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Dự án &amp; sản phẩm</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Dự án và sản phẩm">
+                        <a class="nav-link" href="projects.html"
+                            ><span>Dự án</span></a
+                        ><a class="nav-link" href="categories.html"
+                            ><span>Danh mục sản phẩm</span></a
+                        ><a class="nav-link" href="booking.html"
+                            ><span>Sản phẩm dự án</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group" open>
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-user-group"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text"
+                            >Khách hàng &amp; tiếp thị</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Khách hàng và tiếp thị">
+                        <a
+                            class="nav-link is-active"
+                            aria-current="page"
+                            href="leads.html"
+                            ><span>Khách hàng tiềm năng</span></a
+                        ><a class="nav-link" href="forms.html"
+                            ><span>Biểu mẫu &amp; mã QR</span></a
+                        ><a class="nav-link" href="campaigns.html"
+                            ><span>Chiến dịch tiếp thị</span></a
+                        >
+                    </nav>
+                </details>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Lịch hẹn và công việc"
+                >
+                    <a class="nav-link" href="workflow.html"
+                        ><i
+                            class="fa-solid fa-calendar-check"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Công việc &amp; lịch hẹn</span></a
+                    >
+                </nav>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Người mua và bàn giao"
+                >
+                    <a class="nav-link" href="buyers.html"
+                        ><i class="fa-solid fa-handshake" aria-hidden="true"></i
+                        ><span>Người mua &amp; bàn giao</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-users"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Đội ngũ</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Đội ngũ">
+                        <a class="nav-link" href="team.html?type=management"
+                            ><span>Admin</span></a
+                        ><a class="nav-link" href="team.html?type=employee"
+                            ><span>Nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-chart-pie"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Báo cáo</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Báo cáo">
+                        <a class="nav-link" href="reports.html"
+                            ><span>Báo cáo hoạt động</span></a
+                        ><a class="nav-link" href="staff-reports.html"
+                            ><span>Báo cáo nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Hệ thống</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav
+                        class="main-nav"
+                        aria-label="Thiết lập hệ thống và nội dung"
+                    >
+                        <a class="nav-link" href="permissions.html"
+                            ><span>Phân quyền</span></a
+                        ><a class="nav-link" href="settings.html"
+                            ><span>Thông tin doanh nghiệp</span></a
+                        ><a class="nav-link" href="articles.html"
+                            ><span>Cẩm nang</span></a
+                        ><a class="nav-link" href="account.html"
+                            ><span>Tài khoản cá nhân</span></a
+                        >
+                    </nav>
+                </details>
+                <div class="sidebar-bottom">
+                    <a class="sidebar-support" href="support.html"
+                        ><i
+                            class="fa-solid fa-circle-question"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Trung tâm hỗ trợ</span
+                        ><i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                </div>
+            </aside>
             <main class="main-panel">
-                <header class="topbar"><button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><div class="breadcrumbs"><span>An Phát Land</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><strong>Khách hàng tiềm năng</strong></div><div class="topbar-actions"><label class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><div class="topbar-account-actions"><a class="account-switch" href="account.html" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span><i class="fa-solid fa-gear" aria-hidden="true"></i></a><a class="account-logout" href="../login.html" data-account-logout="true" aria-label="Đăng xuất" title="Đăng xuất"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span></a></div><div class="notification-center"><button type="button" class="icon-button notification-button" aria-label="Mở thông báo" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-count" hidden></span></button><section class="notification-popover" hidden aria-label="Thông báo"><header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary>Bạn đã xem hết thông báo</small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list><p class="notification-empty">Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.</p></div><a class="notification-footer" href="workflow.html">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section></div></div></header>
+                <header class="topbar">
+                    <button
+                        class="icon-button mobile-menu"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Mở menu"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <div class="breadcrumbs">
+                        <span>An Phát Land</span
+                        ><i
+                            class="fa-solid fa-chevron-right"
+                            aria-hidden="true"
+                        ></i
+                        ><strong>Khách hàng tiềm năng</strong>
+                    </div>
+                    <div class="topbar-actions">
+                        <label class="global-search"
+                            ><i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i
+                            ><input
+                                id="globalSearch"
+                                type="search"
+                                placeholder="Tìm trong trang này..."
+                                aria-label="Tìm trong trang hiện tại"
+                        /></label>
+                        <div class="topbar-account-actions">
+                            <a
+                                class="account-switch"
+                                href="account.html"
+                                aria-label="Mở thông tin tài khoản"
+                                ><span class="account-avatar">MA</span
+                                ><span class="account-copy"
+                                    ><strong>Minh Anh</strong
+                                    ><small>Quản lý kinh doanh</small></span
+                                ><i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i></a
+                            ><a
+                                class="account-logout"
+                                href="../login.html"
+                                data-account-logout="true"
+                                aria-label="Đăng xuất"
+                                title="Đăng xuất"
+                                ><i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i
+                                ><span>Đăng xuất</span></a
+                            >
+                        </div>
+                        <div class="notification-center">
+                            <button
+                                type="button"
+                                class="icon-button notification-button"
+                                aria-label="Mở thông báo"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                            >
+                                <i
+                                    class="fa-solid fa-bell"
+                                    aria-hidden="true"
+                                ></i
+                                ><span class="notification-count" hidden></span>
+                            </button>
+                            <section
+                                class="notification-popover"
+                                hidden
+                                aria-label="Thông báo"
+                            >
+                                <header class="notification-popover-head">
+                                    <div>
+                                        <strong>Thông báo</strong
+                                        ><small data-notification-summary
+                                            >Bạn đã xem hết thông báo</small
+                                        >
+                                    </div>
+                                    <button
+                                        type="button"
+                                        data-notification-read
+                                    >
+                                        Đánh dấu đã đọc
+                                    </button>
+                                </header>
+                                <div
+                                    class="notification-list"
+                                    data-notification-list
+                                >
+                                    <p class="notification-empty">
+                                        Chưa có thông báo mới. Thông báo về
+                                        khách hàng, công việc và lịch hẹn sẽ
+                                        hiện ở đây.
+                                    </p>
+                                </div>
+                                <a
+                                    class="notification-footer"
+                                    href="workflow.html"
+                                    >Mở công việc & lịch hẹn
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i
+                                ></a>
+                            </section>
+                        </div>
+                    </div>
+                </header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
                             <p class="screen-eyebrow">KHÁCH HÀNG TIỀM NĂNG</p>
                             <h1>Khách hàng tiềm năng</h1>
-                            <p>Quản lý hồ sơ, nhu cầu, nguồn đăng ký, người phụ trách và lịch sử chăm sóc khách hàng.</p>
+                            <p>
+                                Quản lý hồ sơ, nhu cầu, nguồn đăng ký, người phụ
+                                trách và lịch sử chăm sóc khách hàng.
+                            </p>
                         </div>
                         <div class="screen-heading-actions">
                             <button
@@ -69,8 +400,7 @@
                             ></span>
                             <div>
                                 <span>Tổng khách tiềm năng</span
-                                ><strong>7</strong
-                                ><small>Từ 3 dự án</small>
+                                ><strong>7</strong><small>Từ 3 dự án</small>
                             </div>
                         </article>
                         <article class="screen-stat">
@@ -105,8 +435,7 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>Khách đủ điều kiện</span
-                                ><strong>3</strong
+                                <span>Khách đủ điều kiện</span><strong>3</strong
                                 ><small>Có nhu cầu và ngân sách phù hợp</small>
                             </div>
                         </article>
@@ -114,10 +443,13 @@
                     <section class="panel screen-panel">
                         <div class="screen-panel-head">
                             <div>
-                                <span class="panel-kicker">HỒ SƠ KHÁCH TIỀM NĂNG</span>
+                                <span class="panel-kicker"
+                                    >HỒ SƠ KHÁCH TIỀM NĂNG</span
+                                >
                                 <h2>Danh sách khách hàng tiềm năng</h2>
                                 <p>
-                                    Tìm kiếm, phân công và xem các lần tương tác mới nhất.
+                                    Tìm kiếm, phân công và xem các lần tương tác
+                                    mới nhất.
                                 </p>
                             </div>
                             <div class="screen-filter lead-filters">
@@ -130,27 +462,57 @@
                                         type="search"
                                         data-filter="leads"
                                         placeholder="Tên, số điện thoại, dự án" /></label
-                                    ><select data-lead-project-filter aria-label="Lọc theo dự án">
+                                ><select
+                                    data-lead-project-filter
+                                    aria-label="Lọc theo dự án"
+                                >
                                     <option value="">Tất cả dự án</option>
-                                    <option value="AP-026">An Phú Riverside</option>
+                                    <option value="AP-026">
+                                        An Phú Riverside
+                                    </option>
                                     <option value="GV-014">Green Valley</option>
-                                    <option value="CP-008">Central Park Towers</option>
-                                    <option value="LG-031">Lumière Garden</option>
+                                    <option value="CP-008">
+                                        Central Park Towers
+                                    </option>
+                                    <option value="LG-031">
+                                        Lumière Garden
+                                    </option>
                                 </select>
-                                <select data-lead-source-filter aria-label="Lọc theo nguồn">
+                                <select
+                                    data-lead-source-filter
+                                    aria-label="Lọc theo nguồn"
+                                >
                                     <option value="">Tất cả nguồn</option>
-                                    <option value="Google Ads · UTM">Google Ads · UTM</option>
-                                    <option value="SEO · Customer website">SEO · Customer website</option>
-                                    <option value="QR · Sự kiện mở bán">QR · Sự kiện mở bán</option>
-                                    <option value="Meta · Campaign T10">Meta · Campaign T10</option>
+                                    <option value="Google Ads · UTM">
+                                        Google Ads · UTM
+                                    </option>
+                                    <option value="SEO · Customer website">
+                                        SEO · Customer website
+                                    </option>
+                                    <option value="QR · Sự kiện mở bán">
+                                        QR · Sự kiện mở bán
+                                    </option>
+                                    <option value="Meta · Campaign T10">
+                                        Meta · Campaign T10
+                                    </option>
                                 </select>
-                                <select data-lead-owner-filter aria-label="Lọc theo người phụ trách">
-                                    <option value="">Tất cả người phụ trách</option>
-                                    <option value="Trần Thanh Long">Trần Thanh Long</option>
+                                <select
+                                    data-lead-owner-filter
+                                    aria-label="Lọc theo người phụ trách"
+                                >
+                                    <option value="">
+                                        Tất cả người phụ trách
+                                    </option>
+                                    <option value="Trần Thanh Long">
+                                        Trần Thanh Long
+                                    </option>
                                     <option value="Quỳnh Dao">Quỳnh Dao</option>
                                     <option value="Mai Ngọc">Mai Ngọc</option>
                                 </select>
-                                <select data-lead-status-filter aria-label="Lọc theo trạng thái">
+                                <select
+                                    data-lead-status-filter
+                                    aria-label="Lọc theo trạng thái"
+                                >
                                     <option>Tất cả trạng thái</option>
                                     <option>Chưa liên hệ</option>
                                     <option>Đang tư vấn</option>
@@ -159,7 +521,13 @@
                                     <option>Đã giao dịch</option>
                                     <option>Không phù hợp</option>
                                 </select>
-                                <button class="button button-quiet lead-filter-reset" type="button" data-clear-lead-filters>Xóa lọc</button>
+                                <button
+                                    class="button button-quiet lead-filter-reset"
+                                    type="button"
+                                    data-clear-lead-filters
+                                >
+                                    Xóa lọc
+                                </button>
                             </div>
                         </div>
                         <div class="screen-table-wrap">
@@ -174,8 +542,20 @@
                                         <th>Hoạt động gần nhất</th>
                                     </tr>
                                 </thead>
-                                <tbody id="leadTableBody" data-static-demo="true">
-                                    <tr data-customer-id="anh" data-project="AP-026" data-form-id="consult" data-product-id="unit-ap-a2-1208" data-campaign-id="campaign-an-phu-launch-1" data-source="Google Ads · UTM" data-owner="Trần Thanh Long" data-owner-id="staff-long">
+                                <tbody
+                                    id="leadTableBody"
+                                    data-static-demo="true"
+                                >
+                                    <tr
+                                        data-customer-id="anh"
+                                        data-project="AP-026"
+                                        data-form-id="consult"
+                                        data-product-id="unit-ap-a2-1208"
+                                        data-campaign-id="campaign-an-phu-launch-1"
+                                        data-source="Google Ads · UTM"
+                                        data-owner="Trần Thanh Long"
+                                        data-owner-id="staff-long"
+                                    >
                                         <td>
                                             <span class="screen-entity"
                                                 ><span
@@ -186,7 +566,11 @@
                                                     ></i></span
                                                 ><span
                                                     ><strong
-                                                        ><a class="customer-link" href="customer-detail.html?id=anh">Nguyễn Ngọc Anh</a></strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=anh"
+                                                            >Nguyễn Ngọc Anh</a
+                                                        ></strong
                                                     ><small
                                                         >0903 456 218 · Khách
                                                         mới</small
@@ -204,7 +588,16 @@
                                         <td>Trần Thanh Long</td>
                                         <td>Hôm nay · 08:45</td>
                                     </tr>
-                                    <tr data-customer-id="khoa" data-project="GV-014" data-form-id="price" data-product-id="unit-gv-n08-06" data-campaign-id="campaign-green-valley-organic" data-source="SEO · Customer website" data-owner="Quỳnh Dao" data-owner-id="staff-quynh">
+                                    <tr
+                                        data-customer-id="khoa"
+                                        data-project="GV-014"
+                                        data-form-id="price"
+                                        data-product-id="unit-gv-n08-06"
+                                        data-campaign-id="campaign-green-valley-organic"
+                                        data-source="SEO · Customer website"
+                                        data-owner="Quỳnh Dao"
+                                        data-owner-id="staff-quynh"
+                                    >
                                         <td>
                                             <span class="screen-entity"
                                                 ><span
@@ -215,7 +608,11 @@
                                                     ></i></span
                                                 ><span
                                                     ><strong
-                                                        ><a class="customer-link" href="customer-detail.html?id=khoa">Trần Minh Khoa</a></strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=khoa"
+                                                            >Trần Minh Khoa</a
+                                                        ></strong
                                                     ><small
                                                         >0918 224 760 · Khách
                                                         quay lại</small
@@ -233,7 +630,16 @@
                                         <td>Quỳnh Dao</td>
                                         <td>Hôm qua · 16:20</td>
                                     </tr>
-                                    <tr data-customer-id="yen" data-project="CP-008" data-form-id="viewing" data-product-id="unit-cp-b1-0803" data-campaign-id="campaign-central-park-event" data-source="QR · Sự kiện mở bán" data-owner="Mai Ngọc" data-owner-id="staff-mai">
+                                    <tr
+                                        data-customer-id="yen"
+                                        data-project="CP-008"
+                                        data-form-id="viewing"
+                                        data-product-id="unit-cp-b1-0803"
+                                        data-campaign-id="campaign-central-park-event"
+                                        data-source="QR · Sự kiện mở bán"
+                                        data-owner="Mai Ngọc"
+                                        data-owner-id="staff-mai"
+                                    >
                                         <td>
                                             <span class="screen-entity"
                                                 ><span
@@ -244,9 +650,14 @@
                                                     ></i></span
                                                 ><span
                                                     ><strong
-                                                        ><a class="customer-link" href="customer-detail.html?id=yen">Lê Hoàng Yến</a></strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=yen"
+                                                            >Lê Hoàng Yến</a
+                                                        ></strong
                                                     ><small
-                                                        >0987 332 104 · Đã giao dịch</small
+                                                        >0987 332 104 · Đã giao
+                                                        dịch</small
                                                     ></span
                                                 ></span
                                             >
@@ -261,7 +672,16 @@
                                         <td>Mai Ngọc</td>
                                         <td>Hôm qua · 14:10</td>
                                     </tr>
-                                    <tr data-customer-id="bao" data-project="AP-026" data-form-id="consult" data-product-id="unit-ap-a2-1210" data-campaign-id="campaign-an-phu-meta-oct" data-source="Meta · Campaign T10" data-owner="Trần Thanh Long" data-owner-id="staff-long">
+                                    <tr
+                                        data-customer-id="bao"
+                                        data-project="AP-026"
+                                        data-form-id="consult"
+                                        data-product-id="unit-ap-a2-1210"
+                                        data-campaign-id="campaign-an-phu-meta-oct"
+                                        data-source="Meta · Campaign T10"
+                                        data-owner="Trần Thanh Long"
+                                        data-owner-id="staff-long"
+                                    >
                                         <td>
                                             <span class="screen-entity"
                                                 ><span
@@ -272,7 +692,11 @@
                                                     ></i></span
                                                 ><span
                                                     ><strong
-                                                        ><a class="customer-link" href="customer-detail.html?id=bao">Phạm Quốc Bảo</a></strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=bao"
+                                                            >Phạm Quốc Bảo</a
+                                                        ></strong
                                                     ><small
                                                         >0908 113 624 · Khách
                                                         quay lại</small
@@ -290,48 +714,260 @@
                                         <td>Trần Thanh Long</td>
                                         <td>20/10 · 11:35</td>
                                     </tr>
-                                    <tr data-customer-id="nam" data-project="GV-014" data-form-id="price" data-product-id="unit-gv-n08-06" data-campaign-id="campaign-green-valley-organic" data-source="SEO · Customer website" data-owner="Quỳnh Dao" data-owner-id="staff-quynh">
-                                        <td><span class="screen-entity"><span class="screen-entity-icon green"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><strong><a class="customer-link" href="customer-detail.html?id=nam">Võ Hoàng Nam</a></strong><small>0912 440 580 · Khách mới</small></span></span></td>
-                                        <td>Nhà phố · 8–9 tỷ</td><td>SEO · Customer website</td><td><span class="screen-badge blue">Đang tư vấn</span></td><td>Quỳnh Dao</td><td>Hôm nay · 09:10</td>
+                                    <tr
+                                        data-customer-id="nam"
+                                        data-project="GV-014"
+                                        data-form-id="price"
+                                        data-product-id="unit-gv-n08-06"
+                                        data-campaign-id="campaign-green-valley-organic"
+                                        data-source="SEO · Customer website"
+                                        data-owner="Quỳnh Dao"
+                                        data-owner-id="staff-quynh"
+                                    >
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon green"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=nam"
+                                                            >Võ Hoàng Nam</a
+                                                        ></strong
+                                                    ><small
+                                                        >0912 440 580 · Khách
+                                                        mới</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Nhà phố · 8–9 tỷ</td>
+                                        <td>SEO · Customer website</td>
+                                        <td>
+                                            <span class="screen-badge blue"
+                                                >Đang tư vấn</span
+                                            >
+                                        </td>
+                                        <td>Quỳnh Dao</td>
+                                        <td>Hôm nay · 09:10</td>
                                     </tr>
-                                    <tr data-customer-id="dat" data-project="AP-026" data-form-id="consult" data-product-id="unit-ap-a2-1506" data-campaign-id="campaign-an-phu-meta-oct" data-source="Meta · Campaign T10" data-owner="Trần Thanh Long" data-owner-id="staff-long">
-                                        <td><span class="screen-entity"><span class="screen-entity-icon blue"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><strong><a class="customer-link" href="customer-detail.html?id=dat">Võ Thành Đạt</a></strong><small>0903 123 179 · Đã giao dịch</small></span></span></td>
-                                        <td>Căn hộ 2 phòng ngủ</td><td>Meta · Campaign T10</td><td><span class="screen-badge green">Đã giao dịch</span></td><td>Trần Thanh Long</td><td>20/10 · 14:00</td>
+                                    <tr
+                                        data-customer-id="dat"
+                                        data-project="AP-026"
+                                        data-form-id="consult"
+                                        data-product-id="unit-ap-a2-1506"
+                                        data-campaign-id="campaign-an-phu-meta-oct"
+                                        data-source="Meta · Campaign T10"
+                                        data-owner="Trần Thanh Long"
+                                        data-owner-id="staff-long"
+                                    >
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon blue"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=dat"
+                                                            >Võ Thành Đạt</a
+                                                        ></strong
+                                                    ><small
+                                                        >0903 123 179 · Đã giao
+                                                        dịch</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Căn hộ 2 phòng ngủ</td>
+                                        <td>Meta · Campaign T10</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Đã giao dịch</span
+                                            >
+                                        </td>
+                                        <td>Trần Thanh Long</td>
+                                        <td>20/10 · 14:00</td>
                                     </tr>
-                                    <tr data-customer-id="ha" data-project="GV-014" data-form-id="price" data-product-id="unit-gv-n08-05" data-campaign-id="campaign-green-valley-organic" data-source="SEO · Customer website" data-owner="Quỳnh Dao" data-owner-id="staff-quynh">
-                                        <td><span class="screen-entity"><span class="screen-entity-icon green"><i class="fa-solid fa-user" aria-hidden="true"></i></span><span><strong><a class="customer-link" href="customer-detail.html?id=ha">Nguyễn Thu Hà</a></strong><small>0903 123 168 · Đã giao dịch</small></span></span></td>
-                                        <td>Nhà phố</td><td>SEO · Customer website</td><td><span class="screen-badge green">Đã giao dịch</span></td><td>Quỳnh Dao</td><td>18/10 · 15:00</td>
+                                    <tr
+                                        data-customer-id="ha"
+                                        data-project="GV-014"
+                                        data-form-id="price"
+                                        data-product-id="unit-gv-n08-05"
+                                        data-campaign-id="campaign-green-valley-organic"
+                                        data-source="SEO · Customer website"
+                                        data-owner="Quỳnh Dao"
+                                        data-owner-id="staff-quynh"
+                                    >
+                                        <td>
+                                            <span class="screen-entity"
+                                                ><span
+                                                    class="screen-entity-icon green"
+                                                    ><i
+                                                        class="fa-solid fa-user"
+                                                        aria-hidden="true"
+                                                    ></i></span
+                                                ><span
+                                                    ><strong
+                                                        ><a
+                                                            class="customer-link"
+                                                            href="customer-detail.html?id=ha"
+                                                            >Nguyễn Thu Hà</a
+                                                        ></strong
+                                                    ><small
+                                                        >0903 123 168 · Đã giao
+                                                        dịch</small
+                                                    ></span
+                                                ></span
+                                            >
+                                        </td>
+                                        <td>Nhà phố</td>
+                                        <td>SEO · Customer website</td>
+                                        <td>
+                                            <span class="screen-badge green"
+                                                >Đã giao dịch</span
+                                            >
+                                        </td>
+                                        <td>Quỳnh Dao</td>
+                                        <td>18/10 · 15:00</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </section>
-                    <footer class="dashboard-footer"><span>LANDIFORM · An Phát Land</span><span>Khách hàng tiềm năng</span><a href="support.html">Trung tâm hỗ trợ</a></footer>
+                    <footer class="dashboard-footer">
+                        <span>LANDIFORM · An Phát Land</span
+                        ><span>Khách hàng tiềm năng</span
+                        ><a href="support.html">Trung tâm hỗ trợ</a>
+                    </footer>
                 </div>
             </main>
         </div>
         <div class="modal-backdrop" id="leadModal" hidden>
-            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
-                <button class="modal-close" type="button" data-lead-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-user-plus" aria-hidden="true"></i></span>
+            <section
+                class="project-edit-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="leadModalTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-lead-close
+                    aria-label="Đóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-user-plus" aria-hidden="true"></i
+                ></span>
                 <h2 id="leadModalTitle">Thêm khách tiềm năng</h2>
-                <p>Lưu một hồ sơ chung để đội ngũ theo dõi nhu cầu và các lần trao đổi.</p>
+                <p>
+                    Lưu một hồ sơ chung để đội ngũ theo dõi nhu cầu và các lần
+                    trao đổi.
+                </p>
                 <form id="leadForm" class="project-edit-form">
-                    <label for="leadName">Họ và tên</label><input id="leadName" name="name" autocomplete="name" required placeholder="Nhập họ tên khách hàng" />
+                    <label for="leadName">Họ và tên</label
+                    ><input
+                        id="leadName"
+                        name="name"
+                        autocomplete="name"
+                        required
+                        placeholder="Nhập họ tên khách hàng"
+                    />
                     <div class="project-form-row">
-                        <div><label for="leadPhone">Số điện thoại</label><input id="leadPhone" name="phone" type="tel" autocomplete="tel" required placeholder="Nhập số điện thoại" /></div>
-                        <div><label for="leadEmail">Email</label><input id="leadEmail" name="email" type="email" autocomplete="email" placeholder="Nếu khách có email" /></div>
+                        <div>
+                            <label for="leadPhone">Số điện thoại</label
+                            ><input
+                                id="leadPhone"
+                                name="phone"
+                                type="tel"
+                                autocomplete="tel"
+                                required
+                                placeholder="Nhập số điện thoại"
+                            />
+                        </div>
+                        <div>
+                            <label for="leadEmail">Email</label
+                            ><input
+                                id="leadEmail"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="Nếu khách có email"
+                            />
+                        </div>
                     </div>
                     <div class="project-form-row">
-                        <div><label for="leadProject">Dự án quan tâm</label><select id="leadProject" name="project" required><option value="">Chọn dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
-                        <div><label for="leadOwner">Người phụ trách</label><select id="leadOwner" name="owner"><option>Trần Thanh Long</option><option>Quỳnh Dao</option><option>Mai Ngọc</option><option>Minh Anh</option></select></div>
+                        <div>
+                            <label for="leadProject">Dự án quan tâm</label
+                            ><select id="leadProject" name="project" required>
+                                <option value="">Chọn dự án</option>
+                                <option value="AP-026">An Phú Riverside</option>
+                                <option value="GV-014">Green Valley</option>
+                                <option value="CP-008">
+                                    Central Park Towers
+                                </option>
+                                <option value="LG-031">Lumière Garden</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="leadOwner">Người phụ trách</label
+                            ><select id="leadOwner" name="owner">
+                                <option>Trần Thanh Long</option>
+                                <option>Quỳnh Dao</option>
+                                <option>Mai Ngọc</option>
+                                <option>Minh Anh</option>
+                            </select>
+                        </div>
                     </div>
-                    <label for="leadNeed">Nhu cầu</label><input id="leadNeed" name="need" required placeholder="Ví dụ: Căn hộ 2 phòng ngủ" />
+                    <label for="leadNeed">Nhu cầu</label
+                    ><input
+                        id="leadNeed"
+                        name="need"
+                        required
+                        placeholder="Ví dụ: Căn hộ 2 phòng ngủ"
+                    />
                     <div class="project-form-row">
-                        <div><label for="leadBudget">Ngân sách dự kiến</label><input id="leadBudget" name="budget" placeholder="Ví dụ: 3–4 tỷ" /></div>
-                        <div><label for="leadSource">Nguồn tiếp nhận</label><select id="leadSource" name="source"><option>Customer website</option><option>Biểu mẫu đăng ký</option><option>Mã QR sự kiện</option><option>Gọi điện</option><option>Giới thiệu</option></select></div>
+                        <div>
+                            <label for="leadBudget">Ngân sách dự kiến</label
+                            ><input
+                                id="leadBudget"
+                                name="budget"
+                                placeholder="Ví dụ: 3–4 tỷ"
+                            />
+                        </div>
+                        <div>
+                            <label for="leadSource">Nguồn tiếp nhận</label
+                            ><select id="leadSource" name="source">
+                                <option>Customer website</option>
+                                <option>Biểu mẫu đăng ký</option>
+                                <option>Mã QR sự kiện</option>
+                                <option>Gọi điện</option>
+                                <option>Giới thiệu</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="modal-actions"><button class="button button-secondary" type="button" data-lead-close>Hủy</button><button class="button button-primary" type="submit">Lưu khách hàng</button></div>
+                    <div class="modal-actions">
+                        <button
+                            class="button button-secondary"
+                            type="button"
+                            data-lead-close
+                        >
+                            Hủy</button
+                        ><button class="button button-primary" type="submit">
+                            Lưu khách hàng
+                        </button>
+                    </div>
                 </form>
             </section>
         </div>
@@ -341,10 +977,7 @@
             role="status"
             aria-live="polite"
         ></div>
-    <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-    <script src="../public/js/leads.js?v=20261027-lead-summary-v1"></script>
-</body>
+
+        <script src="../public/js/admin.js"></script>
+    </body>
 </html>
-
-
-

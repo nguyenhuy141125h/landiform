@@ -18,32 +18,363 @@
             rel="stylesheet"
             href="../../website/public/css/fontawesome.min.css"
         />
-        <link rel="stylesheet" href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1" />
-        <link rel="stylesheet" href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1" />
-        <link rel="stylesheet" href="../public/css/admin-selects.css?v=20261026-native-popup-v3" />
-<link rel="stylesheet" href="../public/css/notifications.css" />
-</head>
+        <link
+            rel="stylesheet"
+            href="../public/css/dashboard.css?v=20261027-menu-group-icons-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-screens.css?v=20261027-topbar-line-fix-v1"
+        />
+        <link
+            rel="stylesheet"
+            href="../public/css/admin-selects.css?v=20261026-native-popup-v3"
+        />
+        <link rel="stylesheet" href="../public/css/notifications.css" />
+    </head>
     <body class="dashboard-body">
         <div class="app-shell">
-            <aside class="sidebar nav-ready" id="sidebar" aria-label="Điều hướng quản trị"><a class="brand" href="../index.html" aria-label="LANDIFORM - Tổng quan"><span class="brand-mark"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="brand-name">LANDI<span>FORM</span></span></a>
-<div class="workspace-switch" role="button" tabindex="0" aria-haspopup="menu" aria-expanded="false" aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"><span class="workspace-avatar">AP</span><span class="workspace-copy"><strong>An Phát Land</strong><small>Chi nhánh Hồ Chí Minh</small></span><i class="fa-solid fa-chevron-down workspace-switch-arrow" aria-hidden="true"></i></div><div class="workspace-branch-menu" role="menu" hidden><button type="button" class="workspace-branch-option is-selected" role="menuitemradio" aria-checked="true" data-branch-option="hcm">Chi nhánh Hồ Chí Minh</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="hanoi">Chi nhánh Hà Nội</button><button type="button" class="workspace-branch-option" role="menuitemradio" aria-checked="false" data-branch-option="all">Toàn bộ hệ thống</button></div>
-<nav class="main-nav sidebar-overview" aria-label="Tổng quan"><a class="nav-link" href="../index.html"><i class="fa-solid fa-table-cells-large" aria-hidden="true"></i><span>Tổng quan</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-building" aria-hidden="true"></i><span class="nav-label-text">Dự án &amp; sản phẩm</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Dự án và sản phẩm"><a class="nav-link" href="projects.html"><span>Dự án</span></a><a class="nav-link" href="categories.html"><span>Danh mục sản phẩm</span></a><a class="nav-link" href="booking.html"><span>Sản phẩm dự án</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-user-group" aria-hidden="true"></i><span class="nav-label-text">Khách hàng &amp; tiếp thị</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Khách hàng và tiếp thị"><a class="nav-link" href="leads.html"><span>Khách hàng tiềm năng</span></a><a class="nav-link" href="forms.html"><span>Biểu mẫu &amp; mã QR</span></a><a class="nav-link" href="campaigns.html"><span>Chiến dịch tiếp thị</span></a></nav></details>
-<nav class="main-nav sidebar-overview" aria-label="Lịch hẹn và công việc"><a class="nav-link is-active" href="workflow.html" aria-current="page"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i><span>Công việc &amp; lịch hẹn</span></a></nav>
-<nav class="main-nav sidebar-overview" aria-label="Người mua và bàn giao"><a class="nav-link" href="buyers.html"><i class="fa-solid fa-handshake" aria-hidden="true"></i><span>Người mua &amp; bàn giao</span></a></nav>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-users" aria-hidden="true"></i><span class="nav-label-text">Đội ngũ</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Đội ngũ"><a class="nav-link" href="team.html?type=management"><span>Admin</span></a><a class="nav-link" href="team.html?type=employee"><span>Nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-chart-pie" aria-hidden="true"></i><span class="nav-label-text">Báo cáo</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Báo cáo"><a class="nav-link" href="reports.html"><span>Báo cáo hoạt động</span></a><a class="nav-link" href="staff-reports.html"><span>Báo cáo nhân viên</span></a></nav></details>
-<details class="nav-group"><summary class="nav-label"><i class="nav-label-icon fa-solid fa-gear" aria-hidden="true"></i><span class="nav-label-text">Hệ thống</span><i class="fa-solid fa-chevron-down nav-group-chevron" aria-hidden="true"></i></summary><nav class="main-nav" aria-label="Thiết lập hệ thống và nội dung"><a class="nav-link" href="permissions.html"><span>Phân quyền</span></a><a class="nav-link" href="settings.html"><span>Thông tin doanh nghiệp</span></a><a class="nav-link" href="articles.html"><span>Cẩm nang</span></a><a class="nav-link" href="account.html"><span>Tài khoản cá nhân</span></a></nav></details>
-<div class="sidebar-bottom"><a class="sidebar-support" href="support.html"><i class="fa-solid fa-circle-question" aria-hidden="true"></i><span>Trung tâm hỗ trợ</span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a></div></aside>
+            <aside
+                class="sidebar nav-ready"
+                id="sidebar"
+                aria-label="Điều hướng quản trị"
+            >
+                <a
+                    class="brand"
+                    href="../index.html"
+                    aria-label="LANDIFORM - Tổng quan"
+                    ><span class="brand-mark"
+                        ><i
+                            class="fa-solid fa-city"
+                            aria-hidden="true"
+                        ></i></span
+                    ><span class="brand-name">LANDI<span>FORM</span></span></a
+                >
+                <div
+                    class="workspace-switch"
+                    role="button"
+                    tabindex="0"
+                    aria-haspopup="menu"
+                    aria-expanded="false"
+                    aria-label="Chọn chi nhánh hoặc phạm vi hệ thống"
+                >
+                    <span class="workspace-avatar">AP</span
+                    ><span class="workspace-copy"
+                        ><strong>An Phát Land</strong
+                        ><small>Chi nhánh Hồ Chí Minh</small></span
+                    ><i
+                        class="fa-solid fa-chevron-down workspace-switch-arrow"
+                        aria-hidden="true"
+                    ></i>
+                </div>
+                <div class="workspace-branch-menu" role="menu" hidden>
+                    <button
+                        type="button"
+                        class="workspace-branch-option is-selected"
+                        role="menuitemradio"
+                        aria-checked="true"
+                        data-branch-option="hcm"
+                    >
+                        Chi nhánh Hồ Chí Minh</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="hanoi"
+                    >
+                        Chi nhánh Hà Nội</button
+                    ><button
+                        type="button"
+                        class="workspace-branch-option"
+                        role="menuitemradio"
+                        aria-checked="false"
+                        data-branch-option="all"
+                    >
+                        Toàn bộ hệ thống
+                    </button>
+                </div>
+                <nav class="main-nav sidebar-overview" aria-label="Tổng quan">
+                    <a class="nav-link" href="../index.html"
+                        ><i
+                            class="fa-solid fa-table-cells-large"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Tổng quan</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-building"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Dự án &amp; sản phẩm</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Dự án và sản phẩm">
+                        <a class="nav-link" href="projects.html"
+                            ><span>Dự án</span></a
+                        ><a class="nav-link" href="categories.html"
+                            ><span>Danh mục sản phẩm</span></a
+                        ><a class="nav-link" href="booking.html"
+                            ><span>Sản phẩm dự án</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-user-group"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text"
+                            >Khách hàng &amp; tiếp thị</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Khách hàng và tiếp thị">
+                        <a class="nav-link" href="leads.html"
+                            ><span>Khách hàng tiềm năng</span></a
+                        ><a class="nav-link" href="forms.html"
+                            ><span>Biểu mẫu &amp; mã QR</span></a
+                        ><a class="nav-link" href="campaigns.html"
+                            ><span>Chiến dịch tiếp thị</span></a
+                        >
+                    </nav>
+                </details>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Lịch hẹn và công việc"
+                >
+                    <a
+                        class="nav-link is-active"
+                        href="workflow.html"
+                        aria-current="page"
+                        ><i
+                            class="fa-solid fa-calendar-check"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Công việc &amp; lịch hẹn</span></a
+                    >
+                </nav>
+                <nav
+                    class="main-nav sidebar-overview"
+                    aria-label="Người mua và bàn giao"
+                >
+                    <a class="nav-link" href="buyers.html"
+                        ><i class="fa-solid fa-handshake" aria-hidden="true"></i
+                        ><span>Người mua &amp; bàn giao</span></a
+                    >
+                </nav>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-users"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Đội ngũ</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Đội ngũ">
+                        <a class="nav-link" href="team.html?type=management"
+                            ><span>Admin</span></a
+                        ><a class="nav-link" href="team.html?type=employee"
+                            ><span>Nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-chart-pie"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Báo cáo</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav class="main-nav" aria-label="Báo cáo">
+                        <a class="nav-link" href="reports.html"
+                            ><span>Báo cáo hoạt động</span></a
+                        ><a class="nav-link" href="staff-reports.html"
+                            ><span>Báo cáo nhân viên</span></a
+                        >
+                    </nav>
+                </details>
+                <details class="nav-group">
+                    <summary class="nav-label">
+                        <i
+                            class="nav-label-icon fa-solid fa-gear"
+                            aria-hidden="true"
+                        ></i
+                        ><span class="nav-label-text">Hệ thống</span
+                        ><i
+                            class="fa-solid fa-chevron-down nav-group-chevron"
+                            aria-hidden="true"
+                        ></i>
+                    </summary>
+                    <nav
+                        class="main-nav"
+                        aria-label="Thiết lập hệ thống và nội dung"
+                    >
+                        <a class="nav-link" href="permissions.html"
+                            ><span>Phân quyền</span></a
+                        ><a class="nav-link" href="settings.html"
+                            ><span>Thông tin doanh nghiệp</span></a
+                        ><a class="nav-link" href="articles.html"
+                            ><span>Cẩm nang</span></a
+                        ><a class="nav-link" href="account.html"
+                            ><span>Tài khoản cá nhân</span></a
+                        >
+                    </nav>
+                </details>
+                <div class="sidebar-bottom">
+                    <a class="sidebar-support" href="support.html"
+                        ><i
+                            class="fa-solid fa-circle-question"
+                            aria-hidden="true"
+                        ></i
+                        ><span>Trung tâm hỗ trợ</span
+                        ><i
+                            class="fa-solid fa-arrow-up-right-from-square"
+                            aria-hidden="true"
+                        ></i
+                    ></a>
+                </div>
+            </aside>
             <main class="main-panel">
-                <header class="topbar"><button class="icon-button mobile-menu" id="menuToggle" type="button" aria-label="Mở menu" aria-expanded="false"><i class="fa-solid fa-bars" aria-hidden="true"></i></button><div class="breadcrumbs"><span>An Phát Land</span><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><strong>Công việc & lịch hẹn</strong></div><div class="topbar-actions"><label class="global-search"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><input id="globalSearch" type="search" placeholder="Tìm trong trang này..." aria-label="Tìm trong trang hiện tại" /></label><div class="topbar-account-actions"><a class="account-switch" href="account.html" aria-label="Mở thông tin tài khoản"><span class="account-avatar">MA</span><span class="account-copy"><strong>Minh Anh</strong><small>Quản lý kinh doanh</small></span><i class="fa-solid fa-gear" aria-hidden="true"></i></a><a class="account-logout" href="../login.html" data-account-logout="true" aria-label="Đăng xuất" title="Đăng xuất"><i class="fa-solid fa-arrow-right-from-bracket" aria-hidden="true"></i><span>Đăng xuất</span></a></div><div class="notification-center"><button type="button" class="icon-button notification-button" aria-label="Mở thông báo" aria-haspopup="dialog" aria-expanded="false"><i class="fa-solid fa-bell" aria-hidden="true"></i><span class="notification-count" hidden></span></button><section class="notification-popover" hidden aria-label="Thông báo"><header class="notification-popover-head"><div><strong>Thông báo</strong><small data-notification-summary>Bạn đã xem hết thông báo</small></div><button type="button" data-notification-read>Đánh dấu đã đọc</button></header><div class="notification-list" data-notification-list><p class="notification-empty">Chưa có thông báo mới. Thông báo về khách hàng, công việc và lịch hẹn sẽ hiện ở đây.</p></div><a class="notification-footer" href="workflow.html">Mở công việc & lịch hẹn <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></section></div></div></header>
+                <header class="topbar">
+                    <button
+                        class="icon-button mobile-menu"
+                        id="menuToggle"
+                        type="button"
+                        aria-label="Mở menu"
+                        aria-expanded="false"
+                    >
+                        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <div class="breadcrumbs">
+                        <span>An Phát Land</span
+                        ><i
+                            class="fa-solid fa-chevron-right"
+                            aria-hidden="true"
+                        ></i
+                        ><strong>Công việc & lịch hẹn</strong>
+                    </div>
+                    <div class="topbar-actions">
+                        <label class="global-search"
+                            ><i
+                                class="fa-solid fa-magnifying-glass"
+                                aria-hidden="true"
+                            ></i
+                            ><input
+                                id="globalSearch"
+                                type="search"
+                                placeholder="Tìm trong trang này..."
+                                aria-label="Tìm trong trang hiện tại"
+                        /></label>
+                        <div class="topbar-account-actions">
+                            <a
+                                class="account-switch"
+                                href="account.html"
+                                aria-label="Mở thông tin tài khoản"
+                                ><span class="account-avatar">MA</span
+                                ><span class="account-copy"
+                                    ><strong>Minh Anh</strong
+                                    ><small>Quản lý kinh doanh</small></span
+                                ><i
+                                    class="fa-solid fa-gear"
+                                    aria-hidden="true"
+                                ></i></a
+                            ><a
+                                class="account-logout"
+                                href="../login.html"
+                                data-account-logout="true"
+                                aria-label="Đăng xuất"
+                                title="Đăng xuất"
+                                ><i
+                                    class="fa-solid fa-arrow-right-from-bracket"
+                                    aria-hidden="true"
+                                ></i
+                                ><span>Đăng xuất</span></a
+                            >
+                        </div>
+                        <div class="notification-center">
+                            <button
+                                type="button"
+                                class="icon-button notification-button"
+                                aria-label="Mở thông báo"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                            >
+                                <i
+                                    class="fa-solid fa-bell"
+                                    aria-hidden="true"
+                                ></i
+                                ><span class="notification-count" hidden></span>
+                            </button>
+                            <section
+                                class="notification-popover"
+                                hidden
+                                aria-label="Thông báo"
+                            >
+                                <header class="notification-popover-head">
+                                    <div>
+                                        <strong>Thông báo</strong
+                                        ><small data-notification-summary
+                                            >Bạn đã xem hết thông báo</small
+                                        >
+                                    </div>
+                                    <button
+                                        type="button"
+                                        data-notification-read
+                                    >
+                                        Đánh dấu đã đọc
+                                    </button>
+                                </header>
+                                <div
+                                    class="notification-list"
+                                    data-notification-list
+                                >
+                                    <p class="notification-empty">
+                                        Chưa có thông báo mới. Thông báo về
+                                        khách hàng, công việc và lịch hẹn sẽ
+                                        hiện ở đây.
+                                    </p>
+                                </div>
+                                <a
+                                    class="notification-footer"
+                                    href="workflow.html"
+                                    >Mở công việc & lịch hẹn
+                                    <i
+                                        class="fa-solid fa-arrow-right"
+                                        aria-hidden="true"
+                                    ></i
+                                ></a>
+                            </section>
+                        </div>
+                    </div>
+                </header>
                 <div class="dashboard-content screen-content">
                     <header class="screen-heading">
                         <div>
                             <p class="screen-eyebrow">CÔNG VIỆC</p>
                             <h1>Công việc & lịch hẹn</h1>
-                            <p>Giao việc, theo dõi hạn xử lý và lưu các lần liên hệ với khách hàng.</p>
+                            <p>
+                                Giao việc, theo dõi hạn xử lý và lưu các lần
+                                liên hệ với khách hàng.
+                            </p>
                         </div>
                         <div class="screen-heading-actions">
                             <button
@@ -105,62 +436,232 @@
                                 ></i
                             ></span>
                             <div>
-                                <span>Hoàn thành đúng hẹn</span><strong>94%</strong
+                                <span>Hoàn thành đúng hẹn</span
+                                ><strong>94%</strong
                                 ><small>Trong 30 ngày gần nhất</small>
                             </div>
                         </article>
                     </div>
 
-                    <section class="panel screen-panel appointment-panel" id="appointments">
+                    <section
+                        class="panel screen-panel appointment-panel"
+                        id="appointments"
+                    >
                         <div class="screen-panel-head appointment-panel-head">
                             <div>
-                                <span class="panel-kicker">LỊCH HẸN KHÁCH HÀNG</span>
+                                <span class="panel-kicker"
+                                    >LỊCH HẸN KHÁCH HÀNG</span
+                                >
                                 <h2>Lịch tư vấn, tham quan & bàn giao</h2>
-                                <p>Xếp lịch đón khách xem nhà, tư vấn, bàn giao và phân công người phụ trách.</p>
+                                <p>
+                                    Xếp lịch đón khách xem nhà, tư vấn, bàn giao
+                                    và phân công người phụ trách.
+                                </p>
                             </div>
                             <div class="appointment-head-actions">
-                                <a class="button button-quiet" href="team.html?type=employee&new=1"><i class="fa-solid fa-user-plus" aria-hidden="true"></i> Tạo nhân viên</a>
-                                <button class="button button-primary" type="button" data-appointment-open><i class="fa-solid fa-plus" aria-hidden="true"></i> Tạo lịch hẹn</button>
+                                <a
+                                    class="button button-quiet"
+                                    href="team.html?type=employee&new=1"
+                                    ><i
+                                        class="fa-solid fa-user-plus"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Tạo nhân viên</a
+                                >
+                                <button
+                                    class="button button-primary"
+                                    type="button"
+                                    data-appointment-open
+                                >
+                                    <i
+                                        class="fa-solid fa-plus"
+                                        aria-hidden="true"
+                                    ></i>
+                                    Tạo lịch hẹn
+                                </button>
                             </div>
                         </div>
                         <div class="appointment-calendar-toolbar">
                             <div class="appointment-calendar-navigation">
-                                <button class="button button-quiet" type="button" data-calendar-prev aria-label="Khoảng thời gian trước"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
-                                <button class="button button-secondary" type="button" data-calendar-today>Hôm nay</button>
-                                <button class="button button-quiet" type="button" data-calendar-next aria-label="Khoảng thời gian tiếp theo"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
+                                <button
+                                    class="button button-quiet"
+                                    type="button"
+                                    data-calendar-prev
+                                    aria-label="Khoảng thời gian trước"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-left"
+                                        aria-hidden="true"
+                                    ></i>
+                                </button>
+                                <button
+                                    class="button button-secondary"
+                                    type="button"
+                                    data-calendar-today
+                                >
+                                    Hôm nay
+                                </button>
+                                <button
+                                    class="button button-quiet"
+                                    type="button"
+                                    data-calendar-next
+                                    aria-label="Khoảng thời gian tiếp theo"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-right"
+                                        aria-hidden="true"
+                                    ></i>
+                                </button>
                             </div>
                             <h3 id="appointmentCalendarTitle"></h3>
                             <div class="appointment-calendar-options">
-                                <label class="calendar-staff-filter"><i class="fa-solid fa-user" aria-hidden="true"></i><select id="appointmentStaffFilter" aria-label="Lọc lịch theo nhân viên"><option value="">Tất cả nhân viên</option><option value="Trần Thanh Long">Trần Thanh Long</option><option value="Quỳnh Dao">Quỳnh Dao</option><option value="Mai Ngọc">Mai Ngọc</option></select></label>
-                                <div class="appointment-calendar-modes" role="group" aria-label="Chế độ xem lịch">
-                                    <button type="button" class="is-active" data-calendar-mode="month" aria-pressed="true">Tháng</button>
-                                    <button type="button" data-calendar-mode="week" aria-pressed="false">Tuần</button>
-                                    <button type="button" data-calendar-mode="day" aria-pressed="false">Ngày</button>
+                                <label class="calendar-staff-filter"
+                                    ><i
+                                        class="fa-solid fa-user"
+                                        aria-hidden="true"
+                                    ></i
+                                    ><select
+                                        id="appointmentStaffFilter"
+                                        aria-label="Lọc lịch theo nhân viên"
+                                    >
+                                        <option value="">
+                                            Tất cả nhân viên
+                                        </option>
+                                        <option value="Trần Thanh Long">
+                                            Trần Thanh Long
+                                        </option>
+                                        <option value="Quỳnh Dao">
+                                            Quỳnh Dao
+                                        </option>
+                                        <option value="Mai Ngọc">
+                                            Mai Ngọc
+                                        </option>
+                                    </select></label
+                                >
+                                <div
+                                    class="appointment-calendar-modes"
+                                    role="group"
+                                    aria-label="Chế độ xem lịch"
+                                >
+                                    <button
+                                        type="button"
+                                        class="is-active"
+                                        data-calendar-mode="month"
+                                        aria-pressed="true"
+                                    >
+                                        Tháng
+                                    </button>
+                                    <button
+                                        type="button"
+                                        data-calendar-mode="week"
+                                        aria-pressed="false"
+                                    >
+                                        Tuần
+                                    </button>
+                                    <button
+                                        type="button"
+                                        data-calendar-mode="day"
+                                        aria-pressed="false"
+                                    >
+                                        Ngày
+                                    </button>
                                 </div>
                             </div>
                         </div>
-                        <div class="appointment-calendar" id="appointmentCalendar" aria-label="Lịch phân công nhân viên"></div>
-                        <div class="appointment-calendar-legend" aria-label="Phân loại lịch">
-                            <span><i class="calendar-legend-dot consultation"></i>Tư vấn</span>
-                            <span><i class="calendar-legend-dot viewing"></i>Dẫn khách xem nhà</span>
-                            <span><i class="calendar-legend-dot handover"></i>Bàn giao</span>
+                        <div
+                            class="appointment-calendar"
+                            id="appointmentCalendar"
+                            aria-label="Lịch phân công nhân viên"
+                        ></div>
+                        <div
+                            class="appointment-calendar-legend"
+                            aria-label="Phân loại lịch"
+                        >
+                            <span
+                                ><i class="calendar-legend-dot consultation"></i
+                                >Tư vấn</span
+                            >
+                            <span
+                                ><i class="calendar-legend-dot viewing"></i>Dẫn
+                                khách xem nhà</span
+                            >
+                            <span
+                                ><i class="calendar-legend-dot handover"></i>Bàn
+                                giao</span
+                            >
                         </div>
                         <div class="appointment-toolbar">
-                            <div class="appointment-tabs" role="group" aria-label="Lọc lịch hẹn">
-                                <button class="is-active" type="button" data-appointment-view="upcoming" aria-pressed="true">Sắp tới <span id="appointmentUpcomingCount">0</span></button>
-                                <button type="button" data-appointment-view="unassigned" aria-pressed="false">Chưa phân công <span id="appointmentUnassignedCount">0</span></button>
-                                <button type="button" data-appointment-view="all" aria-pressed="false">Tất cả</button>
+                            <div
+                                class="appointment-tabs"
+                                role="group"
+                                aria-label="Lọc lịch hẹn"
+                            >
+                                <button
+                                    class="is-active"
+                                    type="button"
+                                    data-appointment-view="upcoming"
+                                    aria-pressed="true"
+                                >
+                                    Sắp tới
+                                    <span id="appointmentUpcomingCount">0</span>
+                                </button>
+                                <button
+                                    type="button"
+                                    data-appointment-view="unassigned"
+                                    aria-pressed="false"
+                                >
+                                    Chưa phân công
+                                    <span id="appointmentUnassignedCount"
+                                        >0</span
+                                    >
+                                </button>
+                                <button
+                                    type="button"
+                                    data-appointment-view="all"
+                                    aria-pressed="false"
+                                >
+                                    Tất cả
+                                </button>
                             </div>
-                            <select id="appointmentProjectFilter" aria-label="Lọc lịch theo dự án"><option value="">Tất cả dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select>
+                            <select
+                                id="appointmentProjectFilter"
+                                aria-label="Lọc lịch theo dự án"
+                            >
+                                <option value="">Tất cả dự án</option>
+                                <option value="AP-026">An Phú Riverside</option>
+                                <option value="GV-014">Green Valley</option>
+                                <option value="CP-008">
+                                    Central Park Towers
+                                </option>
+                                <option value="LG-031">Lumière Garden</option>
+                            </select>
                         </div>
                         <div class="screen-table-wrap">
                             <table class="screen-table appointment-table">
-                                <thead><tr><th>Ngày giờ</th><th>Khách hàng</th><th>Dự án & nội dung</th><th>Người phụ trách</th><th>Trạng thái</th><th>Thao tác</th></tr></thead>
-                                <tbody id="appointmentRows"><tr><td colspan="6">Đang tải lịch hẹn...</td></tr></tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Ngày giờ</th>
+                                        <th>Khách hàng</th>
+                                        <th>Dự án & nội dung</th>
+                                        <th>Người phụ trách</th>
+                                        <th>Trạng thái</th>
+                                        <th>Thao tác</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="appointmentRows">
+                                    <tr>
+                                        <td colspan="6">
+                                            Đang tải lịch hẹn...
+                                        </td>
+                                    </tr>
+                                </tbody>
                             </table>
                         </div>
                     </section>
-                    <div class="screen-columns workflow-agenda-layout" id="workAgenda">
+                    <div
+                        class="screen-columns workflow-agenda-layout"
+                        id="workAgenda"
+                    >
                         <section class="panel screen-panel">
                             <div class="screen-panel-head">
                                 <div>
@@ -169,8 +670,9 @@
                                     >
                                     <h2>Công việc cần làm</h2>
                                     <p>
-                                        Việc theo dõi khách như gọi lại, gửi thông tin
-                                        hoặc chuẩn bị tham quan. Lịch hẹn ở bảng phía trên.
+                                        Việc theo dõi khách như gọi lại, gửi
+                                        thông tin hoặc chuẩn bị tham quan. Lịch
+                                        hẹn ở bảng phía trên.
                                     </p>
                                 </div>
                                 <span class="screen-period">Việc sắp tới</span>
@@ -182,7 +684,8 @@
                                     <div>
                                         <strong>Gọi lại Nguyễn Ngọc Anh</strong
                                         ><small
-                                            >An Phú Riverside · Căn hộ 2 phòng ngủ · Phụ trách: Trần Thanh
+                                            >An Phú Riverside · Căn hộ 2 phòng
+                                            ngủ · Phụ trách: Trần Thanh
                                             Long</small
                                         >
                                     </div>
@@ -211,7 +714,8 @@
                                     ><span class="agenda-dot violet"></span>
                                     <div>
                                         <strong
-                                            >Chuẩn bị tài liệu tham quan nhà mẫu</strong
+                                            >Chuẩn bị tài liệu tham quan nhà
+                                            mẫu</strong
                                         ><small
                                             >Central Park Towers · Phụ trách:
                                             Mai Ngọc</small
@@ -238,77 +742,421 @@
                             </div>
                         </section>
                     </div>
-                    <footer class="dashboard-footer"><span>LANDIFORM · An Phát Land</span><span>Công việc & lịch hẹn</span><a href="support.html">Trung tâm hỗ trợ</a></footer>
+                    <footer class="dashboard-footer">
+                        <span>LANDIFORM · An Phát Land</span
+                        ><span>Công việc & lịch hẹn</span
+                        ><a href="support.html">Trung tâm hỗ trợ</a>
+                    </footer>
                 </div>
             </main>
         </div>
         <div class="modal-backdrop" id="appointmentModal" hidden>
-            <section class="project-edit-dialog appointment-dialog" role="dialog" aria-modal="true" aria-labelledby="appointmentModalTitle">
-                <button class="modal-close" type="button" data-appointment-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></span>
+            <section
+                class="project-edit-dialog appointment-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="appointmentModalTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-appointment-close
+                    aria-label="Đóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i
+                        class="fa-solid fa-calendar-check"
+                        aria-hidden="true"
+                    ></i
+                ></span>
                 <h2 id="appointmentModalTitle">Tạo lịch hẹn khách hàng</h2>
-                <p>Chọn khách, thời gian và người tư vấn. Có thể phân công sau nếu chưa chọn được người phù hợp.</p>
+                <p>
+                    Chọn khách, thời gian và người tư vấn. Có thể phân công sau
+                    nếu chưa chọn được người phù hợp.
+                </p>
                 <form id="appointmentForm" class="project-edit-form">
                     <input type="hidden" name="productId" />
-                    <div id="appointmentProductContext" hidden><label for="appointmentProductDisplay">Sản phẩm quan tâm</label><input id="appointmentProductDisplay" type="text" readonly /><small class="appointment-field-note">Lịch gọi sẽ được liên kết với sản phẩm này.</small></div>
-                    <div class="project-form-row">
-                        <div class="appointment-customer-picker"><label for="appointmentCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="appointmentCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="appointmentCustomerOptions" aria-haspopup="listbox" placeholder="Tìm theo tên hoặc số điện thoại" autocomplete="off" /><input id="appointmentCustomer" name="customer" type="hidden" /><div class="appointment-customer-options" id="appointmentCustomerOptions" role="listbox" hidden></div></div></div>
-                        <div><label for="appointmentProject">Dự án</label><select id="appointmentProject" name="project" required><option value="">Chọn dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
+                    <div id="appointmentProductContext" hidden>
+                        <label for="appointmentProductDisplay"
+                            >Sản phẩm quan tâm</label
+                        ><input
+                            id="appointmentProductDisplay"
+                            type="text"
+                            readonly
+                        /><small class="appointment-field-note"
+                            >Lịch gọi sẽ được liên kết với sản phẩm này.</small
+                        >
                     </div>
-                    <div class="appointment-new-customer-fields" id="appointmentNewCustomerFields" hidden>
-                        <p>Nhập thông tin liên hệ để tạo hồ sơ khách hàng tiềm năng và gắn lịch hẹn với hồ sơ đó.</p>
+                    <div class="project-form-row">
+                        <div class="appointment-customer-picker">
+                            <label for="appointmentCustomerSearch"
+                                >Khách hàng</label
+                            >
+                            <div class="appointment-customer-combo">
+                                <input
+                                    id="appointmentCustomerSearch"
+                                    type="search"
+                                    role="combobox"
+                                    aria-autocomplete="list"
+                                    aria-expanded="false"
+                                    aria-controls="appointmentCustomerOptions"
+                                    aria-haspopup="listbox"
+                                    placeholder="Tìm theo tên hoặc số điện thoại"
+                                    autocomplete="off"
+                                /><input
+                                    id="appointmentCustomer"
+                                    name="customer"
+                                    type="hidden"
+                                />
+                                <div
+                                    class="appointment-customer-options"
+                                    id="appointmentCustomerOptions"
+                                    role="listbox"
+                                    hidden
+                                ></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="appointmentProject">Dự án</label
+                            ><select
+                                id="appointmentProject"
+                                name="project"
+                                required
+                            >
+                                <option value="">Chọn dự án</option>
+                                <option value="AP-026">An Phú Riverside</option>
+                                <option value="GV-014">Green Valley</option>
+                                <option value="CP-008">
+                                    Central Park Towers
+                                </option>
+                                <option value="LG-031">Lumière Garden</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div
+                        class="appointment-new-customer-fields"
+                        id="appointmentNewCustomerFields"
+                        hidden
+                    >
+                        <p>
+                            Nhập thông tin liên hệ để tạo hồ sơ khách hàng tiềm
+                            năng và gắn lịch hẹn với hồ sơ đó.
+                        </p>
                         <div class="project-form-row">
-                            <div><label for="appointmentNewCustomerName">Họ và tên</label><input id="appointmentNewCustomerName" name="newCustomerName" autocomplete="name" placeholder="Ví dụ: Nguyễn Văn An" /></div>
-                            <div><label for="appointmentNewCustomerPhone">Số điện thoại</label><input id="appointmentNewCustomerPhone" name="newCustomerPhone" type="tel" autocomplete="tel" placeholder="Ví dụ: 0901 234 567" /></div>
+                            <div>
+                                <label for="appointmentNewCustomerName"
+                                    >Họ và tên</label
+                                ><input
+                                    id="appointmentNewCustomerName"
+                                    name="newCustomerName"
+                                    autocomplete="name"
+                                    placeholder="Ví dụ: Nguyễn Văn An"
+                                />
+                            </div>
+                            <div>
+                                <label for="appointmentNewCustomerPhone"
+                                    >Số điện thoại</label
+                                ><input
+                                    id="appointmentNewCustomerPhone"
+                                    name="newCustomerPhone"
+                                    type="tel"
+                                    autocomplete="tel"
+                                    placeholder="Ví dụ: 0901 234 567"
+                                />
+                            </div>
                         </div>
                         <div class="project-form-row">
-                            <div><label for="appointmentNewCustomerEmail">Email (không bắt buộc)</label><input id="appointmentNewCustomerEmail" name="newCustomerEmail" type="email" autocomplete="email" placeholder="ten@email.com" /></div>
-                            <div><label for="appointmentNewCustomerNeed">Nhu cầu quan tâm</label><input id="appointmentNewCustomerNeed" name="newCustomerNeed" placeholder="Ví dụ: Tìm căn hộ 2 phòng ngủ" /></div>
+                            <div>
+                                <label for="appointmentNewCustomerEmail"
+                                    >Email (không bắt buộc)</label
+                                ><input
+                                    id="appointmentNewCustomerEmail"
+                                    name="newCustomerEmail"
+                                    type="email"
+                                    autocomplete="email"
+                                    placeholder="ten@email.com"
+                                />
+                            </div>
+                            <div>
+                                <label for="appointmentNewCustomerNeed"
+                                    >Nhu cầu quan tâm</label
+                                ><input
+                                    id="appointmentNewCustomerNeed"
+                                    name="newCustomerNeed"
+                                    placeholder="Ví dụ: Tìm căn hộ 2 phòng ngủ"
+                                />
+                            </div>
                         </div>
                     </div>
                     <div class="project-form-row">
-                        <div><label for="appointmentStart">Ngày và giờ hẹn</label><input id="appointmentStart" name="start" type="datetime-local" required /></div>
-                        <div><label for="appointmentType">Hoạt động</label><select id="appointmentType" name="type"><option>Tư vấn tại văn phòng</option><option>Dẫn khách xem nhà</option><option>Tham quan nhà mẫu</option><option>Bàn giao nhà</option><option>Gửi tư vấn</option><option>Họp trực tuyến</option></select></div>
+                        <div>
+                            <label for="appointmentStart">Ngày và giờ hẹn</label
+                            ><input
+                                id="appointmentStart"
+                                name="start"
+                                type="datetime-local"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label for="appointmentType">Hoạt động</label
+                            ><select id="appointmentType" name="type">
+                                <option>Tư vấn tại văn phòng</option>
+                                <option>Dẫn khách xem nhà</option>
+                                <option>Tham quan nhà mẫu</option>
+                                <option>Bàn giao nhà</option>
+                                <option>Gửi tư vấn</option>
+                                <option>Họp trực tuyến</option>
+                            </select>
+                        </div>
                     </div>
-                    <label for="appointmentPlace">Địa điểm hoặc cách liên hệ</label><input id="appointmentPlace" name="place" maxlength="120" placeholder="Chọn hoạt động, địa điểm hoặc gợi ý" aria-describedby="appointmentPlaceHint" /><small class="appointment-field-note" id="appointmentPlaceHint">Gợi ý địa điểm sẽ thay đổi theo hoạt động.</small>
+                    <label for="appointmentPlace"
+                        >Địa điểm hoặc cách liên hệ</label
+                    ><input
+                        id="appointmentPlace"
+                        name="place"
+                        maxlength="120"
+                        placeholder="Chọn hoạt động, địa điểm hoặc gợi ý"
+                        aria-describedby="appointmentPlaceHint"
+                    /><small
+                        class="appointment-field-note"
+                        id="appointmentPlaceHint"
+                        >Gợi ý địa điểm sẽ thay đổi theo hoạt động.</small
+                    >
                     <div class="project-form-row">
-                        <div><label for="appointmentAssignee">Nhân viên phụ trách</label><select id="appointmentAssignee" name="assignee"><option value="">Chưa phân công</option></select><small class="appointment-field-note" id="appointmentAssigneeHint">Chọn dự án để xem nhân viên phù hợp.</small></div>
-                        <div><label for="appointmentStatus">Trạng thái</label><select id="appointmentStatus" name="status"><option>Chờ phân công</option><option>Đã phân công</option><option>Hoàn tất</option><option>Đã hủy</option></select></div>
+                        <div>
+                            <label for="appointmentAssignee"
+                                >Nhân viên phụ trách</label
+                            ><select id="appointmentAssignee" name="assignee">
+                                <option value="">Chưa phân công</option></select
+                            ><small
+                                class="appointment-field-note"
+                                id="appointmentAssigneeHint"
+                                >Chọn dự án để xem nhân viên phù hợp.</small
+                            >
+                        </div>
+                        <div>
+                            <label for="appointmentStatus">Trạng thái</label
+                            ><select id="appointmentStatus" name="status">
+                                <option>Chờ phân công</option>
+                                <option>Đã phân công</option>
+                                <option>Hoàn tất</option>
+                                <option>Đã hủy</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="modal-actions appointment-modal-actions"><button class="button button-danger" type="button" data-appointment-delete hidden><i class="fa-solid fa-trash-can" aria-hidden="true"></i> Xóa lịch</button><button class="button button-quiet" type="button" data-appointment-cancel hidden><i class="fa-solid fa-ban" aria-hidden="true"></i> Hủy lịch</button><span class="appointment-modal-actions-spacer"></span><button class="button button-secondary" type="button" data-appointment-close>Đóng</button><button class="button button-primary" type="submit">Lưu lịch hẹn</button></div>
+                    <div class="modal-actions appointment-modal-actions">
+                        <button
+                            class="button button-danger"
+                            type="button"
+                            data-appointment-delete
+                            hidden
+                        >
+                            <i
+                                class="fa-solid fa-trash-can"
+                                aria-hidden="true"
+                            ></i>
+                            Xóa lịch</button
+                        ><button
+                            class="button button-quiet"
+                            type="button"
+                            data-appointment-cancel
+                            hidden
+                        >
+                            <i class="fa-solid fa-ban" aria-hidden="true"></i>
+                            Hủy lịch</button
+                        ><span class="appointment-modal-actions-spacer"></span
+                        ><button
+                            class="button button-secondary"
+                            type="button"
+                            data-appointment-close
+                        >
+                            Đóng</button
+                        ><button class="button button-primary" type="submit">
+                            Lưu lịch hẹn
+                        </button>
+                    </div>
                 </form>
             </section>
         </div>
         <div class="modal-backdrop" id="calendarDayModal" hidden>
-            <section class="project-edit-dialog calendar-day-dialog" role="dialog" aria-modal="true" aria-labelledby="calendarDayTitle">
-                <button class="modal-close" type="button" data-calendar-day-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i></span>
+            <section
+                class="project-edit-dialog calendar-day-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="calendarDayTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-calendar-day-close
+                    aria-label="Đóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-calendar-day" aria-hidden="true"></i
+                ></span>
                 <h2 id="calendarDayTitle">Lịch trong ngày</h2>
                 <div class="calendar-day-agenda" id="calendarDayAgenda"></div>
                 <div class="modal-actions">
-                    <button class="button button-secondary" type="button" data-calendar-day-close>Đóng</button>
-                    <button class="button button-primary" type="button" data-calendar-day-add><i class="fa-solid fa-plus" aria-hidden="true"></i> Xếp lịch ngày này</button>
+                    <button
+                        class="button button-secondary"
+                        type="button"
+                        data-calendar-day-close
+                    >
+                        Đóng
+                    </button>
+                    <button
+                        class="button button-primary"
+                        type="button"
+                        data-calendar-day-add
+                    >
+                        <i class="fa-solid fa-plus" aria-hidden="true"></i> Xếp
+                        lịch ngày này
+                    </button>
                 </div>
             </section>
         </div>
         <div class="modal-backdrop" id="taskModal" hidden>
-            <section class="project-edit-dialog" role="dialog" aria-modal="true" aria-labelledby="taskModalTitle">
-                <button class="modal-close" type="button" data-task-close aria-label="Đóng"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
-                <span class="modal-icon"><i class="fa-solid fa-list-check" aria-hidden="true"></i></span>
+            <section
+                class="project-edit-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="taskModalTitle"
+            >
+                <button
+                    class="modal-close"
+                    type="button"
+                    data-task-close
+                    aria-label="Đóng"
+                >
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+                <span class="modal-icon"
+                    ><i class="fa-solid fa-list-check" aria-hidden="true"></i
+                ></span>
                 <h2 id="taskModalTitle">Thêm công việc</h2>
                 <p>Giao việc cho đúng người và ghi rõ hạn xử lý.</p>
                 <form id="taskForm" class="project-edit-form">
-                    <label for="taskTitle">Nội dung công việc</label><input id="taskTitle" name="title" required maxlength="120" placeholder="Ví dụ: Gửi lại khách để xác nhận lịch tham quan" />
+                    <label for="taskTitle">Nội dung công việc</label
+                    ><input
+                        id="taskTitle"
+                        name="title"
+                        required
+                        maxlength="120"
+                        placeholder="Ví dụ: Gửi lại khách để xác nhận lịch tham quan"
+                    />
                     <div class="project-form-row">
-                        <div class="appointment-customer-picker searchable-customer-picker"><label for="taskCustomerSearch">Khách hàng</label><div class="appointment-customer-combo"><input id="taskCustomerSearch" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="taskCustomerOptions" aria-haspopup="listbox" placeholder="Tìm khách hàng hoặc để trống" autocomplete="off" /><select id="taskCustomer" name="customer" hidden><option value="">Không gắn khách hàng</option><option value="anh" data-project-code="AP-026">Nguyễn Ngọc Anh</option><option value="khoa" data-project-code="GV-014">Trần Minh Khoa</option><option value="yen" data-project-code="CP-008">Lê Hoàng Yến</option><option value="bao" data-project-code="AP-026">Phạm Quốc Bảo</option></select><div class="appointment-customer-options" id="taskCustomerOptions" role="listbox" hidden></div></div></div>
-                        <div><label for="taskProject">Dự án</label><select id="taskProject" name="project" required><option value="">Chọn dự án</option><option value="AP-026">An Phú Riverside</option><option value="GV-014">Green Valley</option><option value="CP-008">Central Park Towers</option><option value="LG-031">Lumière Garden</option></select></div>
+                        <div
+                            class="appointment-customer-picker searchable-customer-picker"
+                        >
+                            <label for="taskCustomerSearch">Khách hàng</label>
+                            <div class="appointment-customer-combo">
+                                <input
+                                    id="taskCustomerSearch"
+                                    type="search"
+                                    role="combobox"
+                                    aria-autocomplete="list"
+                                    aria-expanded="false"
+                                    aria-controls="taskCustomerOptions"
+                                    aria-haspopup="listbox"
+                                    placeholder="Tìm khách hàng hoặc để trống"
+                                    autocomplete="off"
+                                /><select
+                                    id="taskCustomer"
+                                    name="customer"
+                                    hidden
+                                >
+                                    <option value="">
+                                        Không gắn khách hàng
+                                    </option>
+                                    <option
+                                        value="anh"
+                                        data-project-code="AP-026"
+                                    >
+                                        Nguyễn Ngọc Anh
+                                    </option>
+                                    <option
+                                        value="khoa"
+                                        data-project-code="GV-014"
+                                    >
+                                        Trần Minh Khoa
+                                    </option>
+                                    <option
+                                        value="yen"
+                                        data-project-code="CP-008"
+                                    >
+                                        Lê Hoàng Yến
+                                    </option>
+                                    <option
+                                        value="bao"
+                                        data-project-code="AP-026"
+                                    >
+                                        Phạm Quốc Bảo
+                                    </option>
+                                </select>
+                                <div
+                                    class="appointment-customer-options"
+                                    id="taskCustomerOptions"
+                                    role="listbox"
+                                    hidden
+                                ></div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="taskProject">Dự án</label
+                            ><select id="taskProject" name="project" required>
+                                <option value="">Chọn dự án</option>
+                                <option value="AP-026">An Phú Riverside</option>
+                                <option value="GV-014">Green Valley</option>
+                                <option value="CP-008">
+                                    Central Park Towers
+                                </option>
+                                <option value="LG-031">Lumière Garden</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="project-form-row">
-                        <div><label for="taskAssignee">Người phụ trách</label><select id="taskAssignee" name="assignee" required><option value="">Chọn nhân viên hoặc quản lý</option><option>Trần Thanh Long</option><option>Quỳnh Dao</option><option>Mai Ngọc</option></select></div>
-                        <div><label for="taskDeadline">Hẹn xử lý</label><input id="taskDeadline" name="deadline" type="datetime-local" required /></div>
+                        <div>
+                            <label for="taskAssignee">Người phụ trách</label
+                            ><select id="taskAssignee" name="assignee" required>
+                                <option value="">
+                                    Chọn nhân viên hoặc quản lý
+                                </option>
+                                <option>Trần Thanh Long</option>
+                                <option>Quỳnh Dao</option>
+                                <option>Mai Ngọc</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="taskDeadline">Hẹn xử lý</label
+                            ><input
+                                id="taskDeadline"
+                                name="deadline"
+                                type="datetime-local"
+                                required
+                            />
+                        </div>
                     </div>
-                    <label for="taskPriority">Mức ưu tiên</label><select id="taskPriority" name="priority"><option>Thông thường</option><option>Ưu tiên</option></select>
-                    <div class="modal-actions"><button class="button button-secondary" type="button" data-task-close>Hủy</button><button class="button button-primary" type="submit">Lưu công việc</button></div>
+                    <label for="taskPriority">Mức ưu tiên</label
+                    ><select id="taskPriority" name="priority">
+                        <option>Thông thường</option>
+                        <option>Ưu tiên</option>
+                    </select>
+                    <div class="modal-actions">
+                        <button
+                            class="button button-secondary"
+                            type="button"
+                            data-task-close
+                        >
+                            Hủy</button
+                        ><button class="button button-primary" type="submit">
+                            Lưu công việc
+                        </button>
+                    </div>
                 </form>
             </section>
         </div>
@@ -319,52 +1167,463 @@
             aria-live="polite"
         ></div>
 
-
-
-
         <div hidden id="appointmentPeopleExamples" aria-hidden="true">
-            <article data-person-kind="customer" data-id="anh" data-name="Nguyễn Ngọc Anh" data-project-code="AP-026"></article>
-            <article data-person-kind="customer" data-id="khoa" data-name="Trần Minh Khoa" data-project-code="GV-014"></article>
-            <article data-person-kind="customer" data-id="yen" data-name="Lê Hoàng Yến" data-project-code="CP-008"></article>
-            <article data-person-kind="customer" data-id="bao" data-name="Phạm Quốc Bảo" data-project-code="AP-026"></article>
-            <article data-person-kind="customer" data-id="nam" data-name="Võ Hoàng Nam" data-project-code="GV-014"></article>
-            <article data-person-kind="new" data-id="__new__" data-name="+ Tạo hồ sơ khách hàng mới"></article>
-            <article data-person-kind="staff" data-id="staff-long" data-name="Trần Thanh Long" data-role="Nhân viên tư vấn" data-project="An Phú Riverside" data-status="Đang hoạt động"></article>
-            <article data-person-kind="staff" data-id="staff-quynh" data-name="Quỳnh Dao" data-role="Nhân viên tư vấn" data-project="Green Valley" data-status="Đang hoạt động"></article>
-            <article data-person-kind="staff" data-id="staff-mai" data-name="Mai Ngọc" data-role="Chăm sóc khách hàng" data-project="Central Park Towers" data-status="Đang hoạt động"></article>
+            <article
+                data-person-kind="customer"
+                data-id="anh"
+                data-name="Nguyễn Ngọc Anh"
+                data-project-code="AP-026"
+            ></article>
+            <article
+                data-person-kind="customer"
+                data-id="khoa"
+                data-name="Trần Minh Khoa"
+                data-project-code="GV-014"
+            ></article>
+            <article
+                data-person-kind="customer"
+                data-id="yen"
+                data-name="Lê Hoàng Yến"
+                data-project-code="CP-008"
+            ></article>
+            <article
+                data-person-kind="customer"
+                data-id="bao"
+                data-name="Phạm Quốc Bảo"
+                data-project-code="AP-026"
+            ></article>
+            <article
+                data-person-kind="customer"
+                data-id="nam"
+                data-name="Võ Hoàng Nam"
+                data-project-code="GV-014"
+            ></article>
+            <article
+                data-person-kind="new"
+                data-id="__new__"
+                data-name="+ Tạo hồ sơ khách hàng mới"
+            ></article>
+            <article
+                data-person-kind="staff"
+                data-id="staff-long"
+                data-name="Trần Thanh Long"
+                data-role="Nhân viên tư vấn"
+                data-project="An Phú Riverside"
+                data-status="Đang hoạt động"
+            ></article>
+            <article
+                data-person-kind="staff"
+                data-id="staff-quynh"
+                data-name="Quỳnh Dao"
+                data-role="Nhân viên tư vấn"
+                data-project="Green Valley"
+                data-status="Đang hoạt động"
+            ></article>
+            <article
+                data-person-kind="staff"
+                data-id="staff-mai"
+                data-name="Mai Ngọc"
+                data-role="Chăm sóc khách hàng"
+                data-project="Central Park Towers"
+                data-status="Đang hoạt động"
+            ></article>
         </div>
         <div hidden id="appointmentExamples" aria-hidden="true">
-    <article data-id="appointment-anh" data-customer="anh" data-customer-name="Nguyễn Ngọc Anh" data-project="AP-026" data-product-id="unit-ap-a2-1208" data-start="2026-10-29T09:30" data-type="Tư vấn tại văn phòng" data-place="Văn phòng An Phát Land" data-assignee="Trần Thanh Long" data-assignee-id="staff-long" data-status="Đã phân công"></article>
-    <article data-id="appointment-yen" data-customer="yen" data-customer-name="Lê Hoàng Yến" data-project="CP-008" data-product-id="unit-cp-b1-0803" data-start="2026-12-17T14:00" data-type="Bàn giao căn hộ" data-place="Sảnh tòa B1 · Central Park Towers" data-assignee="Mai Ngọc" data-assignee-id="staff-mai" data-status="Đã phân công"></article>
-    <article data-id="appointment-khoa" data-customer="khoa" data-customer-name="Trần Minh Khoa" data-project="GV-014" data-product-id="unit-gv-n08-06" data-start="2026-10-30T10:00" data-type="Gọi tư vấn" data-place="Gọi điện cho khách" data-assignee="Quỳnh Dao" data-assignee-id="staff-quynh" data-status="Đã phân công"></article>
-    <article data-id="appointment-tour" data-customer="nam" data-customer-name="Võ Hoàng Nam" data-project="GV-014" data-product-id="unit-gv-n08-06" data-start="2026-10-31T09:30" data-type="Dẫn khách xem nhà" data-place="Nhà phố mẫu Green Valley" data-assignee="Quỳnh Dao" data-assignee-id="staff-quynh" data-status="Đã phân công"></article>
-    <article data-id="appointment-handover" data-customer="dat" data-customer-name="Võ Thành Đạt" data-project="AP-026" data-product-id="unit-ap-a2-1506" data-start="2026-12-24T14:00" data-type="Bàn giao căn hộ" data-place="Sảnh tòa A2 · An Phú Riverside" data-assignee="Trần Thanh Long" data-assignee-id="staff-long" data-status="Đã phân công"></article>
-</div>
-<div hidden id="inventoryCatalogExamples">
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a2-1208" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="A2" data-floor="Tầng 12" data-code="A2 · 12.08" data-area="82" data-price="3.8" data-commission="2" data-status="Chờ duyệt" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a2-1209" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="A2" data-floor="Tầng 12" data-code="A2 · 12.09" data-area="82" data-price="3.9" data-commission="2" data-status="Còn bán" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a2-1210" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 3 phòng ngủ" data-zone="A2" data-floor="Tầng 12" data-code="A2 · 12.10" data-area="105" data-price="5.2" data-commission="2" data-status="Còn bán" data-bedrooms="3" data-bathrooms="2"></article>
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a2-1301" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 1 phòng ngủ" data-zone="A2" data-floor="Tầng 13" data-code="A2 · 13.01" data-area="58" data-price="2.8" data-commission="2" data-status="Còn bán" data-bedrooms="1" data-bathrooms="1"></article>
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a1-0501" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="A1" data-floor="Tầng 5" data-code="A1 · 05.01" data-area="78" data-price="3.5" data-commission="2" data-status="Đã bán" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a1-0502" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="A1" data-floor="Tầng 5" data-code="A1 · 05.02" data-area="78" data-price="3.5" data-commission="2" data-status="Còn bán" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="viewing" data-project-type="Căn hộ" data-project-area="Quận 7, TP. Hồ Chí Minh" data-id="unit-cp-b1-0803" data-project="Central Park Towers" data-project-code="CP-008" data-address="Quận 7, TP. Hồ Chí Minh" data-group="apartment" data-type="Căn hộ 3 phòng ngủ" data-zone="B1" data-floor="Tầng 8" data-code="B1 · 08.03" data-area="104" data-price="5.1" data-commission="2" data-status="Đã bán" data-bedrooms="3" data-bathrooms="2"></article>
-            <article data-form-id="viewing" data-project-type="Căn hộ" data-project-area="Quận 7, TP. Hồ Chí Minh" data-id="unit-cp-b1-0804" data-project="Central Park Towers" data-project-code="CP-008" data-address="Quận 7, TP. Hồ Chí Minh" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="B1" data-floor="Tầng 8" data-code="B1 · 08.04" data-area="79" data-price="3.7" data-commission="2" data-status="Còn bán" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="viewing" data-project-type="Căn hộ" data-project-area="Quận 7, TP. Hồ Chí Minh" data-id="unit-cp-b2-1001" data-project="Central Park Towers" data-project-code="CP-008" data-address="Quận 7, TP. Hồ Chí Minh" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="B2" data-floor="Tầng 10" data-code="B2 · 10.01" data-area="80" data-price="3.8" data-commission="2" data-status="Còn bán" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="price" data-project-type="Nhà phố" data-project-area="Biên Hòa" data-id="unit-gv-n08-05" data-project="Green Valley" data-project-code="GV-014" data-address="Biên Hòa, Đồng Nai" data-group="house" data-type="Nhà phố" data-zone="N08" data-floor="" data-code="N08 · 05" data-area="165" data-price="8.2" data-commission="3" data-status="Đã bán" data-storeys="3" data-bedrooms="3" data-frontage="6"></article>
-            <article data-form-id="" data-project-type="Đất nền" data-address="Đức Hòa, Long An" data-project-area="Long An" data-project-code="LG-031" data-id="unit-lg-17" data-project="Lumière Garden" data-group="land" data-type="Đất nền dự án" data-zone="Phân khu 1" data-floor="" data-code="LG · 17" data-area="120" data-price="2.4" data-commission="2" data-status="Chưa mở bán" data-frontage="6" data-depth="20" data-legal-use="Đất ở tại dự án"></article>
-            <article data-form-id="price" data-project-type="Nhà phố" data-project-area="Biên Hòa" data-id="unit-gv-house-026" data-project="Green Valley" data-project-code="GV-014" data-address="Biên Hòa, Đồng Nai" data-group="house" data-type="Nhà riêng" data-zone="Khu dân cư A" data-floor="" data-code="GV · A.26" data-area="96" data-price="6.6" data-commission="3" data-status="Còn bán" data-storeys="2" data-bedrooms="3" data-frontage="5"></article>
-            <article data-form-id="" data-project-type="Đất nền" data-address="Đức Hòa, Long An" data-project-area="Long An" data-project-code="LG-031" data-id="unit-lg-lot-021" data-project="Lumière Garden" data-group="land" data-type="Đất nền dự án" data-zone="Phân khu 1" data-floor="" data-code="LG · 21" data-area="120" data-price="2.4" data-commission="2" data-status="Còn bán" data-frontage="6" data-depth="20" data-legal-use="Đất ở tại dự án"></article>
-            <article data-form-id="" data-project-type="Đất nền" data-address="Đức Hòa, Long An" data-project-area="Long An" data-project-code="LG-031" data-id="unit-lg-lot-022" data-project="Lumière Garden" data-group="land" data-type="Đất thổ cư" data-zone="Phân khu 2" data-floor="" data-code="LG · 22" data-area="150" data-price="3.1" data-commission="2" data-status="Còn bán" data-frontage="7.5" data-depth="20" data-legal-use="Đất thổ cư"></article>
-            <article data-form-id="consult" data-project-type="Căn hộ" data-address="TP. Thủ Đức, TP. Hồ Chí Minh" data-project-area="TP. Thủ Đức" data-project-code="AP-026" data-id="unit-ap-a2-1506" data-project="An Phú Riverside" data-group="apartment" data-type="Căn hộ 2 phòng ngủ" data-zone="A2" data-floor="Tầng 15" data-code="A2 · 15.06" data-area="82" data-price="3.8" data-commission="2" data-status="Đã bán" data-bedrooms="2" data-bathrooms="2"></article>
-            <article data-form-id="price" data-project-type="Nhà phố" data-project-area="Biên Hòa" data-id="unit-gv-n08-06" data-project="Green Valley" data-project-code="GV-014" data-address="Biên Hòa, Đồng Nai" data-group="house" data-type="Nhà phố" data-zone="N08" data-floor="" data-code="N08 · 06" data-area="168" data-price="8.4" data-commission="3" data-status="Còn bán" data-storeys="3" data-bedrooms="3" data-frontage="6"></article>
+            <article
+                data-id="appointment-anh"
+                data-customer="anh"
+                data-customer-name="Nguyễn Ngọc Anh"
+                data-project="AP-026"
+                data-product-id="unit-ap-a2-1208"
+                data-start="2026-10-29T09:30"
+                data-type="Tư vấn tại văn phòng"
+                data-place="Văn phòng An Phát Land"
+                data-assignee="Trần Thanh Long"
+                data-assignee-id="staff-long"
+                data-status="Đã phân công"
+            ></article>
+            <article
+                data-id="appointment-yen"
+                data-customer="yen"
+                data-customer-name="Lê Hoàng Yến"
+                data-project="CP-008"
+                data-product-id="unit-cp-b1-0803"
+                data-start="2026-12-17T14:00"
+                data-type="Bàn giao căn hộ"
+                data-place="Sảnh tòa B1 · Central Park Towers"
+                data-assignee="Mai Ngọc"
+                data-assignee-id="staff-mai"
+                data-status="Đã phân công"
+            ></article>
+            <article
+                data-id="appointment-khoa"
+                data-customer="khoa"
+                data-customer-name="Trần Minh Khoa"
+                data-project="GV-014"
+                data-product-id="unit-gv-n08-06"
+                data-start="2026-10-30T10:00"
+                data-type="Gọi tư vấn"
+                data-place="Gọi điện cho khách"
+                data-assignee="Quỳnh Dao"
+                data-assignee-id="staff-quynh"
+                data-status="Đã phân công"
+            ></article>
+            <article
+                data-id="appointment-tour"
+                data-customer="nam"
+                data-customer-name="Võ Hoàng Nam"
+                data-project="GV-014"
+                data-product-id="unit-gv-n08-06"
+                data-start="2026-10-31T09:30"
+                data-type="Dẫn khách xem nhà"
+                data-place="Nhà phố mẫu Green Valley"
+                data-assignee="Quỳnh Dao"
+                data-assignee-id="staff-quynh"
+                data-status="Đã phân công"
+            ></article>
+            <article
+                data-id="appointment-handover"
+                data-customer="dat"
+                data-customer-name="Võ Thành Đạt"
+                data-project="AP-026"
+                data-product-id="unit-ap-a2-1506"
+                data-start="2026-12-24T14:00"
+                data-type="Bàn giao căn hộ"
+                data-place="Sảnh tòa A2 · An Phú Riverside"
+                data-assignee="Trần Thanh Long"
+                data-assignee-id="staff-long"
+                data-status="Đã phân công"
+            ></article>
         </div>
-    <script src="../public/js/inventory.js?v=20261027-product-address-v1"></script>
-    <script src="../public/js/admin-common.js?v=20261027-remove-reservations-v1"></script>
-    <script src="../public/js/appointments.js?v=20261027-shared-detail-v1"></script>
-    <script src="../public/js/workflow.js?v=20261027-search-customer-task-v1"></script>
-    <script src="../public/js/searchable-customer-select.js?v=20261027-search-all-customer-fields-v2"></script>
-</body>
+        <div hidden id="inventoryCatalogExamples">
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a2-1208"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="A2"
+                data-floor="Tầng 12"
+                data-code="A2 · 12.08"
+                data-area="82"
+                data-price="3.8"
+                data-commission="2"
+                data-status="Chờ duyệt"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a2-1209"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="A2"
+                data-floor="Tầng 12"
+                data-code="A2 · 12.09"
+                data-area="82"
+                data-price="3.9"
+                data-commission="2"
+                data-status="Còn bán"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a2-1210"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 3 phòng ngủ"
+                data-zone="A2"
+                data-floor="Tầng 12"
+                data-code="A2 · 12.10"
+                data-area="105"
+                data-price="5.2"
+                data-commission="2"
+                data-status="Còn bán"
+                data-bedrooms="3"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a2-1301"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 1 phòng ngủ"
+                data-zone="A2"
+                data-floor="Tầng 13"
+                data-code="A2 · 13.01"
+                data-area="58"
+                data-price="2.8"
+                data-commission="2"
+                data-status="Còn bán"
+                data-bedrooms="1"
+                data-bathrooms="1"
+            ></article>
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a1-0501"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="A1"
+                data-floor="Tầng 5"
+                data-code="A1 · 05.01"
+                data-area="78"
+                data-price="3.5"
+                data-commission="2"
+                data-status="Đã bán"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a1-0502"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="A1"
+                data-floor="Tầng 5"
+                data-code="A1 · 05.02"
+                data-area="78"
+                data-price="3.5"
+                data-commission="2"
+                data-status="Còn bán"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="viewing"
+                data-project-type="Căn hộ"
+                data-project-area="Quận 7, TP. Hồ Chí Minh"
+                data-id="unit-cp-b1-0803"
+                data-project="Central Park Towers"
+                data-project-code="CP-008"
+                data-address="Quận 7, TP. Hồ Chí Minh"
+                data-group="apartment"
+                data-type="Căn hộ 3 phòng ngủ"
+                data-zone="B1"
+                data-floor="Tầng 8"
+                data-code="B1 · 08.03"
+                data-area="104"
+                data-price="5.1"
+                data-commission="2"
+                data-status="Đã bán"
+                data-bedrooms="3"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="viewing"
+                data-project-type="Căn hộ"
+                data-project-area="Quận 7, TP. Hồ Chí Minh"
+                data-id="unit-cp-b1-0804"
+                data-project="Central Park Towers"
+                data-project-code="CP-008"
+                data-address="Quận 7, TP. Hồ Chí Minh"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="B1"
+                data-floor="Tầng 8"
+                data-code="B1 · 08.04"
+                data-area="79"
+                data-price="3.7"
+                data-commission="2"
+                data-status="Còn bán"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="viewing"
+                data-project-type="Căn hộ"
+                data-project-area="Quận 7, TP. Hồ Chí Minh"
+                data-id="unit-cp-b2-1001"
+                data-project="Central Park Towers"
+                data-project-code="CP-008"
+                data-address="Quận 7, TP. Hồ Chí Minh"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="B2"
+                data-floor="Tầng 10"
+                data-code="B2 · 10.01"
+                data-area="80"
+                data-price="3.8"
+                data-commission="2"
+                data-status="Còn bán"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="price"
+                data-project-type="Nhà phố"
+                data-project-area="Biên Hòa"
+                data-id="unit-gv-n08-05"
+                data-project="Green Valley"
+                data-project-code="GV-014"
+                data-address="Biên Hòa, Đồng Nai"
+                data-group="house"
+                data-type="Nhà phố"
+                data-zone="N08"
+                data-floor=""
+                data-code="N08 · 05"
+                data-area="165"
+                data-price="8.2"
+                data-commission="3"
+                data-status="Đã bán"
+                data-storeys="3"
+                data-bedrooms="3"
+                data-frontage="6"
+            ></article>
+            <article
+                data-form-id=""
+                data-project-type="Đất nền"
+                data-address="Đức Hòa, Long An"
+                data-project-area="Long An"
+                data-project-code="LG-031"
+                data-id="unit-lg-17"
+                data-project="Lumière Garden"
+                data-group="land"
+                data-type="Đất nền dự án"
+                data-zone="Phân khu 1"
+                data-floor=""
+                data-code="LG · 17"
+                data-area="120"
+                data-price="2.4"
+                data-commission="2"
+                data-status="Chưa mở bán"
+                data-frontage="6"
+                data-depth="20"
+                data-legal-use="Đất ở tại dự án"
+            ></article>
+            <article
+                data-form-id="price"
+                data-project-type="Nhà phố"
+                data-project-area="Biên Hòa"
+                data-id="unit-gv-house-026"
+                data-project="Green Valley"
+                data-project-code="GV-014"
+                data-address="Biên Hòa, Đồng Nai"
+                data-group="house"
+                data-type="Nhà riêng"
+                data-zone="Khu dân cư A"
+                data-floor=""
+                data-code="GV · A.26"
+                data-area="96"
+                data-price="6.6"
+                data-commission="3"
+                data-status="Còn bán"
+                data-storeys="2"
+                data-bedrooms="3"
+                data-frontage="5"
+            ></article>
+            <article
+                data-form-id=""
+                data-project-type="Đất nền"
+                data-address="Đức Hòa, Long An"
+                data-project-area="Long An"
+                data-project-code="LG-031"
+                data-id="unit-lg-lot-021"
+                data-project="Lumière Garden"
+                data-group="land"
+                data-type="Đất nền dự án"
+                data-zone="Phân khu 1"
+                data-floor=""
+                data-code="LG · 21"
+                data-area="120"
+                data-price="2.4"
+                data-commission="2"
+                data-status="Còn bán"
+                data-frontage="6"
+                data-depth="20"
+                data-legal-use="Đất ở tại dự án"
+            ></article>
+            <article
+                data-form-id=""
+                data-project-type="Đất nền"
+                data-address="Đức Hòa, Long An"
+                data-project-area="Long An"
+                data-project-code="LG-031"
+                data-id="unit-lg-lot-022"
+                data-project="Lumière Garden"
+                data-group="land"
+                data-type="Đất thổ cư"
+                data-zone="Phân khu 2"
+                data-floor=""
+                data-code="LG · 22"
+                data-area="150"
+                data-price="3.1"
+                data-commission="2"
+                data-status="Còn bán"
+                data-frontage="7.5"
+                data-depth="20"
+                data-legal-use="Đất thổ cư"
+            ></article>
+            <article
+                data-form-id="consult"
+                data-project-type="Căn hộ"
+                data-address="TP. Thủ Đức, TP. Hồ Chí Minh"
+                data-project-area="TP. Thủ Đức"
+                data-project-code="AP-026"
+                data-id="unit-ap-a2-1506"
+                data-project="An Phú Riverside"
+                data-group="apartment"
+                data-type="Căn hộ 2 phòng ngủ"
+                data-zone="A2"
+                data-floor="Tầng 15"
+                data-code="A2 · 15.06"
+                data-area="82"
+                data-price="3.8"
+                data-commission="2"
+                data-status="Đã bán"
+                data-bedrooms="2"
+                data-bathrooms="2"
+            ></article>
+            <article
+                data-form-id="price"
+                data-project-type="Nhà phố"
+                data-project-area="Biên Hòa"
+                data-id="unit-gv-n08-06"
+                data-project="Green Valley"
+                data-project-code="GV-014"
+                data-address="Biên Hòa, Đồng Nai"
+                data-group="house"
+                data-type="Nhà phố"
+                data-zone="N08"
+                data-floor=""
+                data-code="N08 · 06"
+                data-area="168"
+                data-price="8.4"
+                data-commission="3"
+                data-status="Còn bán"
+                data-storeys="3"
+                data-bedrooms="3"
+                data-frontage="6"
+            ></article>
+        </div>
+
+        <script src="../public/js/admin.js"></script>
+    </body>
 </html>
-
-
-
